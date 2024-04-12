@@ -1,0 +1,20 @@
+.swiper {
+  padding-bottom: 30px;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background: #ff453a99;
+  opacity: 1;
+  cursor: pointer;
+  &.swiper-pagination-bullet-active {
+    background: #ff453a;
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+}
