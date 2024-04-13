@@ -246,3 +246,10 @@ body {
     }
   }
 }
+// products
+.product__box {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
