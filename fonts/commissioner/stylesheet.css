@@ -3,7 +3,6 @@
     src: url('Commissioner-ExtraBold.eot');
     src: local('Commissioner ExtraBold'), local('Commissioner-ExtraBold'),
         url('Commissioner-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-ExtraBold.woff2') format('woff2'),
         url('Commissioner-ExtraBold.woff') format('woff'),
         url('Commissioner-ExtraBold.ttf') format('truetype');
     font-weight: 800;
@@ -15,7 +14,6 @@
     src: url('Commissioner-Light.eot');
     src: local('Commissioner Light'), local('Commissioner-Light'),
         url('Commissioner-Light.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-Light.woff2') format('woff2'),
         url('Commissioner-Light.woff') format('woff'),
         url('Commissioner-Light.ttf') format('truetype');
     font-weight: 300;
@@ -27,7 +25,6 @@
     src: url('Commissioner-Bold.eot');
     src: local('Commissioner Bold'), local('Commissioner-Bold'),
         url('Commissioner-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-Bold.woff2') format('woff2'),
         url('Commissioner-Bold.woff') format('woff'),
         url('Commissioner-Bold.ttf') format('truetype');
     font-weight: bold;
@@ -39,7 +36,6 @@
     src: url('Commissioner-Medium.eot');
     src: local('Commissioner Medium'), local('Commissioner-Medium'),
         url('Commissioner-Medium.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-Medium.woff2') format('woff2'),
         url('Commissioner-Medium.woff') format('woff'),
         url('Commissioner-Medium.ttf') format('truetype');
     font-weight: 500;
@@ -51,7 +47,6 @@
     src: url('Commissioner-ExtraLight.eot');
     src: local('Commissioner ExtraLight'), local('Commissioner-ExtraLight'),
         url('Commissioner-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-ExtraLight.woff2') format('woff2'),
         url('Commissioner-ExtraLight.woff') format('woff'),
         url('Commissioner-ExtraLight.ttf') format('truetype');
     font-weight: 200;
@@ -63,7 +58,6 @@
     src: url('Commissioner-Black.eot');
     src: local('Commissioner Black'), local('Commissioner-Black'),
         url('Commissioner-Black.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-Black.woff2') format('woff2'),
         url('Commissioner-Black.woff') format('woff'),
         url('Commissioner-Black.ttf') format('truetype');
     font-weight: 900;
@@ -75,7 +69,6 @@
     src: url('Commissioner-Regular.eot');
     src: local('Commissioner Regular'), local('Commissioner-Regular'),
         url('Commissioner-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-Regular.woff2') format('woff2'),
         url('Commissioner-Regular.woff') format('woff'),
         url('Commissioner-Regular.ttf') format('truetype');
     font-weight: normal;
@@ -87,7 +80,6 @@
     src: url('Commissioner-SemiBold.eot');
     src: local('Commissioner SemiBold'), local('Commissioner-SemiBold'),
         url('Commissioner-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-SemiBold.woff2') format('woff2'),
         url('Commissioner-SemiBold.woff') format('woff'),
         url('Commissioner-SemiBold.ttf') format('truetype');
     font-weight: 600;
@@ -99,7 +91,6 @@
     src: url('Commissioner-Thin.eot');
     src: local('Commissioner Thin'), local('Commissioner-Thin'),
         url('Commissioner-Thin.eot?#iefix') format('embedded-opentype'),
-        url('Commissioner-Thin.woff2') format('woff2'),
         url('Commissioner-Thin.woff') format('woff'),
         url('Commissioner-Thin.ttf') format('truetype');
     font-weight: 100;
