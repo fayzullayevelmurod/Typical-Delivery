@@ -73,6 +73,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // products
   const products = document.querySelectorAll(".product__card");
+  const productName = document.querySelectorAll(".product__name");
+  const productDesc = document.querySelectorAll(".product__desc");
   products.forEach((product) => {
     const openProductInfoBtn = product.querySelector(".info__btn");
     const productInfoBox = product.querySelector(".product__info-list");
@@ -80,5 +82,21 @@ window.addEventListener("DOMContentLoaded", () => {
       openProductInfoBtn.classList.toggle("active");
       productInfoBox.classList.toggle("active");
     });
+  });
+  const maxLengthProductName = 46;
+  const maxLengthProductDesc = 126;
+
+  productName.forEach((item) => {
+    if (item.textContent.length > maxLengthProductName) {
+      item.textContent =
+        item.textContent.slice(0, maxLengthProductName) + "...";
+    }
+  });
+
+  productDesc.forEach((description) => {
+    if (description.textContent.length > maxLengthProductDesc) {
+      description.textContent =
+        description.textContent.slice(0, maxLengthProductDesc) + "...";
+    }
   });
 });
