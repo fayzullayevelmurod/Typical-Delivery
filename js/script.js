@@ -99,4 +99,19 @@ window.addEventListener("DOMContentLoaded", () => {
         description.textContent.slice(0, maxLengthProductDesc) + "...";
     }
   });
+
+  // read more
+  const redMoreBtn = document.querySelector(".read__more");
+  const readMoreText = document.querySelector(".read__more span");
+  const hideText = document.querySelector(".hide__text");
+
+  redMoreBtn.addEventListener("click", () => {
+    hideText.classList.toggle("show");
+    redMoreBtn.classList.toggle("active");
+    if (readMoreText.textContent === "Читать полностью") {
+      readMoreText.textContent = "Свернуть";
+    } else {
+      readMoreText.textContent = "Читать полностью";
+    }
+  });
 });
