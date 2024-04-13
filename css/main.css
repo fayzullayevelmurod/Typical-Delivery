@@ -69,11 +69,37 @@ li {
   margin: 0 auto;
 }
 
+.red__btn {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 10px 32px;
+  background: #ff453a;
+  border: 1px solid rgba(255, 255, 255, 0.0509803922);
+  border-radius: 20px;
+  width: fit-content;
+  display: inline-block;
+  color: #fff;
+}
+
 body {
   font-family: "Commissioner", sans-serif;
   font-weight: 400;
   background-color: #212429;
   color: #fff;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  color: #fff;
+}
+
+.title__lg {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
 }
 
 .swiper {
@@ -231,6 +257,10 @@ body {
   position: relative;
 }
 
+body {
+  margin-bottom: 200px;
+}
+
 .hero {
   margin: 48px 0 80px 0;
 }
@@ -263,6 +293,176 @@ body {
 }
 .hero__swiper .swiper-slide-active::before {
   display: none;
+}
+
+.sidebars .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.product__menu {
+  max-width: 343px;
+  width: 100%;
+}
+.product__menu .menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 33px;
+}
+.product__menu .menu__header .filter__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 1px #ff7a67;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #373a42;
+  cursor: pointer;
+}
+.product__menu .stock__box {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  padding: 0 0 20px 23px;
+  border-bottom: 1px solid #6f7174;
+}
+.product__menu .stock__box-text {
+  background-image: linear-gradient(99.46deg, #15ffab 0%, #15ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.01px;
+}
+.product__menu .tab__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 10px;
+  padding-right: 23px;
+}
+.product__menu .tab__header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.product__menu .tab__header-box.active .active__box {
+  display: block;
+}
+.product__menu .tab__header .active__box {
+  width: 10px;
+  height: 10px;
+  background: #ff453a;
+  box-shadow: 0px 0px 5px 1px #ff453a;
+  border-radius: 50%;
+  display: none;
+}
+.product__menu .tab__header-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s linear;
+  position: relative;
+  z-index: 1;
+}
+.product__menu .tab__header-item:hover::before {
+  transform: scaleX(1);
+}
+.product__menu .tab__header-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: transform 0.3s linear;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, rgba(48, 51, 58, 0) 0%, #30333a 35.08%, #30333a 73.71%, rgba(48, 51, 58, 0) 100%);
+}
+.product__menu .tab__header-item .product__name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.right__sidebar {
+  flex: 1 1 0;
+}
+.right__sidebar-top {
+  display: flex;
+  align-items: stretch;
+  padding-top: 25px;
+}
+.right__sidebar-banner {
+  width: 100%;
+}
+.right__sidebar-banner img {
+  border-radius: 24px 0px 0px 24px;
+  height: 100%;
+}
+.right__sidebar .purchase__box {
+  max-width: 306px;
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+  background: linear-gradient(180deg, rgba(33, 36, 41, 0) 23.95%, #00ffd1 140.19%);
+  border-radius: 0px 24px 24px 0px;
+}
+.right__sidebar .purchase__box .time__info {
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #bdbdbd;
+}
+.right__sidebar .purchase__box-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.right__sidebar .purchase__box-info {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  padding: 20px 0 30px 0;
+  color: #bdbdbd;
+}
+.right__sidebar .purchase__box .price {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+  padding-bottom: 20px;
+}
+.right__sidebar .timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 40px 0;
+}
+.right__sidebar .timer .line {
+  background: #ff453a;
+  height: 24px;
+  width: 2px;
+}
+.right__sidebar .timer__block .time {
+  font-family: "Futura", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 43px;
+  color: #ff453a;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=main.css.map */

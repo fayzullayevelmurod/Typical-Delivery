@@ -12,8 +12,10 @@
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="description">
 	<meta property="og:image" content="images/title-logo.webp">
-	<!-- font -->
+	<!-- font commissioner -->
 	<link rel="stylesheet" href="./fonts/commissioner/stylesheet.css">
+	<!-- font futura -->
+	<link rel="stylesheet" href="fonts/futura/stylesheet.css">
 	<!-- swiper css -->
 	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
 	<!-- normalize css -->
@@ -91,28 +93,147 @@
 
 			<!-- hero section -->
 			<div class="hero">
-				<div class="container">
-					<div class="swiper hero__swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="images/hero-2.webp" alt="sushi img" width="1008" height="480">
-							</div>
-							<div class="swiper-slide">
-								<img src="images/hero-1.webp" alt="sushi img" width="1008" height="480">
-							</div>
-							<div class="swiper-slide">
-								<img src="images/hero-3.webp" alt="sushi img" width="1008" height="480">
-							</div>
-							<div class="swiper-slide">
-								<img src="images/hero-1.webp" alt="sushi img" width="1008" height="480">
-							</div>
+				<div class="swiper hero__swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="images/hero-2.webp" alt="sushi img" width="1008" height="480">
 						</div>
-						<div class="swiper-pagination"></div>
+						<div class="swiper-slide">
+							<img src="images/hero-1.webp" alt="sushi img" width="1008" height="480">
+						</div>
+						<div class="swiper-slide">
+							<img src="images/hero-3.webp" alt="sushi img" width="1008" height="480">
+						</div>
+						<div class="swiper-slide">
+							<img src="images/hero-1.webp" alt="sushi img" width="1008" height="480">
+						</div>
 					</div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 
+			<div class="sidebars">
+				<div class="container">
 
+					<aside class="product__menu left__sidebar">
+						<div class="menu__header">
+							<h3 class="product__menu-title">Наше меню</h3>
+							<button class="filter__btn" aria-label="filter button" data-type="filter__btn">
+								<img src="images/icons/filter.svg" alt="filter icon" width="20" height="18">
+							</button>
+						</div>
+						<div class="stock__box">
+							<img class="stock__box-img" src="images/icons/stock.svg" alt="stock icon" width="54" height="64">
+							<p class="stock__box-text">Акции</p>
+						</div>
+
+						<div class="tab__header">
+							<div class="tab__header-box active">
+								<div class="tab__header-item">
+									<img src="images/tab-img-1.png" alt="product img" width="100" height="64">
+									<p class="product__name">Роллы</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-2.png" alt="product img" width="100" height="64">
+									<p class="product__name">Пицца</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-3.png" alt="product img" width="100" height="64">
+									<p class="product__name">Блины</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-4.png" alt="product img" width="100" height="64">
+									<p class="product__name">Форель, погружение</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-5.png" alt="product img" width="100" height="64">
+									<p class="product__name">Суси и Гунканы</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-6.png" alt="product img" width="100" height="64">
+									<p class="product__name">Горячие роллы</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-7.png" alt="product img" width="100" height="64">
+									<p class="product__name">Сеты</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-8.png" alt="product img" width="100" height="64">
+									<p class="product__name">Салаты и закуски</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+							<div class="tab__header-box">
+								<div class="tab__header-item">
+									<img src="images/tab-img-9.png" alt="product img" width="100" height="64">
+									<p class="product__name">Супы</p>
+								</div>
+								<div class="active__box"></div>
+							</div>
+						</div>
+					</aside>
+
+					<aside class="products right__sidebar">
+						<h2 class="title">Предложение дня</h2>
+						<div class="right__sidebar-top">
+							<div class="right__sidebar-banner">
+								<img class="banner__img" src="images/banner.png" alt="banner" width="592" height="518">
+							</div>
+							<div class="purchase__box">
+								<h3 class="title__lg">Успей купить</h3>
+								<p class="time__info">Осталось мало времени</p>
+
+								<div class="promotion__timer">
+									<div class="timer">
+										<div class="timer__block">
+											<span class="time" id="days">99</span>
+										</div>
+										<div class="line"></div>
+										<div class="timer__block">
+											<span class="time" id="hours">09</span>
+										</div>
+										<div class="line"></div>
+										<div class="timer__block">
+											<span class="time" id="minutes">99</span>
+										</div>
+									</div>
+								</div>
+
+								<h4 class="purchase__box-title">Для всех влюбленных</h4>
+								<p class="purchase__box-info">
+									Валентинов день - отличное время для проявления нежности и заботы. Роллы в подарок к этому особенному
+									дню - это не
+									только вкусный и оригинальный подарок, но и символ общего удовольствия и вкусных моментов вдвоем.
+								</p>
+								<p class="price">969 ₽</p>
+								<button class="red__btn">КУПИТЬ</button>
+							</div>
+						</div>
+					</aside>
+
+				</div>
+			</div>
 
 		</main>
 
