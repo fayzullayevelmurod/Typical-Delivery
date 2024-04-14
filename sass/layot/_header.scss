@@ -1,8 +1,14 @@
 .header {
   position: sticky;
+  top: 0;
   margin-top: 20px;
-  left: 0;
   width: 100%;
+  z-index: 100;
+  background: #212429;
+
+  .sticky__logo {
+    display: none;
+  }
 
   &__dropdown {
     position: absolute;
@@ -15,7 +21,7 @@
     z-index: 10;
     padding: 31px 43px 20px 43px;
     transform-origin: top;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
     p {
       font-size: 15px;
       font-weight: 500;

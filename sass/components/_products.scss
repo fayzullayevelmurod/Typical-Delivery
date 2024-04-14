@@ -29,6 +29,7 @@
     left: 15px;
     display: flex;
     gap: 5px;
+
     & > div {
       background: #00000080;
       padding: 8px;
@@ -64,6 +65,15 @@
         justify-content: center;
         transform-origin: left;
         transition: transform 0.2s linear;
+        white-space: nowrap;
+        width: 115px;
+
+        &.first {
+          bottom: 72%;
+          left: 50%;
+          background-size: 100% 69%;
+          padding: 0px 0 17px 0;
+        }
       }
     }
     .discount__number span {

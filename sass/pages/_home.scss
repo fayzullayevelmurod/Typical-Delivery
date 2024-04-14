@@ -48,8 +48,12 @@
 }
 // product menu
 .product__menu {
+  position: sticky;
+  padding-top: 6px;
+  top: 100px;
   max-width: 343px;
   width: 100%;
+  padding-right: 6px;
   .menu__header {
     display: flex;
     align-items: center;
@@ -90,8 +94,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-top: 10px;
+    margin-top: 10px;
     padding-right: 23px;
+    overflow-y: scroll;
+    max-height: calc(100vh - 270px);
     &-box {
       display: flex;
       align-items: center;

@@ -1,0 +1,93 @@
+.footer {
+  border-top: 1px solid #ffffff33;
+  background: #2f323a;
+  padding: 60px 0 38px 0;
+
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #bdbdbd;
+    display: block;
+  }
+  .first {
+    a,
+    p {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+  .adres,
+  .work__time,
+  .gmail__adres {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .parrent__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .row {
+    display: flex;
+    align-items: start;
+    &.first {
+      gap: 40px;
+    }
+    &.second {
+      gap: 70px;
+    }
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .teal__btn {
+    background: #0bb699;
+    border: 1.5px solid #ffffff1a;
+    padding: 14px 20px 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 40px;
+    width: fit-content;
+    margin-top: 15px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      background: #129c86;
+    }
+  }
+  &__menu-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #bdbdbd;
+  }
+  &__link {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 28px;
+
+    &:hover {
+      color: #bdbdbd;
+    }
+  }
+  .last {
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      padding-bottom: 25px;
+    }
+    a {
+      display: block;
+      padding-bottom: 10px;
+    }
+  }
+}

@@ -3,7 +3,15 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
+::-webkit-scrollbar {
+  width: 5px;
+  background: #30333a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 10px;
+}
 *,
 *::before,
 *::after {
@@ -57,7 +65,7 @@ li {
   list-style: none;
 }
 .wrapper {
-  overflow: hidden;
+  overflow: clip;
 }
 
 .container {

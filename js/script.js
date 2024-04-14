@@ -114,4 +114,22 @@ window.addEventListener("DOMContentLoaded", () => {
       readMoreText.textContent = "Читать полностью";
     }
   });
+
+  // sticky header
+  document.addEventListener("scroll", () => {
+    const defaultLogo = document.querySelector(".default__logo");
+    const stickytLogo = document.querySelector(".sticky__logo");
+    const headerTop = document.querySelector(".header__right-top");
+    if (window.scrollY > 0) {
+      defaultLogo.style.display = "none";
+      stickytLogo.style.display = "block";
+      headerTop.style.display = "none";
+      console.log("sa");
+    } else {
+      headerTop.style.display = "flex";
+      defaultLogo.style.display = "block";
+      stickytLogo.style.display = "none";
+      console.log("al");
+    }
+  });
 });
