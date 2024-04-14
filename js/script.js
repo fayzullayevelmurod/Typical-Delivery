@@ -235,4 +235,27 @@ window.addEventListener("DOMContentLoaded", () => {
     this.classList.add("disabled");
     startCountdown();
   });
+
+  // tabs
+  const tabHeaderItems = document.querySelectorAll(".tab__header-box");
+
+  tabHeaderItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      tabHeaderItems.forEach((el) => {
+        el.classList.remove("active");
+      });
+      item.classList.add("active");
+    });
+  });
+
+  // media__header
+  const mediaHeader = document.querySelector(".media__header");
+  const openMenuBtn = document.querySelector(".hambuerger__menu");
+  const closeMenuBtn = document.querySelector(".close__menu");
+  openMenuBtn.addEventListener("click", () => {
+    mediaHeader.classList.add("show");
+  });
+  closeMenuBtn.addEventListener("click", () => {
+    mediaHeader.classList.remove("show");
+  });
 });
