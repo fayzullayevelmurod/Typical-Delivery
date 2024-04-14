@@ -1,0 +1,42 @@
+.phone__input-box {
+  position: relative;
+  z-index: 1;
+  input {
+    padding: 10px 20px 0 20px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  input:focus {
+    & + label {
+      transform: translateY(-18px);
+    }
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    color: #bdbdbd;
+    transition: all 0.2s linear;
+    z-index: 1;
+    &.up {
+      transform: translateY(-18px);
+    }
+  }
+}
+.send__code-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  display: none;
+  &.show {
+    display: block;
+  }
+  span {
+    color: #ff453a;
+  }
+}

@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="./fonts/commissioner/stylesheet.css">
 	<!-- font futura -->
 	<link rel="stylesheet" href="fonts/futura/stylesheet.css">
+	<!-- font Proxima Nova -->
+	<link rel="stylesheet" href="fonts/ProximaNova/stylesheet.css">
 	<!-- swiper css -->
 	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
 	<!-- normalize css -->
@@ -32,7 +34,8 @@
 		<header class="header">
 			<div class="container">
 				<a class="header__logo" href="#">
-					<img class="default__logo" src="images/icons/logo.svg" alt="logo" title="company logo" width="220" height="100">
+					<img class="default__logo" src="images/icons/logo.svg" alt="logo" title="company logo" width="220"
+						height="100">
 					<img class="sticky__logo" src="images/logo-2.svg" alt="logo" title="company logo" width="187" height="65">
 				</a>
 				<div class="header__right">
@@ -76,10 +79,10 @@
 										ул. Севастопольская, 92А</p>
 								</div>
 							</div>
-							<div class="login">
+							<button class="login auth__modal-open" aria-label="open auth modal btn">
 								<img src="images/icons/user.svg" alt="user" width="24" height="24">
 								<span class="login__info">Войти</span>
-							</div>
+							</button>
 						</div>
 						<div class="header__right-bottom-right">
 							<img src="images/icons/cart.svg" alt="cart icon" width="50" height="50">
@@ -1213,7 +1216,7 @@
 							</div>
 							<div>
 								<span class="footer__text">Время работы:</span>
-								<p class="work__time" href="tel:+79780010134">с 10:00 до 00:00</p>
+								<p class="work__time">с 10:00 до 00:00</p>
 							</div>
 							<div>
 								<span class="footer__text">По любым вопросам:</span>
@@ -1296,6 +1299,54 @@
 			</div>
 		</footer>
 
+	</div>
+
+	<!-- modal start -->
+	<div class="modal__overlay"></div>
+	<div class="modal auth__modal">
+		<div class="modal__content">
+			<div>
+				<div class="modal__top">
+					<button class="modal__close-btn auth__modal-close" aria-label="close modal button">
+						<img src="images/icons/close.svg" alt="close icon" width="16" height="16">
+					</button>
+				</div>
+				<h4 class="modal__title">Авторизуйтесь</h4>
+
+				<form class="modal__form">
+					<div class="phone__input-box">
+						<input class="modal__input phone__input" type="number" name="number" required>
+						<label class="placeholder__text">Номер телефона</label>
+					</div>
+					<div class="enter__code">
+						<div class="enter__code-inputs">
+							<input class="modal__input enter__code-input" type="number" required>
+							<span class="line"></span>
+							<input class="modal__input enter__code-input" type="number" required>
+							<span class="line"></span>
+							<input class="modal__input enter__code-input" type="number" required>
+							<span class="line"></span>
+							<input class="modal__input enter__code-input" type="number" required>
+						</div>
+						<button class="send__code-btn" type="button">Получить код</button>
+					</div>
+					<p class="error__text">Вы ввели не верных код</p>
+					<p class="send__code-text">Вы можете запросить повторный код через: <span class="end__time">1:59</span></p>
+					<div class="remember__box">
+						<input type="checkbox" checked id="remember">
+						<label for="remember">Запомнить меня</label>
+					</div>
+					<button class="red__btn send__btn" aria-label="send button">Войти</button>
+				</form>
+			</div>
+			<p class="modal__info">
+				При входе и регистрации вы предоставляете Согласие на обработку
+				персональных данных в соответствии с <a href="#!">Политикой обработки
+					персональных данных</a>, а также соглашаетесь с <a href="#!">Политикой обработки
+					персональных данных</a>, Условиями использования сайта. Защита от
+				спама reCAPTCHA: <a href="#!">Конфиденциальность</a> и <a href="#!">Условия использования.</a>
+			</p>
+		</div>
 	</div>
 
 	<!-- swiper js -->

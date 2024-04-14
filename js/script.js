@@ -124,12 +124,115 @@ window.addEventListener("DOMContentLoaded", () => {
       defaultLogo.style.display = "none";
       stickytLogo.style.display = "block";
       headerTop.style.display = "none";
-      console.log("sa");
     } else {
       headerTop.style.display = "flex";
       defaultLogo.style.display = "block";
       stickytLogo.style.display = "none";
-      console.log("al");
     }
+  });
+
+  // modal
+  const authModal = document.querySelector(".auth__modal");
+  const openModal = document.querySelector(".auth__modal-open");
+  const modalOverlay = document.querySelector(".modal__overlay");
+  const authModalClose = document.querySelector(".auth__modal-close");
+  const sendButton = authModal.querySelector(".send__btn");
+  function hideMOdal() {
+    authModal.classList.remove("show");
+    modalOverlay.classList.remove("show");
+    document.body.style.overflow = "auto";
+    document.querySelector(".wrapper").style.filter = "blur(0)";
+  }
+  function showModal() {
+    authModal.classList.add("show");
+    modalOverlay.classList.add("show");
+    document.body.style.overflow = "hidden";
+    document.querySelector(".wrapper").style.filter = "blur(7px)";
+  }
+  openModal.addEventListener("click", showModal);
+  authModalClose.addEventListener("click", hideMOdal);
+  authModal.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("auth__modal")) {
+      hideMOdal();
+      console.log(e.target);
+    }
+  });
+
+  // validate input
+
+  const phoneInput = document.querySelector(".phone__input");
+  const placeholderText = document.querySelector(".placeholder__text");
+  const inputs = document.querySelectorAll(".enter__code-input");
+  const errorText = document.querySelector(".error__text");
+
+  inputs.forEach(function (input, index) {
+    input.addEventListener("input", function () {
+      if (this.value.length > 0) {
+        if (index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        } else {
+          sendButton.focus();
+        }
+      }
+    });
+
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Backspace" && this.value.length === 0) {
+        if (index > 0) {
+          inputs[index - 1].focus();
+        }
+      }
+    });
+  });
+  sendButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    inputs.forEach(function (input) {
+      if (input.value === "") {
+        input.focus();
+        return;
+      }
+      if (input.value && phoneInput.value) {
+        input.classList.add("error");
+        errorText.classList.add("show");
+      }
+    });
+  });
+  phoneInput.addEventListener("click", () => {
+    placeholderText.classList.add("up");
+  });
+
+  const sendCodeButton = document.querySelector(".send__code-btn");
+  const codeText = document.querySelector(".send__code-text");
+  const endTime = document.querySelector(".end__time");
+
+  let countdownTimer;
+  let remainingTime = 119;
+
+  function updateCountdown() {
+    const minutes = Math.floor(remainingTime / 60);
+    const seconds = remainingTime % 60;
+    endTime.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+    if (remainingTime <= 0) {
+      clearInterval(countdownTimer);
+      codeText.classList.remove("show");
+      sendCodeButton.classList.remove("disabled");
+      sendCodeButton.removeAttribute("disabled");
+      endTime.textContent = "0:00";
+    } else {
+      remainingTime--;
+    }
+  }
+
+  function startCountdown() {
+    updateCountdown();
+    countdownTimer = setInterval(updateCountdown, 1000);
+  }
+
+  sendCodeButton.addEventListener("click", function () {
+    codeText.classList.add("show");
+    this.setAttribute("disabled", "true");
+    this.classList.add("disabled");
+    startCountdown();
   });
 });

@@ -17,6 +17,15 @@ html {
 *::after {
   box-sizing: inherit;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 a,
 p,
@@ -41,6 +50,9 @@ select:focus {
 button {
   border: none;
   background: none;
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 input:focus {
