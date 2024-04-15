@@ -1585,6 +1585,10 @@ body {
   display: none;
 }
 
+.product__menu-title.media__block {
+  display: none;
+}
+
 .bottom__panel {
   z-index: 200;
   display: none;
@@ -1629,6 +1633,9 @@ body {
   }
 }
 @media screen and (max-width: 1000px) {
+  .product__menu-title.media__block {
+    display: block;
+  }
   .sidebars .container {
     flex-direction: column;
     row-gap: 40px;
