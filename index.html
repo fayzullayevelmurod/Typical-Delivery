@@ -12,14 +12,12 @@
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="description">
 	<meta property="og:image" content="images/title-logo.webp">
-	<!-- font commissioner -->
-	<link rel="stylesheet" href="./fonts/commissioner/stylesheet.css">
 	<!-- font futura -->
 	<link rel="stylesheet" href="fonts/futura/stylesheet.css">
 	<!-- font Proxima Nova -->
 	<link rel="stylesheet" href="fonts/ProximaNova/stylesheet.css">
 	<!-- swiper css -->
-	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 	<!-- normalize css -->
 	<link rel="stylesheet" href="./libs/normalize.min.css">
 	<!-- custom css -->
@@ -212,17 +210,17 @@
 				<div class="swiper hero__swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="images/hero-2.webp" alt="sushi img" width="1000" height="483">
+							<img loading="lazy" src="images/hero-2.webp" alt="sushi img" width="1468" height="483">
 						</div>
 						<div class="swiper-slide">
-							<img class="media__block" src="images/media-slider.png" alt="sushi img" width="290" height="420">
-							<img class="media__hide" src="images/hero-1.webp" alt="sushi img" width="1000" height="483">
+							<img class="media__block" src="images/media-slider.webp" alt="sushi img" width="290" height="420">
+							<img class="media__hide" src="images/hero-1.webp" alt="sushi img" width="1468" height="483">
 						</div>
 						<div class="swiper-slide">
-							<img src="images/hero-3.webp" alt="sushi img" width="1000" height="483">
+							<img loading="lazy" src="images/hero-3.webp" alt="sushi img" width="1468" height="483">
 						</div>
 						<div class="swiper-slide">
-							<img src="images/hero-1.webp" alt="sushi img" width="1000" height="483">
+							<img loading="lazy" src="images/hero-1.webp" alt="sushi img" width="1000" height="483">
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
@@ -244,15 +242,15 @@
 								<div class="promotion__timer">
 									<div class="timer">
 										<div class="timer__block">
-											<span class="time" id="days">99</span>
+											<span class="time days">99</span>
 										</div>
 										<div class="line"></div>
 										<div class="timer__block">
-											<span class="time" id="hours">09</span>
+											<span class="time hours">09</span>
 										</div>
 										<div class="line"></div>
 										<div class="timer__block">
-											<span class="time" id="minutes">99</span>
+											<span class="time minutes">99</span>
 										</div>
 									</div>
 								</div>
@@ -363,15 +361,15 @@
 									<div class="promotion__timer">
 										<div class="timer">
 											<div class="timer__block">
-												<span class="time" id="days">99</span>
+												<span class="time days">99</span>
 											</div>
 											<div class="line"></div>
 											<div class="timer__block">
-												<span class="time" id="hours">09</span>
+												<span class="time hours">09</span>
 											</div>
 											<div class="line"></div>
 											<div class="timer__block">
-												<span class="time" id="minutes">99</span>
+												<span class="time minutes">99</span>
 											</div>
 										</div>
 									</div>
@@ -1569,7 +1567,7 @@
 					<span>Главная</span>
 				</div>
 				<div>
-					<img src="images/icons/wallet.svg" alt="">
+					<img src="images/icons/wallet.png" alt="" width="20" height="20">
 					<span>Заказы</span>
 				</div>
 				<div>
@@ -1623,7 +1621,7 @@
 
 				<form class="modal__form">
 					<div class="phone__input-box">
-						<input class="modal__input phone__input" type="number" name="number" required>
+						<input class="modal__input phone__input" type="tel" name="number" required>
 						<label class="placeholder__text">Номер телефона</label>
 					</div>
 					<div class="enter__code">
@@ -1657,8 +1655,10 @@
 		</div>
 	</div>
 
+	<!-- iMask JS -->
+	<script src="https://unpkg.com/imask"></script>
 	<!-- swiper js -->
-	<script src="./libs/swiper/swiper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<!-- custom js -->
 	<script src="./js/script.js"></script>
 </body>

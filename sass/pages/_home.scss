@@ -295,6 +295,8 @@
 
 // bottom panel
 .bottom__panel {
+  z-index: 200;
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -306,7 +308,7 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    &>div {
+    & > div {
       text-align: center;
     }
     span {
@@ -532,7 +534,7 @@
     padding: 20px 15px 0 15px;
   }
   .delivery__title {
-    font-display: 22px;
+    font-size: 22px;
     line-height: 27px;
   }
   .delivery__desc,
@@ -710,6 +712,12 @@
 @media screen and (max-width: 480px) {
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .bottom__panel {
+    display: block;
+  }
+  .footer {
+    padding: 40px 0 100px 0;
   }
 }
 @media screen and (max-width: 400px) {

@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   // hero swiper
+
   var heroSwiper = new Swiper(".hero__swiper", {
     pagination: {
       el: ".swiper-pagination",
@@ -59,9 +60,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function setClock(selector, endtime) {
     const timer = document.querySelector(selector),
-      days = timer.querySelector("#days"),
-      hours = timer.querySelector("#hours"),
-      minutes = timer.querySelector("#minutes"),
+      days = timer.querySelector(".days"),
+      hours = timer.querySelector(".hours"),
+      minutes = timer.querySelector(".minutes"),
       timeInterval = setInterval(updatClock, 1000);
 
     updatClock();
@@ -268,4 +269,6 @@ window.addEventListener("DOMContentLoaded", () => {
   closeMenuBtn.addEventListener("click", () => {
     mediaHeader.classList.remove("show");
   });
+
+  IMask(phoneInput, { mask: "+{7} (000) 000-00-00" });
 });

@@ -23,6 +23,7 @@
     color: #bdbdbd;
     transition: all 0.2s linear;
     z-index: 1;
+    pointer-events: none;
     &.up {
       transform: translateY(-18px);
     }
