@@ -88,6 +88,9 @@ li {
 .wrapper {
   overflow: clip;
 }
+.wrapper.blur {
+  filter: blur(8px);
+}
 
 .container {
   max-width: 1320px;
@@ -167,7 +170,7 @@ body {
   background: rgba(0, 0, 0, 0.5019607843);
   padding: 8px;
   border-radius: 8px;
-  font-family: Futura;
+  font-family: "Futura", sans-serif;
   font-size: 14px;
   font-weight: 700;
   display: flex;
@@ -402,14 +405,6 @@ body {
   display: block;
 }
 
-.salm {
-  font-family: Commissioner;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.57px;
-  text-align: left;
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -571,6 +566,282 @@ body {
 .modal__info a {
   color: rgba(255, 255, 255, 0.5019607843);
   text-decoration: underline;
+}
+
+.filter__modal .modal__close-btn {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  height: 36px;
+}
+.filter__modal h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 31px;
+  text-align: center;
+}
+.filter__modal .filter__boxes {
+  display: flex;
+  padding-top: 40px;
+  flex-direction: column;
+  gap: 26px;
+}
+.filter__modal .filter__boxes .filter__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  z-index: 50;
+}
+.filter__modal .filter__boxes .filter__box.active .clicker__btn {
+  background: #ff453a;
+}
+.filter__modal .filter__boxes .filter__box.active .clicker__btn .circle__box {
+  background: #fff;
+  right: 3px;
+  left: auto;
+}
+.filter__modal .filter__box-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filter__modal .filter__box-content span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.clicker__btn {
+  width: 46px;
+  height: 26px;
+  padding: 3px;
+  border-radius: 40px;
+  background: #6f7174;
+  position: relative;
+  cursor: pointer;
+}
+.clicker__btn .circle__box {
+  transition: all 0.2s linear;
+  background: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.modal__footer .clear__btn {
+  background: #373a42;
+  border: 1px solid rgba(255, 255, 255, 0.0509803922);
+  padding: 15px 58px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #fff;
+}
+.modal__footer button {
+  flex: 1 1 auto;
+  border-radius: 24px;
+  cursor: pointer;
+}
+.modal__footer .red__btn {
+  width: 100%;
+}
+
+.back__call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  display: none;
+}
+.back__call.show {
+  display: flex;
+}
+.back__call .modal__header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding-bottom: 40px;
+}
+.back__call .modal__header .modal__close-btn {
+  height: 36px;
+}
+.back__call .modal__content {
+  position: relative;
+  padding: 32px 20px;
+  height: fit-content;
+  max-width: 592px;
+  border-radius: 24px;
+}
+.back__call .call__modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.back__call .select__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.back__call .select__box .arrow__down {
+  transition: all 0.2s linear;
+}
+.back__call .select__box.active .arrow__down {
+  transform: rotate(180deg);
+}
+.back__call .select__input span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #bdbdbd;
+}
+.back__call .arrow__down {
+  position: relative;
+  z-index: 200;
+}
+.back__call .modal__input {
+  padding-right: 16px;
+}
+.back__call .selected__text.active {
+  color: #fff;
+}
+.back__call .option__box {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  background: #2f323a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+  border-radius: 24px;
+  transform: scaleY(0);
+  transition: all 0.2s linear;
+  transform-origin: top;
+}
+.back__call .option__box.show {
+  transform: scaleY(1);
+}
+.back__call .option__box .scroll__box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 224px;
+  overflow-y: scroll;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.back__call .option__box .scroll__box::-webkit-scrollbar {
+  width: 2px;
+}
+.back__call .option__box .scroll__box::-webkit-scrollbar-thumb {
+  background: #ff453a;
+}
+.back__call .option__box .option {
+  cursor: pointer;
+}
+.back__call .option__box span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.back__call .option__box .flex__box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.back__call .option__box p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.back__call .option__box .status {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.back__call .option__box .status.active {
+  color: #00ff0a;
+}
+.back__call .option__box .status.closed {
+  color: #ff453a;
+}
+.back__call .enter__num-code {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.back__call .enter__num-code .num__code {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44.03px;
+}
+.back__call .enter__num-code input {
+  width: 214px;
+  font-weight: 500;
+}
+.back__call .enter__num-code input::placeholder {
+  font-size: 16px;
+}
+.back__call .enter__num-code input .warrning {
+  color: #ff453a;
+}
+.back__call .warning__code {
+  display: none;
+  color: #ff453a;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.back__call .warning__code.show {
+  display: block;
+}
+.back__call .sedn__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.back__call .sedn__box .remember__box {
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.back__call .sedn__box .remember__box label {
+  font-family: "Proxima Nova";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 11px;
+}
+.back__call .sedn__box .remember__box label::after {
+  top: 71%;
+}
+.back__call .sedn__box .remember__box label a {
+  text-decoration: underline;
+  color: rgba(255, 69, 58, 0.6980392157);
+  display: inline;
+}
+.back__call .sedn__box .red__btn {
+  box-shadow: 0px 0px 5px 1px #ff7a67;
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+
+.selected__text {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .swiper {

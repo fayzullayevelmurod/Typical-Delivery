@@ -79,6 +79,10 @@ li {
 }
 .wrapper {
   overflow: clip;
+
+  &.blur {
+filter: blur(8px);
+  }
 }
 
 .container {

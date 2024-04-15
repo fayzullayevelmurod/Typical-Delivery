@@ -148,30 +148,32 @@ window.addEventListener("DOMContentLoaded", () => {
   const modalOverlay = document.querySelector(".modal__overlay");
   const authModalClose = document.querySelector(".auth__modal-close");
   const sendButton = authModal.querySelector(".send__btn");
+  const wrapper = document.querySelector(".wrapper");
+
   function hideMOdal() {
     authModal.classList.remove("show");
     modalOverlay.classList.remove("show");
     document.body.style.overflow = "auto";
-    document.querySelector(".wrapper").style.filter = "blur(0)";
+    wrapper.classList.remove("blur");
   }
   function showModal() {
     authModal.classList.add("show");
     modalOverlay.classList.add("show");
     document.body.style.overflow = "hidden";
-    document.querySelector(".wrapper").style.filter = "blur(7px)";
+    wrapper.classList.add("blur");
   }
   openModal.addEventListener("click", showModal);
   authModalClose.addEventListener("click", hideMOdal);
   authModal.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("auth__modal")) {
       hideMOdal();
-      console.log(e.target);
     }
   });
 
   // validate input
 
   const phoneInput = document.querySelector(".phone__input");
+  const numberInputs = document.querySelectorAll(".number__input");
   const placeholderText = document.querySelector(".placeholder__text");
   const inputs = document.querySelectorAll(".enter__code-input");
   const errorText = document.querySelector(".error__text");
@@ -196,7 +198,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
   sendButton.addEventListener("click", function (e) {
-    e.preventDefault();
     inputs.forEach(function (input) {
       if (input.value === "") {
         input.focus();
@@ -263,12 +264,120 @@ window.addEventListener("DOMContentLoaded", () => {
   const mediaHeader = document.querySelector(".media__header");
   const openMenuBtn = document.querySelector(".hambuerger__menu");
   const closeMenuBtn = document.querySelector(".close__menu");
+  const clearBtn = document.querySelector(".clear__btn");
   openMenuBtn.addEventListener("click", () => {
     mediaHeader.classList.add("show");
   });
   closeMenuBtn.addEventListener("click", () => {
     mediaHeader.classList.remove("show");
   });
-
+  const numberInput = document.querySelector(".number__input");
   IMask(phoneInput, { mask: "+{7} (000) 000-00-00" });
+  IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
+
+  // filter__box
+  const filterBox = document.querySelectorAll(".filter__box");
+  filterBox.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("active");
+      clearBtn.addEventListener("click", () => {
+        item.classList.remove("active");
+      });
+    });
+  });
+
+  const filterModal = document.querySelector(".filter__modal");
+  const openFilterModal = document.querySelector(".open__filter-modal");
+  const closeFilterModal = document.querySelector(".filter__modal-close");
+  const applyBtn = document.querySelector(".apply__btn");
+
+  function showFilterModal() {
+    filterModal.classList.add("show");
+    modalOverlay.classList.add("show");
+    wrapper.classList.add("blur");
+    document.body.style.overflow = "hidden";
+  }
+  function hideFilterModal() {
+    filterModal.classList.remove("show");
+    modalOverlay.classList.remove("show");
+    wrapper.classList.remove("blur");
+    document.body.style.overflow = "auto";
+  }
+  openFilterModal.addEventListener("click", showFilterModal);
+  closeFilterModal.addEventListener("click", hideFilterModal);
+  applyBtn.addEventListener("click", hideFilterModal);
+
+  filterModal.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("filter__modal")) {
+      hideFilterModal();
+    }
+  });
+
+  // select__box
+  const selectBox = document.querySelector(".select__box");
+  const selectOption = document.querySelector(".option__box");
+  const options = document.querySelectorAll(".option");
+  const selectedText = document.querySelector(".selected__text");
+
+  selectBox.addEventListener("click", () => {
+    selectOption.classList.toggle("show");
+    selectBox.classList.toggle("active");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      selectedText.value = option.querySelector(".select__text").textContent;
+      selectedText.classList.add("active");
+      selectOption.classList.add("");
+      selectBox.classList.remove("active");
+    });
+  });
+
+  // num__code
+  const inputsTwo = document.querySelectorAll(".checker__input");
+  // const numCodeInput = document.querySelector(".num__code-input");
+  const warningCode = document.querySelector(".warning__code");
+  const selectedTextTwo = document.querySelector(".selected__text");
+
+  const numCodeInput = document.querySelector(".num__code-input");
+
+  numCodeInput.addEventListener("input", function () {
+    // Faqat raqam kiritsin
+    this.value = this.value.replace(/\D/g, "");
+
+    // 4 ta raqamdan ortiq kiritilmasin
+    if (this.value.length > 4) {
+      this.value = this.value.slice(0, 4);
+    }
+  });
+  const form = document.querySelector(".back__call");
+  const numCode = document.querySelector(".num__code").textContent;
+
+  form.addEventListener("submit", function (event) {
+    // Kiritilgan qiymat num__code qiymatiga teng bo'lmagan bo'lsa
+    if (numCodeInput.value.trim() !== numCode.trim()) {
+      event.preventDefault();
+      warningCode.classList.add("show");
+    }
+  });
+
+  const openCallModal = document.querySelector(".open__call-modal");
+  const closeCallModal = document.querySelector(".call__modal-close");
+  function showCallModal() {
+    form.classList.add("show");
+    wrapper.classList.add("blur");
+    document.body.style.overflow = "hidden";
+  }
+  function hideCallModal() {
+    form.classList.remove("show");
+    wrapper.classList.remove("blur");
+    document.body.style.overflow = "auto";
+  }
+  openCallModal.addEventListener("click", showCallModal);
+  closeCallModal.addEventListener("click", hideCallModal);
+  form.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("back__call")) {
+      hideCallModal();
+    }
+  });
 });

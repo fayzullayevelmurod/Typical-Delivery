@@ -41,7 +41,7 @@
 						<img src="images/icons/phone.svg" alt="phone icon" width="12" height="12">
 					</a>
 					<div class="header__right-top">
-						<a class="tel" href="tel:+79780010134">+7 978 001 01 34</a>
+						<a class="tel open__call-modal" href="#!">+7 978 001 01 34</a>
 						<div class="work__time">
 							<img src="images/icons/clock.svg" alt="clock icon" width="24" height="24">
 							<span class="work__time-text">Рабочие часы</span>
@@ -269,7 +269,7 @@
 					<aside class="product__menu left__sidebar">
 						<div class="menu__header">
 							<h3 class="product__menu-title">Наше меню</h3>
-							<button class="filter__btn" aria-label="filter button" data-type="filter__btn">
+							<button class="filter__btn open__filter-modal" aria-label="filter button" data-type="filter__btn">
 								<img src="images/icons/filter.svg" alt="filter icon" width="20" height="18">
 							</button>
 						</div>
@@ -1642,7 +1642,7 @@
 						<input type="checkbox" checked id="remember">
 						<label for="remember">Запомнить меня</label>
 					</div>
-					<button class="red__btn send__btn" aria-label="send button">Войти</button>
+					<button type="submit" class="red__btn send__btn" aria-label="send button">Войти</button>
 				</form>
 			</div>
 			<p class="modal__info">
@@ -1652,6 +1652,163 @@
 					персональных данных</a>, Условиями использования сайта. Защита от
 				спама reCAPTCHA: <a href="#!">Конфиденциальность</a> и <a href="#!">Условия использования.</a>
 			</p>
+		</div>
+	</div>
+
+	<!-- filter modal -->
+	<div class="modal filter__modal">
+		<div class="modal__content">
+			<div>
+				<div>
+					<h2>Фильтры</h2>
+					<button class="modal__close-btn filter__modal-close" aria-label="close modal button">
+						<img src="images/icons/close.svg" alt="close icon" width="16" height="16">
+					</button>
+				</div>
+				<div class="filter__boxes">
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/filter-1.svg" alt="filter icon" width="22" height="22">
+							<span>Вега</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/acute.svg" alt="filter icon" width="22" height="22">
+							<span>Острое</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/filter-2.svg" alt="filter icon" width="22" height="22">
+							<span>Постное</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/duble-acute.svg" alt="filter icon" width="22" height="22">
+							<span>Очень острое</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/starts.svg" alt="filter icon" width="22" height="22">
+							<span>Новинки</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/flesh.svg" alt="flesh icon" width="22" height="22">
+							<span>Хит</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+					<div class="filter__box">
+						<div class="filter__box-content">
+							<img src="images/icons/bag.svg" alt="bag icon" width="22" height="22">
+							<span>Скидки</span>
+						</div>
+						<div class="clicker__btn">
+							<div class="circle__box"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal__footer">
+				<button class="clear__btn">Сбросить</button><button class="red__btn apply__btn">Применить</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Back call -->
+	<div class="back__call modal">
+		<div class="modal__content">
+			<div class="modal__header">
+				<h2>Обратный звонок</h2>
+				<button class="modal__close-btn call__modal-close" aria-label="close modal button">
+					<img src="images/icons/close.svg" alt="close icon" width="16" height="16">
+				</button>
+			</div>
+			<form class="call__modal-form">
+				<input class="checker__input modal__input" type="text" name="text" placeholder="Ваше имя*" required>
+				<input class="checker__input modal__input number__input phone__input" type="tel" name="number" required
+					placeholder="Телефон*">
+				<div class="select__box modal__input">
+					<div class="select__input">
+						<input class="selected__text" placeholder="Выберите заведение" required>
+					</div>
+					<img class="arrow__down" src="images/icons/arrow-down.svg" alt="arrow-down" width="12" height="14">
+					<div class="option__box">
+						<div class="scroll__box">
+							<div class="option">
+								<span class="select__text">пр-т Победы, 2</span>
+								<div class="flex__box">
+									<p>с 10:00 до 00:00</p>
+									<span class="status active">Открыто</span>
+								</div>
+							</div>
+							<div class="option">
+								<span class="select__text">пр-т Окт. Революции, 42</span>
+								<div class="flex__box">
+									<p>с 09:00 до 01:00</p>
+									<span class="status closed">Закрыто</span>
+								</div>
+							</div>
+							<div class="option">
+								<span class="select__text">пр-т Ген. Острякова, 52</span>
+								<div class="flex__box">
+									<p>с 10:00 до 00:00</p>
+									<span class="status active">Открыто</span>
+								</div>
+							</div>
+							<div class="option">
+								<span class="select__text">пр-т Окт. Революции, 42</span>
+								<div class="flex__box">
+									<p>с 09:00 до 01:00</p>
+									<span class="status closed">Закрыто</span>
+								</div>
+							</div>
+							<div class="option">
+								<span class="select__text">пр-т Окт. Революции, 42</span>
+								<div class="flex__box">
+									<p>с 09:00 до 01:00</p>
+									<span class="status closed">Закрыто</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="enter__num-code">
+					<input class="modal__input num__code-input" type="number" placeholder="Введите цифры" required>
+					<p class="num__code">1465</p>
+				</div>
+				<p class="warning__code">Вы ввели не верных код</p>
+				<div class="sedn__box">
+					<div class="remember__box">
+						<input type="checkbox" checked id="remember">
+						<label for="remember">Согласен с обработкой моих персональных данных в соответствии с <a href="#!">политикой
+								конфиденциальности сайта</a></label>
+					</div>
+					<button class="red__btn call__form-btn" type="submit">Отправить</button>
+				</div>
+			</form>
 		</div>
 	</div>
 
