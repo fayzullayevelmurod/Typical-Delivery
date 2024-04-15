@@ -16,6 +16,16 @@ window.addEventListener("DOMContentLoaded", () => {
     autoplay: {
       delay: 3000,
     },
+    breakpoints: {
+      576: {
+        slidesPerView: 1.3,
+        spaceBetween: 30,
+      },
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+    },
   });
 
   // Timer
