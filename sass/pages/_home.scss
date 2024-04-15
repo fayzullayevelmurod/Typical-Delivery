@@ -303,6 +303,9 @@
   .right__sidebar .purchase__box {
     padding-bottom: 48px;
   }
+  .footer .row.second {
+    gap: 70px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -448,6 +451,19 @@
   .product__card-content {
     padding: 20px 15px 0 15px;
   }
+  .delivery__title {
+    font-display: 22px;
+    line-height: 27px;
+  }
+  .delivery__desc,
+  .delivery .read__more {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .delivery .read__more.active img {
+    width: 10px;
+    height: 12px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -462,9 +478,6 @@
     font-size: 24px;
     line-height: 29.35px;
   }
-  .right__sidebar .title {
-    text-align: center;
-  }
   .right__sidebar-top {
     flex-direction: column;
   }
@@ -472,7 +485,7 @@
     max-width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 15px 0 25px 0;
+    padding: 15px 15px 25px 15px;
   }
   .right__sidebar-banner img {
     border-radius: 16px 16px 0px 0px;
@@ -510,7 +523,17 @@
     gap: 5px;
   }
   .product__card-content .product__name {
-    padding-bottom: 17px;
+    padding-bottom: 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .product__card-footer .flex__box {
+    padding-top: 15px;
+  }
+  .hambuerger__menu,
+  .close__menu {
+    width: 36px;
+    height: 36px;
   }
   .product__card-content {
     padding: 10px 10px 0 10px;
@@ -539,6 +562,29 @@
   }
   .product__card .offer__box {
     display: none;
+  }
+  .product__card-img,
+  .product__card {
+    border-radius: 14px;
+  }
+  .header .header__logo img {
+    width: 140px;
+    height: 63px;
+  }
+  #pizza .product__card-img > img,
+  #pancakes .product__card-img > img {
+    height: 134px;
+  }
+  .product__card-img.no-pt {
+    padding: 0;
+  }
+  .delivery__title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 15px;
+  }
+  .delivery {
+    padding: 60px 0;
   }
 }
 
