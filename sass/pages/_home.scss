@@ -47,12 +47,14 @@
   }
 }
 // product menu
-.product__menu {
+.sticky__filter {
   position: sticky;
-  padding-top: 6px;
   top: 100px;
   max-width: 343px;
   width: 100%;
+}
+.product__menu {
+  padding-top: 6px;
   padding-right: 6px;
   .menu__header {
     display: flex;
@@ -319,6 +321,7 @@
     }
   }
 }
+
 @media screen and (max-width: 1255px) {
   .right__sidebar-banner img {
     width: 100%;

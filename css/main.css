@@ -1525,12 +1525,15 @@ body {
   gap: 80px;
 }
 
-.product__menu {
+.sticky__filter {
   position: sticky;
-  padding-top: 6px;
   top: 100px;
   max-width: 343px;
   width: 100%;
+}
+
+.product__menu {
+  padding-top: 6px;
   padding-right: 6px;
 }
 .product__menu .menu__header {
