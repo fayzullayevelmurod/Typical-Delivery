@@ -18,16 +18,17 @@
 .modal {
   position: fixed;
   top: 0;
-  left: 0;
+  // left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 999;
-  transform: scaleX(0);
-  transition: all 0.2s linear;
-  transform-origin: right;
+  // transform: scaleX(0);
+  transition: all 0.3s linear;
+  right: -100%;
 
   &.show {
-    transform: scaleX(1);
+    // transform : scaleX(1);
+    right: 0;
   }
   .error__text {
     display: none;
@@ -158,7 +159,6 @@
         transform: translateY(-50%);
         width: 19px;
         height: 19px;
-        border-radius: 50%;
         background: url(../../images/icons/check.svg) no-repeat;
         background-size: 10px;
       }
@@ -269,6 +269,10 @@
     font-weight: 600;
     line-height: 20px;
     color: #fff;
+
+    &:hover {
+      background: #3e424b;
+    }
   }
   button {
     flex: 1 1 auto;
@@ -312,6 +316,7 @@
     height: fit-content;
     max-width: 592px;
     border-radius: 24px;
+    border: 1px solid #ffffff33;
   }
   .call__modal-form {
     display: flex;
@@ -349,6 +354,7 @@
   }
   .modal__input {
     padding-right: 16px;
+    cursor: pointer;
   }
   .selected__text {
     width: 100%;

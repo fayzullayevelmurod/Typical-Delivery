@@ -440,8 +440,15 @@
   .header .default__logo {
     width: 160px;
   }
+  .product__cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }
-
+@media screen and (max-width: 815px) {
+  .product__cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
 @media screen and (max-width: 768px) {
   .title {
     font-size: 32px;
@@ -571,10 +578,62 @@
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 576px) {
-  .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+@media screen and (max-width: 680px) {
+  .pizza .product__card-img > img,
+  #pancakes .product__card-img > img {
+    height: 134px;
   }
+  .product__box {
+    padding-top: 40px;
+  }
+  .product__card .product__info-list .info__list {
+    gap: 5px;
+  }
+  .product__card-content .product__name {
+    padding-bottom: 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .product__card-footer .flex__box {
+    padding-top: 15px;
+  }
+  .product__card-content {
+    padding: 10px 10px 0 10px;
+  }
+  .product__card-footer {
+    padding: 0 10px 15px 10px;
+  }
+  .product__card-footer .product__price {
+    font-size: 16px;
+    line-height: 19.57px;
+  }
+  .product__card-footer .add__btn {
+    width: 32px;
+    height: 32px;
+  }
+  .product__card-content .product__desc,
+  .product__card .product__info-box {
+    display: none;
+  }
+  .product__card-img {
+    padding: 30px 0;
+    & > img {
+      height: 78px;
+      width: 100%;
+    }
+  }
+  .product__card .offer__box {
+    display: none;
+  }
+  .product__card-img,
+  .product__card {
+    border-radius: 14px;
+  }
+  .product__cards {
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  }
+}
+@media screen and (max-width: 576px) {
   .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -638,66 +697,16 @@
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
   }
-  .product__box {
-    padding-top: 40px;
-  }
-  .product__card .product__info-list .info__list {
-    gap: 5px;
-  }
-  .product__card-content .product__name {
-    padding-bottom: 0;
-    font-size: 14px;
-    line-height: 17px;
-  }
-  .product__card-footer .flex__box {
-    padding-top: 15px;
-  }
   .hambuerger__menu,
   .close__menu {
     width: 36px;
     height: 36px;
-  }
-  .product__card-content {
-    padding: 10px 10px 0 10px;
-  }
-  .product__card-footer {
-    padding: 0 10px 15px 10px;
-  }
-  .product__card-footer .product__price {
-    font-size: 16px;
-    line-height: 19.57px;
-  }
-  .product__card-footer .add__btn {
-    width: 32px;
-    height: 32px;
-  }
-  .product__card-content .product__desc,
-  .product__card .product__info-box {
-    display: none;
-  }
-  .product__card-img {
-    padding: 30px 0;
-    & > img {
-      height: 78px;
-      width: 100%;
-    }
-  }
-  .product__card .offer__box {
-    display: none;
-  }
-  .product__card-img,
-  .product__card {
-    border-radius: 14px;
   }
   .header .header__logo .img__1 {
     width: 50px;
   }
   .header .header__logo .img__2 {
     width: 85px;
-  }
-  #pizza .product__card-img > img,
-  #pancakes .product__card-img > img {
-    height: 134px;
   }
   .product__card-img.no-pt {
     padding: 0;
@@ -724,18 +733,32 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 485px) {
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
   .bottom__panel {
     display: block;
+    padding-bottom: 25px;
+    .active {
+      img {
+        display: none;
+        &.active-img {
+          display: block;
+          margin: 0 auto 4px auto;
+        }
+      }
+      span {
+        color: #ff453a;
+      }
+    }
   }
   .footer {
     padding: 40px 0 100px 0;
   }
-}
-@media screen and (max-width: 400px) {
+  .media__right-sidebar .title {
+    text-align: center;
+  }
   .hero .swiper img,
   .hero__swiper .swiper-slide,
   .hero__swiper .swiper-slide::before {
@@ -754,6 +777,8 @@
   .hero .swiper img.media__hide {
     display: none;
   }
+}
+@media screen and (max-width: 400px) {
   .back__call .modal__content {
     padding: 30px 15px;
     margin: 0 10px;

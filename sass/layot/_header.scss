@@ -9,14 +9,14 @@
 
   .sticky__logo {
     display: none;
-    // width: 220px;
+    width: 220px;
   }
 
   &__dropdown {
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-top: 5px;
+    // margin-top: 5px;
     transform: translateX(-50%);
     display: none;
     opacity: 0;
@@ -151,6 +151,7 @@
         transform: translateX(-50%);
         opacity: 1;
         display: block;
+        color: #fff;
       }
     }
   }
@@ -350,5 +351,8 @@
   .header .default__logo {
     width: 140px;
     height: 63px;
+  }
+  .header .sticky__logo {
+    width: fit-content;
   }
 }

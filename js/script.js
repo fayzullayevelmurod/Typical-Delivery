@@ -310,6 +310,12 @@ window.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("click", () => {
       item.classList.toggle("active");
       updateApplyButtonStatus();
+      if (item.classList.contains("active")) {
+        clearBtn.addEventListener("click", () => {
+          item.classList.remove("active");
+          updateApplyButtonStatus();
+        });
+      }
     });
   });
 
