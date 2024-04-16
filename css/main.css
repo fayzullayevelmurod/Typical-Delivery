@@ -155,9 +155,12 @@ body {
   justify-content: space-between;
   position: relative;
   background: linear-gradient(180deg, #212429 26.74%, #30333a 100%);
-  border: 1px solid;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-left: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.1);
+  background-size: 100% 100%;
   border-radius: 20px;
-  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
   transition: all 0.2s linear;
 }
 .product__card:hover {
@@ -219,8 +222,20 @@ body {
 .product__card-img {
   padding: 60px 0 58px 0;
   text-align: center;
-  background: linear-gradient(180deg, #212429 0%, #30333a 100%);
   border-radius: 20px;
+  position: relative;
+  z-index: -1;
+}
+.product__card-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #212429 0%, #30333a 100%);
 }
 .product__card-img.no-pt {
   padding: 5px 0;
@@ -675,6 +690,12 @@ body {
 }
 .modal__footer .red__btn {
   width: 100%;
+}
+.modal__footer .apply__btn.disabled {
+  cursor: default;
+  color: rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.0509803922);
 }
 
 .back__call {
@@ -1212,12 +1233,27 @@ body {
 .media__header .apps a {
   display: block;
   padding-bottom: 10px;
-  padding-left: 10px;
+  margin-left: -23px;
 }
 
-@media screen and (max-width: 1145px) {
+@media screen and (max-width: 1335px) {
+  .header__right-bottom-left {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 1260px) {
   .header__right-bottom {
     display: none;
+  }
+  .header .tel.media__block {
+    display: flex !important;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #373a42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .header__right-top {
     margin-bottom: 0;
@@ -1758,6 +1794,7 @@ body {
     gap: 10px;
     overflow-x: scroll;
     margin-top: 0;
+    padding-bottom: 0;
   }
   .product__menu .tab__header::-webkit-scrollbar {
     display: none;
@@ -1783,9 +1820,6 @@ body {
     padding: 8px 16px;
     border-radius: 20px;
     background: #373a42;
-  }
-  .product__menu .tab__header-item:hover {
-    color: #ff453a;
   }
   .media__hide-sidebar {
     display: none;
@@ -1944,18 +1978,11 @@ body {
   .header .header__right .header__right-top {
     display: none !important;
   }
-  .header .tel.media__block {
-    display: block;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #373a42;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .header__right {
     gap: 10px;
+  }
+  .back__call .sedn__box {
+    flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 576px) {
@@ -2122,6 +2149,29 @@ body {
   }
   .hero .swiper img.media__hide {
     display: none;
+  }
+  .back__call .modal__content {
+    padding: 30px 15px;
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .back__call .enter__num-code {
+    flex-direction: column;
+    align-items: start;
+  }
+  .back__call .enter__num-code .up__box {
+    width: 100%;
+    height: 50px;
+  }
+  .back__call .enter__num-code input {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 353px) {
+  .back__call .sedn__box .remember__box label::after {
+    top: 63%;
   }
 }
 

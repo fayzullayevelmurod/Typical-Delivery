@@ -278,6 +278,14 @@
   .red__btn {
     width: 100%;
   }
+  .apply__btn {
+    &.disabled {
+      cursor: default;
+      color: #ffffff33;
+      background: transparent;
+      border-color: #ffffff0d;
+    }
+  }
 }
 
 .back__call {

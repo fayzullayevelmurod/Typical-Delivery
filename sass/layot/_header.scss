@@ -290,15 +290,30 @@
     a {
       display: block;
       padding-bottom: 10px;
-      padding-left: 10px;
+      margin-left: -23px;
     }
   }
 }
 
 // media query
-@media screen and (max-width: 1145px) {
+@media screen and (max-width: 1335px) {
+  .header__right-bottom-left {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 1260px) {
   .header__right-bottom {
     display: none;
+  }
+  .header .tel.media__block {
+    display: flex !important;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #373a42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .header__right-top {
     margin-bottom: 0;

@@ -46,23 +46,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Timer
 
-  const deadline = "2024-04-22";
+  // Timer
+
+  const deadline = "2024-08-11";
 
   function getTimeRemaining(endtime) {
-    let days, hours, minutes;
+    let hours, minutes, seconds;
     const timer = Date.parse(endtime) - Date.parse(new Date());
 
     if (timer <= 0) {
-      days = 0;
       hours = 0;
       minutes = 0;
+      seconds = 0;
     } else {
-      days = Math.floor(timer / (1000 * 60 * 60 * 24));
       hours = Math.floor((timer / (1000 * 60 * 60)) % 24);
       minutes = Math.floor((timer / 1000 / 60) % 60);
+      seconds = Math.floor((timer / 1000) % 60);
     }
 
-    return { timer, days, hours, minutes };
+    return { timer, hours, minutes, seconds };
   }
 
   function getZero(num) {
@@ -73,29 +75,31 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function setClock(selector, endtime) {
-    const timer = document.querySelector(selector),
-      days = timer.querySelector(".days"),
-      hours = timer.querySelector(".hours"),
-      minutes = timer.querySelector(".minutes"),
-      timeInterval = setInterval(updatClock, 1000);
+  function setClock(endtime) {
+    const promotion = document.querySelectorAll(".promotion__timer");
+    promotion.forEach((item) => {
+      const timer = item.querySelector(".timer"),
+        hours = timer.querySelector(".hours"),
+        minutes = timer.querySelector(".minutes"),
+        seconds = timer.querySelector(".seconds"),
+        timeInterval = setInterval(updatClock, 1000);
 
-    updatClock();
+      updatClock();
 
-    function updatClock() {
-      const t = getTimeRemaining(endtime);
+      function updatClock() {
+        const t = getTimeRemaining(endtime);
 
-      days.innerHTML = getZero(t.days);
-      hours.innerHTML = getZero(t.hours);
-      minutes.innerHTML = getZero(t.minutes);
+        hours.innerHTML = getZero(t.hours);
+        minutes.innerHTML = getZero(t.minutes);
+        seconds.innerHTML = getZero(t.seconds);
 
-      if (t.timer <= 0) {
-        clearInterval(timeInterval);
+        if (t.timer <= 0) {
+          clearInterval(timeInterval);
+        }
       }
-    }
+    });
   }
-
-  setClock(".timer", deadline);
+  setClock(deadline);
 
   // products
   const products = document.querySelectorAll(".product__card");
@@ -248,7 +252,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const endTime = document.querySelector(".end__time");
 
   let countdownTimer;
-  let remainingTime = 4;
+  let remainingTime = 119;
 
   function updateCountdown() {
     const minutes = Math.floor(remainingTime / 60);
@@ -283,18 +287,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // tabs
-  const tabHeaderItems = document.querySelectorAll(".tab__header-box");
-
-  tabHeaderItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      tabHeaderItems.forEach((el) => {
-        el.classList.remove("active");
-      });
-      item.classList.add("active");
-    });
-  });
-
   // media__header
   const mediaHeader = document.querySelector(".media__header");
   const openMenuBtn = document.querySelector(".hambuerger__menu");
@@ -312,35 +304,52 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // filter__box
   const filterBox = document.querySelectorAll(".filter__box");
+  const applyBtn = document.querySelector(".apply__btn");
+
   filterBox.forEach((item) => {
     item.addEventListener("click", () => {
       item.classList.toggle("active");
-      clearBtn.addEventListener("click", () => {
-        item.classList.remove("active");
-      });
+      updateApplyButtonStatus();
     });
+  });
+
+  function updateApplyButtonStatus() {
+    let isActive = false;
+    filterBox.forEach((item) => {
+      if (item.classList.contains("active")) {
+        isActive = true;
+      }
+    });
+
+    if (isActive) {
+      applyBtn.classList.remove("disabled");
+    } else {
+      applyBtn.classList.add("disabled");
+    }
+  }
+
+  applyBtn.addEventListener("click", () => {
+    if (!applyBtn.classList.contains("disabled")) {
+      hideFilterModal();
+    }
   });
 
   const filterModal = document.querySelector(".filter__modal");
   const openFilterModal = document.querySelector(".open__filter-modal");
   const closeFilterModal = document.querySelector(".filter__modal-close");
-  const applyBtn = document.querySelector(".apply__btn");
 
   function showFilterModal() {
     filterModal.classList.add("show");
     modalOverlay.classList.add("show");
     wrapper.classList.add("blur");
-    // document.body.style.overflow = "hidden";
   }
   function hideFilterModal() {
     filterModal.classList.remove("show");
     modalOverlay.classList.remove("show");
     wrapper.classList.remove("blur");
-    // document.body.style.overflow = "auto";
   }
   openFilterModal.addEventListener("click", showFilterModal);
   closeFilterModal.addEventListener("click", hideFilterModal);
-  applyBtn.addEventListener("click", hideFilterModal);
 
   filterModal.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("filter__modal")) {
@@ -382,6 +391,17 @@ window.addEventListener("DOMContentLoaded", () => {
     upInput.addEventListener("click", () => {
       upText.classList.add("up");
     });
+    upInput.addEventListener("focus", () => {
+      if (!upInput.value.trim()) {
+        upText.classList.add("active");
+      }
+    });
+
+    upInput.addEventListener("blur", () => {
+      if (!upInput.value.trim()) {
+        upText.classList.remove("active");
+      }
+    });
     document.addEventListener("click", (event) => {
       if (event.target !== upInput && !upInput.value) {
         upText.classList.remove("up");
@@ -404,7 +424,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const openCallModal = document.querySelector(".open__call-modal");
+  const openCallModal = document.querySelectorAll(".open__call-modal");
   const closeCallModal = document.querySelector(".call__modal-close");
   function showCallModal() {
     form.classList.add("show");
@@ -416,11 +436,48 @@ window.addEventListener("DOMContentLoaded", () => {
     wrapper.classList.remove("blur");
     // document.body.style.overflow = "auto";
   }
-  openCallModal.addEventListener("click", showCallModal);
+  openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
   closeCallModal.addEventListener("click", hideCallModal);
   form.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("back__call")) {
       hideCallModal();
     }
+  });
+
+  // window scroll
+  const sections = document.querySelectorAll(".products");
+  const links = document.querySelectorAll(".tab__header-box");
+
+  function changeLinkState() {
+    let index = sections.length;
+
+    while (--index && window.scrollY + 80 < sections[index].offsetTop) {}
+
+    links.forEach((link) => link.classList.remove("active"));
+    links[index].classList.add("active");
+  }
+
+  changeLinkState();
+  window.addEventListener("scroll", changeLinkState);
+
+  links.forEach((link, index) => {
+    link.addEventListener("click", () => {
+      window.scrollTo({
+        top: sections[index].offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // tabs
+  const tabHeaderItems = document.querySelectorAll(".tab__header-box");
+
+  tabHeaderItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      tabHeaderItems.forEach((el) => {
+        el.classList.remove("active");
+      });
+      item.classList.add("active");
+    });
   });
 });
