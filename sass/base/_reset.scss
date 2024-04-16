@@ -81,7 +81,7 @@ li {
   overflow: clip;
 
   &.blur {
-filter: blur(8px);
+    filter: blur(8px);
   }
 }
 
@@ -101,6 +101,10 @@ filter: blur(8px);
   width: fit-content;
   display: inline-block;
   color: #fff;
+  transition: all 0.2s linear;
+  &:hover {
+    background: #d5413a;
+  }
 }
 
 @media screen and (max-width: 1340px) {

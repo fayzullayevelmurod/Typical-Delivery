@@ -42,7 +42,7 @@
 						<img loading="lazy" src="images/icons/phone.svg" alt="phone icon" width="12" height="12">
 					</a>
 					<div class="header__right-top">
-						<a class="tel open__call-modal" href="#!">+7 978 001 01 34</a>
+						<a class="tel" href="tel:+7 978 001 01 34">+7 978 001 01 34</a>
 						<div class="work__time">
 							<img loading="lazy" src="images/icons/clock.svg" alt="clock icon" width="24" height="24">
 							<span class="work__time-text">Рабочие часы</span>
@@ -86,6 +86,10 @@
 								<img loading="lazy" src="images/icons/user.svg" alt="user" width="24" height="24">
 								<span class="login__info">Войти</span>
 							</button>
+							<div class="header__back-call open__call-modal">
+								<img src="images/icons/phone.svg" alt="phone icon" width="20" height="20">
+								<span>Перезвоните мне</span>
+							</div>
 						</div>
 						<div class="header__right-bottom-right">
 							<img loading="lazy" src="images/icons/cart.svg" alt="cart icon" width="50" height="50">
@@ -195,10 +199,10 @@
 				<div class="apps">
 					<h5>Наше приложение</h5>
 					<a href="https://www.appstore.com" target="_blank">
-						<img loading="lazy" src="images/appstore.webp" alt="appstore" width="180" height="55">
+						<img loading="lazy" src="images/icons/appstore.svg" alt="appstore" width="200" height="60">
 					</a>
 					<a href="https://play.google.com" target="_blank">
-						<img loading="lazy" src="images/gplay.webp" alt="gplay" width="180" height="55">
+						<img loading="lazy" src="images/icons/gplay.svg" alt="gplay" width="200" height="60">
 					</a>
 				</div>
 			</div>
@@ -275,15 +279,19 @@
 						<div class="menu__header">
 							<h3 class="product__menu-title">Наше меню</h3>
 							<button class="filter__btn open__filter-modal" aria-label="filter button" data-type="filter__btn">
-								<img loading="lazy" src="images/icons/filter.svg" alt="filter icon" width="20" height="18">
+								<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M18 1H4C2.58579 1 1.87868 1 1.43934 1.4122C1 1.8244 1 2.48782 1 3.81466V4.50448C1 5.54232 1 6.06124 1.2596 6.49142C1.5192 6.9216 1.99347 7.18858 2.94202 7.72255L5.85504 9.3624C6.49146 9.7206 6.80967 9.8998 7.03751 10.0976C7.51199 10.5095 7.80408 10.9935 7.93644 11.5872C8 11.8722 8 12.2058 8 12.8729V15.5424C8 16.452 8 16.9067 8.25192 17.2613C8.50385 17.6158 8.95128 17.7907 9.8462 18.1406C11.7248 18.875 12.6641 19.2422 13.3321 18.8244C14 18.4066 14 17.4519 14 15.5424V12.8729C14 12.2058 14 11.8722 14.0636 11.5872C14.1959 10.9935 14.488 10.5095 14.9625 10.0976C15.1903 9.8998 15.5085 9.7206 16.145 9.3624L19.058 7.72255C20.0065 7.18858 20.4808 6.9216 20.7404 6.49142C21 6.06124 21 5.54232 21 4.50448V3.81466C21 2.48782 21 1.8244 20.5607 1.4122C20.1213 1 19.4142 1 18 1Z"
+										stroke="#FF453A" stroke-width="2" />
+								</svg>
 							</button>
 						</div>
 						<div class="scroll__box">
-							<div class="stock__box">
+							<a href="#!" class="stock__box">
 								<img loading="lazy" class="stock__box-img" src="images/icons/stock.svg" alt="stock icon" width="54"
 									height="64">
 								<p class="stock__box-text">Акции</p>
-							</div>
+							</a>
 
 							<div class="tab__header">
 								<a href="#rolls" class="tab__header-box active tab__header-btn " data-type="rolls">
@@ -1416,7 +1424,7 @@
 							</div>
 							<div>
 								<span class="footer__text">По любым вопросам:</span>
-								<a class="gmail__adres" href="https://info.foodtd@gmail.com">info.foodtd@gmail.com</a>
+								<a class="gmail__adres" href="mailto:info.foodtd@gmail.com">info.foodtd@gmail.com</a>
 							</div>
 							<a class="teal__btn" href="#!">
 								<span>Сотрудничество с нами</span>
@@ -1553,10 +1561,10 @@
 					<div class="last">
 						<h5>Наше приложение</h5>
 						<a href="https://www.appstore.com" target="_blank">
-							<img loading="lazy" src="images/appstore.webp" alt="appstore" width="200" height="60">
+							<img loading="lazy" src="images/icons/appstore.svg" alt="appstore" width="200" height="60">
 						</a>
 						<a href="https://play.google.com" target="_blank">
-							<img loading="lazy" src="images/gplay.webp" alt="gplay" width="200" height="60">
+							<img loading="lazy" src="images/icons/gplay.svg" alt="gplay" width="200" height="60">
 						</a>
 					</div>
 				</div>
@@ -1680,7 +1688,8 @@
 						</div>
 						<button class="send__code-btn" type="button">Получить код</button>
 					</div>
-					<p class="error__text">Вы ввели не верных код</p>
+					<p class="error__text">Введите номер телефона</p>
+					<p class="wrong__code">Вы ввели не верный код</p>
 					<p class="send__code-text">Вы можете запросить повторный код через: <span class="end__time">1:59</span></p>
 					<div class="remember__box">
 						<input type="checkbox" checked id="remember">
@@ -1782,7 +1791,7 @@
 	</div>
 
 	<!-- Back call -->
-	<div class="back__call modal">
+	<div class="back__call modal show">
 		<div class="modal__content">
 			<div class="modal__header">
 				<h2>Обратный звонок</h2>
@@ -1791,9 +1800,15 @@
 				</button>
 			</div>
 			<form class="call__modal-form">
-				<input class="checker__input modal__input" type="text" name="text" placeholder="Ваше имя*" required>
-				<input class="checker__input modal__input number__input phone__input" type="tel" name="number" required
-					placeholder="Телефон*">
+				<div class="up__box">
+					<input class="checker__input modal__input up__input" type="text" name="text" placeholder="" required>
+					<label for="checker input" class="up__text">Ваше имя*</label>
+				</div>
+				<div class="up__box">
+					<input class="checker__input modal__input up__input number__input phone__input" type="tel" name="number"
+						required placeholder="">
+					<label for="checker input" class="up__text">Телефон*</label>
+				</div>
 				<div class="select__box modal__input">
 					<div class="select__input">
 						<input class="selected__text" placeholder="Выберите заведение" required>
@@ -1841,10 +1856,13 @@
 					</div>
 				</div>
 				<div class="enter__num-code">
-					<input class="modal__input num__code-input" type="number" placeholder="Введите цифры" required>
+					<div class="up__box">
+						<input class="up__input modal__input num__code-input" type="number" required>
+						<label for="num code input" class="up__text">Введите цифры</label>
+					</div>
 					<p class="num__code">1465</p>
 				</div>
-				<p class="warning__code">Вы ввели не верных код</p>
+				<p class="warning__code">Вы ввели не верный код</p>
 				<div class="sedn__box">
 					<div class="remember__box">
 						<input type="checkbox" checked id="remember2">

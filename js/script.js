@@ -168,13 +168,13 @@ window.addEventListener("DOMContentLoaded", () => {
   function hideMOdal() {
     authModal.classList.remove("show");
     modalOverlay.classList.remove("show");
-    document.body.style.overflow = "auto";
+    // document.body.style.overflow = "auto";
     wrapper.classList.remove("blur");
   }
   function showModal() {
     authModal.classList.add("show");
     modalOverlay.classList.add("show");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
     wrapper.classList.add("blur");
   }
   openModal.addEventListener("click", showModal);
@@ -192,6 +192,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const placeholderText = document.querySelector(".placeholder__text");
   const inputs = document.querySelectorAll(".enter__code-input");
   const errorText = document.querySelector(".error__text");
+  const wrongCode = document.querySelector(".wrong__code");
 
   inputs.forEach(function (input, index) {
     input.addEventListener("input", function () {
@@ -220,12 +221,26 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       if (input.value && phoneInput.value) {
         input.classList.add("error");
-        errorText.classList.add("show");
       }
     });
+    if (phoneInput.value) {
+      e.preventDefault();
+      wrongCode.classList.add("show");
+    }
   });
   phoneInput.addEventListener("click", () => {
+    phoneInput.placeholder = "+7-(---)--- -- --";
     placeholderText.classList.add("up");
+    if (!phoneInput.value) {
+      placeholderText.classList.add("up");
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target !== phoneInput && !phoneInput.value) {
+      placeholderText.classList.remove("up");
+      phoneInput.placeholder = "";
+    }
   });
 
   const sendCodeButton = document.querySelector(".send__code-btn");
@@ -233,7 +248,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const endTime = document.querySelector(".end__time");
 
   let countdownTimer;
-  let remainingTime = 119;
+  let remainingTime = 4;
 
   function updateCountdown() {
     const minutes = Math.floor(remainingTime / 60);
@@ -257,10 +272,15 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   sendCodeButton.addEventListener("click", function () {
-    codeText.classList.add("show");
-    this.setAttribute("disabled", "true");
-    this.classList.add("disabled");
-    startCountdown();
+    if (!phoneInput.value) {
+      errorText.classList.add("show");
+    } else {
+      errorText.classList.remove("show");
+      startCountdown();
+      this.setAttribute("disabled", "true");
+      this.classList.add("disabled");
+      codeText.classList.add("show");
+    }
   });
 
   // tabs
@@ -310,13 +330,13 @@ window.addEventListener("DOMContentLoaded", () => {
     filterModal.classList.add("show");
     modalOverlay.classList.add("show");
     wrapper.classList.add("blur");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   }
   function hideFilterModal() {
     filterModal.classList.remove("show");
     modalOverlay.classList.remove("show");
     wrapper.classList.remove("blur");
-    document.body.style.overflow = "auto";
+    // document.body.style.overflow = "auto";
   }
   openFilterModal.addEventListener("click", showFilterModal);
   closeFilterModal.addEventListener("click", hideFilterModal);
@@ -350,12 +370,30 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // num__code
   const inputsTwo = document.querySelectorAll(".checker__input");
-  // const numCodeInput = document.querySelector(".num__code-input");
   const warningCode = document.querySelector(".warning__code");
-  const selectedTextTwo = document.querySelector(".selected__text");
-
   const numCodeInput = document.querySelector(".num__code-input");
-
+  // up__input
+  const upBox = document.querySelectorAll(".up__box");
+  const form = document.querySelector(".back__call");
+  const numCode = document.querySelector(".num__code").textContent;
+  upBox.forEach((item) => {
+    const upInput = item.querySelector(".up__input");
+    const upText = item.querySelector(".up__text");
+    upInput.addEventListener("click", () => {
+      upText.classList.add("up");
+    });
+    document.addEventListener("click", (event) => {
+      if (event.target !== upInput && !upInput.value) {
+        upText.classList.remove("up");
+      }
+    });
+    form.addEventListener("submit", function (event) {
+      if (numCodeInput.value.trim() !== numCode.trim()) {
+        event.preventDefault();
+        warningCode.classList.add("show");
+      }
+    });
+  });
   numCodeInput.addEventListener("input", function () {
     // Faqat raqam kiritsin
     this.value = this.value.replace(/\D/g, "");
@@ -365,28 +403,18 @@ window.addEventListener("DOMContentLoaded", () => {
       this.value = this.value.slice(0, 4);
     }
   });
-  const form = document.querySelector(".back__call");
-  const numCode = document.querySelector(".num__code").textContent;
-
-  form.addEventListener("submit", function (event) {
-    // Kiritilgan qiymat num__code qiymatiga teng bo'lmagan bo'lsa
-    if (numCodeInput.value.trim() !== numCode.trim()) {
-      event.preventDefault();
-      warningCode.classList.add("show");
-    }
-  });
 
   const openCallModal = document.querySelector(".open__call-modal");
   const closeCallModal = document.querySelector(".call__modal-close");
   function showCallModal() {
     form.classList.add("show");
     wrapper.classList.add("blur");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   }
   function hideCallModal() {
     form.classList.remove("show");
     wrapper.classList.remove("blur");
-    document.body.style.overflow = "auto";
+    // document.body.style.overflow = "auto";
   }
   openCallModal.addEventListener("click", showCallModal);
   closeCallModal.addEventListener("click", hideCallModal);

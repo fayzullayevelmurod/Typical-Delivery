@@ -9,6 +9,7 @@
 
   .sticky__logo {
     display: none;
+    width: 220px;
   }
 
   &__dropdown {
@@ -16,7 +17,9 @@
     top: 100%;
     left: 50%;
     margin-top: 5px;
-    transform: translateX(-50%) scaleY(0);
+    transform: translateX(-50%);
+    display: none;
+    opacity: 0;
     background: url(../images/dropdown-bg.webp) no-repeat;
     background-size: 100% 100%;
     z-index: 10;
@@ -59,7 +62,9 @@
 
       &:hover {
         .work__time-dropdown {
-          transform: translateX(-50%) scaleY(1);
+          transform: translateX(-50%);
+          opacity: 1;
+          display: block;
         }
       }
 
@@ -113,6 +118,9 @@
       font-weight: 600;
       line-height: 20px;
 
+      &.active {
+        cursor: default;
+      }
       &:hover,
       &.active {
         color: #bdbdbd;
@@ -123,10 +131,10 @@
       &::before {
         content: "";
         position: absolute;
-        bottom: -1px;
+        bottom: -2px;
         left: 0;
         width: 100%;
-        height: 1px;
+        height: 2px;
         background: #ff453a;
         box-shadow: 0px 1px 4px 0px #ff7a6799;
         border-radius: 0px 0px 40px 40px;
@@ -136,9 +144,13 @@
     }
   }
   .location {
+    transition: all 0.2s linear;
     &:hover {
+      color: #bdbdbd;
       .location__dropdown {
-        transform: translateX(-50%) scaleY(1);
+        transform: translateX(-50%);
+        opacity: 1;
+        display: block;
       }
     }
   }
@@ -152,6 +164,26 @@
     cursor: pointer;
     position: relative;
     color: #fff;
+    transition: all 0.2s linear;
+    &:hover {
+      color: #bdbdbd;
+    }
+  }
+  &__back-call {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover span {
+      color: #bdbdbd;
+    }
+    cursor: pointer;
+    span {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      transition: all 0.2s linear;
+    }
   }
 }
 .hambuerger__menu {
