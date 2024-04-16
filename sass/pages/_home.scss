@@ -52,6 +52,8 @@
   top: 100px;
   max-width: 343px;
   width: 100%;
+  z-index: 100;
+  background: #212429;
 }
 .product__menu {
   padding-top: 6px;
@@ -344,6 +346,12 @@
   .product__menu-title.media__block {
     display: block;
   }
+  .sticky__filter {
+    top: 0;
+    max-width: 100%;
+    margin-right: -20px;
+    padding: 20px 0;
+  }
   .sidebars .container {
     flex-direction: column;
     row-gap: 40px;
@@ -414,7 +422,7 @@
     padding-top: 0;
   }
   .product__menu .scroll__box {
-    margin-right: -35px;
+    margin-right: -55px;
   }
   .product__menu-title {
     font-size: 24px;
@@ -439,6 +447,9 @@
   }
   .product__menu .tab__header-box.active {
     color: #ff453a;
+    p {
+      color: #ff453a !important;
+    }
   }
   .header .default__logo {
     width: 160px;
@@ -733,6 +744,9 @@
         box-shadow: 0px 0px 16px 2px #ffffff40;
       }
     }
+  }
+  .sticky__filter {
+    padding: 10px 0;
   }
 }
 
