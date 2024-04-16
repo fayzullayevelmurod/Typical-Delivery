@@ -98,20 +98,7 @@
     padding: 60px 0 58px 0;
     text-align: center;
     border-radius: 20px;
-    position: relative;
-    z-index: -1;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      border-radius: 20px;
-      background: linear-gradient(180deg, #212429 0%, #30333a 100%);
-    }
+    background: linear-gradient(180deg, #212429 0%, #30333a 100%);
     &.no-pt {
       padding: 5px 0;
     }

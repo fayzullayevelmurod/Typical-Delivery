@@ -152,7 +152,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const headerTop = document.querySelector(".header__right-top");
     if (window.scrollY > 0) {
       defaultLogo.style.display = "none";
-      stickytLogo.style.display = "block";
+      stickytLogo.style.display = "flex";
       headerTop.style.display = "none";
     } else {
       headerTop.style.display = "flex";

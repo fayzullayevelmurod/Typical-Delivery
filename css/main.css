@@ -223,18 +223,6 @@ body {
   padding: 60px 0 58px 0;
   text-align: center;
   border-radius: 20px;
-  position: relative;
-  z-index: -1;
-}
-.product__card-img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  border-radius: 20px;
   background: linear-gradient(180deg, #212429 0%, #30333a 100%);
 }
 .product__card-img.no-pt {
@@ -965,7 +953,6 @@ body {
 }
 .header .sticky__logo {
   display: none;
-  width: 220px;
 }
 .header__dropdown {
   position: absolute;
@@ -1277,6 +1264,21 @@ body {
     justify-content: end;
   }
 }
+.flex__logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+@media screen and (max-width: 580px) {
+  .header {
+    padding-top: 0;
+  }
+  .header .default__logo {
+    width: 140px;
+    height: 63px;
+  }
+}
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   background: #2f323a;
@@ -1480,6 +1482,7 @@ body {
   height: 100%;
   background: rgba(33, 36, 41, 0.6);
   z-index: 1;
+  border-radius: 40px;
 }
 .hero__swiper .swiper-slide-active img {
   box-shadow: 0px 0px 16px 2px rgba(255, 255, 255, 0.2509803922);
@@ -1857,6 +1860,9 @@ body {
   .product__menu .tab__header-box.active {
     color: #ff453a;
   }
+  .header .default__logo {
+    width: 160px;
+  }
 }
 @media screen and (max-width: 768px) {
   .title {
@@ -1865,10 +1871,6 @@ body {
   }
   .header__right .work__time-text {
     font-size: 14px;
-  }
-  .header__logo img {
-    width: 180px;
-    height: 80px;
   }
   .title__lg {
     font-size: 24px;
@@ -1946,6 +1948,12 @@ body {
     font-size: 18px;
     line-height: 22.01px;
   }
+  .header .header__logo .img__1 {
+    width: 50px;
+  }
+  .header .header__logo .img__2 {
+    width: 85px;
+  }
   .product__cards {
     gap: 10px;
     padding-top: 20px;
@@ -1996,6 +2004,14 @@ body {
   .header .tel.media__block {
     width: 36px;
     height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .tel.media__block img {
+    width: 15px;
+    height: 15px;
+    display: block;
   }
   .title {
     font-size: 24px;
@@ -2091,9 +2107,11 @@ body {
   .product__card {
     border-radius: 14px;
   }
-  .header .header__logo img {
-    width: 140px;
-    height: 63px;
+  .header .header__logo .img__1 {
+    width: 50px;
+  }
+  .header .header__logo .img__2 {
+    width: 85px;
   }
   #pizza .product__card-img > img,
   #pancakes .product__card-img > img {
@@ -2117,7 +2135,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .hero .swiper img {
+  .hero .swiper .swiper-slide-active img {
     box-shadow: 0px 0px 16px 2px rgba(255, 255, 255, 0.2509803922);
   }
 }
@@ -2134,7 +2152,8 @@ body {
 }
 @media screen and (max-width: 400px) {
   .hero .swiper img,
-  .hero__swiper .swiper-slide {
+  .hero__swiper .swiper-slide,
+  .hero__swiper .swiper-slide::before {
     border-radius: 18px;
   }
   .hero__swiper .swiper-slide {
@@ -2167,6 +2186,9 @@ body {
   .back__call .enter__num-code input {
     width: 100%;
     height: 100%;
+  }
+  .header .header__logo .img__2 {
+    display: none;
   }
 }
 @media screen and (max-width: 353px) {
