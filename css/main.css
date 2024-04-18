@@ -429,7 +429,7 @@ body {
 }
 
 .auth__modal {
-  transition: all 0.1s linear !important;
+  transition: all 0.2s linear !important;
 }
 
 .modal {
