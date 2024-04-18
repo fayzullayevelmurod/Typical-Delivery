@@ -983,13 +983,16 @@ body {
   }
 }
 .header {
-  position: sticky;
-  top: -3px;
   padding-top: 20px;
   margin-top: 20px;
   width: 100%;
   z-index: 200;
   background: #212429;
+}
+.header.fixed {
+  position: fixed;
+  top: 0;
+  margin-top: 0;
 }
 .header .sticky__logo {
   display: none;

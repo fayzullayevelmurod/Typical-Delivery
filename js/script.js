@@ -154,8 +154,10 @@ window.addEventListener("DOMContentLoaded", () => {
       defaultLogo.style.display = "none";
       stickytLogo.style.display = "flex";
       headerTop.style.display = "none";
+      document.querySelector('header').classList.add('fixed');
     } else {
       headerTop.style.display = "flex";
+      document.querySelector("header").classList.remove("fixed");
       defaultLogo.style.display = "block";
       stickytLogo.style.display = "none";
     }
@@ -181,7 +183,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // document.body.style.overflow = "hidden";
     wrapper.classList.add("blur");
   }
-  openModal.forEach(btn => btn.addEventListener("click", showModal))
+  openModal.forEach((btn) => btn.addEventListener("click", showModal));
   authModalClose.addEventListener("click", hideMOdal);
   authModal.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("auth__modal")) {
