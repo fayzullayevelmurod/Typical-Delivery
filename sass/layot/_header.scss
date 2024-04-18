@@ -4,7 +4,7 @@
   padding-top: 20px;
   margin-top: 20px;
   width: 100%;
-  z-index: 100;
+  z-index: 200;
   background: #212429;
 
   .sticky__logo {
@@ -297,6 +297,9 @@
 }
 
 // media query
+@media screen and (max-width: 1400px) {
+  
+}
 @media screen and (max-width: 1335px) {
   .header__right-bottom-left {
     gap: 16px;

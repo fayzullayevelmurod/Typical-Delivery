@@ -113,8 +113,8 @@ window.addEventListener("DOMContentLoaded", () => {
       productInfoBox.classList.toggle("active");
     });
   });
-  const maxLengthProductName = window.innerWidth >= 480 ? 25 : 46;
-  const maxLengthProductDesc = 126;
+  const maxLengthProductName = window.innerWidth >= 480 ? 43 : 46;
+  const maxLengthProductDesc = 96;
 
   productName.forEach((item) => {
     if (item.textContent.length > maxLengthProductName) {

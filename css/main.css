@@ -667,6 +667,7 @@ body {
   font-weight: 600;
   line-height: 20px;
   color: #fff;
+  transition: all 0.2s linear;
 }
 .modal__footer .clear__btn:hover {
   background: #3e424b;
@@ -971,7 +972,7 @@ body {
   padding-top: 20px;
   margin-top: 20px;
   width: 100%;
-  z-index: 100;
+  z-index: 200;
   background: #212429;
 }
 .header .sticky__logo {
@@ -1543,7 +1544,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 33px;
+  padding-bottom: 13px;
 }
 .product__menu .menu__header .filter__btn {
   display: flex;
@@ -1567,8 +1568,11 @@ body {
   display: flex;
   align-items: center;
   gap: 38px;
-  padding: 0 0 20px 23px;
+  padding: 20px 0 20px 23px;
   border-bottom: 1px solid #6f7174;
+}
+.product__menu .stock__box:hover {
+  background: linear-gradient(90deg, rgba(48, 51, 58, 0) 0%, #30333a 35.08%, #30333a 73.71%, rgba(48, 51, 58, 0) 100%);
 }
 .product__menu .stock__box-text {
   background-image: linear-gradient(99.46deg, #15ffab 0%, #15ffff 100%);
@@ -1748,6 +1752,10 @@ body {
 
 .media__right-sidebar {
   display: none;
+}
+
+.product__menu-title {
+  font-size: 26px;
 }
 
 .product__menu-title.media__block {
