@@ -76,6 +76,11 @@
       background: #373a42;
       cursor: pointer;
       transition: all 0.2s linear;
+      padding: 0;
+      svg {
+        width: 122px;
+        height: 20px;
+      }
 
       &:hover {
         background: #ff453a;

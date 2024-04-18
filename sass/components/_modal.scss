@@ -269,7 +269,7 @@
     font-weight: 600;
     line-height: 20px;
     color: #fff;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
 
     &:hover {
       background: #3e424b;
@@ -520,5 +520,15 @@
       transform: translateY(-20px);
       font-size: 12px;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal__footer .apply__btn {
+    width: 100%;
+    height: 52px;
+  }
+  .filter__modal .modal__footer {
+    flex-direction: column;
   }
 }
