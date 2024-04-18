@@ -29,9 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
     watchOverflow: true,
     centeredSlides: true,
     loop: true,
-    autoplay: {
-      delay: 3000,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    // },
     breakpoints: {
       576: {
         slidesPerView: 1.3,
@@ -469,8 +469,8 @@ window.addEventListener("DOMContentLoaded", () => {
   links.forEach((link, index) => {
     link.addEventListener("click", () => {
       window.scrollTo({
-        top: sections[index].offsetTop - 80,
-        behavior: "smooth",
+        top: sections[index].offsetTop - 75,
+        // behavior: "smooth",
       });
     });
   });

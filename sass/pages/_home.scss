@@ -1,4 +1,9 @@
 // hero
+@media screen and (min-width: 1440px) {
+  .hero .swiper-slide img {
+    height: 33vw;
+  }
+}
 .hero {
   margin: 48px 0 80px 0;
 
@@ -315,7 +320,7 @@
 }
 // bottom panel
 .bottom__panel {
-  z-index: 200;
+  z-index: 400;
   display: none;
   position: fixed;
   bottom: 0;
@@ -369,8 +374,9 @@
     top: 0;
     max-width: 100%;
     margin-right: -20px;
-    padding: 20px 0 40px 0;
+    margin: 10px 0 18px 0;
     z-index: 201;
+    padding: 10px 0 22px 0;
   }
   .sidebars .container {
     flex-direction: column;
@@ -484,6 +490,12 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .sticky__filter {
+    padding-bottom: 15px;
+  }
+  .hero__swiper .swiper-slide img {
+    height: 350px;
+  }
   .title {
     font-size: 32px;
     line-height: 39px;
@@ -677,10 +689,11 @@
     padding-bottom: 40px;
   }
   .sticky__filter {
-    padding: 20px 0 40px 0 !important;
+    margin: 20px 0 40px 0 !important;
   }
   .header {
-    padding-top: 0;
+    padding-top: 5px;
+    margin-top: 15px;
   }
   .bottom__panel {
     display: block;
@@ -700,6 +713,9 @@
   }
 }
 @media screen and (max-width: 576px) {
+  .product__card {
+    border-width: 1px;
+  }
   .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -795,9 +811,6 @@
       }
     }
   }
-  .sticky__filter {
-    padding: 10px 0;
-  }
 }
 
 @media screen and (max-width: 520px) {
@@ -836,6 +849,9 @@
   .auth__modal .modal__content {
     max-width: 100%;
   }
+  .header .header__logo .img__2 {
+    display: none;
+  }
 }
 @media screen and (max-width: 480px) {
   .product__cards {
@@ -861,9 +877,7 @@
     width: 100%;
     height: 100%;
   }
-  .header .header__logo .img__2 {
-    display: none;
-  }
+
   .modal .enter__code .send__code-btn {
     font-size: 12px;
   }

@@ -16,21 +16,43 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    // margin-top: 5px;
     transform: translateX(-50%);
+    margin-top: 10px;
     display: none;
-    opacity: 0;
-    background: url(../images/dropdown-bg.webp) no-repeat;
-    background-size: 100% 100%;
-    z-index: 10;
-    padding: 31px 43px 20px 43px;
-    transform-origin: top;
-    transition: all 0.2s linear;
+
     p {
       font-size: 15px;
       font-weight: 500;
       line-height: 24px;
       white-space: nowrap;
+    }
+    .bg {
+      z-index: 10;
+      padding: 20px;
+      width: 221px;
+      transition: all 0.2s linear;
+      text-align: center;
+      background: #373a42;
+      border: 1px solid #ffffff1a;
+      position: relative;
+      z-index: 1;
+      background: #373a42;
+      border-radius: 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        z-index: -1;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #373a42;
+        border-top: 1px solid #ffffff1a;
+        border-left: 1px solid #ffffff1a;
+        width: 15px;
+        height: 15px;
+        transform: rotate(45deg);
+      }
     }
   }
 
