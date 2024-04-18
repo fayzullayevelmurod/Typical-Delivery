@@ -367,6 +367,7 @@
     max-width: 100%;
     margin-right: -20px;
     padding: 20px 0;
+    z-index: 201;
   }
   .sidebars .container {
     flex-direction: column;
@@ -573,6 +574,7 @@
   .product__cards {
     gap: 10px;
     padding-top: 20px;
+    grid-template-columns: auto auto;
   }
   .product__card-img {
     padding: 50px 0;
@@ -608,7 +610,7 @@
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 576px) {
   .pizza .product__card-img > img,
   #pancakes .product__card-img > img {
     height: 134px;
@@ -660,7 +662,7 @@
     border-radius: 14px;
   }
   .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
 @media screen and (max-width: 576px) {
@@ -763,10 +765,14 @@
     padding: 10px 0;
   }
 }
-
+@media screen and (max-width: 520px) {
+  .product__cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
 @media screen and (max-width: 485px) {
   .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
   .bottom__panel {
     display: block;
@@ -808,6 +814,14 @@
   .hero .swiper img.media__hide {
     display: none;
   }
+  .auth__modal .modal__content {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .product__cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
 @media screen and (max-width: 400px) {
   .back__call .modal__content {
@@ -831,10 +845,23 @@
   .header .header__logo .img__2 {
     display: none;
   }
+  .modal .enter__code .send__code-btn {
+    font-size: 12px;
+  }
+  .modal .enter__code-inputs {
+    gap: 2px;
+  }
 }
 
 @media screen and (max-width: 353px) {
   .back__call .sedn__box .remember__box label::after {
     top: 63%;
   }
+  .product__cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }
+
+// @media screen and  {
+  
+// }

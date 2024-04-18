@@ -163,7 +163,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // modal
   const authModal = document.querySelector(".auth__modal");
-  const openModal = document.querySelector(".auth__modal-open");
+  const openModal = document.querySelectorAll(".auth__modal-open");
   const modalOverlay = document.querySelector(".modal__overlay");
   const authModalClose = document.querySelector(".auth__modal-close");
   const sendButton = authModal.querySelector(".send__btn");
@@ -181,7 +181,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // document.body.style.overflow = "hidden";
     wrapper.classList.add("blur");
   }
-  openModal.addEventListener("click", showModal);
+  openModal.forEach(btn => btn.addEventListener("click", showModal))
   authModalClose.addEventListener("click", hideMOdal);
   authModal.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("auth__modal")) {
