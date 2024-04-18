@@ -428,6 +428,10 @@ body {
   display: block;
 }
 
+.auth__modal {
+  transition: all 0.1s linear !important;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -1314,10 +1318,7 @@ body {
   gap: 9px;
 }
 
-@media screen and (max-width: 580px) {
-  .header {
-    padding-top: 0;
-  }
+@media screen and (max-width: 767px) {
   .header .default__logo {
     width: 140px;
     height: 63px;
@@ -1417,6 +1418,10 @@ body {
 .footer .media__block,
 .footer .xs__block {
   display: none;
+}
+.footer .tel,
+.footer .font-600 {
+  font-weight: 600;
 }
 
 @media screen and (max-width: 992px) {
@@ -1831,16 +1836,19 @@ body {
   .product__menu-title.media__block {
     display: block;
   }
+  .product__menu .tab__header-item:hover {
+    background: #373a42;
+  }
   .sticky__filter {
     top: 0;
     max-width: 100%;
     margin-right: -20px;
-    padding: 20px 0;
+    padding: 20px 0 40px 0;
     z-index: 201;
   }
   .sidebars .container {
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 0;
   }
   .product__menu .scroll__box {
     height: fit-content;
@@ -1898,7 +1906,7 @@ body {
   }
   .media__right-sidebar {
     display: block;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
   }
   .product__box {
     padding-top: 0;
@@ -2079,8 +2087,8 @@ body {
   #pancakes .product__card-img > img {
     height: 134px;
   }
-  .product__box {
-    padding-top: 40px;
+  .footer .last a {
+    margin-left: 0;
   }
   .product__card .product__info-list .info__list {
     gap: 5px;
@@ -2127,6 +2135,31 @@ body {
   }
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+@media screen and (max-width: 767px) {
+  .media__right-sidebar {
+    padding-bottom: 40px;
+  }
+  .sticky__filter {
+    padding: 20px 0 40px 0 !important;
+  }
+  .header {
+    padding-top: 0;
+  }
+  .bottom__panel {
+    display: block;
+    padding-bottom: 25px;
+  }
+  .bottom__panel .active img {
+    display: none;
+  }
+  .bottom__panel .active img.active-img {
+    display: block;
+    margin: 0 auto 4px auto;
+  }
+  .bottom__panel .active span {
+    color: #ff453a;
   }
 }
 @media screen and (max-width: 576px) {
@@ -2229,20 +2262,6 @@ body {
   }
 }
 @media screen and (max-width: 485px) {
-  .bottom__panel {
-    display: block;
-    padding-bottom: 25px;
-  }
-  .bottom__panel .active img {
-    display: none;
-  }
-  .bottom__panel .active img.active-img {
-    display: block;
-    margin: 0 auto 4px auto;
-  }
-  .bottom__panel .active span {
-    color: #ff453a;
-  }
   .footer {
     padding: 40px 0 100px 0;
   }

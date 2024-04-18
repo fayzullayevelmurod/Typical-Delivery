@@ -362,16 +362,19 @@
   .product__menu-title.media__block {
     display: block;
   }
+  .product__menu .tab__header-item:hover {
+    background: #373a42;
+  }
   .sticky__filter {
     top: 0;
     max-width: 100%;
     margin-right: -20px;
-    padding: 20px 0;
+    padding: 20px 0 40px 0;
     z-index: 201;
   }
   .sidebars .container {
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 0;
   }
   .product__menu .scroll__box {
     height: fit-content;
@@ -433,7 +436,7 @@
   }
   .media__right-sidebar {
     display: block;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
   }
   .product__box {
     padding-top: 0;
@@ -615,8 +618,12 @@
   #pancakes .product__card-img > img {
     height: 134px;
   }
+
+  .footer .last a {
+    margin-left: 0;
+  }
   .product__box {
-    padding-top: 40px;
+    // padding-top: 40px;
   }
   .product__card .product__info-list .info__list {
     gap: 5px;
@@ -663,6 +670,33 @@
   }
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+@media screen and (max-width: 767px) {
+  .media__right-sidebar {
+    padding-bottom: 40px;
+  }
+  .sticky__filter {
+    padding: 20px 0 40px 0 !important;
+  }
+  .header {
+    padding-top: 0;
+  }
+  .bottom__panel {
+    display: block;
+    padding-bottom: 25px;
+    .active {
+      img {
+        display: none;
+        &.active-img {
+          display: block;
+          margin: 0 auto 4px auto;
+        }
+      }
+      span {
+        color: #ff453a;
+      }
+    }
   }
 }
 @media screen and (max-width: 576px) {
@@ -765,6 +799,7 @@
     padding: 10px 0;
   }
 }
+
 @media screen and (max-width: 520px) {
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -773,22 +808,6 @@
 @media screen and (max-width: 485px) {
   .product__cards {
     // grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-  .bottom__panel {
-    display: block;
-    padding-bottom: 25px;
-    .active {
-      img {
-        display: none;
-        &.active-img {
-          display: block;
-          margin: 0 auto 4px auto;
-        }
-      }
-      span {
-        color: #ff453a;
-      }
-    }
   }
   .footer {
     padding: 40px 0 100px 0;
@@ -863,5 +882,5 @@
 }
 
 // @media screen and  {
-  
+
 // }

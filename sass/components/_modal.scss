@@ -14,7 +14,9 @@
     display: block;
   }
 }
-
+.auth__modal {
+  transition: all 0.1s linear !important;
+}
 .modal {
   position: fixed;
   top: 0;
