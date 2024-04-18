@@ -463,6 +463,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     links.forEach((link) => link.classList.remove("active"));
     links[index].classList.add("active");
+
+    // Horizontal scrollni o'zgartiramiz
+    if (window.innerWidth >= 1000) {
+      links[index].scrollIntoView({ inline: "center", block: "nearest" });
+    }
   }
 
   changeLinkState();
