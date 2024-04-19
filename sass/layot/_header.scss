@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 200;
   background: #212429;
+  position: relative;
 
   &.fixed {
     position: fixed;
@@ -36,7 +37,6 @@
       padding: 20px;
       width: 221px;
       transition: all 0.2s linear;
-      text-align: center;
       background: #373a42;
       border: 1px solid #ffffff1a;
       position: relative;
@@ -50,13 +50,12 @@
         top: -8px;
         z-index: -1;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) rotate(45deg);
         background: #373a42;
         border-top: 1px solid #ffffff1a;
         border-left: 1px solid #ffffff1a;
         width: 15px;
         height: 15px;
-        transform: rotate(45deg);
       }
     }
   }
@@ -86,6 +85,11 @@
       align-items: center;
       gap: 10px;
       cursor: pointer;
+
+      &-info {
+        width: 135px;
+        margin: 0 auto;
+      }
 
       &:hover {
         .work__time-dropdown {

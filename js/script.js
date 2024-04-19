@@ -178,13 +178,13 @@ window.addEventListener("DOMContentLoaded", () => {
   function hideMOdal() {
     authModal.classList.remove("show");
     modalOverlay.classList.remove("show");
-    // document.body.style.overflow = "auto";
+    document.body.style.overflow = "auto";
     wrapper.classList.remove("blur");
   }
   function showModal() {
     authModal.classList.add("show");
     modalOverlay.classList.add("show");
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     wrapper.classList.add("blur");
   }
   openModal.forEach((btn) => btn.addEventListener("click", showModal));

@@ -28,6 +28,9 @@
   transition: all 0.2s linear;
   &:hover {
     box-shadow: 0px -10px 14px -9px #00ff0a;
+    .add__btn {
+      background: #ff453a;
+    }
   }
 
   .offer__box {

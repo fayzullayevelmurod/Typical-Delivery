@@ -97,11 +97,12 @@
   }
 
   .stock__box {
+    margin-top: 14px;
     display: flex;
     align-items: center;
     gap: 38px;
-    padding: 20px 0 20px 23px;
-    border-bottom: 1px solid #6f7174;
+    padding: 0px 0 0px 23px;
+    // border-bottom: 1px solid #6f7174;
     &:hover {
       background: linear-gradient(
         90deg,
@@ -121,6 +122,12 @@
       line-height: 22.01px;
     }
   }
+  .line {
+    width: 100%;
+    height: 1px;
+    background: #6f7174;
+    margin-top: 20px;
+  }
   .scroll__box {
     overflow-y: scroll;
     max-height: calc(100vh - 170px);
@@ -134,7 +141,7 @@
     flex-direction: column;
     gap: 10px;
     // padding-bottom: 25px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding-right: 23px;
     &-box {
       display: flex;
@@ -363,9 +370,21 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   .product__menu-title.media__block {
     display: block;
+  }
+  .phone__input-box input,
+  .back__call .modal__input,
+  .back__call .sedn__box .red__btn {
+    height: 46px;
+  }
+  .product__menu .line {
+    display: none;
+  }
+  .back__call .modal__input,
+  .up__box .up__text {
+    font-size: 14px;
   }
   .product__menu .tab__header-item:hover {
     background: #373a42;
@@ -490,7 +509,8 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
-@media screen and (max-width: 768px) {
+// 768px -> 1024px
+@media screen and (max-width: 1024px) {
   .sticky__filter {
     padding-bottom: 15px;
   }
@@ -587,11 +607,6 @@
     width: 85px;
   }
 
-  .product__cards {
-    gap: 10px;
-    padding-top: 20px;
-    grid-template-columns: auto auto;
-  }
   .product__card-img {
     padding: 50px 0;
   }
@@ -626,10 +641,21 @@
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 576px) {
+// 576px -> 767px
+@media screen and (max-width: 767px) {
   .pizza .product__card-img > img,
   #pancakes .product__card-img > img {
     height: 134px;
+  }
+  .phone__input-box input,
+  .back__call .modal__input,
+  .back__call .sedn__box .red__btn {
+    height: 44px;
+  }
+  .product__cards {
+    gap: 10px;
+    padding-top: 20px;
+    grid-template-columns: auto auto;
   }
 
   .footer .last a {
@@ -713,7 +739,8 @@
     }
   }
 }
-@media screen and (max-width: 576px) {
+// 567 -> 767px
+@media screen and (max-width: 767px) {
   .product__card {
     border-width: 1px;
   }
@@ -819,9 +846,17 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
-@media screen and (max-width: 485px) {
+// change 485px -> 767px
+@media screen and (max-width: 767px) {
   .product__cards {
     // grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .modal .enter__code .send__code-btn {
+    padding: 0;
+    white-space: nowrap;
+  }
+  .auth__modal .modal__title {
+    padding-top: 15px;
   }
   .footer {
     padding: 40px 0 100px 0;
@@ -851,7 +886,16 @@
     max-width: 100%;
   }
   .header .header__logo .img__2 {
-    display: none;
+    // display: none;
+  }
+  .modal__input,
+  .up__box .up__text,
+  .phone__input-box input,
+  .phone__input-box label {
+    font-size: 14px;
+  }
+  .phone__input-box input {
+    height: 46px;
   }
 }
 @media screen and (max-width: 480px) {

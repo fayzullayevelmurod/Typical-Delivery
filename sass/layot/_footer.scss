@@ -167,6 +167,10 @@
     text-align: center;
     padding-top: 20px;
   }
+  .footer .parrent__row .media__block.last-child {
+    max-width: 160px;
+    width: 100%;
+  }
   .footer {
     .xs__block {
       display: flex;
@@ -180,8 +184,11 @@
       }
       .col {
         justify-content: space-between;
+        max-width: 160px;
+        width: 100%;
       }
     }
+
     .xs__hide {
       display: none;
     }
