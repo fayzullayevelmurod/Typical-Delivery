@@ -986,12 +986,13 @@ body {
   }
 }
 .header {
+  position: sticky;
+  top: -3px;
   padding-top: 20px;
   margin-top: 20px;
   width: 100%;
   z-index: 200;
   background: #212429;
-  position: relative;
 }
 .header.fixed {
   position: fixed;

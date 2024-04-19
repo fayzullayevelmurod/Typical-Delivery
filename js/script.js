@@ -162,10 +162,10 @@ window.addEventListener("DOMContentLoaded", () => {
       stickytLogo.style.display = "none";
     }
   });
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
-    header.classList.toggle("fixed", window.scrollY > 0);
-  });
+  // window.addEventListener("scroll", () => {
+  //   const header = document.querySelector("header");
+  //   header.classList.toggle("fixed", window.scrollY > 0);
+  // });
 
   // modal
   const authModal = document.querySelector(".auth__modal");
