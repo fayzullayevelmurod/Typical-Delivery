@@ -154,13 +154,17 @@ window.addEventListener("DOMContentLoaded", () => {
       defaultLogo.style.display = "none";
       stickytLogo.style.display = "flex";
       headerTop.style.display = "none";
-      document.querySelector('header').classList.add('fixed');
+      // document.querySelector('header').classList.add('fixed');
     } else {
       headerTop.style.display = "flex";
-      document.querySelector("header").classList.remove("fixed");
+      //
       defaultLogo.style.display = "block";
       stickytLogo.style.display = "none";
     }
+  });
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("fixed", window.scrollY > 0);
   });
 
   // modal
@@ -464,10 +468,9 @@ window.addEventListener("DOMContentLoaded", () => {
     links.forEach((link) => link.classList.remove("active"));
     links[index].classList.add("active");
 
-    // Horizontal scrollni o'zgartiramiz
-    if (window.innerWidth >= 1000) {
-      links[index].scrollIntoView({ inline: "center", block: "nearest" });
-    }
+    // if (window.innerWidth >= 1000) {
+    //   links[index].scrollIntoView({ inline: "center", block: "nearest" });
+    // }
   }
 
   changeLinkState();
