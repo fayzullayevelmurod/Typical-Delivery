@@ -8,12 +8,11 @@
   z-index: 1;
   background: transparent;
   border-radius: 40px;
-	transition: all .2s linear;
-	color: #fff;
-	&:hover {
-		background: #FF453A;
-
-	}
+  transition: all 0.2s linear;
+  color: #fff;
+  &:hover {
+    background: #ff453a;
+  }
   // &::before {
   //   content: "";
   //   position: absolute;
@@ -26,4 +25,15 @@
   //   // border: 2px solid #ff7a67;
   // 	box-shadow: 0 0 10px #ff7a67;
   // }
+}
+
+.vk__btn {
+  border: 1.5px solid #55a4ff;
+  width: 32px;
+  height: 32px;
+  border: 1.5px 0px 0px 0px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
