@@ -1,8 +1,3 @@
-.stock {
-  .title {
-    padding-bottom: 25px;
-  }
-}
 .stock__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));

@@ -10,6 +10,10 @@ body {
   font-weight: 600;
   line-height: 44px;
   color: #fff;
+
+  &.pb-25 {
+    padding-bottom: 25px;
+  }
 }
 .title__lg {
   font-size: 26px;

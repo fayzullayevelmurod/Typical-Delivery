@@ -1,0 +1,60 @@
+.news {
+  background: #2f323a;
+  padding: 40px 0 120px 0;
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .news__card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+  &__img {
+    max-width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  &__date {
+    font-family: "Futura", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.95px;
+    color: #ff453a;
+    text-transform: uppercase;
+  }
+  &__title {
+    padding: 15px 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.91px;
+  }
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 40px;
+  &__numbers {
+    display: flex;
+    gap: 24px;
+    span {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24.46px;
+      color: #fff;
+      cursor: pointer;
+      &.active {
+        color: #ff453a;
+      }
+    }
+  }
+  button {
+    padding: 0;
+    cursor: pointer;
+  }
+}
