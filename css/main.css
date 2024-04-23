@@ -193,6 +193,30 @@ body {
   line-height: 32px;
 }
 
+.desc {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.35px;
+  color: #bdbdbd;
+}
+
+.outline__btn {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 9px 25px;
+  border: 2px solid #ff453a;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border-radius: 40px;
+  transition: all 0.2s linear;
+  color: #fff;
+}
+.outline__btn:hover {
+  background: #FF453A;
+}
+
 .product__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
@@ -2516,6 +2540,38 @@ body {
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
+}
+.stock .title {
+  padding-bottom: 25px;
+}
+
+.stock__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+  gap: 20px;
+}
+.stock__cards .stock__card {
+  border-left: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, #212429 26.74%, #30333a 100%);
+  overflow: hidden;
+  border-radius: 24px;
+}
+.stock__cards .stock__card .card__img {
+  height: 202px;
+  width: 100%;
+  object-fit: cover;
+}
+.stock__cards .stock__card .card__content {
+  padding: 20px 20px 47px 20px;
+}
+.stock__cards .stock__card .card__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22.01px;
+}
+.stock__cards .stock__card .desc {
+  padding: 15px 0 20px 0;
 }
 
 /*# sourceMappingURL=main.css.map */
