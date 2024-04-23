@@ -104,6 +104,7 @@ li {
   background: #ff453a;
   border: 1px solid rgba(255, 255, 255, 0.0509803922);
   border-radius: 20px;
+  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
   color: #fff;
@@ -143,7 +144,8 @@ body {
 .product__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
-  column-gap: 17px;
+  -moz-column-gap: 17px;
+       column-gap: 17px;
   row-gap: 20px;
   padding-top: 25px;
 }
@@ -231,7 +233,8 @@ body {
   padding: 5px 0;
 }
 .product__card-img img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 .product__card-content {
@@ -294,7 +297,9 @@ body {
   background: #212429;
   border: 1px solid rgba(255, 255, 255, 0.1019607843);
   padding: 15px;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   z-index: 10;
   transform-origin: bottom;
@@ -365,6 +370,9 @@ body {
   height: 50px;
   font-weight: 400;
   font-size: 16px;
+}
+.phone__input-box input::-moz-placeholder {
+  color: #fff;
 }
 .phone__input-box input::placeholder {
   color: #fff;
@@ -502,6 +510,9 @@ body {
   background: #2f323a;
   color: #ffffff;
   width: 100%;
+}
+.modal__input::-moz-placeholder {
+  color: #bdbdbd;
 }
 .modal__input::placeholder {
   color: #bdbdbd;
@@ -715,6 +726,7 @@ body {
 .back__call .modal__content {
   position: relative;
   padding: 32px 20px;
+  height: -moz-fit-content;
   height: fit-content;
   max-width: 592px;
   border-radius: 24px;
@@ -835,6 +847,9 @@ body {
 .back__call .enter__num-code input {
   width: 214px;
   font-weight: 500;
+}
+.back__call .enter__num-code input::-moz-placeholder {
+  font-size: 16px;
 }
 .back__call .enter__num-code input::placeholder {
   font-size: 16px;
@@ -1354,6 +1369,7 @@ body {
     height: 63px;
   }
   .header .sticky__logo {
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -1414,6 +1430,7 @@ body {
   align-items: center;
   gap: 15px;
   border-radius: 40px;
+  width: -moz-fit-content;
   width: fit-content;
   margin-top: 15px;
   transition: all 0.2s linear;
@@ -1543,7 +1560,7 @@ body {
     row-gap: 40px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1300px) {
   .hero .swiper-slide img {
     height: 33vw;
   }
@@ -1910,6 +1927,7 @@ body {
     row-gap: 0;
   }
   .product__menu .scroll__box {
+    height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
   }
@@ -2321,7 +2339,8 @@ body {
   .right__sidebar-banner img {
     border-radius: 16px 16px 0px 0px;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .title__lg {
     font-size: 20px;
@@ -2407,7 +2426,8 @@ body {
   }
   .hero__swiper .swiper-slide img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .hero .swiper img.media__block {
     display: block;
@@ -2463,6 +2483,4 @@ body {
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
