@@ -174,3 +174,14 @@ li {
     padding-right: 30px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .breadcrumb {
+    padding: 60px 0 20px 0;
+  }
+  
+}
+@media screen and (max-width: 767px) {
+  .breadcrumb {
+    padding: 40px 0 20px 0;
+  }
+}

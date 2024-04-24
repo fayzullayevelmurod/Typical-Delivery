@@ -177,6 +177,16 @@ li {
     padding-right: 30px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .breadcrumb {
+    padding: 60px 0 20px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .breadcrumb {
+    padding: 40px 0 20px 0;
+  }
+}
 body {
   font-family: "Commissioner", sans-serif;
   font-weight: 400;
@@ -235,6 +245,12 @@ body {
   justify-content: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .outline__btn {
+    padding: 9px 22px;
+    font-size: 14px;
+  }
+}
 .product__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
@@ -2588,6 +2604,78 @@ body {
   padding: 15px 0 20px 0;
 }
 
+@media screen and (max-width: 1343px) {
+  .stock__cards {
+    grid-template-columns: repeat(auto-fit, minmax(316px, 1fr));
+  }
+}
+@media screen and (max-width: 1024px) {
+  .stock__cards .stock__card .card__img {
+    height: 165px;
+  }
+  .stock__cards .stock__card .card__content {
+    padding: 20px 15px;
+  }
+  .stock__cards .stock__card .card__title {
+    font-size: 16px;
+    line-height: 19.57px;
+  }
+  .stock__cards .stock__card .desc {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .stock__cards {
+    gap: 15px;
+  }
+  .delivery {
+    padding: 80px 0;
+  }
+  .stock__cards .stock__card {
+    border-radius: 20px;
+  }
+  .stock__cards .stock__card .card__img {
+    border-radius: 20px;
+  }
+  .title.pb-25 {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .stock__cards {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+    margin-right: -15px;
+  }
+  .stock__cards::-webkit-scrollbar {
+    display: none;
+  }
+  .stock__cards .stock__card {
+    min-width: 244px;
+    max-width: 244px;
+    width: 100%;
+    border-radius: 18px;
+  }
+  .stock__cards .stock__card .card__img {
+    border-radius: 18px;
+    height: 115px;
+  }
+  .stock__cards .stock__card .card__title {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .stock__cards .stock__card .desc {
+    font-size: 13px;
+    line-height: 15.9px;
+    padding: 10px 0 20px 0;
+  }
+  .delivery {
+    padding: 60px 0;
+  }
+  .footer .parrent__row .media__block.last-child {
+    max-width: 141px;
+  }
+}
 .news {
   background: #2f323a;
   padding: 40px 0 120px 0;
