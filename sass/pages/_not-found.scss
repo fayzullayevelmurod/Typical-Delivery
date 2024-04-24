@@ -3,7 +3,7 @@
   background: #2f323a;
   .go__back {
     display: flex;
-    align-items: centere;
+    align-items: center;
     gap: 15px;
     font-size: 18px;
     font-weight: 600;
@@ -13,5 +13,41 @@
   &-img {
     display: block;
     margin: 40px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .not__found .go__back {
+    gap: 10px;
+    font-size: 16px;
+    line-height: 13.92px;
+    img {
+      width: 52px;
+    }
+  }
+  .not__found {
+    padding: 30px 0 80px 0;
+  }
+  .not__found-img {
+    width: 402px;
+    height: 191px;
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .not__found .go__back {
+    font-size: 14px;
+    line-height: 12.18px;
+    img {
+      width: 44px;
+    }
+  }
+  .not__found-img {
+    margin-top: 40px;
+    width: 209px;
+    height: 101px;
+  }
+  .not__found {
+    padding: 20px 0 60px 0;
   }
 }
