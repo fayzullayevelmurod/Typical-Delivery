@@ -178,10 +178,19 @@ li {
   .breadcrumb {
     padding: 60px 0 20px 0;
   }
-  
 }
 @media screen and (max-width: 767px) {
   .breadcrumb {
     padding: 40px 0 20px 0;
+  }
+  .breadcrumb__link {
+    font-size: 12px;
+  }
+  .breadcrumb__list {
+    gap: 7px;
+  }
+  .breadcrumb .line {
+    width: 3px;
+    height: 3px;
   }
 }
