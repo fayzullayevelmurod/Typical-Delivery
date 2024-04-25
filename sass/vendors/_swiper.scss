@@ -1,7 +1,7 @@
 .swiper {
   padding-bottom: 30px;
 }
-.swiper .swiper-slide img {
+.intro .swiper .swiper-slide img {
   height: 43vh;
 }
 
@@ -62,4 +62,31 @@
     gap: 12px;
     align-items: center;
   }
+}
+.swiper-prev-btn {
+  transform: rotate(180deg) !important;
+  &.swiper-button-disabled {
+   transform: scale(0.84) rotate(180deg) !important; 
+  }
+}
+.swiper-next-btn,
+.swiper-prev-btn {
+  &.swiper-button-disabled {
+    background: #ff453a73;
+    transform: scale(0.84);
+  }
+  transition: all .2s linear;
+  width: 62px;
+  background: #FF453A;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.swiper-btns {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }

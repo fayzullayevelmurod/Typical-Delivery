@@ -2,35 +2,28 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
   gap: 20px;
-
-  .stock__card {
-    // border: 1px solid;
-    // border-image-source: linear-gradient(
-    //   0deg,
-    //   rgba(255, 255, 255, 0.1) 0%,
-    //   rgba(255, 255, 255, 0) 100%
-    // );
-    border-left: 0.5px solid rgba(255, 255, 255, 0.1);
-    border-right: 0.5px solid rgba(255, 255, 255, 0.1);
-    background: linear-gradient(180deg, #212429 26.74%, #30333a 100%);
-    overflow: hidden;
-    border-radius: 24px;
-    .card__img {
-      height: 202px;
-      width: 100%;
-      object-fit: cover;
-    }
-    .card__content {
-      padding: 20px 20px 47px 20px;
-    }
-    .card__title {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 22.01px;
-    }
-    .desc {
-      padding: 15px 0 20px 0;
-    }
+}
+.stock__card {
+  border-left: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, #212429 26.74%, #30333a 100%);
+  overflow: hidden;
+  border-radius: 24px;
+  .card__img {
+    height: 202px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .card__content {
+    padding: 20px 20px 47px 20px;
+  }
+  .card__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22.01px;
+  }
+  .desc {
+    padding: 15px 0 20px 0;
   }
 }
 

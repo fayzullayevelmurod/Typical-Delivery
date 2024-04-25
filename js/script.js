@@ -44,6 +44,20 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  // promotion__swiper
+  var promotionSwiper = new Swiper(".promotion__swiper", {
+    slidesPerView: 2.3,
+    speed: 700,
+    spaceBetween: 20,
+    // navigation: {
+    //   nextEl: "next__btn",
+    //   prevEl: "prev__btn",
+    // },
+    navigation: {
+      nextEl: ".next__btn",
+      prevEl: ".prev__btn",
+    },
+  });
   // Timer
 
   // Timer
