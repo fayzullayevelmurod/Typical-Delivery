@@ -3402,4 +3402,90 @@ body {
   color: #ff453a;
 }
 
+.contact {
+  background: #2f323a;
+  padding: 40px 0 120px 0;
+}
+.contact .title {
+  padding-bottom: 25px;
+}
+.contact .flex__box {
+  display: flex;
+  align-items: start;
+  gap: 35px;
+}
+.contact .map__box {
+  max-width: 900px;
+  width: 100%;
+}
+.contact .map__box iframe {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+}
+.contact .map__box .bottom__box {
+  padding-top: 25px;
+  display: flex;
+  align-items: start;
+  gap: 40px;
+}
+.contact .map__box .status__box {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 10px;
+}
+.contact .map__box .status__box .status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff0a;
+  display: block;
+}
+.contact .map__box .status__box .status.red {
+  background: #ff453a;
+}
+.contact .map__box .status__box .status.yellow {
+  background: #fbff3a;
+}
+.contact .map__box .status__box .status.blue {
+  background: #3aa0ff;
+}
+.contact .map__box p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.contact .map__box p span {
+  font-weight: 600;
+  color: #bdbdbd;
+}
+.contact .operating__mode h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.01px;
+  padding: 30px 0 15px 0;
+}
+.contact .operating__mode h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.57px;
+  padding: 15px 0;
+}
+.contact .operating__mode span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.57px;
+  color: #bdbdbd;
+  display: block;
+  padding-bottom: 5px;
+}
+.contact .operating__mode p,
+.contact .operating__mode a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */
