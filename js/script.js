@@ -516,4 +516,34 @@ window.addEventListener("DOMContentLoaded", () => {
       item.classList.add("active");
     });
   });
+
+  // counter
+  try {
+    // HTML elementlarini tanlash
+    const counters = document.querySelectorAll(".counter"); // "counter" nomli classga ega barcha elementlarni tanlash
+
+    // Har bir "counter" elementi uchun forEach() metodini ishlatish
+    counters.forEach(function (counter) {
+      const incrementButton = counter.querySelector(".increment"); // "increment" tugmasini tanlash
+      const decrementButton = counter.querySelector(".decrement"); // "decrement" tugmasini tanlash
+      const countNumber = counter.querySelector(".count__number"); // "count__number" nomli spanni tanlash
+
+      // Balandlikni o'zgartirish funksiyalari
+      function increment() {
+        let currentValue = parseInt(countNumber.textContent);
+        countNumber.textContent = currentValue + 1;
+      }
+
+      function decrement() {
+        let currentValue = parseInt(countNumber.textContent);
+        if (currentValue > 1) {
+          countNumber.textContent = currentValue - 1;
+        }
+      }
+
+      // Tugmachlarga hodisalar qo'shish
+      incrementButton.addEventListener("click", increment);
+      decrementButton.addEventListener("click", decrement);
+    });
+  } catch (error) {}
 });
