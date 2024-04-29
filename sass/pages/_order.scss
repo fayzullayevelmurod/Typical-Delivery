@@ -1,0 +1,28 @@
+.order {
+  background: #2f323a;
+  padding: 40px 0 120px;
+
+  .thanks__box {
+    margin-top: 25px;
+    border: 1px solid #00ff0a;
+    padding: 20px 79px;
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    h5 {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 26px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      a {
+        color: #ff453a;
+        font-weight: 600;
+        display: block;
+      }
+    }
+  }
+}
