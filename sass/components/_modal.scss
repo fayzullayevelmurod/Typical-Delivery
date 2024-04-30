@@ -133,39 +133,7 @@
       }
     }
   }
-  .remember__box {
-    padding: 30px 0 30px 29px;
-    input {
-      display: none;
-    }
-    label {
-      cursor: pointer;
-      position: relative;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: -29px;
-        transform: translateY(-50%);
-        width: 19px;
-        height: 19px;
-        border-radius: 50%;
-        background: #ff453a;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        top: 80%;
-        left: -25px;
-        transform: translateY(-50%);
-        width: 19px;
-        height: 19px;
-        background: url(../../images/icons/check.svg) no-repeat;
-        background-size: 10px;
-      }
-    }
-  }
   .send__btn {
     width: 100%;
     box-shadow: 0px 0px 5px 1px #ff7a67;
