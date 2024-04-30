@@ -308,12 +308,23 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+}
+.read__more {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #bdbdbd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &.active {
     img {
-      transition: transform 0.2s linear;
-    }
-    &.active img {
       transform: rotate(180deg);
     }
+  }
+  img {
+    transition: transform 0.2s linear;
   }
 }
 .media__right-sidebar {
