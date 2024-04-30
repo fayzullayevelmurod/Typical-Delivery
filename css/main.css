@@ -3987,6 +3987,15 @@ button {
   color: rgba(255, 69, 58, 0.6980392157);
   text-decoration: underline;
 }
+.order .go__back {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22.01px;
+  margin-top: 40px;
+}
 
 .product {
   background: #2f323a;
