@@ -1,4 +1,35 @@
 .reviews {
   padding: 40px 0 120px 0;
-	background: #2F323A;
+  background: #2f323a;
+  .sidebars {
+    display: flex;
+    align-items: start;
+    gap: 35px;
+    justify-content: space-between;
+  }
+  .yandex__reviews-box {
+    margin: 25px 0 20px 0;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #00ff0a;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .left__box {
+    flex: 1 1 auto;
+  }
+  .right__box {
+    max-width: 725px;
+    width: 100%;
+    .description__box {
+      margin: 15px 0 80px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
 }
