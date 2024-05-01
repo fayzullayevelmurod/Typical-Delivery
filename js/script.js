@@ -149,12 +149,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const redMoreBtn = document.querySelector(".read__more");
     const readMoreText = document.querySelector(".read__more span");
     const hideText = document.querySelector(".hide__text");
-    const dots = document.querySelector('.dots');
+    const dots = document.querySelector(".dots");
     redMoreBtn.addEventListener("click", () => {
       hideText.classList.toggle("show");
       redMoreBtn.classList.toggle("active");
       if (dots) {
-        dots.classList.toggle('hide')
+        dots.classList.toggle("hide");
       }
       if (readMoreText.textContent === "Читать полностью") {
         readMoreText.textContent = "Свернуть";
@@ -547,6 +547,18 @@ window.addEventListener("DOMContentLoaded", () => {
       // Tugmachlarga hodisalar qo'shish
       incrementButton.addEventListener("click", increment);
       decrementButton.addEventListener("click", decrement);
+    });
+  } catch (error) {}
+
+  try {
+    var productTwoSwiper = new Swiper(".product__two-swiper", {
+      slidesPerView: 5.4,
+      speed: 700,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".next-btn",
+        prevEl: ".prev-btn",
+      },
     });
   } catch (error) {}
 });

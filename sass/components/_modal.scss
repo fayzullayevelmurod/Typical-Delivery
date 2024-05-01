@@ -16,6 +16,16 @@
 }
 .auth__modal {
   transition: all 0.1s linear !important;
+
+  .remember__box {
+    padding: 30px 0;
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19.57px;
+      color: #fff;
+    }
+  }
 }
 .modal {
   position: fixed;
@@ -205,10 +215,27 @@
     }
   }
 }
+.clicker__input {
+  display: none;
+  &:checked {
+    & + .clicker__btn {
+      background: #ff453a;
+
+      .circle__box {
+        background: #fff;
+        right: 3px;
+        left: auto;
+      }
+    }
+  }
+}
 .clicker__btn {
   width: 46px;
-  height: 26px;
-  padding: 3px;
+  max-height: 26px;
+  min-height: 26px;
+  height: 100%;
+  display: block;
+  // padding: 3px;
   border-radius: 40px;
   background: #6f7174;
   position: relative;
@@ -439,14 +466,52 @@
       align-items: center;
       gap: 10px;
 
+      input {
+        display: none;
+        &:checked {
+          & + label {
+            &::before {
+              background: red;
+            }
+            &::after {
+              display: block;
+            }
+          }
+        }
+      }
+
       label {
         font-family: "Proxima Nova";
         font-size: 11px;
         font-weight: 400;
         line-height: 11px;
+        color: #8b8b8b;
+        position: relative;
+        padding-left: 30px;
 
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          width: 19px;
+          height: 19px;
+          background: #8b8b8b;
+          border-radius: 50%;
+          cursor: pointer;
+        }
         &::after {
-          top: 71%;
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 5px;
+          transform: translateY(-50%);
+          background: url(../../images/icons/check.svg) no-repeat;
+          background-size: contain;
+          width: 9px;
+          height: 7px;
+          display: none;
         }
 
         a {
@@ -492,7 +557,62 @@
     }
   }
 }
+.remember__box {
+  input {
+    display: none;
+    &:checked {
+      & + label {
+        &::before {
+          background: red;
+        }
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
 
+  label {
+    font-family: "Proxima Nova";
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 11px;
+    color: #8b8b8b;
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 19px;
+      height: 19px;
+      background: #8b8b8b;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      background: url(../../images/icons/check.svg) no-repeat;
+      background-size: contain;
+      width: 9px;
+      height: 7px;
+      display: none;
+    }
+
+    a {
+      text-decoration: underline;
+      color: #ff453ab2;
+      display: inline;
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .modal__footer .apply__btn {
     width: 100%;
