@@ -24,10 +24,12 @@
       justify-content: space-between;
     }
     .product__img {
+      background: #000;
       border: 1px solid #ffffff33;
       background: #212429;
       border-radius: 14px;
-      width: fit-content;
+      width: 112px;
+      height: 112px;
     }
     .left__box {
       display: flex;
@@ -40,7 +42,7 @@
       line-height: 19.57px;
       display: block;
     }
-    .product__weight {
+    .product__weight-box {
       font-size: 14px;
       font-weight: 500;
       line-height: 17.12px;
@@ -150,10 +152,10 @@
       }
     }
   }
-	.outline__btn {
-		width: 100%;
-		text-align: center;
-	}
+  .outline__btn {
+    width: 100%;
+    text-align: center;
+  }
   .red__text {
     color: #ff453a;
   }
