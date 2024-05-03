@@ -156,13 +156,15 @@ window.addEventListener("DOMContentLoaded", () => {
       if (dots) {
         dots.classList.toggle("hide");
       }
-      if (readMoreText.textContent === "Читать полностью") {
+      if (
+        readMoreText.textContent === "Читать полностью"
+      ) {
         readMoreText.textContent = "Свернуть";
       } else {
         readMoreText.textContent = "Читать полностью";
       }
     });
-  } catch (error) {}
+  } catch (error) { }
 
   // sticky header
   document.addEventListener("scroll", () => {
