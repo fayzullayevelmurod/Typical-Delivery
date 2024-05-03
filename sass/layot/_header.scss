@@ -8,6 +8,21 @@
   background: #212429;
   // position: relative;
 
+  .cart__box {
+    position: relative;
+
+    .product__number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17.12px;
+      color: #000;
+    }
+  }
+
   &.fixed {
     position: fixed;
     top: 0;
@@ -375,6 +390,7 @@
     gap: 30px;
     justify-content: end;
   }
+  
 }
 .flex__logo {
   display: flex;

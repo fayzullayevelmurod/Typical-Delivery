@@ -7,13 +7,12 @@ button {
   font-weight: 500;
   line-height: 24px;
   padding: 9px 25px;
-  border: 2px solid #ff453a;
+  border: 2px solid #FF453A;
   position: relative;
   z-index: 1;
-  background: transparent;
   border-radius: 40px;
   transition: all 0.2s linear;
-  box-shadow: 0px 0px 5px 1px #ff7a67;
+  box-shadow: 0px 0px 5px 1px #FF7A67;
   color: #fff;
   &:hover {
     background: #ff453a;
@@ -33,7 +32,6 @@ button {
 }
 
 .vk__btn {
-  border: 1.5px solid #55a4ff;
   min-width: 32px;
   min-height: 32px;
   max-width: 32px;
@@ -44,6 +42,35 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s linear;
+  &:hover {
+    background: #55a4ff;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid #55a4ff;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 4px #65adff;
+    border-radius: 50%;
+    z-index: 2;
+  }
 }
 
 @media screen and (max-width: 1024px) {

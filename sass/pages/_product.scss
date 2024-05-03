@@ -6,6 +6,15 @@
     align-items: start;
     gap: 40px;
     padding-bottom: 97px;
+
+    .title__lg {
+      color: #fff;
+    }
+  }
+  .title__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .desc__box {
     display: flex;

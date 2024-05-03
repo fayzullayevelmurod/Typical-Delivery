@@ -911,6 +911,14 @@
   .product__cards {
     // grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
+  .back__call .sedn__box {
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: start;
+  }
+  .back__call .sedn__box .red__btn {
+    width: 100%;
+  }
   .modal .enter__code .send__code-btn {
     padding: 0;
     white-space: nowrap;
