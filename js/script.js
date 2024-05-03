@@ -590,9 +590,18 @@ window.addEventListener("DOMContentLoaded", () => {
       modalOverlay.classList.remove("show");
       wrapper.classList.remove("blur");
     }
-    openProductModal.forEach((btn) =>
-      btn.addEventListener("click", showProductModal)
-    );
+    openProductModal.forEach((btn) => {
+      const infoBtn = btn.querySelector(".info__btn");
+      btn.addEventListener("click", (e) => {
+        if (
+          !e.target.classList.contains("info__btn") &&
+          !e.target.classList.contains("info__icon") &&
+          !e.target.classList.contains("close__icon")
+        ) {
+          showProductModal();
+        }
+      });
+    });
     closeProductModal.addEventListener("click", hideProductModal);
     productModal.addEventListener("click", (e) => {
       if (e.target && e.target.classList.contains("product__modal")) {

@@ -32,4 +32,22 @@
       gap: 15px;
     }
   }
+  .reviews__box {
+    height: 1067px;
+    .badge,
+    .mini-badge,
+    .mini-badge__org-name {
+      color: #bdbdbd;
+    }
+    .badge {
+      background: #000;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      background: #212429;
+    }
+  }
 }
