@@ -56,3 +56,17 @@
     display: block;
   }
 }
+
+.checkbox__input {
+  display: none;
+  &:checked {
+    & + .clicker__btn {
+      background: #ff453a;
+
+      .circle__box {
+        right: 3px;
+        left: auto;
+      }
+    }
+  }
+}

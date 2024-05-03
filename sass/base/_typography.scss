@@ -3,6 +3,9 @@ body {
   font-weight: 400;
   background-color: #212429;
   color: #fff;
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 .title {

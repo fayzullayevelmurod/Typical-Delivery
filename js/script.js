@@ -561,5 +561,44 @@ window.addEventListener("DOMContentLoaded", () => {
       },
     });
   } catch (error) {}
+  try {
+    var productTwoSwiper = new Swiper(".product__three-swiper", {
+      slidesPerView: 3.4,
+      speed: 700,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".next-btn",
+        prevEl: ".prev-btn",
+      },
+    });
+  } catch (error) {}
+  // products modal
+  try {
+    const productModal = document.querySelector(".product__modal");
+    const openProductModal = document.querySelectorAll(".product__card");
+    const closeProductModal = document.querySelector(".close__product-modal");
+
+    function showProductModal() {
+      productModal.classList.add("active");
+      document.body.classList.add("no-scroll");
+      modalOverlay.classList.add("show");
+      wrapper.classList.add("blur");
+    }
+    function hideProductModal() {
+      productModal.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+      modalOverlay.classList.remove("show");
+      wrapper.classList.remove("blur");
+    }
+    openProductModal.forEach((btn) =>
+      btn.addEventListener("click", showProductModal)
+    );
+    closeProductModal.addEventListener("click", hideProductModal);
+    productModal.addEventListener("click", (e) => {
+      if (e.target && e.target.classList.contains("product__modal")) {
+        hideProductModal();
+      }
+    });
+  } catch (error) {}
 });
 // click box
