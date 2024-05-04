@@ -520,19 +520,23 @@ tabHeaderItems.forEach((item) => {
 
 // counter
 try {
-  // HTML elementlarini tanlash
-  const counters = document.querySelectorAll(".counter"); // "counter" nomli classga ega barcha elementlarni tanlash
-
-  // Har bir "counter" elementi uchun forEach() metodini ishlatish
+  const counters = document.querySelectorAll(".count__box");
   counters.forEach(function (counter) {
-    const incrementButton = counter.querySelector(".increment"); // "increment" tugmasini tanlash
-    const decrementButton = counter.querySelector(".decrement"); // "decrement" tugmasini tanlash
-    const countNumber = counter.querySelector(".count__number"); // "count__number" nomli spanni tanlash
+    const incrementButton = counter.querySelector(".increment");
+    const decrementButton = counter.querySelector(".decrement");
+    const countNumber = counter.querySelector(".count__number");
+    // const price = counter.querySelector(".price");
+    // const newPrice = counter.querySelector(".new__price");
+    // const oldPrice = counter.querySelector(".old__price");
 
-    // Balandlikni o'zgartirish funksiyalari
+    // let NEW_PRIEC = 1;
+    // let OLD_PRICE = 2;
+
     function increment() {
       let currentValue = parseInt(countNumber.textContent);
-      countNumber.textContent = currentValue + 1;
+      if (!incrementButton.classList.contains("disabled")) {
+        countNumber.textContent = currentValue + 1;
+      }
     }
 
     function decrement() {

@@ -3642,6 +3642,13 @@ button {
 .basket .title {
   padding-bottom: 25px;
 }
+.basket .product__two-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 82px 0 20px 0;
+}
 .basket .top__box {
   display: flex;
   align-items: start;
@@ -3693,40 +3700,6 @@ button {
   display: flex;
   align-items: center;
 }
-.basket__cart .counter {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #373a42;
-  border-radius: 40px;
-  padding: 10px 20px;
-}
-.basket__cart .counter button {
-  cursor: pointer;
-  position: relative;
-  height: 2px;
-  background: #bdbdbd;
-  border-radius: 10px;
-}
-.basket__cart .count__number {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 19.57px;
-  color: #fff;
-  width: 20px;
-  text-align: center;
-}
-.basket__cart .increment::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2px;
-  height: 14px;
-  background: #bdbdbd;
-  border-radius: 10px;
-}
 .basket__cart .product__price {
   padding: 0 72px 0 70px;
 }
@@ -3747,6 +3720,51 @@ button {
 .basket__cart .delete__product-btn {
   cursor: pointer;
   padding: 0;
+}
+.basket .counter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #373a42;
+  border-radius: 40px;
+  padding: 10px 20px;
+  width: fit-content;
+}
+.basket .counter button {
+  cursor: pointer;
+  position: relative;
+  width: 14px;
+  height: 2px;
+  background: #bdbdbd;
+  border-radius: 10px;
+}
+.basket .counter .increment.disabled {
+  height: 18px;
+  width: 18px;
+  background: none;
+  cursor: not-allowed;
+}
+.basket .counter .increment.disabled::before {
+  display: none;
+}
+.basket .count__number {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.57px;
+  color: #fff;
+  width: 20px;
+  text-align: center;
+}
+.basket .increment::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 14px;
+  background: #bdbdbd;
+  border-radius: 10px;
 }
 .basket .order__box {
   background: #212429;
@@ -3794,6 +3812,50 @@ button {
 }
 .basket .red__text {
   color: #ff453a;
+}
+.basket .bottom__box {
+  padding-top: 60px;
+  max-width: 837px;
+  width: 100%;
+}
+.basket .bottom__box .order {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.basket .bottom__box .order__tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.basket .bottom__box .order .left__td {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.basket .bottom__box .order .left__td .img__box {
+  width: 82px;
+  height: 82px;
+}
+.basket .bottom__box .order .left__td .img__box img {
+  width: 100%;
+  height: 100%;
+}
+.basket .bottom__box .order .left__td .product__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.57px;
+}
+.basket .bottom__box .order .right__td {
+  display: flex;
+  align-items: center;
+}
+.basket .bottom__box .order .right__td .price {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.01px;
+  margin: 0 57px 0 68px;
+  width: 70px;
 }
 
 .contact {
