@@ -607,6 +607,20 @@ try {
       nextEl: ".next-btn",
       prevEl: ".prev-btn",
     },
+    breakpoints: {
+      1024: {
+        slidesPerView: 5.4,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 3.3,
+        spaceBetween: 10,
+      },
+      0: {
+        slidesPerView: 1.3,
+        spaceBetween: 10,
+      },
+    },
   });
 } catch (error) {}
 // products modal
