@@ -3450,8 +3450,17 @@ button {
   justify-content: space-between;
   padding-top: 25px;
 }
+.promotion__boxes .img__box {
+  max-width: 100%;
+  width: 100%;
+}
+.promotion__boxes .promotion__box-content {
+  max-width: 585px;
+  width: 100%;
+}
 .promotion__box-img {
-  width: 700px;
+  width: 100%;
+  object-fit: cover;
   height: 360px;
   object-fit: cover;
   border-radius: 24px;
@@ -3465,9 +3474,9 @@ button {
 .promotion .other__promotions {
   padding-top: 80px;
 }
-.promotion .other__promotions .container__box {
-  max-width: 1613px;
-  margin-left: auto;
+.promotion .other__promotions .promotion__swiper {
+  margin-right: -300px;
+  padding-right: 300px;
 }
 .promotion .other__promotions-boxes {
   display: flex;
@@ -3488,13 +3497,90 @@ button {
   -webkit-text-fill-color: transparent;
 }
 .promotion .other__promotions .stock__card {
-  background: linear-gradient(180deg, #212429 26.74%, #2F323A 100%);
+  background: linear-gradient(180deg, #212429 26.74%, #2f323a 100%);
   border: none;
 }
 .promotion .other__promotions .stock__card .card__img {
   border-radius: 20px;
 }
 
+@media screen and (max-width: 1024px) {
+  .promotion__boxes {
+    flex-direction: column;
+    row-gap: 25px;
+    padding-top: 20px;
+  }
+  .promotion__boxes .promotion__box-content {
+    max-width: 100%;
+  }
+  .promotion .other__promotions {
+    padding-top: 60px;
+  }
+  .promotion .other__promotions .content .description {
+    font-size: 15px;
+    line-height: 30.6px;
+    padding: 15px 0 25px 0;
+  }
+  .promotion .other__promotions-boxes {
+    gap: 25px;
+  }
+  .stock__card .card__title {
+    font-size: 16px;
+    line-height: 19.57px;
+  }
+  .stock__card .card__content {
+    padding: 20px 15px;
+  }
+  .promotion .other__promotions .stock__card .card__img {
+    height: 164px;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+  .promotion .other__promotions .stock__card {
+    border-radius: 18px;
+  }
+  .promotion {
+    padding: 30px 0 80px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .promotion .other__promotions-boxes {
+    display: block;
+    row-gap: 20px;
+  }
+  .promotion .other__promotions .content {
+    margin-bottom: 20px;
+    max-width: 100%;
+    padding-top: 0;
+  }
+  .promotion .other__promotions .content .swiper-btns {
+    display: none;
+  }
+  .promotion .other__promotions {
+    padding-top: 40px;
+  }
+  .promotion .other__promotions .content .description {
+    font-size: 16px;
+    padding-bottom: 0;
+  }
+  .promotion__boxes {
+    row-gap: 20px;
+  }
+  .promotion__boxes .title__lg {
+    font-size: 22px;
+    line-height: 26.91px;
+  }
+  .promotion__box-img {
+    height: 149.14px;
+    border-radius: 16px;
+  }
+  .stock__card .card__content {
+    padding: 15px;
+  }
+  .promotion {
+    padding: 20px 0 60px 0;
+  }
+}
 .delivery__info {
   background: #2f323a;
   padding-bottom: 120px;
@@ -4929,6 +5015,7 @@ button {
   display: flex;
   gap: 10px;
   padding: 40px 0;
+  flex-wrap: wrap;
 }
 .product__weights .product__weight {
   display: block;
@@ -4945,6 +5032,7 @@ button {
   font-weight: 600;
   line-height: 24.46px;
   padding-bottom: 20px;
+  color: #fff;
 }
 .product .flex__box {
   display: flex;
@@ -5007,7 +5095,7 @@ button {
   border-right: 1px solid blue;
   border-bottom: 1px solid #35383f;
   border-radius: 20px;
-  background: linear-gradient(#2F323A 23.15%, #212429 100%);
+  background: linear-gradient(#2f323a 23.15%, #212429 100%);
   z-index: -1;
 }
 .product__content-box {
@@ -5066,6 +5154,143 @@ button {
   line-height: 18.35px;
   text-align: center;
   padding-top: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .product .product__img-box img {
+    width: 100%;
+    height: 100%;
+  }
+  .product__content .product__info {
+    max-width: 360px;
+  }
+  .product__content {
+    gap: 20px;
+  }
+  .product .desc__box {
+    margin-top: 10px;
+    margin-left: 10px;
+    gap: 10px;
+  }
+  .product__weights {
+    padding: 30px 0;
+    gap: 10px;
+  }
+  .product__weights .product__weight {
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+  .product .tip__title {
+    padding-bottom: 15px;
+  }
+  .product .flex__box span {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .clicker__btn {
+    width: 44px;
+    height: 26px;
+  }
+  .clicker__btn .circle__box {
+    width: 20px;
+    height: 20px;
+    left: 2px;
+  }
+  .product .flex__box input:checked + label .circle__box {
+    right: 2px;
+  }
+  .added__btn {
+    margin-top: 40px;
+    width: fit-content;
+    padding: 11px;
+    font-size: 16px;
+    max-width: 240px;
+  }
+  .product__img {
+    height: 200px;
+  }
+  .product__img img {
+    object-fit: cover;
+  }
+  .product__content-box {
+    padding: 15px;
+  }
+  .product__info {
+    font-size: 13px;
+    line-height: 15.9px;
+    padding: 10px 0 15px 0;
+  }
+  .product__weight {
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .added__cart-info {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .product .product__two-title {
+    margin-bottom: 20px;
+  }
+  .product .product__two-title .swiper-btns img {
+    width: 42px;
+    height: 42px;
+  }
+  .product {
+    padding: 30px 0 80px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .product__content {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .product .product__img-box {
+    height: 250px;
+  }
+  .product__content .product__info {
+    max-width: 100%;
+  }
+  .product__content .title__lg {
+    font-size: 22px;
+  }
+  .product .desc__box {
+    margin-left: 0;
+  }
+  .product .added__btn {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .product__content {
+    margin-bottom: 60px;
+    margin-bottom: 0;
+  }
+  .product .flex__box {
+    margin: 0 auto;
+    width: 214px;
+  }
+  .product .tip__title {
+    width: 214px;
+    font-size: 18px;
+    line-height: 22.01px;
+    margin: 0 auto;
+  }
+  .product .product__two-title .swiper-btns {
+    display: none;
+  }
+  .product {
+    padding: 20px 0 60px 0;
+  }
+  .product .product__content {
+    row-gap: 35px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .product .product__img-box {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
