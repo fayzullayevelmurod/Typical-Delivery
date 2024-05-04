@@ -4431,13 +4431,19 @@ button {
   justify-content: space-between;
   gap: 43px;
 }
+.order .table .table__tr .right__box span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.57px;
+  display: block;
+}
 .order .table .product__name {
   font-size: 16px;
   font-weight: 500;
   line-height: 19.57px;
   white-space: nowrap;
 }
-.order .table .product__weight {
+.order .table .product__weight-box {
   font-size: 14px;
   font-weight: 500;
   line-height: 17.12px;
@@ -4557,6 +4563,160 @@ button {
   margin-top: 40px;
 }
 
+@media screen and (max-width: 1250px) {
+  .order .table .table__tr {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .order .table__body .right__box {
+    max-width: 100%;
+  }
+  .order .table__body .right__box > div:first-child {
+    margin-left: 0;
+    text-align: center;
+    order: 1;
+  }
+  .order .table__body .right__box > div:nth-child(2) {
+    order: 2;
+  }
+  .order .table__header {
+    display: none;
+  }
+  .order .media__text {
+    display: block;
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.12px;
+    color: #bdbdbd;
+  }
+  .order .table__footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .order .sidebars__section {
+    gap: 20px;
+    padding-top: 150px;
+    position: relative;
+  }
+  .order .right__box {
+    max-width: 268px;
+    width: 100%;
+  }
+  .order .right__box-card h4 {
+    font-size: 20px;
+    line-height: 24.46px;
+  }
+  .order .right__box-card span {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .order .right__box-card .status__box {
+    font-size: 14px;
+  }
+  .order .right__box-card p {
+    font-size: 16px;
+  }
+  .order .right__box-card .payment__cards {
+    padding-top: 5px;
+    width: 100%;
+  }
+  .order .right__box-card {
+    padding: 20px 15px;
+    border-radius: 18px;
+  }
+  .order .right__box .red__btn {
+    font-size: 16px;
+  }
+  .order .table {
+    border-radius: 18px;
+  }
+  .order .table__body {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+  .order .sidebars__section .left__box {
+    max-width: 100%;
+    gap: 15px;
+  }
+  .order .table__body .img__box {
+    min-width: 72px;
+    max-width: 72px;
+    height: 72px;
+    border-radius: 12px;
+  }
+  .order .table .table__tr .right__box span {
+    font-size: 18px;
+    line-height: 22.01px;
+    font-weight: 700;
+  }
+  .order .go__back {
+    font-size: 16px;
+    line-height: 19.57px;
+  }
+  .order {
+    padding: 30px 0 80px 0;
+  }
+  .order .thanks__box h5 {
+    font-size: 20px;
+  }
+  .order .sidebars__section .left__box .order__boxes-title {
+    display: none;
+  }
+  .order .thanks__box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .order .sidebars__section {
+    flex-direction: column;
+  }
+  .order .right__box {
+    max-width: 100%;
+  }
+  .order .right__box-card,
+  .order .table {
+    border-radius: 16px;
+  }
+  .order .table .product__name,
+  .order .go__back {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .order .table .product__weight-box {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .order .table__body {
+    gap: 10px;
+  }
+  .order {
+    padding: 20px 0 60px 0;
+  }
+  .order .thanks__box h5 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .order .thanks__box p {
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .order .thanks__box {
+    padding: 20px 15px;
+    border-radius: 16px;
+    position: unset;
+    margin: 20px 0;
+  }
+  .order .sidebars__section {
+    padding-top: 0;
+  }
+}
 .product {
   background: #2f323a;
   padding: 40px 0 120px 0;
