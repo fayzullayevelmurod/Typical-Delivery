@@ -66,7 +66,6 @@ input:focus {
 a:active,
 a:focus {
   outline: 0;
-  border: none;
   -moz-outline-style: none;
 }
 
@@ -3664,6 +3663,22 @@ button {
   background: #212429;
   padding: 25px;
 }
+.basket__cart.empty__basket {
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.basket__cart.empty__basket .status__text {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 39.14px;
+  padding-bottom: 15px;
+}
+.basket__cart.empty__basket .outline__btn {
+  width: fit-content;
+}
 .basket__cart .flex__box {
   display: flex;
   align-items: center;
@@ -3856,6 +3871,25 @@ button {
   line-height: 22.01px;
   margin: 0 57px 0 68px;
   width: 70px;
+}
+.basket .empty__basket-title {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.product__four-swiper .product__card {
+  background: linear-gradient(180deg, #30333a 26.82%, #212429 100%);
+}
+.product__four-swiper .product__card:hover {
+  box-shadow: none;
+}
+.product__four-swiper .product__card .product__card-img {
+  height: 276px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact {

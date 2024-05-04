@@ -564,6 +564,17 @@ try {
   });
 } catch (error) {}
 try {
+  var productTwoSwiper = new Swiper(".product__four-swiper", {
+    slidesPerView: 4.5,
+    speed: 700,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".next-btn",
+      prevEl: ".prev-btn",
+    },
+  });
+} catch (error) {}
+try {
   var productTwoSwiper = new Swiper(".product__three-swiper", {
     slidesPerView: 3.4,
     speed: 700,
