@@ -265,3 +265,103 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .basket {
+    padding: 30px 0 80px 0;
+  }
+  .basket__cart.empty__basket {
+    height: 360px;
+  }
+  .basket__cart.empty__basket .status__text {
+    font-size: 28px;
+    line-height: 34.24px;
+    padding-bottom: 0;
+  }
+  .basket__cart.empty__basket .outline__btn {
+    padding: 13px 24px;
+    font-size: 16px;
+  }
+  .basket .order__box {
+    padding: 20px 15px;
+    border-radius: 20px;
+    width: 268px;
+    .title__lg {
+      font-size: 20px;
+    }
+  }
+  .basket .top__box {
+    gap: 20px;
+  }
+  .basket .order__box .order__info {
+    padding: 20px 0 40px 0;
+  }
+  .basket .order__box .total__box .total,
+  .basket .order__box .total__box .total__price {
+    font-size: 18px;
+    line-height: 22.01px;
+  }
+  .basket .product__two-title {
+    margin: 60px 0 20px 0;
+  }
+  .basket .empty__basket-title {
+    font-size: 24px;
+    line-height: 29.35px;
+  }
+  .product__two-title {
+    .swiper-btns {
+      img {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+  .product__four-swiper .product__card .product__card-img {
+    height: 229px;
+  }
+  .product__card .product__info-list {
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product__four-swiper .product__card .product__card-img {
+    height: 140px;
+  }
+  .basket .top__box {
+    flex-direction: column;
+    & > div {
+      width: 100%;
+    }
+  }
+  .basket .order__box {
+    width: 100%;
+    border-radius: 18px;
+    margin-bottom: 0;
+  }
+  .basket__cart {
+    width: 100%;
+    border-radius: 18px;
+  }
+  .basket__cart.empty__basket {
+    max-height: 240px;
+  }
+  .basket__cart.empty__basket .status__text {
+    font-size: 22px;
+    line-height: 26.91px;
+  }
+  .basket__cart.empty__basket .outline__btn {
+    padding: 11px 23px;
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .product__two-title .swiper-btns {
+    display: none;
+  }
+  .basket .empty__basket-title {
+    font-size: 22px;
+    line-height: 26.91px;
+  }
+}

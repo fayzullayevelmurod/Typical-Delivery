@@ -596,6 +596,20 @@ try {
       nextEl: ".next-btn",
       prevEl: ".prev-btn",
     },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4.5,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 3.1,
+        spaceBetween: 10,
+      },
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+    },
   });
 } catch (error) {}
 try {
