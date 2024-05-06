@@ -399,22 +399,27 @@ try {
 } catch (error) {}
 
 // select__box
-const selectBox = document.querySelector(".select__box");
-const selectOption = document.querySelector(".option__box");
-const options = document.querySelectorAll(".option");
-const selectedText = document.querySelector(".selected__text");
 
-selectBox.addEventListener("click", () => {
-  selectOption.classList.toggle("show");
-  selectBox.classList.toggle("active");
-});
+const allSelect = document.querySelectorAll(".all__select");
 
-options.forEach((option) => {
-  option.addEventListener("click", () => {
-    selectedText.value = option.querySelector(".select__text").textContent;
-    selectedText.classList.add("active");
-    // selectOption.classList.add("");
-    selectBox.classList.remove("active");
+allSelect.forEach((parentEl) => {
+  const selectBox = parentEl.querySelector(".select__box");
+  const selectOption = parentEl.querySelector(".option__box");
+  const options = parentEl.querySelectorAll(".option");
+  const selectedText = parentEl.querySelector(".selected__text");
+
+  selectBox.addEventListener("click", () => {
+    selectOption.classList.toggle("show");
+    selectBox.classList.toggle("active");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      selectedText.value = option.querySelector(".select__text").textContent;
+      selectedText.classList.add("active");
+      selectBox.classList.remove("active");
+      console.log(selectBox);
+    });
   });
 });
 

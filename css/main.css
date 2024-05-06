@@ -922,44 +922,50 @@ button {
   flex-direction: column;
   gap: 15px;
 }
-.back__call .select__box {
+
+.select__box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
-.back__call .select__box .arrow__down {
+.select__box .arrow__down {
   transition: all 0.2s linear;
   cursor: pointer;
 }
-.back__call .select__box.active .arrow__down {
+.select__box.active .arrow__down {
   transform: rotate(180deg);
 }
-.back__call .select__input {
+
+.select__input {
   width: 100%;
 }
-.back__call .select__input span {
+.select__input span {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   color: #bdbdbd;
 }
-.back__call .arrow__down {
+
+.arrow__down {
   position: relative;
   z-index: 200;
 }
-.back__call .modal__input {
+
+.modal__input {
   padding-right: 16px;
   cursor: pointer;
 }
-.back__call .selected__text {
+
+.selected__text {
   width: 100%;
   pointer-events: none;
 }
-.back__call .selected__text.active {
+.selected__text.active {
   color: #fff;
 }
-.back__call .option__box {
+
+.option__box {
   position: absolute;
   top: 0;
   z-index: 1;
@@ -973,10 +979,10 @@ button {
   transition: all 0.2s linear;
   transform-origin: top;
 }
-.back__call .option__box.show {
+.option__box.show {
   display: block;
 }
-.back__call .option__box .scroll__box {
+.option__box .scroll__box {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -984,92 +990,95 @@ button {
   overflow-y: scroll;
   margin-top: 18px;
 }
-.back__call .option__box .scroll__box::-webkit-scrollbar {
+.option__box .scroll__box::-webkit-scrollbar {
   width: 2px;
 }
-.back__call .option__box .scroll__box::-webkit-scrollbar-thumb {
+.option__box .scroll__box::-webkit-scrollbar-thumb {
   background: #ff453a;
 }
-.back__call .option__box .option {
+.option__box .option {
   cursor: pointer;
 }
-.back__call .option__box span {
+.option__box span {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
 }
-.back__call .option__box .flex__box {
+.option__box .flex__box {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.back__call .option__box p {
+.option__box p {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
 }
-.back__call .option__box .status {
+.option__box .status {
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
 }
-.back__call .option__box .status.active {
+.option__box .status.active {
   color: #00ff0a;
 }
-.back__call .option__box .status.closed {
+.option__box .status.closed {
   color: #ff453a;
 }
-.back__call .enter__num-code {
+
+.enter__num-code {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.back__call .enter__num-code .num__code {
+.enter__num-code .num__code {
   font-size: 36px;
   font-weight: 600;
   line-height: 44.03px;
 }
-.back__call .enter__num-code input {
+.enter__num-code input {
   width: 214px;
   font-weight: 500;
 }
-.back__call .enter__num-code input::placeholder {
+.enter__num-code input::placeholder {
   font-size: 16px;
 }
-.back__call .enter__num-code input .warrning {
+.enter__num-code input .warrning {
   color: #ff453a;
 }
-.back__call .warning__code {
+
+.warning__code {
   display: none;
   color: #ff453a;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
 }
-.back__call .warning__code.show {
+.warning__code.show {
   display: block;
 }
-.back__call .sedn__box {
+
+.sedn__box {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.back__call .sedn__box .remember__box {
+.sedn__box .remember__box {
   max-width: 320px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.back__call .sedn__box .remember__box input {
+.sedn__box .remember__box input {
   display: none;
 }
-.back__call .sedn__box .remember__box input:checked + label::before {
+.sedn__box .remember__box input:checked + label::before {
   background: red;
 }
-.back__call .sedn__box .remember__box input:checked + label::after {
+.sedn__box .remember__box input:checked + label::after {
   display: block;
 }
-.back__call .sedn__box .remember__box label {
+.sedn__box .remember__box label {
   font-family: "Proxima Nova";
   font-size: 11px;
   font-weight: 400;
@@ -1078,7 +1087,7 @@ button {
   position: relative;
   padding-left: 30px;
 }
-.back__call .sedn__box .remember__box label::before {
+.sedn__box .remember__box label::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -1090,7 +1099,7 @@ button {
   border-radius: 50%;
   cursor: pointer;
 }
-.back__call .sedn__box .remember__box label::after {
+.sedn__box .remember__box label::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1102,12 +1111,12 @@ button {
   height: 7px;
   display: none;
 }
-.back__call .sedn__box .remember__box label a {
+.sedn__box .remember__box label a {
   text-decoration: underline;
   color: rgba(255, 69, 58, 0.6980392157);
   display: inline;
 }
-.back__call .sedn__box .red__btn {
+.sedn__box .red__btn {
   box-shadow: 0px 0px 5px 1px #ff7a67;
   flex: 1 1 auto;
   cursor: pointer;
@@ -5722,6 +5731,310 @@ button {
 @media screen and (max-width: 576px) {
   .product .product__img-box {
     width: 100%;
+  }
+}
+.decor .option .flex__box {
+  justify-content: start;
+}
+.decor .delivery__info-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #fff;
+}
+.decor .option__box .scroll__box {
+  margin-top: 15px;
+}
+.decor .flex__item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.decor .info {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26.91px;
+  color: #bdbdbd;
+  padding: 20px 0;
+}
+.decor .info.first {
+  padding-top: 0;
+}
+.decor .basket__cart {
+  gap: 0;
+}
+.decor .info__sm {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.01px;
+  color: #bdbdbd;
+  padding-bottom: 20px;
+}
+.decor .right__form {
+  min-width: 202px;
+  max-width: 202px;
+  padding-right: 20px;
+}
+.decor .left__form {
+  width: 100%;
+  max-width: 525px;
+}
+.decor .flex__box.no-justify {
+  justify-content: unset;
+}
+.decor .checker__box {
+  gap: 10px;
+}
+.decor .flex__box.gap-40 {
+  gap: 40px;
+}
+.decor .work__time-info {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.decor .work__time-info span {
+  font-weight: 700;
+  color: #00ff0a;
+  display: block;
+}
+.decor .adres__flex {
+  display: flex;
+  gap: 15px;
+  padding-top: 15px;
+}
+.decor .adres__flex .box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.decor .basket__cart input {
+  cursor: auto;
+  height: 50px;
+}
+.decor .basket__cart .select__box {
+  padding: 0 20px;
+}
+.decor .select__form .flex__box, .decor .select__form.flex__box {
+  gap: 15px;
+  justify-content: start;
+}
+.decor .select__form .all__select,
+.decor .select__form .up__box {
+  width: 264px;
+}
+.decor .select__form .up__box {
+  text-align: center;
+}
+.decor .select__form .up__box .up__text {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.decor .select__form .up__box .up__text.up {
+  transform: translateX(-50%) translateY(-20px);
+}
+.decor .select__form .up__box input {
+  text-align: center;
+}
+.decor .select__form .scroll__box {
+  max-width: 99%;
+}
+.decor .select__box .arrow__down {
+  z-index: 5;
+}
+.decor .payment__methods {
+  display: flex;
+  gap: 20px;
+}
+.decor .payment__methods .payment__method {
+  width: fit-content;
+  padding: 12px 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.decor .payment__methods .payment__method span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.57px;
+  color: #fff;
+}
+.decor .textarea__box textarea {
+  resize: none;
+  height: 140px;
+  border-radius: 24px;
+  padding-top: 32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.57px;
+  cursor: auto;
+}
+.decor .textarea__box .up__text {
+  top: 25px;
+  transform: translateY(0);
+}
+.decor .textarea__box .up__text.up {
+  transform: translateY(-15px);
+}
+.decor .remember__box label {
+  display: block;
+  margin-top: 10px;
+}
+.decor .right__sec input {
+  height: 50px;
+}
+.decor .next__tab {
+  border-radius: 60px;
+  width: 54px;
+  height: 40px;
+  background: rgba(255, 69, 58, 0.4509803922);
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.decor .status__info {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.decor .status__info span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #bdbdbd;
+  line-height: 17.12px;
+}
+.decor .status__info span.red__text {
+  color: #ff453a;
+}
+.decor .status__info .flex__el {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.decor .status__info .info__box {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.decor .status__info .info__box.red {
+  background: #ff453a;
+}
+.decor .status__info .info__box.green {
+  background: #00ff0a;
+}
+.decor .status__box {
+  width: fit-content;
+  background: rgba(255, 250, 176, 0.2509803922);
+  padding: 4px 5px;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .decor .right__form.first {
+    order: -1;
+  }
+  .decor .flex__box.no-justify {
+    flex-direction: row;
+    align-items: center;
+  }
+  .decor .info__sm {
+    padding-bottom: 15px;
+    font-size: 16px;
+    line-height: 19.57px;
+  }
+  .decor .flex__box.gap-40 {
+    gap: 20px;
+  }
+  .decor .info {
+    font-size: 20px;
+    line-height: 24.46px;
+  }
+  .decor .left__form {
+    max-width: 100%;
+  }
+  .decor .basket__cart input {
+    height: 46px;
+  }
+  .decor .work__time-info {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .decor .adres__flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .decor .select__form .all__select,
+  .decor .select__form .up__box {
+    width: 100%;
+  }
+  .select__form.flex__box {
+    gap: 0 !important;
+  }
+  .select__form > div {
+    width: 100%;
+  }
+  .decor .payment__methods .payment__method span {
+    font-size: 14px;
+    line-height: 17.12px;
+  }
+  .decor .payment__methods .payment__method {
+    padding: 10px 20px;
+    border-radius: 40px;
+  }
+  .decor .payment__methods {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .decor .textarea__box textarea {
+    border-radius: 18px;
+  }
+  .decor .right__sec {
+    width: 268px;
+    max-width: 268px;
+    border-radius: 18px;
+  }
+  .decor .option__box .flex__box {
+    flex-direction: row;
+  }
+  .decor .select__form .scroll__box {
+    max-width: 99.4%;
+  }
+  .decor .status__box {
+    font-size: 12px;
+  }
+  .decor .right__sec input {
+    height: 46px;
+  }
+  .decor .next__tab {
+    height: 36px;
+    width: 46px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .decor .info {
+    font-size: 18px;
+    line-height: 22.01px;
+  }
+  .decor .right__sec {
+    max-width: 100%;
+  }
+  .basket .order__box .order__info {
+    gap: 10px;
+  }
+  .decor .delivery__info-text {
+    font-size: 14px;
+  }
+  .decor .option__box {
+    padding-right: 24px;
   }
 }
 
