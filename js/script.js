@@ -702,3 +702,19 @@ try {
     });
   });
 } catch (error) {}
+
+try {
+  const titleEl = document.querySelectorAll(".title__el");
+
+  titleEl.forEach((el) => {
+    const titleSec = el.querySelector(".title__sec");
+    const titleInfo = el.querySelector(".info__sec");
+
+    if (titleSec) {
+      titleSec.addEventListener("click", () => {
+        titleSec.classList.toggle("active");
+        titleInfo.classList.toggle("active");
+      });
+    }
+  });
+} catch (error) {}
