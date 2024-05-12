@@ -809,8 +809,7 @@
     margin: 20px 0 40px 0 !important;
   }
   .header {
-    padding-top: 5px;
-    margin-top: 15px;
+    // padding-top: 5px;
   }
   .bottom__panel {
     display: block;
@@ -968,7 +967,8 @@
     border-radius: 18px;
   }
   .hero__swiper .swiper-slide {
-    height: 420px;
+    height: auto;
+    max-height: 720px;
     img {
       height: 100%;
       object-fit: cover;
@@ -982,6 +982,9 @@
   }
   .auth__modal .modal__content {
     max-width: 100%;
+  }
+  main {
+    padding-top: 85px;
   }
 }
 @media screen and (max-width: 480px) {

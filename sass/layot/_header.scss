@@ -1,8 +1,11 @@
+main {
+  padding-top: 110px;
+}
 .header {
-  position: sticky;
-  top: -3px;
+  // position: sticky;
+  position: fixed;
+  top: 0;
   padding-top: 20px;
-  margin-top: 20px;
   width: 100%;
   z-index: 200;
   background: #212429;
@@ -390,7 +393,6 @@
     gap: 30px;
     justify-content: end;
   }
-  
 }
 .flex__logo {
   display: flex;
@@ -404,5 +406,12 @@
   }
   .header .sticky__logo {
     width: fit-content;
+    height: 51px;
+    img {
+      height: 100%;
+    }
+  }
+  .header {
+    padding-top: 15px;
   }
 }

@@ -32,7 +32,7 @@ var heroSwiper = new Swiper(".hero__swiper", {
   //   delay: 3000,
   // },
   breakpoints: {
-    576: {
+    767: {
       slidesPerView: 1.3,
       spaceBetween: 30,
     },
@@ -200,19 +200,24 @@ const openModal = document.querySelectorAll(".auth__modal-open");
 const modalOverlay = document.querySelector(".modal__overlay");
 const authModalClose = document.querySelector(".auth__modal-close");
 const sendButton = authModal.querySelector(".send__btn");
-const wrapper = document.querySelector(".wrapper");
-
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
+const header = document.querySelector("header");
 function hideMOdal() {
   authModal.classList.remove("show");
   modalOverlay.classList.remove("show");
-  document.body.style.overflow = "auto";
-  wrapper.classList.remove("blur");
+  document.body.classList.remove("no-scroll");
+  main.classList.remove("blur");
+  footer.classList.remove("blur");
+  header.classList.remove("blur");
 }
 function showModal() {
   authModal.classList.add("show");
   modalOverlay.classList.add("show");
-  document.body.style.overflow = "hidden";
-  wrapper.classList.add("blur");
+  document.body.classList.add("no-scroll");
+  main.classList.add("blur");
+  footer.classList.add("blur");
+  header.classList.add("blur");
 }
 openModal.forEach((btn) => btn.addEventListener("click", showModal));
 authModalClose.addEventListener("click", hideMOdal);
@@ -381,12 +386,16 @@ try {
   function showFilterModal() {
     filterModal.classList.add("show");
     modalOverlay.classList.add("show");
-    wrapper.classList.add("blur");
+    main.classList.add("blur");
+    footer.classList.add("blur");
+    header.classList.add("blur");
   }
   function hideFilterModal() {
     filterModal.classList.remove("show");
     modalOverlay.classList.remove("show");
-    wrapper.classList.remove("blur");
+    main.classList.remove("blur");
+    footer.classList.remove("blur");
+    header.classList.remove("blur");
   }
   openFilterModal.addEventListener("click", showFilterModal);
   closeFilterModal.addEventListener("click", hideFilterModal);
@@ -474,12 +483,16 @@ const openCallModal = document.querySelectorAll(".open__call-modal");
 const closeCallModal = document.querySelector(".call__modal-close");
 function showCallModal() {
   form.classList.add("show");
-  wrapper.classList.add("blur");
+  main.classList.add("blur");
+  footer.classList.add("blur");
+  header.classList.add("blur");
   // document.body.style.overflow = "hidden";
 }
 function hideCallModal() {
   form.classList.remove("show");
-  wrapper.classList.remove("blur");
+  main.classList.remove("blur");
+  footer.classList.remove("blur");
+  header.classList.remove("blur");
   // document.body.style.overflow = "auto";
 }
 openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
@@ -652,13 +665,15 @@ try {
     productModal.classList.add("active");
     document.body.classList.add("no-scroll");
     modalOverlay.classList.add("show");
-    wrapper.classList.add("blur");
+    main.classList.add("blur");
+    footer.classList.add("blur");
   }
   function hideProductModal() {
     productModal.classList.remove("active");
     document.body.classList.remove("no-scroll");
     modalOverlay.classList.remove("show");
-    wrapper.classList.remove("blur");
+    main.classList.remove("blur");
+    footer.classList.remove("blur");
   }
   openProductModal.forEach((btn) => {
     const infoBtn = btn.querySelector(".info__btn");

@@ -169,6 +169,12 @@ li {
   height: 15px;
 }
 
+main.blur,
+footer.blur,
+header.blur {
+  filter: blur(8px);
+}
+
 @media screen and (max-width: 1340px) {
   .container {
     max-width: 100%;
@@ -204,6 +210,7 @@ body {
 }
 body.no-scroll {
   overflow: hidden;
+  padding-right: 3px;
 }
 
 .title {
@@ -392,6 +399,7 @@ button {
   border-right: 0.5px solid rgba(255, 255, 255, 0.1);
   background-size: 100% 100%;
   border-radius: 20px;
+  cursor: pointer;
   z-index: 1;
   transition: all 0.2s linear;
 }
@@ -658,25 +666,6 @@ button {
   left: auto;
 }
 
-.modal__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 900;
-  background: url(../images/modal-overlay.webp) no-repeat;
-  background-size: cover;
-  filter: blur(100px);
-  display: none;
-}
-.modal__overlay.show {
-  display: block;
-}
-
-.auth__modal {
-  transition: all 0.1s linear !important;
-}
 .auth__modal .remember__box {
   padding: 30px 0;
 }
@@ -690,14 +679,19 @@ button {
 .modal {
   position: fixed;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   z-index: 999;
-  transition: all 0.3s linear;
-  right: -100%;
+  transform: translateX(100%);
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
 }
 .modal.show {
-  right: 0;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
 .modal .error__text {
   display: none;
@@ -731,12 +725,11 @@ button {
   max-width: 440px;
   width: 100%;
   height: 100%;
-  right: 0;
-  position: absolute;
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: auto;
 }
 .modal__title {
   color: #bdbdbd;
@@ -954,6 +947,7 @@ button {
   max-width: 592px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0;
 }
 .back__call .call__modal-form {
   display: flex;
@@ -1244,6 +1238,8 @@ button {
 }
 .product__modal.active {
   transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
 .product__modal .modal__content {
   overflow: hidden;
@@ -1579,11 +1575,14 @@ button {
   gap: 15px;
 }
 
+main {
+  padding-top: 110px;
+}
+
 .header {
-  position: sticky;
-  top: -3px;
+  position: fixed;
+  top: 0;
   padding-top: 20px;
-  margin-top: 20px;
   width: 100%;
   z-index: 200;
   background: #212429;
@@ -1962,6 +1961,13 @@ button {
   }
   .header .sticky__logo {
     width: fit-content;
+    height: 51px;
+  }
+  .header .sticky__logo img {
+    height: 100%;
+  }
+  .header {
+    padding-top: 15px;
   }
 }
 .footer {
@@ -2957,10 +2963,6 @@ button {
   .sticky__filter {
     margin: 20px 0 40px 0 !important;
   }
-  .header {
-    padding-top: 5px;
-    margin-top: 15px;
-  }
   .bottom__panel {
     display: block;
     padding-bottom: 25px;
@@ -3103,7 +3105,8 @@ button {
     border-radius: 18px;
   }
   .hero__swiper .swiper-slide {
-    height: 420px;
+    height: auto;
+    max-height: 720px;
   }
   .hero__swiper .swiper-slide img {
     height: 100%;
@@ -3117,6 +3120,9 @@ button {
   }
   .auth__modal .modal__content {
     max-width: 100%;
+  }
+  main {
+    padding-top: 85px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -5269,17 +5275,11 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
-.order .right__box .remember__box p {
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 11px;
-  color: #8b8b8b;
-}
-.order .right__box .remember__box a {
-  color: rgba(255, 69, 58, 0.6980392157);
-  text-decoration: underline;
+.order .right__box .remember__box label {
+  cursor: pointer;
+  user-select: none;
 }
 .order .go__back {
   display: flex;
@@ -6157,6 +6157,7 @@ button {
 .decor .remember__box label {
   display: block;
   margin-top: 10px;
+  cursor: pointer;
 }
 .decor .right__sec input {
   height: 50px;
