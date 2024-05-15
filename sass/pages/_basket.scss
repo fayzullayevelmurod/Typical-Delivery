@@ -19,6 +19,8 @@
   }
   .right__sec {
     flex: 1 0 295px;
+    position: sticky;
+    top: 85px;
   }
   .left__sec {
     max-width: 837px;
@@ -119,10 +121,9 @@
     button {
       cursor: pointer;
       position: relative;
-      width: 14px;
-      height: 2px;
-      background: #bdbdbd;
-      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .increment {
       &.disabled {
@@ -143,19 +144,6 @@
     color: #fff;
     width: 20px;
     text-align: center;
-  }
-  .increment {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 2px;
-      height: 14px;
-      background: #bdbdbd;
-      border-radius: 10px;
-    }
   }
   .order__box {
     background: #212429;
@@ -207,7 +195,7 @@
 
   .bottom__box {
     padding-top: 60px;
-    max-width: 837px;
+    max-width: 810px;
     width: 100%;
     .order {
       display: flex;
@@ -392,6 +380,9 @@
       width: 16px;
       height: 16px;
     }
+  }
+  .basket .bottom__box {
+    width: 98%;
   }
 }
 

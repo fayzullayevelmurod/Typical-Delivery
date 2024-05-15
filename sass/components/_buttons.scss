@@ -16,6 +16,9 @@ button {
   color: #fff;
   &:hover {
     background: #ff453a;
+    span {
+      color: #fff;
+    }
   }
   // &::before {
   //   content: "";
@@ -114,6 +117,13 @@ button {
   padding: 12px 26px;
   border-radius: 40px;
   border: 2px solid #ffffff40 !important;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background: #bdbdbd;
+    border-color: transparent !important;
+    color: #000000;
+  }
 }
 
 .pink__btn {

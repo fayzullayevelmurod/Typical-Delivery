@@ -42,6 +42,55 @@ var heroSwiper = new Swiper(".hero__swiper", {
     },
   },
 });
+// var heroSwiper = new Swiper(".product__three-swiper", {
+//   navigation: {
+//     nextEl: ".next-btn",
+//     prevEl: ".prev-btn",
+//   },
+//   slidesPerView: 3.4,
+//   spaceBetween: 10,
+//   speed: 700,
+//   centeredSlides: true,
+//   initialSlide: 1,
+//   watchOverflow: true,
+//   centeredSlides: true,
+//   breakpoints: {
+//      1024: {
+//       slidesPerView: 2.4,
+//       spaceBetween: 10,
+//     },
+//     768: {
+//       slidesPerView: 3.3,
+//       spaceBetween: 10,
+//     },
+//     0: {
+//       slidesPerView: 1.3,
+//       spaceBetween: 10,
+//     },
+//   },
+// });
+// slidesPerView: 3.4,
+//   speed: 700,
+//   spaceBetween: 10,
+//   navigation: {
+//     nextEl: ".next-btn",
+//     prevEl: ".prev-btn",
+//   },
+//   breakpoints: {
+//     1024: {
+//       slidesPerView: 5.4,
+//       spaceBetween: 10,
+//     },
+//     768: {
+//       slidesPerView: 3.3,
+//       spaceBetween: 10,
+//     },
+//     0: {
+//       slidesPerView: 1.3,
+//       spaceBetween: 10,
+//     },
+//   },
+// });
 
 // promotion__swiper
 var promotionSwiper = new Swiper(".promotion__swiper", {
@@ -389,6 +438,7 @@ try {
     main.classList.add("blur");
     footer.classList.add("blur");
     header.classList.add("blur");
+    document.body.classList.add("no-scroll");
   }
   function hideFilterModal() {
     filterModal.classList.remove("show");
@@ -396,6 +446,7 @@ try {
     main.classList.remove("blur");
     footer.classList.remove("blur");
     header.classList.remove("blur");
+    document.body.classList.remove("no-scroll");
   }
   openFilterModal.addEventListener("click", showFilterModal);
   closeFilterModal.addEventListener("click", hideFilterModal);
@@ -641,7 +692,7 @@ try {
     },
     breakpoints: {
       1024: {
-        slidesPerView: 5.4,
+        slidesPerView: 3.4,
         spaceBetween: 10,
       },
       768: {
@@ -667,6 +718,7 @@ try {
     modalOverlay.classList.add("show");
     main.classList.add("blur");
     footer.classList.add("blur");
+    header.classList.add("blur");
   }
   function hideProductModal() {
     productModal.classList.remove("active");
@@ -674,6 +726,7 @@ try {
     modalOverlay.classList.remove("show");
     main.classList.remove("blur");
     footer.classList.remove("blur");
+    header.classList.remove("blur");
   }
   openProductModal.forEach((btn) => {
     const infoBtn = btn.querySelector(".info__btn");
@@ -731,5 +784,34 @@ try {
         titleInfo.classList.toggle("active");
       });
     }
+  });
+} catch (error) {}
+
+try {
+  const productCartBox = document.querySelectorAll(".product__cart-box");
+
+  productCartBox.forEach((item) => {
+    const addedCatText = item.querySelector(".added__cart-info");
+    const clickerInput = item.querySelector(".clicker__input");
+    if (clickerInput && clickerInput.checked) {
+      addedCatText.classList.add("show");
+    }
+    console.log(addedCatText, clickerInput);
+    clickerInput.addEventListener("change", () => {
+      addedCatText.classList.toggle("show");
+    });
+  });
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  const productItem = document.querySelectorAll(".product__item");
+
+  productItem.forEach((item, index) => {
+    const deleteProductBtn = item.querySelector(".delete__product-btn");
+    deleteProductBtn.addEventListener("click", () => {
+      item.style.display = "none";
+    });
   });
 } catch (error) {}

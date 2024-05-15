@@ -201,6 +201,11 @@
   line-height: 18.35px;
   text-align: center;
   padding-top: 10px;
+  display: none;
+
+  &.show {
+    display: block;
+  }
 }
 
 // about__delivery
@@ -317,13 +322,15 @@
         line-height: 30.6px;
         text-transform: uppercase;
       }
-      p {
+      p,
+      a {
         font-size: 16px;
         font-weight: 500;
         line-height: 25.6px;
         color: #bdbdbd;
         padding-top: 5px;
-        span {
+        span,
+        a {
           text-decoration: underline;
           color: #fff;
         }
@@ -380,8 +387,8 @@
     width: 44px;
     height: 26px;
     .circle__box {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       left: 2px;
     }
   }

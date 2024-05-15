@@ -102,8 +102,15 @@
       display: block;
     }
   }
-  .contact{
+  .contact {
     padding: 30px 0 80px 0;
+  }
+  .status__box {
+    .status__text {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+    }
   }
 }
 
@@ -113,6 +120,12 @@
     font-size: 16px;
     padding: 25px 0 15px 0;
     line-height: 19.57px;
+  }
+  .status__box {
+    .status__text {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
   .contact .operating__mode p,
   .contact .operating__mode a,
@@ -153,7 +166,7 @@
       border-radius: 18px;
     }
   }
-  .contact{
+  .contact {
     padding: 20px 0 60px 0;
   }
 }
@@ -161,6 +174,12 @@
 @media screen and (max-width: 768px) {
   .contact .flex__box {
     flex-direction: column;
+  }
+  .status__box {
+    .status__text {
+      font-size: 12px;
+      line-height: 24px;
+    }
   }
   .contact .operating__mode {
     order: -1;

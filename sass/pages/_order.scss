@@ -222,6 +222,11 @@
     font-weight: 600;
     line-height: 22.01px;
     margin-top: 40px;
+    &:hover {
+      svg path {
+        fill-opacity: 1;
+      }
+    }
   }
 }
 // media

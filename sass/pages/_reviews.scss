@@ -35,6 +35,10 @@
         color: #bdbdbd;
       }
     }
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
   }
   .reviews__box {
     height: 1067px;
