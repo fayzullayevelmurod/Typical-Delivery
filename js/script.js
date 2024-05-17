@@ -1,3 +1,55 @@
+let lastScrollTop = 0;
+const headerNav = document.querySelector("header");
+window.addEventListener("scroll", () => {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    headerNav.style.top = "-100px";
+  } else {
+    headerNav.style.top = "0";
+  }
+  lastScrollTop = scrollTop;
+});
+
+// yamaps
+try {
+  const center = [55.75864051344586, 37.6275861640625];
+  function init() {
+    let map = new ymaps.Map("map", {
+      center: center,
+      zoom: 10,
+    });
+
+    let placemark = new ymaps.Placemark(
+      center,
+      {},
+      {
+        iconLayout: "default#image",
+        iconImageHref: "../images/icons/map-location.svg",
+        iconImageSize: [34, 34],
+        iconImageOffset: [-25, -52],
+      }
+    );
+    // {
+    //   iconLayout: "default#image",
+    //   iconImageHref: "",
+    //   iconImageSize: [30, 42],
+    //   iconImageOffset: [-3, -42],
+    // }
+
+    map.controls.remove("geolocationControl"); // удаляем геолокацию
+    map.controls.remove("searchControl"); // удаляем поиск
+    map.controls.remove("trafficControl"); // удаляем контроль трафика
+    map.controls.remove("typeSelector"); // удаляем тип
+    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    map.controls.remove("rulerControl"); // удаляем контрол правил
+    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+    map.geoObjects.add(placemark);
+  }
+  ymaps.ready(init);
+} catch (error) {}
+
 function preloadImages() {
   const images = document.querySelectorAll("img");
   images.forEach((img) => {
@@ -238,10 +290,6 @@ document.addEventListener("scroll", () => {
     stickytLogo.style.display = "none";
   }
 });
-// window.addEventListener("scroll", () => {
-//   const header = document.querySelector("header");
-//   header.classList.toggle("fixed", window.scrollY > 0);
-// });
 
 // modal
 const authModal = document.querySelector(".auth__modal");
