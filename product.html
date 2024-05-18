@@ -232,8 +232,23 @@
 		<!-- main -->
 		<main class="main">
 
+			<div class="container notification__box-container">
+
+			</div>
+
+
 			<!-- breadcrumb -->
-			<div class="container">
+			<div class="container" style="position: relative;">
+				<div class="notification__box" id="notification">
+					<img src="images/icons/cart3.svg" alt="">
+					<div>
+						<p>Добавлено в корзину</p>
+						<span>Унаги кранч <span id="product__count">3</span> шт</span>
+					</div>
+					<button class="close__btn">
+						<img src="images/icons/close.svg" alt="close icon">
+					</button>
+				</div>
 				<ul class="breadcrumb pb-20">
 					<ul class="breadcrumb__list">
 						<li class="breadcrumb__item">
@@ -374,7 +389,7 @@
 										</div>
 										<div class="product__footer">
 											<span class="product__price">59 ₽</span>
-											<input checked class="clicker__input" type="checkbox" id="check-box3">
+											<input class="clicker__input" type="checkbox" id="check-box3">
 											<label class="clicker__btn" for="check-box3">
 												<div class="circle__box"></div>
 											</label>
@@ -561,7 +576,8 @@
 									</div>
 									<div>
 										<h4>В мобильном приложении</h4>
-										<p>Установите приложение для <a href="#!" class="red__text">iPhone</a> или <a href="#!" class="red__text">Android</a></p>
+										<p>Установите приложение для <a href="#!" class="red__text">iPhone</a> или <a href="#!"
+												class="red__text">Android</a></p>
 									</div>
 								</div>
 							</div>

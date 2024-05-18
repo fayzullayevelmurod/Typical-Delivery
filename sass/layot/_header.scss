@@ -9,11 +9,20 @@ main {
   width: 100%;
   z-index: 200;
   background: #212429;
-  transition: .3s;
+  transition: 0.3s;
   // position: relative;
 
   .cart__box {
     position: relative;
+    &.active {
+      svg circle,
+      svg path {
+        stroke: #00ff0a;
+      }
+      svg path {
+        fill: #00ff0a;
+      }
+    }
 
     .product__number {
       position: absolute;
@@ -24,6 +33,10 @@ main {
       font-weight: 700;
       line-height: 17.12px;
       color: #000;
+      display: none;
+      &.active {
+        display: block;
+      }
     }
   }
 

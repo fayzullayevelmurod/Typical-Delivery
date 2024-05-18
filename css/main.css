@@ -1637,6 +1637,13 @@ main {
 .header .cart__box {
   position: relative;
 }
+.header .cart__box.active svg circle,
+.header .cart__box.active svg path {
+  stroke: #00ff0a;
+}
+.header .cart__box.active svg path {
+  fill: #00ff0a;
+}
 .header .cart__box .product__number {
   position: absolute;
   top: 50%;
@@ -1646,6 +1653,10 @@ main {
   font-weight: 700;
   line-height: 17.12px;
   color: #000;
+  display: none;
+}
+.header .cart__box .product__number.active {
+  display: block;
 }
 .header.fixed {
   position: fixed;
@@ -3865,11 +3876,11 @@ main {
   line-height: 22px;
   text-align: left;
 }
-.delivery__info .desc span {
+.delivery__info .desc a {
   color: #fff;
   font-weight: 600;
 }
-.delivery__info .desc span.red__text {
+.delivery__info .desc a.red__text {
   color: #ff453a;
   font-weight: 400;
 }
@@ -4537,10 +4548,6 @@ main {
     row-gap: 20px;
   }
 }
-[class*=copyrights-pane] {
-  display: none !important;
-}
-
 [class*=ground-pane] {
   position: relative;
 }
@@ -4559,6 +4566,66 @@ main {
 }
 .contact .map__box {
   flex: 1 1 auto;
+}
+.contact .map__box .relative__box {
+  position: relative;
+}
+.contact .map__box .location {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+.contact .map__box .location .info__box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact .map__box .location.one {
+  top: 52px;
+  left: 489px;
+}
+.contact .map__box .location.two {
+  top: 150px;
+  left: 384px;
+}
+.contact .map__box .location.three {
+  top: 226px;
+  left: 231px;
+}
+.contact .map__box .location.four {
+  top: 150px;
+  left: 384px;
+}
+.contact .map__box .location.five {
+  bottom: 129px;
+  left: 422px;
+}
+.contact .map__box .location.six {
+  top: 198px;
+  right: 57px;
+  align-items: stretch;
+}
+.contact .map__box .location.six img {
+  height: unset;
+}
+.contact .map__box .location img {
+  background: rgba(0, 0, 0, 0.5019607843);
+  padding: 5px 6px;
+  border-radius: 3px;
+  width: 34px;
+  height: 34px;
+}
+.contact .map__box .location span {
+  width: fit-content;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.12px;
+  padding: 1px 6px;
+  background: rgba(0, 0, 0, 0.5019607843);
+  border-radius: 3px;
 }
 .contact .map__box iframe {
   width: 100%;
@@ -5868,6 +5935,43 @@ main {
 }
 .about__delivery .title__sec .arrow__down {
   display: none;
+}
+
+.notification__box {
+  display: flex;
+  position: fixed;
+  top: 137px;
+  right: 298px;
+  z-index: 10;
+  background-color: #373a42;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1019607843);
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  transform: translateX(225%);
+  transition: 0.2s;
+}
+.notification__box.show {
+  transform: translateX(0);
+}
+.notification__box p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.57px;
+}
+.notification__box span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.12px;
+  padding-top: 4px;
+}
+.notification__box .close__btn {
+  margin-top: -10px;
+}
+
+.notification-box.show {
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {
