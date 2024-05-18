@@ -43,12 +43,6 @@
     min-width: 202px;
     max-width: 202px;
     padding-right: 20px;
-
-    .clicker__input:checked {
-      
-    }
-    .clicker__btn {
-    }
   }
   .left__form {
     width: 100%;
@@ -88,6 +82,7 @@
   .basket__cart input {
     cursor: auto;
     height: 50px;
+    color: #fff;
   }
   .basket__cart .select__box {
     padding: 0 20px;
@@ -116,7 +111,7 @@
       }
     }
     .scroll__box {
-      max-width: 99%;
+      max-width: 98.6%;
     }
   }
   .select__box .arrow__down {
@@ -184,7 +179,6 @@
     justify-content: center;
   }
   .status__info {
-    padding: 10px 0;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -221,6 +215,25 @@
     border-radius: 6px;
     margin-top: 5px;
     color: #fffab0;
+  }
+
+  .status__info .error__code,
+  .status__info .promo__price,
+  .order__box .discount__text {
+    display: none;
+  }
+
+  .status__info .error__code.active,
+  .status__info .promo__price.active,
+  .order__box .discount__text.active {
+    display: flex !important;
+  }
+
+  .next__tab.active {
+    background: #ff453a;
+    svg path {
+      fill-opacity: 1;
+    }
   }
 }
 

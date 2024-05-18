@@ -232,23 +232,20 @@
 		<!-- main -->
 		<main class="main">
 
-			<div class="container notification__box-container">
-
+			<div class="notification__box" id="notification">
+				<img src="images/icons/cart3.svg" alt="">
+				<div>
+					<p>Добавлено в корзину</p>
+					<span>Унаги кранч <span id="product__count">3</span> шт</span>
+				</div>
+				<button class="close__btn">
+					<img src="images/icons/close.svg" alt="close icon">
+				</button>
 			</div>
 
 
 			<!-- breadcrumb -->
-			<div class="container" style="position: relative;">
-				<div class="notification__box" id="notification">
-					<img src="images/icons/cart3.svg" alt="">
-					<div>
-						<p>Добавлено в корзину</p>
-						<span>Унаги кранч <span id="product__count">3</span> шт</span>
-					</div>
-					<button class="close__btn">
-						<img src="images/icons/close.svg" alt="close icon">
-					</button>
-				</div>
+			<div class="container">
 				<ul class="breadcrumb pb-20">
 					<ul class="breadcrumb__list">
 						<li class="breadcrumb__item">
@@ -330,7 +327,7 @@
 								</label>
 								<span>Острое</span>
 							</div>
-							<button class="added__btn outline__btn">
+							<button class="added__btn outline__btn product__added-btn">
 								Добавить
 								<span>1750 ₽</span>
 							</button>

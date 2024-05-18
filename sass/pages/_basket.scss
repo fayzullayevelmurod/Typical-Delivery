@@ -89,7 +89,8 @@
     }
 
     .product__price {
-      padding: 0 72px 0 70px;
+      margin: 0 72px 0 70px;
+      width: 71px;
     }
     .new__price {
       font-size: 18px;
@@ -124,16 +125,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .increment {
       &.disabled {
         height: 18px;
         width: 18px;
         background: none;
         cursor: not-allowed;
-        &::before {
-          display: none;
-        }
       }
     }
   }

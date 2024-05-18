@@ -1032,6 +1032,7 @@ button {
 }
 .option__box .scroll__box {
   display: flex;
+  max-width: 99.3%;
   flex-direction: column;
   gap: 15px;
   height: 224px;
@@ -4199,7 +4200,8 @@ main {
   align-items: center;
 }
 .basket__cart .product__price {
-  padding: 0 72px 0 70px;
+  margin: 0 72px 0 70px;
+  width: 71px;
 }
 .basket__cart .new__price {
   font-size: 18px;
@@ -4235,14 +4237,11 @@ main {
   align-items: center;
   justify-content: center;
 }
-.basket .counter .increment.disabled {
+.basket .counter button.disabled {
   height: 18px;
   width: 18px;
   background: none;
   cursor: not-allowed;
-}
-.basket .counter .increment.disabled::before {
-  display: none;
 }
 .basket .count__number {
   font-size: 16px;
@@ -6302,6 +6301,7 @@ main {
 .decor .basket__cart input {
   cursor: auto;
   height: 50px;
+  color: #fff;
 }
 .decor .basket__cart .select__box {
   padding: 0 20px;
@@ -6328,7 +6328,7 @@ main {
   text-align: center;
 }
 .decor .select__form .scroll__box {
-  max-width: 99%;
+  max-width: 98.6%;
 }
 .decor .select__box .arrow__down {
   z-index: 5;
@@ -6391,7 +6391,6 @@ main {
   justify-content: center;
 }
 .decor .status__info {
-  padding: 10px 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -6428,6 +6427,22 @@ main {
   border-radius: 6px;
   margin-top: 5px;
   color: #fffab0;
+}
+.decor .status__info .error__code,
+.decor .status__info .promo__price,
+.decor .order__box .discount__text {
+  display: none;
+}
+.decor .status__info .error__code.active,
+.decor .status__info .promo__price.active,
+.decor .order__box .discount__text.active {
+  display: flex !important;
+}
+.decor .next__tab.active {
+  background: #ff453a;
+}
+.decor .next__tab.active svg path {
+  fill-opacity: 1;
 }
 
 @media screen and (max-width: 1024px) {

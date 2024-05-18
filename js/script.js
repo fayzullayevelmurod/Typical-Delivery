@@ -708,38 +708,185 @@ tabHeaderItems.forEach((item) => {
 });
 
 // counter
-try {
-  const counters = document.querySelectorAll(".count__box");
-  counters.forEach(function (counter) {
-    const incrementButton = counter.querySelector(".increment");
-    const decrementButton = counter.querySelector(".decrement");
-    const countNumber = counter.querySelector(".count__number");
-    // const price = counter.querySelector(".price");
-    // const newPrice = counter.querySelector(".new__price");
-    // const oldPrice = counter.querySelector(".old__price");
+// try {
+//   const counters = document.querySelectorAll(".count__box");
+//   counters.forEach(function (counter) {
+//     const incrementButton = counter.querySelector(".increment");
+//     const decrementButton = counter.querySelector(".decrement");
+//     const countNumber = counter.querySelector(".count__number");
+//     const newPrice = counter.querySelector(".new__price");
 
-    // let NEW_PRIEC = 1;
-    // let OLD_PRICE = 2;
+//     let NEW_PRIEC = 1750;
+//     let currentValue = 1;
+//     if (newPrice) {
+//       newPrice.textContent = `${NEW_PRIEC} ₽`;
+//       newPrice.textContent = `${NEW_PRIEC * currentValue} ₽`;
+//     }
+
+//     function increment() {
+//       let currentValue = parseInt(countNumber.textContent);
+//       countNumber.textContent = currentValue + 1;
+//       if (newPrice) {
+//         newPrice.textContent = `${NEW_PRIEC * currentValue} ₽`;
+//       }
+//     }
+
+//     function decrement() {
+//       let currentValue = parseInt(countNumber.textContent);
+//       if (currentValue > 1) {
+//         countNumber.textContent = currentValue - 1;
+//       }
+//       if (newPrice && currentValue > 1) {
+//         NEW_PRIEC--;
+//         newPrice.textContent = `${NEW_PRIEC} ₽`;
+//       }
+//     }
+//     incrementButton.addEventListener("click", increment);
+//     decrementButton.addEventListener("click", decrement);
+//   });
+// } catch (error) {
+//   console.log(error);
+// }
+
+// try {
+//   const counters = document.querySelectorAll(".right__td");
+
+//   counters.forEach(function (counter) {
+//     const incrementButton = counter.querySelector(".increment__two");
+//     const decrementButton = counter.querySelector(".decrement__two");
+//     const countNumber = counter.querySelector(".count__number");
+//     const countPrice = counter.querySelector(".price");
+//     const incrementButtonImg = incrementButton.querySelector("img");
+
+//     let currentValue = 1;
+//     const maxValue = 10;
+//     const minValue = 1;
+//     const pricePerItem = 59;
+
+//     countNumber.textContent = currentValue;
+//     countPrice.textContent = `${pricePerItem * currentValue} ₽`;
+
+//     const originalIncrementImgSrc = incrementButtonImg.src;
+//     const newIncrementImgSrc = "./images/icons/stop.svg";
+
+//     incrementButton.addEventListener("click", () => {
+//       if (currentValue < maxValue) {
+//         currentValue++;
+//         countNumber.textContent = currentValue;
+//         countPrice.textContent = `${pricePerItem * currentValue} ₽`;
+
+//         if (currentValue === maxValue) {
+//           incrementButtonImg.src = newIncrementImgSrc;
+//         }
+//       }
+//     });
+
+//     decrementButton.addEventListener("click", () => {
+//       if (currentValue > minValue) {
+//         currentValue--;
+//         countNumber.textContent = currentValue;
+//         countPrice.textContent = `${pricePerItem * currentValue} ₽`;
+
+//         if (currentValue < maxValue) {
+//           incrementButtonImg.src = originalIncrementImgSrc;
+//         }
+//       }
+//     });
+//   });
+// } catch (error) {
+//   console.log(error);
+// }
+try {
+  function initializeCounter(
+    counter,
+    incrementSelector,
+    decrementSelector,
+    numberSelector,
+    priceSelector,
+    pricePerItem,
+    maxValue,
+    minValue
+  ) {
+    const incrementButton = counter.querySelector(incrementSelector);
+    const decrementButton = counter.querySelector(decrementSelector);
+    const countNumber = counter.querySelector(numberSelector);
+    const priceElement = counter.querySelector(priceSelector);
+    const incrementButtonImg = incrementButton?.querySelector("img");
+
+    let currentValue = 1;
+
+    countNumber.textContent = currentValue;
+    if (priceElement) {
+      priceElement.textContent = `${pricePerItem * currentValue} ₽`;
+    }
+
+    const originalIncrementImgSrc = incrementButtonImg?.src;
+    const newIncrementImgSrc = "./images/icons/stop.svg"; // Your new image path
+
+    function updatePrice() {
+      if (priceElement) {
+        priceElement.textContent = `${pricePerItem * currentValue} ₽`;
+      }
+    }
 
     function increment() {
-      let currentValue = parseInt(countNumber.textContent);
-      if (!incrementButton.classList.contains("disabled")) {
-        countNumber.textContent = currentValue + 1;
+      if (currentValue < maxValue) {
+        currentValue++;
+        countNumber.textContent = currentValue;
+        updatePrice();
+
+        if (incrementButtonImg && currentValue === maxValue) {
+          incrementButtonImg.src = newIncrementImgSrc;
+        }
       }
     }
 
     function decrement() {
-      let currentValue = parseInt(countNumber.textContent);
-      if (currentValue > 1) {
-        countNumber.textContent = currentValue - 1;
+      if (currentValue > minValue) {
+        currentValue--;
+        countNumber.textContent = currentValue;
+        updatePrice();
+
+        if (incrementButtonImg && currentValue < maxValue) {
+          incrementButtonImg.src = originalIncrementImgSrc;
+        }
       }
     }
 
-    // Tugmachlarga hodisalar qo'shish
     incrementButton.addEventListener("click", increment);
     decrementButton.addEventListener("click", decrement);
+  }
+
+  const counters = document.querySelectorAll(".count__box");
+  counters.forEach((counter) => {
+    initializeCounter(
+      counter,
+      ".increment",
+      ".decrement",
+      ".count__number",
+      ".new__price",
+      1750,
+      10,
+      1
+    );
   });
-} catch (error) {}
+
+  const rightCounters = document.querySelectorAll(".right__td");
+  rightCounters.forEach((counter) => {
+    initializeCounter(
+      counter,
+      ".increment__two",
+      ".decrement__two",
+      ".count__number",
+      ".price",
+      59,
+      10,
+      1
+    );
+  });
+} catch (error) {
+  console.log(error);
+}
 
 try {
   var productTwoSwiper = new Swiper(".product__two-swiper", {
@@ -926,81 +1073,118 @@ try {
 } catch (error) {}
 
 // added product
-// try {
-// const addedProductBtns = document.querySelectorAll(
-//   ".product__footer > .clicker__input"
-// );
-// const productNumber = document.querySelector(".product__number");
-// const cartBox = document.querySelector(".cart__box");
-// const notification = document.getElementById("notification");
+try {
+  const addedProductBtns = document.querySelectorAll(
+    ".product__footer > .clicker__input"
+  );
+  const productNumber = document.querySelector(".product__number");
+  const productCount = document.getElementById("product__count");
+  const cartBox = document.querySelector(".cart__box");
+  const notification = document.getElementById("notification");
+  const closeBtn = notification.querySelector(".close__btn");
+  const productAddedBtn = document.querySelector(".product__added-btn");
+  let count = 0;
 
-// let count = 0;
+  productNumber.textContent = count;
+  productCount.textContent = count;
 
-// productNumber.textContent = count;
-
-// addedProductBtns.forEach((btn) => {
-//   btn.addEventListener("change", () => {
-//     if (btn.checked) {
-//       count++;
-//     } else {
-//       count--;
-//     }
-//     if (count > 0) {
-//       cartBox.classList.add("active");
-//       productNumber.classList.add("active");
-//       notification.classList.add("show");
-//     } else {
-//       cartBox.classList.remove("active");
-//       productNumber.classList.remove("active");
-//       notification.classList.remove("show");
-//     }
-
-//     // Hide notification after 3 seconds
-//     setTimeout(() => {
-//       notification.classList.remove("show");
-//     }, 3000);
-//   });
-// });
-const addedProductBtns = document.querySelectorAll(
-  ".product__footer > .clicker__input"
-);
-const productNumber = document.querySelector(".product__number");
-const productCount = document.getElementById("product__count");
-const cartBox = document.querySelector(".cart__box");
-const notification = document.getElementById("notification");
-const closeBtn = notification.querySelector(".close__btn");
-let count = 0;
-
-productNumber.textContent = count;
-productCount.textContent = count;
-addedProductBtns.forEach((btn) => {
-  btn.addEventListener("change", () => {
-    if (btn.checked) {
+  if (productAddedBtn) {
+    productAddedBtn.addEventListener("click", () => {
       count++;
-    } else {
-      count--;
-    }
-    productNumber.textContent = count;
-    productCount.textContent = count;
-    const timeOut = setTimeout(() => {
-      if (notification.classList.contains("show")) {
+      productNumber.textContent = count;
+      productCount.textContent = count;
+      const timeOut = setTimeout(() => {
+        if (notification.classList.contains("show")) {
+          notification.classList.remove("show");
+        }
+      }, 5000);
+      if (count > 0) {
+        cartBox.classList.add("active");
+        productNumber.classList.add("active");
+        notification.classList.add("show");
+      } else {
+        cartBox.classList.remove("active");
+        productNumber.classList.remove("active");
         notification.classList.remove("show");
       }
-    }, 5000);
-    if (count > 0) {
-      cartBox.classList.add("active");
-      productNumber.classList.add("active");
-      notification.classList.add("show");
+    });
+  }
+  addedProductBtns.forEach((btn) => {
+    btn.addEventListener("change", () => {
+      if (btn.checked) {
+        count++;
+      } else {
+        count--;
+      }
+      productNumber.textContent = count;
+      productCount.textContent = count;
+      const timeOut = setTimeout(() => {
+        if (notification.classList.contains("show")) {
+          notification.classList.remove("show");
+        }
+      }, 5000);
+      if (count > 0) {
+        cartBox.classList.add("active");
+        productNumber.classList.add("active");
+        notification.classList.add("show");
+      } else {
+        cartBox.classList.remove("active");
+        productNumber.classList.remove("active");
+        notification.classList.remove("show");
+        clearInterval(timeOut);
+      }
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    notification.classList.remove("show");
+  });
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  // const promoInput = document.querySelector(".enter__promo-code");
+  // const errorPromoCodeText = document.querySelector(".error__code");
+  // const promoPrice = document.querySelector(".promo__price");
+  // const discountText = document.querySelector(".discount__text");
+  // const btn = document.querySelector(".next__tab");
+  // let promoCode = '0000';
+
+  const promoInput = document.querySelector(".enter__promo-code");
+  const errorPromoCodeText = document.querySelector(".error__code");
+  const promoPrice = document.querySelector(".promo__price");
+  const discountText = document.querySelector(".discount__text");
+  const btn = document.querySelector(".next__tab");
+  const validPromoCode = "0000";
+
+  promoInput.addEventListener("input", function () {
+    // Limiting input to 4 characters
+    if (promoInput.value.length > 4) {
+      promoInput.value = promoInput.value.slice(0, 4);
+    }
+
+    const enteredCode = promoInput.value.trim();
+
+    // Resetting the classes
+    errorPromoCodeText.classList.remove("active");
+    promoPrice.classList.remove("active");
+    discountText.classList.remove("active");
+    btn.classList.remove("active");
+
+    if (enteredCode === "") {
+      // If no promo code is entered
+      return;
+    } else if (enteredCode === validPromoCode) {
+      // If the correct promo code is entered
+      btn.classList.add("active");
+      promoPrice.classList.add("active");
+      discountText.classList.add("active");
     } else {
-      cartBox.classList.remove("active");
-      productNumber.classList.remove("active");
-      notification.classList.remove("show");
-      clearInterval(timeOut);
+      // If any other code is entered
+      errorPromoCodeText.classList.add("active");
     }
   });
-});
-
-closeBtn.addEventListener("click", () => {
-  notification.classList.remove("show");
-});
-// } catch (error) {}
+} catch (error) {
+  console.log(error);
+}
