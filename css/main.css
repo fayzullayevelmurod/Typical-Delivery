@@ -2617,6 +2617,12 @@ main {
     opacity: 1;
   }
 }
+@media screen and (max-width: 1440px) {
+  .notification__box {
+    right: 63px !important;
+    transform: translateX(-100%);
+  }
+}
 @media screen and (max-width: 1255px) {
   .right__sidebar-banner img {
     width: 100%;
@@ -2635,6 +2641,9 @@ main {
   }
 }
 @media screen and (max-width: 1024px) {
+  .notification__box {
+    right: 30px !important;
+  }
   .product__menu-title.media__block {
     display: block;
   }
@@ -2930,6 +2939,9 @@ main {
   }
 }
 @media screen and (max-width: 768px) {
+  .notification__box {
+    right: 15px !important;
+  }
   .modal__input,
   .up__box .up__text,
   .phone__input-box input,
