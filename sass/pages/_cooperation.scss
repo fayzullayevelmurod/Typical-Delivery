@@ -165,7 +165,7 @@
         font-weight: 700;
         line-height: 77.45px;
         position: relative;
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         span {
           color: #fffab0;
         }
@@ -272,8 +272,17 @@
     }
   }
 }
-
+.cards__box.media__block {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
+  .cards__box.media__block {
+    display: block;
+  }
+  .section.photo,
+  .section.photo-section {
+    display: none;
+  }
   .cooperation__sec .top h1 {
     font-size: 62px;
     line-height: 75.03px;
