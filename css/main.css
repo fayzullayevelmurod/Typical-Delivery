@@ -5866,6 +5866,32 @@ main {
   padding-bottom: 226px;
   z-index: 2;
 }
+.about__delivery .right__box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 43.9%;
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 3%, #aeaeb2 0%, #aeaeb2 92.5%, rgba(174, 174, 178, 0) 100%);
+  width: 4px;
+  height: 100%;
+}
+.about__delivery .right__box::before {
+  content: "";
+  top: 160px;
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 62.3%;
+  transform: translateY(60px);
+  position: sticky;
+  display: block;
+  transition: 0.3s;
+  z-index: 3;
+  aspect-ratio: 1/1;
+}
 .about__delivery .right__box .timeline-badge:first-child {
   top: 160px;
   background: #fff;
@@ -5875,7 +5901,7 @@ main {
   left: 59.9%;
   transform: translateX(-50%) translateY(60px);
   position: sticky;
-  display: block;
+  display: none;
   transition: 0.3s;
   z-index: 3;
   aspect-ratio: 1/1;
@@ -5895,34 +5921,6 @@ main {
   align-items: center;
   justify-content: center;
   position: relative;
-}
-.about__delivery .right__box .timeline {
-  position: absolute;
-  top: 0;
-  left: -12px;
-  display: block;
-  margin: 0 auto;
-  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0, #aeaeb2 59.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
-  width: 4px;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex: none;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 0px;
-  justify-content: center;
-  overflow: visible;
-  padding: 0;
-  position: relative;
-  width: 3px;
-  z-index: 1;
-}
-.about__delivery .right__box .timeline.last {
-  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0%, #aeaeb2 0%, #aeaeb2 92.5%, rgba(174, 174, 178, 0) 100%);
-}
-.about__delivery .right__box .timeline.first {
-  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 12%, #aeaeb2 57.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
 }
 .about__delivery .right__box .timeline-circle {
   display: block;
@@ -6270,19 +6268,12 @@ main {
   }
 }
 .timeline-panel {
-  transition: 0.5s;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .timeline-panel.active {
   opacity: 1;
-}
-
-.timeline-badge.active {
-  background: red !important;
-}
-
-.about__delivery .right__box .timeline-badge.active {
-  background: yellow !important;
 }
 
 .decor .option .flex__box {
