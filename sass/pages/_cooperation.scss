@@ -98,6 +98,7 @@
         line-height: 29.05px;
         padding-bottom: 25px;
         text-align: center;
+        font-family: "Inter", sans-serif;
       }
     }
     .pink__btn {
@@ -224,6 +225,7 @@
       display: flex;
       flex-direction: column;
       gap: 80px;
+      // overflow: hidden;
     }
     .content__info {
       padding: 25px 30px;
@@ -256,6 +258,18 @@
         }
       }
     }
+    .animated-element {
+      width: 200px;
+      height: 300px;
+      background-color: #333;
+      border: 1px solid #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      position: absolute;
+      right: 100%;
+    }
   }
   .bottom {
     border-top: 1px solid #ffffff66;
@@ -272,6 +286,7 @@
     }
   }
 }
+
 .cards__box.media__block {
   display: none;
 }
