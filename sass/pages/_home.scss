@@ -130,7 +130,8 @@
   }
   .scroll__box {
     overflow-y: scroll;
-    max-height: calc(100vh - 170px);
+    // max-height: calc(100vh - 170px);
+    max-height: calc(100vh - 85px);
     padding-right: 10px;
     &::-webkit-scrollbar {
       background: transparent;
@@ -398,6 +399,11 @@
     transform: translateX(-100%);
   }
 }
+@media screen and (max-width: 1364px) {
+  .auth__modal .remember__box label {
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 1255px) {
   .right__sidebar-banner img {
     width: 100%;
@@ -550,12 +556,7 @@
     width: 160px;
   }
   .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-}
-@media screen and (max-width: 815px) {
-  .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 // 768px -> 1024px
@@ -565,11 +566,6 @@
   }
   .auth__modal .remember__box {
     padding: 15px 0 20px 0;
-  }
-  .phone__input-box input,
-  .back__call .modal__input,
-  .back__call .sedn__box .red__btn {
-    height: 44px;
   }
   .modal .error__text,
   .send__code-text,
@@ -728,6 +724,9 @@
   .notification__box {
     right: 15px !important;
   }
+  .back__call .enter__num-code {
+    gap: 10px;
+  }
   .modal__input,
   .up__box .up__text,
   .phone__input-box input,
@@ -741,7 +740,7 @@
     height: 44px;
   }
   .modal .remember__box label {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14.68px;
   }
   .modal .send__btn {
@@ -784,7 +783,6 @@
   .product__cards {
     gap: 10px;
     padding-top: 20px;
-    grid-template-columns: auto auto;
   }
 
   .footer .last a {
@@ -832,9 +830,6 @@
   .product__card-img,
   .product__card {
     border-radius: 14px;
-  }
-  .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
 @media screen and (max-width: 768px) {
@@ -965,17 +960,8 @@
     }
   }
 }
-
-@media screen and (max-width: 520px) {
-  .product__cards {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
 // change 485px -> 767px
-@media screen and (max-width: 768px) {
-  .product__cards {
-    // grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
+@media screen and (max-width: 767px) {
   .back__call .sedn__box {
     flex-direction: column;
     row-gap: 15px;
@@ -1027,12 +1013,9 @@
     line-height: 17.12px;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen  and (max-width: 470px) {
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-  .modal .enter__code .send__code-btn {
-    font-size: 12px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -1055,12 +1038,14 @@
     height: 100%;
   }
 
-  .modal .enter__code .send__code-btn {
-    font-size: 12px;
-  }
   .modal .enter__code-inputs {
     gap: 2px;
   }
+}
+@media screen and (max-width: 359px) {
+  .modal .enter__code .send__code-btn {
+    font-size: 12px;
+  } 
 }
 @media screen and (max-width: 353px) {
   .back__call .sedn__box .remember__box label::after {

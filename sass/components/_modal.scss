@@ -151,6 +151,8 @@
     width: 100%;
     box-shadow: 0px 0px 5px 1px #ff7a67;
     cursor: pointer;
+    height: 50px;
+    border-radius: 24px;
   }
   &__info {
     margin-top: auto;
@@ -358,6 +360,7 @@
 .modal__input {
   padding-right: 16px;
   cursor: pointer;
+  height: 50px;
 }
 .selected__text {
   width: 100%;
@@ -384,7 +387,7 @@
   }
   .scroll__box {
     display: flex;
-    max-width: 99.3%;
+    max-width: 100%;
     flex-direction: column;
     gap: 15px;
     height: 224px;
@@ -531,6 +534,8 @@
     box-shadow: 0px 0px 5px 1px #ff7a67;
     flex: 1 1 auto;
     cursor: pointer;
+    height: 50px;
+    border-radius: 24px;
   }
 }
 .selected__text {
@@ -765,12 +770,22 @@
     }
   }
 }
+.modal__footer .clear__btn,
+  .modal__footer .red__btn {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 @media screen and (max-width: 1024px) {
   .product__modal {
     .modal__content {
       max-width: 100%;
       padding: 30px;
     }
+  }
+  .modal .send__btn {
+    height: 46px;
   }
   .product__modal .product-name {
     font-size: 24px;

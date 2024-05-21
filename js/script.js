@@ -1,14 +1,31 @@
+// let lastScrollTop = 0;
+// const headerNav = document.querySelector("header");
+// window.addEventListener("scroll", () => {
+//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   if (scrollTop > lastScrollTop) {
+//     headerNav.style.top = "-100px";
+//   } else {
+//     headerNav.style.top = "0";
+//   }
+//   lastScrollTop = scrollTop;
+// });
 let lastScrollTop = 0;
 const headerNav = document.querySelector("header");
+const flexibleBox = document.querySelector('.flexible__box');
 window.addEventListener("scroll", () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop) {
-    headerNav.style.top = "-100px";
-  } else {
-    headerNav.style.top = "0";
+  if (scrollTop > 250) {
+    if (scrollTop > lastScrollTop) {
+      headerNav.style.top = "-100px";
+      if(flexibleBox) flexibleBox.style.top = '1rem';
+    } else {
+      headerNav.style.top = "-5px";
+      if(flexibleBox) flexibleBox.style.top = '85px';
+    }
   }
   lastScrollTop = scrollTop;
 });
+
 
 // ymaps
 // try {
@@ -570,28 +587,72 @@ try {
 
 // select__box
 
-const allSelect = document.querySelectorAll(".all__select");
+// const allSelect = document.querySelectorAll(".all__select");
 
-allSelect.forEach((parentEl) => {
-  const selectBox = parentEl.querySelector(".select__box");
-  const selectOption = parentEl.querySelector(".option__box");
-  const options = parentEl.querySelectorAll(".option");
-  const selectedText = parentEl.querySelector(".selected__text");
+// allSelect.forEach((parentEl) => {
+//   const selectBox = parentEl.querySelector(".select__box");
+//   const selectOption = parentEl.querySelector(".option__box");
+//   const options = parentEl.querySelectorAll(".option");
+//   const selectedText = parentEl.querySelector(".selected__text");
 
-  selectBox.addEventListener("click", () => {
-    selectOption.classList.toggle("show");
-    selectBox.classList.toggle("active");
-  });
+//   selectBox.addEventListener("click", () => {
+//     selectOption.classList.toggle("show");
+//     selectBox.classList.toggle("active");
+//   });
 
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      selectedText.value = option.querySelector(".select__text").textContent;
-      selectedText.classList.add("active");
-      selectBox.classList.remove("active");
-      console.log(selectBox);
+//   options.forEach((option) => {
+//     option.addEventListener("click", () => {
+//       selectedText.value = option.querySelector(".select__text").textContent;
+//       selectedText.classList.add("active");
+//       selectBox.classList.remove("active");
+//     });
+//   });
+//   document.addEventListener('click', (e) => {
+//     if(!parentEl.contains(e.target)){
+//       selectOption.classList.remove("show");
+//       selectBox.classList.remove("active");
+//     }
+//   })
+// });
+  const allSelect = document.querySelectorAll(".all__select");
+
+  allSelect.forEach((parentEl) => {
+    const selectBox = parentEl.querySelector(".select__box");
+    const selectOption = parentEl.querySelector(".option__box");
+    const options = parentEl.querySelectorAll(".option");
+    const selectedText = parentEl.querySelector(".selected__text");
+
+    selectBox.addEventListener("click", (e) => {
+      e.stopPropagation();
+      allSelect.forEach(el => {
+        el.querySelector(".select__box").classList.remove("active");
+        el.querySelector(".option__box").classList.remove("show");
+      });
+      selectOption.classList.toggle("show");
+      selectBox.classList.toggle("active");
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.stopPropagation();
+        selectedText.value = option.querySelector(".select__text").textContent;
+        selectedText.classList.add("active");
+        selectOption.classList.remove("show");
+        selectBox.classList.remove("active");
+      });
     });
   });
-});
+
+  document.addEventListener('click', (e) => {
+    allSelect.forEach((parentEl) => {
+      const selectOption = parentEl.querySelector(".option__box");
+      const selectBox = parentEl.querySelector(".select__box");
+      if (!parentEl.contains(e.target)) {
+        selectOption.classList.remove("show");
+        selectBox.classList.remove("active");
+      }
+    });
+  });
 
 // num__code
 const inputsTwo = document.querySelectorAll(".checker__input");

@@ -67,32 +67,20 @@
 .swiper-prev-btn:hover {
   transform: rotate(180deg) scale(1.1);
 }
-.swiper-prev-btn.swiper-button-disabled:hover {
-  background: blue;
+.swiper-prev-btn.swiper-button:hover {
   transform: scale(0.84);
 }
 .swiper-next-btn,
 .swiper-prev-btn {
-  &.swiper-button-disabled {
-    background: #ff453a73;
-    transform: scale(0.84);
-    cursor: auto;
-    &.swiper-prev-btn {
-      transform: scale(0.84) rotate(180deg);
-      &:hover {
-        transform: scale(0.84) rotate(180deg);
-      }
-    }
-    &:hover {
-      background: #ff453a73;
-      transform: scale(0.84);
-    }
-  }
+  transform: scale(0.84);
+  background: #FF453A73;
+ 
   &:hover {
-    background: #ed3d34;
+    background: #FF453A;
     transform: scale(1.1);
   }
   &.swiper-prev-btn {
+    transform: scale(0.84) rotate(180deg);
     &:hover {
       transform: scale(1.1) rotate(180deg);
     }
@@ -100,7 +88,7 @@
 
   transition: all 0.2s linear;
   width: 62px;
-  background: #ff453a;
+  background: #FF453A73;
   height: 62px;
   display: flex;
   align-items: center;

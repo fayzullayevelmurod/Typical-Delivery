@@ -16,11 +16,14 @@
     align-items: start;
     gap: 63px;
     justify-content: space-between;
+    position: relative;
+    overflow: visible;
   }
   .right__sec {
     flex: 1 0 295px;
     position: sticky;
-    top: 85px;
+    top: 0;
+    transition: all .2s ease;
   }
   .left__sec {
     max-width: 837px;
@@ -119,6 +122,12 @@
     border-radius: 40px;
     padding: 10px 20px;
     width: fit-content;
+    .decrement {
+      height: 17px;
+      img {
+        height: 100%;
+      }
+    }
     button {
       cursor: pointer;
       position: relative;
@@ -191,7 +200,7 @@
 
   .bottom__box {
     padding-top: 60px;
-    max-width: 810px;
+    max-width: 813px;
     width: 100%;
     .order {
       display: flex;
@@ -229,7 +238,7 @@
           font-size: 18px;
           font-weight: 700;
           line-height: 22.01px;
-          margin: 0 57px 0 68px;
+          margin: 0 75px 0 68px;
           width: 70px;
         }
       }
@@ -329,6 +338,7 @@
   .basket__cart .product__price {
     order: -1;
     padding: 0;
+    margin: 0;
   }
   .basket .counter {
     margin-left: 40px;
