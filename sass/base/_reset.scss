@@ -86,10 +86,6 @@ li {
 }
 .wrapper {
   overflow: clip;
-
-  &.blur {
-    filter: blur(8px);
-  }
 }
 
 .container {
@@ -172,13 +168,13 @@ li {
     height: 15px;
   }
 }
-main,
-footer,
-header {
-  &.blur {
-    filter: blur(8px);
-  }
-}
+// main,
+// footer,
+// header {
+//   &.blur {
+//     filter: blur(8px);
+//   }
+// }
 // media
 @media screen and (max-width: 1340px) {
   .container {

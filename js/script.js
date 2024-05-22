@@ -379,21 +379,18 @@ const sendButton = authModal.querySelector(".send__btn");
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
 const header = document.querySelector("header");
+const body = document.querySelector("body");
 function hideMOdal() {
   authModal.classList.remove("show");
   modalOverlay.classList.remove("show");
   document.body.classList.remove("no-scroll");
-  main.classList.remove("blur");
-  footer.classList.remove("blur");
-  header.classList.remove("blur");
+  body.classList.remove('blur');
 }
 function showModal() {
   authModal.classList.add("show");
   modalOverlay.classList.add("show");
   document.body.classList.add("no-scroll");
-  main.classList.add("blur");
-  footer.classList.add("blur");
-  header.classList.add("blur");
+  body.classList.add('blur');
 }
 openModal.forEach((btn) => btn.addEventListener("click", showModal));
 authModalClose.addEventListener("click", hideMOdal);
@@ -402,7 +399,6 @@ authModal.addEventListener("click", (e) => {
     hideMOdal();
   }
 });
-
 // validate input
 
 const phoneInput = document.querySelector(".phone__input");
@@ -562,17 +558,13 @@ try {
   function showFilterModal() {
     filterModal.classList.add("show");
     modalOverlay.classList.add("show");
-    main.classList.add("blur");
-    footer.classList.add("blur");
-    header.classList.add("blur");
+    body.classList.add('blur');
     document.body.classList.add("no-scroll");
   }
   function hideFilterModal() {
     filterModal.classList.remove("show");
     modalOverlay.classList.remove("show");
-    main.classList.remove("blur");
-    footer.classList.remove("blur");
-    header.classList.remove("blur");
+    body.classList.remove('blur');
     document.body.classList.remove("no-scroll");
   }
   openFilterModal.addEventListener("click", showFilterModal);
@@ -705,16 +697,12 @@ const openCallModal = document.querySelectorAll(".open__call-modal");
 const closeCallModal = document.querySelector(".call__modal-close");
 function showCallModal() {
   form.classList.add("show");
-  main.classList.add("blur");
-  footer.classList.add("blur");
-  header.classList.add("blur");
+  body.classList.add('blur');
   // document.body.style.overflow = "hidden";
 }
 function hideCallModal() {
   form.classList.remove("show");
-  main.classList.remove("blur");
-  footer.classList.remove("blur");
-  header.classList.remove("blur");
+  body.classList.remove('blur');
   // document.body.style.overflow = "auto";
 }
 openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
@@ -1034,17 +1022,13 @@ try {
     productModal.classList.add("active");
     document.body.classList.add("no-scroll");
     modalOverlay.classList.add("show");
-    main.classList.add("blur");
-    footer.classList.add("blur");
-    header.classList.add("blur");
+    body.classList.add('blur');
   }
   function hideProductModal() {
     productModal.classList.remove("active");
     document.body.classList.remove("no-scroll");
     modalOverlay.classList.remove("show");
-    main.classList.remove("blur");
-    footer.classList.remove("blur");
-    header.classList.remove("blur");
+    body.classList.remove('blur');
   }
   openProductModal.forEach((btn) => {
     const infoBtn = btn.querySelector(".info__btn");
