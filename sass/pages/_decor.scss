@@ -4,6 +4,9 @@
       justify-content: start;
     }
   }
+  .option__box {
+    padding-right: 22px;
+  }
   .delivery__info-text {
     font-size: 16px;
     font-weight: 400;
@@ -112,7 +115,7 @@
       }
     }
     .scroll__box {
-      max-width: 98.6%;
+      max-width: 100%;
     }
   }
   .select__box .arrow__down {

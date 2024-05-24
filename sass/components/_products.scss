@@ -23,7 +23,7 @@
   //   rgba(255, 255, 255, 0.1) 0%,
   //   rgba(255, 255, 255, 0) 100%
   // );
-  z-index: 1;
+  // z-index: 1;
   // padding: 2px;
   transition: all 0.2s linear;
   &:hover {
@@ -119,6 +119,7 @@
       font-weight: 600;
       line-height: 22px;
       padding-bottom: 15px;
+      cursor: pointer;
     }
     .product__desc {
       font-size: 14px;
@@ -236,6 +237,17 @@
 
       &:hover {
         background: #ff453a;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 716px) {
+  .product__card {
+    &:nth-child(3n) {
+      .product__info-list {
+        right: -10px;
+        left: auto;
       }
     }
   }

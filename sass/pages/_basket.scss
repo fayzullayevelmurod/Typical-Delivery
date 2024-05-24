@@ -23,7 +23,7 @@
     flex: 1 0 295px;
     position: sticky;
     top: 0;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
   .left__sec {
     max-width: 837px;
@@ -122,9 +122,11 @@
     border-radius: 40px;
     padding: 10px 20px;
     width: fit-content;
-    .decrement {
+    .decrement,
+    .decrement__two {
       height: 17px;
       img {
+        width: 14px;
         height: 100%;
       }
     }

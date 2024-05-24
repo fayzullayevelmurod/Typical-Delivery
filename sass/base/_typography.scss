@@ -15,7 +15,15 @@ body {
       visibility: visible;
     }
   }
-  &::before {
+  &.blur-two {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &::before,
+  &::after {
     content: " ";
     position: absolute;
     top: 0;
@@ -30,6 +38,9 @@ body {
     transition: all 0.2s linear;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
+  }
+  &::after {
+    z-index: 990;
   }
 }
 

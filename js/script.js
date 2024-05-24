@@ -11,21 +11,23 @@
 // });
 let lastScrollTop = 0;
 const headerNav = document.querySelector("header");
-const flexibleBox = document.querySelector('.flexible__box');
+const flexibleBox = document.querySelector(".flexible__box");
+const notificationBox = document.querySelector(".notification__box");
 window.addEventListener("scroll", () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop > 250) {
     if (scrollTop > lastScrollTop) {
       headerNav.style.top = "-100px";
-      if(flexibleBox) flexibleBox.style.top = '1rem';
+      if (flexibleBox) flexibleBox.style.top = "1rem";
+      if (notificationBox) notificationBox.style.top = "1rem";
     } else {
       headerNav.style.top = "-5px";
-      if(flexibleBox) flexibleBox.style.top = '85px';
+      if (flexibleBox) flexibleBox.style.top = "85px";
+      if (notificationBox) notificationBox.style.top = "85px";
     }
   }
   lastScrollTop = scrollTop;
 });
-
 
 // ymaps
 // try {
@@ -384,13 +386,13 @@ function hideMOdal() {
   authModal.classList.remove("show");
   modalOverlay.classList.remove("show");
   document.body.classList.remove("no-scroll");
-  body.classList.remove('blur');
+  body.classList.remove("blur");
 }
 function showModal() {
   authModal.classList.add("show");
   modalOverlay.classList.add("show");
   document.body.classList.add("no-scroll");
-  body.classList.add('blur');
+  body.classList.add("blur");
 }
 openModal.forEach((btn) => btn.addEventListener("click", showModal));
 authModalClose.addEventListener("click", hideMOdal);
@@ -558,13 +560,13 @@ try {
   function showFilterModal() {
     filterModal.classList.add("show");
     modalOverlay.classList.add("show");
-    body.classList.add('blur');
+    body.classList.add("blur");
     document.body.classList.add("no-scroll");
   }
   function hideFilterModal() {
     filterModal.classList.remove("show");
     modalOverlay.classList.remove("show");
-    body.classList.remove('blur');
+    body.classList.remove("blur");
     document.body.classList.remove("no-scroll");
   }
   openFilterModal.addEventListener("click", showFilterModal);
@@ -606,45 +608,45 @@ try {
 //     }
 //   })
 // });
-  const allSelect = document.querySelectorAll(".all__select");
+const allSelect = document.querySelectorAll(".all__select");
 
-  allSelect.forEach((parentEl) => {
-    const selectBox = parentEl.querySelector(".select__box");
-    const selectOption = parentEl.querySelector(".option__box");
-    const options = parentEl.querySelectorAll(".option");
-    const selectedText = parentEl.querySelector(".selected__text");
+allSelect.forEach((parentEl) => {
+  const selectBox = parentEl.querySelector(".select__box");
+  const selectOption = parentEl.querySelector(".option__box");
+  const options = parentEl.querySelectorAll(".option");
+  const selectedText = parentEl.querySelector(".selected__text");
 
-    selectBox.addEventListener("click", (e) => {
+  selectBox.addEventListener("click", (e) => {
+    e.stopPropagation();
+    allSelect.forEach((el) => {
+      el.querySelector(".select__box").classList.remove("active");
+      el.querySelector(".option__box").classList.remove("show");
+    });
+    selectOption.classList.toggle("show");
+    selectBox.classList.toggle("active");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", (e) => {
       e.stopPropagation();
-      allSelect.forEach(el => {
-        el.querySelector(".select__box").classList.remove("active");
-        el.querySelector(".option__box").classList.remove("show");
-      });
-      selectOption.classList.toggle("show");
-      selectBox.classList.toggle("active");
-    });
-
-    options.forEach((option) => {
-      option.addEventListener("click", (e) => {
-        e.stopPropagation();
-        selectedText.value = option.querySelector(".select__text").textContent;
-        selectedText.classList.add("active");
-        selectOption.classList.remove("show");
-        selectBox.classList.remove("active");
-      });
+      selectedText.value = option.querySelector(".select__text").textContent;
+      selectedText.classList.add("active");
+      selectOption.classList.remove("show");
+      selectBox.classList.remove("active");
     });
   });
+});
 
-  document.addEventListener('click', (e) => {
-    allSelect.forEach((parentEl) => {
-      const selectOption = parentEl.querySelector(".option__box");
-      const selectBox = parentEl.querySelector(".select__box");
-      if (!parentEl.contains(e.target)) {
-        selectOption.classList.remove("show");
-        selectBox.classList.remove("active");
-      }
-    });
+document.addEventListener("click", (e) => {
+  allSelect.forEach((parentEl) => {
+    const selectOption = parentEl.querySelector(".option__box");
+    const selectBox = parentEl.querySelector(".select__box");
+    if (!parentEl.contains(e.target)) {
+      selectOption.classList.remove("show");
+      selectBox.classList.remove("active");
+    }
   });
+});
 
 // num__code
 const inputsTwo = document.querySelectorAll(".checker__input");
@@ -697,12 +699,12 @@ const openCallModal = document.querySelectorAll(".open__call-modal");
 const closeCallModal = document.querySelector(".call__modal-close");
 function showCallModal() {
   form.classList.add("show");
-  body.classList.add('blur');
+  body.classList.add("blur-two");
   // document.body.style.overflow = "hidden";
 }
 function hideCallModal() {
   form.classList.remove("show");
-  body.classList.remove('blur');
+  body.classList.remove("blur-two");
   // document.body.style.overflow = "auto";
 }
 openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
@@ -1022,13 +1024,13 @@ try {
     productModal.classList.add("active");
     document.body.classList.add("no-scroll");
     modalOverlay.classList.add("show");
-    body.classList.add('blur');
+    body.classList.add("blur");
   }
   function hideProductModal() {
     productModal.classList.remove("active");
     document.body.classList.remove("no-scroll");
     modalOverlay.classList.remove("show");
-    body.classList.remove('blur');
+    body.classList.remove("blur");
   }
   openProductModal.forEach((btn) => {
     const infoBtn = btn.querySelector(".info__btn");
