@@ -263,6 +263,11 @@ body::after {
   color: #bdbdbd;
 }
 
+@media screen and (max-width: 1024px) {
+  body.no-scroll {
+    padding-right: 0 !important;
+  }
+}
 button {
   padding: 0;
   cursor: pointer;
@@ -440,9 +445,6 @@ button {
 .product__card:hover {
   box-shadow: 0px -10px 14px -9px #00ff0a;
 }
-.product__card:hover .add__btn {
-  background: #ff453a;
-}
 .product__card .offer__box {
   position: absolute;
   top: 10px;
@@ -517,6 +519,7 @@ button {
   font-size: 18px;
   font-weight: 600;
   line-height: 22px;
+  display: inline-block;
   padding-bottom: 15px;
   cursor: pointer;
 }
@@ -2337,6 +2340,7 @@ button {
 }
 
 .sticky__filter {
+  transition: 0.2s;
   position: sticky;
   top: 10px;
   max-width: 343px;
@@ -2651,7 +2655,7 @@ button {
     transform: translateX(-100%);
   }
 }
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1366px) {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
@@ -2696,7 +2700,7 @@ button {
     background: #373a42;
   }
   .sticky__filter {
-    top: 0;
+    top: 0 !important;
     max-width: 100%;
     margin-right: -20px;
     margin: 10px 0 18px 0;
@@ -3032,9 +3036,9 @@ button {
     gap: 5px;
   }
   .product__card-content .product__name {
-    padding-bottom: 0;
     font-size: 14px;
     line-height: 17px;
+    padding-bottom: 10px;
   }
   .product__card-footer .flex__box {
     padding-top: 15px;
@@ -3252,6 +3256,9 @@ button {
   .product__card-content .product__desc,
   .product__card .product__info-box {
     display: none;
+  }
+  .product__card-content .product__name {
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 470px) {
@@ -6479,7 +6486,7 @@ button {
   color: #fff;
 }
 .decor .basket__cart .select__box {
-  padding: 0 20px;
+  padding: 0 21px;
 }
 .decor .select__form .flex__box, .decor .select__form.flex__box {
   gap: 15px;

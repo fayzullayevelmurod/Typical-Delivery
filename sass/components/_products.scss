@@ -15,22 +15,11 @@
   border-top: 0.5px solid rgba(255, 255, 255, 0.1);
   border-left: 0.5px solid rgba(255, 255, 255, 0.1);
   border-right: 0.5px solid rgba(255, 255, 255, 0.1);
-  // background: url(../../images/border2.png) no-repeat;
   background-size: 100% 100%;
   border-radius: 20px;
-  // border-image-source: linear-gradient(
-  //   180deg,
-  //   rgba(255, 255, 255, 0.1) 0%,
-  //   rgba(255, 255, 255, 0) 100%
-  // );
-  // z-index: 1;
-  // padding: 2px;
   transition: all 0.2s linear;
   &:hover {
     box-shadow: 0px -10px 14px -9px #00ff0a;
-    .add__btn {
-      background: #ff453a;
-    }
   }
 
   .offer__box {
@@ -118,6 +107,7 @@
       font-size: 18px;
       font-weight: 600;
       line-height: 22px;
+      display: inline-block;
       padding-bottom: 15px;
       cursor: pointer;
     }

@@ -1,18 +1,8 @@
-// let lastScrollTop = 0;
-// const headerNav = document.querySelector("header");
-// window.addEventListener("scroll", () => {
-//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//   if (scrollTop > lastScrollTop) {
-//     headerNav.style.top = "-100px";
-//   } else {
-//     headerNav.style.top = "0";
-//   }
-//   lastScrollTop = scrollTop;
-// });
 let lastScrollTop = 0;
 const headerNav = document.querySelector("header");
 const flexibleBox = document.querySelector(".flexible__box");
 const notificationBox = document.querySelector(".notification__box");
+const stickyFilter = document.querySelector('.sticky__filter');
 window.addEventListener("scroll", () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop > 250) {
@@ -20,10 +10,12 @@ window.addEventListener("scroll", () => {
       headerNav.style.top = "-100px";
       if (flexibleBox) flexibleBox.style.top = "1rem";
       if (notificationBox) notificationBox.style.top = "1rem";
+			if(stickyFilter) stickyFilter.style.top = "1rem";
     } else {
       headerNav.style.top = "-5px";
       if (flexibleBox) flexibleBox.style.top = "85px";
       if (notificationBox) notificationBox.style.top = "85px";
+			if(stickyFilter) stickyFilter.style.top = "85px";
     }
   }
   lastScrollTop = scrollTop;
