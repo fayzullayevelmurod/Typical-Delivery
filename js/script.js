@@ -94,54 +94,6 @@ try {
   }
 
   ymaps.ready(init);
-
-  // const center = [55.75864051344586, 37.6275861640625];
-
-  // function init() {
-  //   let map = new ymaps.Map("map", {
-  //     center: center,
-  //     zoom: 10,
-  //   });
-
-  //   const locations = [
-  //     { coords: [55.75864051344586, 37.6275861640625], text: "Доставка" },
-  //     // { coords: [55.74864051344586, 37.6275861640625], text: "Доставка" },
-  //     // { coords: [55.73864051344586, 37.6275861640625], text: "Доставка" },
-  //     // { coords: [55.72864051344586, 37.6275861640625], text: "Доставка" },
-  //     // { coords: [55.71864051344586, 37.6275861640625], text: "Доставка" },
-  //     // { coords: [55.70864051344586, 37.6275861640625], text: "Семейное кафе" },
-  //   ];
-
-  //   locations.forEach((location) => {
-  //     let placemark = new ymaps.Placemark(
-  //       location.coords,
-  //       {},
-  //       {
-  //         iconLayout: "default#imageWithContent",
-  //         iconImageHref: "images/icons/location2.svg",
-  //         iconImageSize: [34, 34],
-  //         iconImageOffset: [-17, -17],
-  //         iconContentOffset: [15, 15],
-  //         iconContentLayout: ymaps.templateLayoutFactory.createClass(
-  //           `<div  style="color: #000; display="flex"; z-index="9999999" font-weight: bold;">${location.text}</div>`
-  //         ),
-  //       }
-  //     );
-
-  //     map.geoObjects.add(placemark);
-  //   });
-
-  //   map.controls.remove("geolocationControl");
-  //   map.controls.remove("searchControl");
-  //   map.controls.remove("trafficControl");
-  //   map.controls.remove("typeSelector");
-  //   map.controls.remove("fullscreenControl");
-  //   map.controls.remove("zoomControl");
-  //   map.controls.remove("rulerControl");
-  //   map.behaviors.disable(["scrollZoom"]);
-  // }
-
-  // ymaps.ready(init);
 } catch (error) {}
 
 function preloadImages() {
