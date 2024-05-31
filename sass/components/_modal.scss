@@ -705,6 +705,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 4;
   }
   .product-name {
     font-size: 26px;
@@ -771,12 +772,12 @@
   }
 }
 .modal__footer .clear__btn,
-  .modal__footer .red__btn {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.modal__footer .red__btn {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 1024px) {
   .product__modal {
     .modal__content {

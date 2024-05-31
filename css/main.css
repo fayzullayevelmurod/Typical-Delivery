@@ -2,7 +2,6 @@
 /* Core style */
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 * {
@@ -1361,6 +1360,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 4;
 }
 .product__modal .product-name {
   font-size: 26px;
@@ -2440,7 +2440,6 @@ button {
   border-radius: 50%;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.2s linear;
 }
 .product__menu .tab__header-item {
   display: flex;
@@ -2632,6 +2631,8 @@ button {
 }
 .product__tabs .product__tab-item.active .active__box {
   display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .product__tab-content {
@@ -2965,7 +2966,7 @@ button {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .notification__box {
     right: 15px !important;
   }
@@ -3072,7 +3073,7 @@ button {
     border-radius: 14px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .media__right-sidebar {
     padding-bottom: 40px;
   }
@@ -3094,7 +3095,7 @@ button {
     color: #ff453a;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .product__card {
     border-width: 1px;
   }
@@ -4622,6 +4623,10 @@ button {
     row-gap: 20px;
   }
 }
+[class*=copyrights-pane] {
+  display: none !important;
+}
+
 [class*=ground-pane] {
   position: relative;
 }
@@ -4643,6 +4648,79 @@ button {
 }
 .contact .map__box .relative__box {
   position: relative;
+}
+.contact .map__box #map {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  background: #000;
+  border-radius: 20px;
+}
+.contact .map__box .map__icons-content {
+  width: 100%;
+  white-space: nowrap;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.contact .map__box .map__icons-content .map__icon-info {
+  width: fit-content;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.12px;
+  padding: 1px 6px;
+  background: rgba(0, 0, 0, 0.5019607843);
+  border-radius: 3px;
+  color: #fff;
+}
+.contact .map__box .map__icons-content.one {
+  top: 52px;
+  left: -489px;
+}
+.contact .map__box .map__icons-content.two {
+  top: 150px;
+  left: -384px;
+}
+.contact .map__box .map__icons-content.three {
+  top: -126px;
+  left: -231px;
+}
+.contact .map__box .map__icons-content.four {
+  top: 10px;
+  left: -200px;
+}
+.contact .map__box .map__icons-content.five {
+  bottom: 129px;
+  left: 10px;
+}
+.contact .map__box .map__icons-content.six {
+  top: 50px;
+  right: 0;
+  align-items: stretch;
+}
+.contact .map__box .map__icons-content.six .info__box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact .map__box .map__icons-content.six .info__box span {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5019607843);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.12px;
+  padding: 0 6px;
+  border-radius: 3px;
+}
+.contact .map__box .map__icons-content.six img {
+  height: unset;
+  background: rgba(0, 0, 0, 0.5019607843);
+  padding: 5px 6px;
+  border-radius: 3px;
+  width: 34px;
+  height: 34px;
 }
 .contact .map__box .location {
   position: absolute;
@@ -4694,16 +4772,6 @@ button {
 .contact .map__box .location__img img {
   width: 100%;
   height: 100%;
-}
-.contact .map__box .location span {
-  width: fit-content;
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 17.12px;
-  padding: 1px 6px;
-  background: rgba(0, 0, 0, 0.5019607843);
-  border-radius: 3px;
 }
 .contact .map__box iframe {
   width: 100%;
@@ -4851,6 +4919,9 @@ button {
   .contact {
     padding: 20px 0 60px 0;
   }
+  .contact .map__box #map {
+    height: 365px;
+  }
 }
 @media screen and (max-width: 768px) {
   .contact .flex__box {
@@ -4891,6 +4962,9 @@ button {
   }
   .contact .map__box p {
     font-size: 11px;
+  }
+  .contact .map__box #map {
+    height: 246px;
   }
 }
 .categories {
@@ -6404,7 +6478,7 @@ button {
   justify-content: start;
 }
 .decor .option__box {
-  padding-right: 22px;
+  padding-right: 25px;
 }
 .decor .delivery__info-text {
   font-size: 16px;
@@ -6414,7 +6488,7 @@ button {
 }
 .decor .option__box .scroll__box {
   margin-top: 15px;
-  width: 99.25%;
+  width: 100%;
 }
 .decor .flex__item {
   display: flex;

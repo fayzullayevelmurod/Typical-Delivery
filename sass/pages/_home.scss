@@ -167,7 +167,6 @@
       border-radius: 50%;
       visibility: hidden;
       opacity: 0;
-      transition: all 0.2s linear;
     }
     &-item {
       display: flex;
@@ -379,6 +378,8 @@
     &.active {
       .active__box {
         display: block;
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
@@ -725,7 +726,7 @@
   }
 }
 // 576px -> 767px
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .notification__box {
     right: 15px !important;
   }
@@ -833,7 +834,7 @@
     border-radius: 14px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .media__right-sidebar {
     padding-bottom: 40px;
   }
@@ -861,7 +862,7 @@
   }
 }
 // 567 -> 767px
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .product__card {
     border-width: 1px;
   }

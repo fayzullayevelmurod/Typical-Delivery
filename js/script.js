@@ -2,126 +2,147 @@ let lastScrollTop = 0;
 const headerNav = document.querySelector("header");
 const flexibleBox = document.querySelector(".flexible__box");
 const notificationBox = document.querySelector(".notification__box");
-const stickyFilter = document.querySelector('.sticky__filter');
+const stickyFilter = document.querySelector(".sticky__filter");
+function s() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop < 15) {
+    if (notificationBox) notificationBox.style.top = "137px";
+  } else {
+    if (notificationBox) notificationBox.style.top = "85px";
+  }
+}
+window.addEventListener("load", s);
 window.addEventListener("scroll", () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  s();
   if (scrollTop > 250) {
     if (scrollTop > lastScrollTop) {
       headerNav.style.top = "-100px";
       if (flexibleBox) flexibleBox.style.top = "1rem";
       if (notificationBox) notificationBox.style.top = "1rem";
-			if(stickyFilter) stickyFilter.style.top = "1rem";
+      if (stickyFilter) stickyFilter.style.top = "1rem";
     } else {
       headerNav.style.top = "-5px";
       if (flexibleBox) flexibleBox.style.top = "85px";
       if (notificationBox) notificationBox.style.top = "85px";
-			if(stickyFilter) stickyFilter.style.top = "85px";
+      if (stickyFilter) stickyFilter.style.top = "85px";
     }
   }
   lastScrollTop = scrollTop;
 });
 
 // ymaps
-// try {
-//   const center = [55.75864051344586, 37.6275861640625];
-//   function init() {
-//     let map = new ymaps.Map("map", {
-//       center: center,
-//       zoom: 10,
-//     });
+try {
+  const center = [55.75864051344586, 37.6275861640625];
+  function init() {
+    let map = new ymaps.Map("map", {
+      center: [55.75864051344586, 37.6275861640625],
+      zoom: 10,
+    });
 
-//     let placemark = new ymaps.Placemark(
-//       center,
-//       {},
-//       {
-//         iconLayout: "default#image",
-//         iconImageHref: "../images/icons/map-location.svg",
-//         iconImageSize: [34, 34],
-//         iconImageOffset: [-25, -52],
-//       }
-//     );
-//     // Creating a polygon using the Polygon auxiliary class.
-//     var myPolygon = new ymaps.Polygon(
-//       [
-//         // Specifying the coordinates of the vertices of the polygon.
-//         [
-//           [60.1918981644201, 30.513391151974343],
-//           [60.190786978271895, 30.517596855709733],
-//           [60.18411906873506, 30.52532161767263],
-//           [60.17744980033012, 30.52789653832693],
-//           [60.17505537249033, 30.526866570065202],
-//           [60.16949620406973, 30.51313365990895],
-//           [60.16744334943163, 30.512961998532003],
-//           [60.16590362399728, 30.52034343774098],
-//           [60.16325170493725, 30.518626823971463],
-//           [60.161968441206376, 30.512790337155053],
-//           [60.16094179402215, 30.513476982662866],
-//           [60.1600006725024, 30.51055873925465],
-//           [60.16136956759276, 30.5016323476531],
-//           [60.16556145295854, 30.49922908837575],
-//           [60.16992386592128, 30.50060237939137],
-//           [60.171292346312335, 30.502147331783966],
-//           [60.17257524473589, 30.50060237939137],
-//           [60.17334495966222, 30.49734081322926],
-//           [60.176167092910546, 30.481719627926545],
-//           [60.17719326286712, 30.479659691403086],
-//           [60.17787735830078, 30.474509850094513],
-//           [60.181725128740176, 30.471248283932404],
-//           [60.18198163068699, 30.468158379147237],
-//           [60.18300761837183, 30.469531670162862],
-//           [60.182409129464446, 30.47210659081716],
-//           [60.18437555191994, 30.475368156979272],
-//           [60.18574342829046, 30.479659691403086],
-//           [60.18694027321249, 30.482921257565195],
-//           [60.1886499757379, 30.48446620995779],
-//           [60.189419312729555, 30.485496178219496],
-//           [60.189846714352946, 30.48927272851247],
-//           [60.1905305453375, 30.49098934228201],
-//           [60.19155626501584, 30.4903026967742],
-//           [60.192752897330365, 30.49665416772145],
-//           [60.191043409196396, 30.5042072683074],
-//           [60.19232553367115, 30.509185448239027],
-//           [60.1918981644201, 30.513391151974343],
-//         ],
-//       ],
-//       // Defining properties of the geo object.
-//       {
-//         // The contents of the balloon.
-//         balloonContent: "Fishing spots",
-//       },
-//       {
-//         /**
-//          * Describing the geo object options.
-//          * Fill color.
-//          */
-//         fillImageHref: "images/lake.png",
-//         // Type of background fill.
-//         fillMethod: "stretch",
-//         // Hiding the stroke.
-//         stroke: true,
-//       }
-//     );
-//     // {
-//     //   iconLayout: "default#image",
-//     //   iconImageHref: "",
-//     //   iconImageSize: [30, 42],
-//     //   iconImageOffset: [-3, -42],
-//     // }
+    // Custom layout for the placemark
+    let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div class="map__icons-content one" style="display: flex; align-items: center;" gap="2px">' +
+        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+        "</div>" +
+        '<div class="map__icons-content two" style="display: flex; align-items: center;" gap="2px">' +
+        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+        "</div>" +
+        '<div class="map__icons-content three" style="display: flex; align-items: center;" gap="2px">' +
+        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+        "</div>" +
+        '<div class="map__icons-content four" style="display: flex; align-items: center;" gap="2px">' +
+        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+        "</div>" +
+        '<div class="map__icons-content five" style="display: flex; align-items: center;" gap="2px">' +
+        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+        "</div>" +
+        '<div class="map__icons-content six" style="display: flex; align-items: center;" gap="2px">' +
+        '<img src="../images/icons/location1.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+        '<div class="info__box">' +
+        "<span>Семейное кафе</span>" +
+        "<span>Россия, Севастополь, проспект Победы, 2</span>" +
+        "</div>" +
+        "</div>"
+    );
 
-//     map.controls.remove("geolocationControl"); // удаляем геолокацию
-//     map.controls.remove("searchControl"); // удаляем поиск
-//     map.controls.remove("trafficControl"); // удаляем контроль трафика
-//     map.controls.remove("typeSelector"); // удаляем тип
-//     map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
-//     map.controls.remove("zoomControl"); // удаляем контрол зуммирования
-//     map.controls.remove("rulerControl"); // удаляем контрол правил
-//     map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+    let placemark = new ymaps.Placemark(
+      center,
+      {},
+      {
+        iconLayout: MyIconContentLayout,
+        iconImageSize: [34, 34],
+        iconImageOffset: [-25, -52],
+      }
+    );
 
-//     map.geoObjects.add(placemark);
-//     map.geoObjects.add(myPolygon);
-//   }
-//   ymaps.ready(init);
-// } catch (error) {}
+    map.controls.remove("geolocationControl"); // geolokatsiyani olib tashlash
+    map.controls.remove("searchControl"); // qidiruvni olib tashlash
+    map.controls.remove("trafficControl"); // trafik nazoratini olib tashlash
+    map.controls.remove("typeSelector"); // tur tanlashni olib tashlash
+    map.controls.remove("fullscreenControl"); // to'liq ekran rejimini olib tashlash
+    map.controls.remove("zoomControl"); // zomm nazoratini olib tashlash
+    map.controls.remove("rulerControl"); // o'lchov nazoratini olib tashlash
+    map.behaviors.disable(["scrollZoom"]); // xarita scrollini o'chirish (ixtiyoriy)
+
+    map.geoObjects.add(placemark);
+  }
+
+  ymaps.ready(init);
+
+  // const center = [55.75864051344586, 37.6275861640625];
+
+  // function init() {
+  //   let map = new ymaps.Map("map", {
+  //     center: center,
+  //     zoom: 10,
+  //   });
+
+  //   const locations = [
+  //     { coords: [55.75864051344586, 37.6275861640625], text: "Доставка" },
+  //     // { coords: [55.74864051344586, 37.6275861640625], text: "Доставка" },
+  //     // { coords: [55.73864051344586, 37.6275861640625], text: "Доставка" },
+  //     // { coords: [55.72864051344586, 37.6275861640625], text: "Доставка" },
+  //     // { coords: [55.71864051344586, 37.6275861640625], text: "Доставка" },
+  //     // { coords: [55.70864051344586, 37.6275861640625], text: "Семейное кафе" },
+  //   ];
+
+  //   locations.forEach((location) => {
+  //     let placemark = new ymaps.Placemark(
+  //       location.coords,
+  //       {},
+  //       {
+  //         iconLayout: "default#imageWithContent",
+  //         iconImageHref: "images/icons/location2.svg",
+  //         iconImageSize: [34, 34],
+  //         iconImageOffset: [-17, -17],
+  //         iconContentOffset: [15, 15],
+  //         iconContentLayout: ymaps.templateLayoutFactory.createClass(
+  //           `<div  style="color: #000; display="flex"; z-index="9999999" font-weight: bold;">${location.text}</div>`
+  //         ),
+  //       }
+  //     );
+
+  //     map.geoObjects.add(placemark);
+  //   });
+
+  //   map.controls.remove("geolocationControl");
+  //   map.controls.remove("searchControl");
+  //   map.controls.remove("trafficControl");
+  //   map.controls.remove("typeSelector");
+  //   map.controls.remove("fullscreenControl");
+  //   map.controls.remove("zoomControl");
+  //   map.controls.remove("rulerControl");
+  //   map.behaviors.disable(["scrollZoom"]);
+  // }
+
+  // ymaps.ready(init);
+} catch (error) {}
 
 function preloadImages() {
   const images = document.querySelectorAll("img");
