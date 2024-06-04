@@ -6808,8 +6808,15 @@ button {
 .cooperation__sec .photo-cms-wrapper.photo {
   overflow: visible;
 }
+.cooperation__sec .pink__btn {
+  position: sticky;
+  top: 40%;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .cooperation__sec .top {
-  padding: 120px 0 150px 0;
+  padding: 120px 0 80px 0;
   text-align: center;
   position: relative;
   background: #080808;
@@ -6854,10 +6861,11 @@ button {
   margin-left: auto;
 }
 .cooperation__sec .top p {
-  padding: 80px 0;
+  padding-top: 80px;
   font-size: 26px;
   font-weight: 500;
   line-height: 31.47px;
+  margin-bottom: 0;
 }
 .cooperation__sec .top p span {
   font-size: 32px;
@@ -6873,6 +6881,9 @@ button {
 .cooperation__sec .cards__box .container {
   display: flex;
   align-items: center;
+}
+.cooperation__sec .cards__box .photo-cms-list {
+  padding-top: 169px;
 }
 .cooperation__sec .cards__box .card {
   padding: 40px;
@@ -6943,6 +6954,19 @@ button {
 }
 .cooperation__sec .midle {
   padding-bottom: 120px;
+  position: relative;
+  z-index: 100;
+  background: #171717;
+}
+.cooperation__sec .midle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 37px;
+  background: linear-gradient(180deg, rgba(23, 23, 23, 0) -1087.21%, #171717 100%);
+  box-shadow: 0px -20px 19px 11px #171717;
 }
 .cooperation__sec .midle .pink__btn {
   display: block;
@@ -7086,6 +7110,9 @@ button {
   .section.photo-section {
     display: none;
   }
+  .cooperation__sec {
+    background: #0a0a0a;
+  }
   .cooperation__sec .top h1 {
     font-size: 62px;
     line-height: 75.03px;
@@ -7098,12 +7125,12 @@ button {
     max-width: 525px;
   }
   .cooperation__sec .top {
-    padding: 100px 0 140px 0;
+    padding: 100px 0 60px 0;
   }
   .cooperation__sec .top p {
     font-size: 18px;
     line-height: 21.78px;
-    padding: 80px 0 60px 0;
+    padding: 80px 0 0 0;
   }
   .cooperation__sec .top p span {
     font-size: 22px;
@@ -7118,8 +7145,7 @@ button {
     min-width: 550px;
   }
   .cooperation__sec .cards__box {
-    padding-top: 0;
-    padding-bottom: 140px;
+    padding: 140px 0;
   }
   .cooperation__sec .cards__box .container {
     gap: 15px;
