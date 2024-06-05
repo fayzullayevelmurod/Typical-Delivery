@@ -6808,6 +6808,9 @@ button {
 .cooperation__sec .photo-cms-wrapper.photo {
   overflow: visible;
 }
+.cooperation__sec .photo-cms-sticky {
+  overflow: visible !important;
+}
 .cooperation__sec .pink__btn {
   position: sticky;
   top: 40%;
@@ -7018,6 +7021,7 @@ button {
 .cooperation__sec .midle .img__box {
   position: relative;
   width: 286px;
+  margin-left: 50px;
 }
 .cooperation__sec .midle .img__box img {
   width: 100%;
@@ -7039,6 +7043,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 80px;
+  transform: translateX(30px);
 }
 .cooperation__sec .phone__box .content__info {
   padding: 25px 30px;
@@ -7151,6 +7156,8 @@ button {
     gap: 15px;
     align-items: stretch;
     overflow-x: scroll;
+    z-index: 100;
+    position: relative;
   }
   .cooperation__sec .cards__box .container::-webkit-scrollbar {
     display: none;
@@ -7180,10 +7187,12 @@ button {
   }
   .cooperation__sec .phone__box .content__parent {
     gap: 66px;
+    transform: translateX(0);
   }
   .cooperation__sec .midle .img__box {
     width: 260px;
     height: 560px;
+    margin: 0 12px;
   }
   .cooperation__sec .midle .img__box img {
     width: 100%;
