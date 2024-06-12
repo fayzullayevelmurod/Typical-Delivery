@@ -202,6 +202,10 @@
       height: 100%;
       // background: #212429;
     }
+    img {
+      width: 179px;
+      height: 68px;
+    }
   }
   .operating__mode {
     max-width: 243px;
@@ -291,10 +295,12 @@
     max-width: 150px;
   }
   .contact .map__box {
-    max-width: 100%;
-    iframe {
+    // max-width: 100%;
+    width: 50%;
+    iframe,
+    .ymaps-2-1-79-map {
       height: 365px !important;
-      height: 100%;
+      width: 100% !important;
       border-radius: 18px;
     }
   }
@@ -331,6 +337,9 @@
   }
   .contact .flex__box {
     gap: 40px;
+  }
+  .contact .map__box {
+    width: 100%;
   }
   .contact .map__box .status__text {
     font-size: 12px;
