@@ -43,15 +43,11 @@
         #f4faff 13.28%,
         rgba(8, 8, 8, 0) 214.38%
       );
+      margin-bottom: 0;
     }
     .title__text {
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-image: linear-gradient(
-        178.93deg,
-        #f4faff 13.28%,
-        rgba(8, 8, 8, 0) 214.38%
-      );
       font-family: "Inter", sans-serif;
       font-size: 38px;
       font-weight: 600;
@@ -67,12 +63,18 @@
         margin-left: auto;
       }
     }
-    p {
+    p:first-child {
+      text-align: right;
+    }
+    p,
+    div {
       padding-top: 80px;
       font-size: 26px;
       font-weight: 500;
       line-height: 31.47px;
       margin-bottom: 0;
+      max-width: 1320px;
+      margin: 0 auto;
       span {
         font-size: 32px;
         font-weight: 500;
@@ -186,6 +188,12 @@
       );
       box-shadow: 0px -20px 19px 11px #171717;
     }
+    .dot {
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      display: inline-block;
+    }
 
     .pink__btn {
       display: block;
@@ -210,6 +218,7 @@
           position: relative;
           padding-left: 180px;
           margin-left: 25px;
+          margin-bottom: 0;
 
           &::before {
             content: "";
@@ -316,12 +325,19 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    .bottom__container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
     p,
     a {
       font-size: 14px;
       font-weight: 400;
       line-height: 28px;
       color: #ffffffb2;
+      margin-bottom: 10px;
     }
   }
 }
@@ -340,6 +356,11 @@
   .cooperation__sec {
     background: #0a0a0a;
   }
+
+  .cooperation__sec .top p:first-child {
+    text-align: center;
+    padding-top: 0;
+  }
   .cooperation__sec .top h1 {
     font-size: 62px;
     line-height: 75.03px;
@@ -354,7 +375,8 @@
   .cooperation__sec .top {
     padding: 100px 0 60px 0;
   }
-  .cooperation__sec .top p {
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
     font-size: 18px;
     line-height: 21.78px;
     padding: 80px 0 0 0;
@@ -439,7 +461,20 @@
     padding-bottom: 100px;
   }
   .cooperation__sec .bottom {
-    margin: 0 30px;
+    padding: 40px 30px;
+    background: #171717;
+    max-width: 100%;
+  }
+  .cooperation__sec .midle .dot {
+    width: 12px;
+    height: 12px;
+  }
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
+    padding: 0 0 80px 0;
+  }
+  .cooperation__sec .top p:first-child {
+    padding-bottom: 0;
   }
 }
 
@@ -456,15 +491,28 @@
     max-width: 270px;
   }
   .cooperation__sec .top {
-    padding: 57px 0 100px 0;
+    padding: 57px 0 60px 0;
   }
-  .cooperation__sec .top p {
-    padding: 65px 0 60px 0;
+  .cooperation__sec .top p:first-child {
+    text-align: left;
+    padding: 0 !important;
+    display: inline;
+  }
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
+    padding: 65px 15px 60px 15px;
     font-size: 14px;
     line-height: 19.36px;
+    text-align: left;
     span {
       font-size: 16px;
     }
+    br {
+      display: none;
+    }
+  }
+  .cooperation__sec .top div {
+    padding-bottom: 0;
   }
   .pink__btn {
     padding: 12px 22px;
@@ -526,6 +574,7 @@
   }
   .cooperation__sec .phone__box {
     position: relative;
+    flex-direction: column;
   }
   .cooperation__sec .midle .info__box {
     padding-top: 180px;
@@ -541,5 +590,38 @@
     margin: 0;
     padding: 40px 15px 20px 15px;
     text-align: left;
+  }
+  .cooperation__sec .midle .dot {
+    width: 6px;
+    height: 6px;
+  }
+  .cooperation__sec .phone__box .content__info {
+    position: unset;
+    display: block;
+  }
+  .cooperation__sec .phone__box .content__parent {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    gap: 10px;
+
+    &:last-child {
+      bottom: 0;
+      top: auto;
+    }
+  }
+  .cooperation__sec .phone__box .content__info.last,
+  .cooperation__sec .phone__box .content__info.first {
+    margin-left: 0;
+  }
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
+    padding-top: 0;
+  }
+  .cooperation__sec .top h1 {
+    font-size: 26px;
+  }
+  .cooperation__sec .top .title__box {
+    padding-bottom: 65px;
   }
 }

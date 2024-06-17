@@ -1161,41 +1161,73 @@ try {
   // const promoPrice = document.querySelector(".promo__price");
   // const discountText = document.querySelector(".discount__text");
   // const btn = document.querySelector(".next__tab");
-  // let promoCode = '0000';
+  // const validPromoCode = "0000";
 
-  const promoInput = document.querySelector(".enter__promo-code");
-  const errorPromoCodeText = document.querySelector(".error__code");
-  const promoPrice = document.querySelector(".promo__price");
-  const discountText = document.querySelector(".discount__text");
-  const btn = document.querySelector(".next__tab");
-  const validPromoCode = "0000";
+  // promoInput.addEventListener("input", function () {
+  //   if (promoInput.value.length > 4) {
+  //     promoInput.value = promoInput.value.slice(0, 4);
+  //   }
 
-  promoInput.addEventListener("input", function () {
-    // Limiting input to 4 characters
-    if (promoInput.value.length > 4) {
-      promoInput.value = promoInput.value.slice(0, 4);
-    }
+  //   const enteredCode = promoInput.value.trim();
 
-    const enteredCode = promoInput.value.trim();
+  //   errorPromoCodeText.classList.remove("active");
+  //   promoPrice.classList.remove("active");
+  //   discountText.classList.remove("active");
+  //   btn.classList.remove("active");
 
-    // Resetting the classes
-    errorPromoCodeText.classList.remove("active");
-    promoPrice.classList.remove("active");
-    discountText.classList.remove("active");
-    btn.classList.remove("active");
+  //   if (enteredCode === "") {
+  //     // If no promo code is entered
+  //     return;
+  //   } else if (enteredCode === validPromoCode) {
+  //     // If the correct promo code is entered
+  //     btn.classList.add("active");
+  //     promoPrice.classList.add("active");
+  //     discountText.classList.add("active");
+  //   } else {
+  //     // If any other code is entered
+  //     errorPromoCodeText.classList.add("active");
+  //   }
+  // });
+  document.addEventListener("DOMContentLoaded", function () {
+    const promoInput = document.querySelector(".enter__promo-code");
+    const errorPromoCodeText = document.querySelector(".error__code");
+    const promoPrice = document.querySelector(".promo__price");
+    const discountText = document.querySelector(".discount__text");
+    const btn = document.querySelector(".next__tab");
+    const validPromoCode = "0000";
 
-    if (enteredCode === "") {
-      // If no promo code is entered
-      return;
-    } else if (enteredCode === validPromoCode) {
-      // If the correct promo code is entered
-      btn.classList.add("active");
-      promoPrice.classList.add("active");
-      discountText.classList.add("active");
-    } else {
-      // If any other code is entered
-      errorPromoCodeText.classList.add("active");
-    }
+    promoInput.addEventListener("input", function () {
+      if (promoInput.value.length > 4) {
+        promoInput.value = promoInput.value.slice(0, 4);
+      }
+
+      const enteredCode = promoInput.value.trim();
+
+      errorPromoCodeText.classList.remove("active");
+      promoPrice.classList.remove("active");
+      discountText.classList.remove("active");
+      btn.classList.remove("active");
+
+      if (enteredCode !== "") {
+        btn.classList.add("active");
+      }
+    });
+
+    btn.addEventListener("click", function () {
+      const enteredCode = promoInput.value.trim();
+
+      if (enteredCode === validPromoCode) {
+        // Correct promo code entered
+        errorPromoCodeText.classList.remove("active");
+        promoPrice.classList.add("active");
+        discountText.classList.add("active");
+      } else {
+        // Incorrect promo code entered
+        errorPromoCodeText.classList.add("active");
+        promoPrice.classList.remove("active");
+        discountText.classList.remove("active");
+      }
+    });
   });
 } catch (error) {
   console.log(error);

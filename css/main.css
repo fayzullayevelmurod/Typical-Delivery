@@ -2041,7 +2041,7 @@ button {
   gap: 9px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .header .default__logo {
     width: 140px;
     height: 63px;
@@ -6852,11 +6852,11 @@ button {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(178.93deg, #f4faff 13.28%, rgba(8, 8, 8, 0) 214.38%);
+  margin-bottom: 0;
 }
 .cooperation__sec .top .title__text {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(178.93deg, #f4faff 13.28%, rgba(8, 8, 8, 0) 214.38%);
   font-family: "Inter", sans-serif;
   font-size: 38px;
   font-weight: 600;
@@ -6872,14 +6872,21 @@ button {
 .cooperation__sec .top .title__box h1:last-child {
   margin-left: auto;
 }
-.cooperation__sec .top p {
+.cooperation__sec .top p:first-child {
+  text-align: right;
+}
+.cooperation__sec .top p,
+.cooperation__sec .top div {
   padding-top: 80px;
   font-size: 26px;
   font-weight: 500;
   line-height: 31.47px;
   margin-bottom: 0;
+  max-width: 1320px;
+  margin: 0 auto;
 }
-.cooperation__sec .top p span {
+.cooperation__sec .top p span,
+.cooperation__sec .top div span {
   font-size: 32px;
   font-weight: 500;
   line-height: 38.73px;
@@ -6980,6 +6987,12 @@ button {
   background: linear-gradient(180deg, rgba(23, 23, 23, 0) -1087.21%, #171717 100%);
   box-shadow: 0px -20px 19px 11px #171717;
 }
+.cooperation__sec .midle .dot {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  display: inline-block;
+}
 .cooperation__sec .midle .pink__btn {
   display: block;
   margin: 0 auto 17px auto;
@@ -7004,6 +7017,7 @@ button {
   position: relative;
   padding-left: 180px;
   margin-left: 25px;
+  margin-bottom: 0;
 }
 .cooperation__sec .midle .title__box h1.line::before {
   content: "";
@@ -7103,6 +7117,12 @@ button {
   flex-direction: column;
   gap: 10px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.cooperation__sec .bottom .bottom__container {
+  max-width: 1320px;
+  margin: 0 auto;
 }
 .cooperation__sec .bottom p,
 .cooperation__sec .bottom a {
@@ -7110,6 +7130,7 @@ button {
   font-weight: 400;
   line-height: 28px;
   color: rgba(255, 255, 255, 0.6980392157);
+  margin-bottom: 10px;
 }
 
 .cards__box.media__block {
@@ -7127,6 +7148,10 @@ button {
   .cooperation__sec {
     background: #0a0a0a;
   }
+  .cooperation__sec .top p:first-child {
+    text-align: center;
+    padding-top: 0;
+  }
   .cooperation__sec .top h1 {
     font-size: 62px;
     line-height: 75.03px;
@@ -7141,12 +7166,14 @@ button {
   .cooperation__sec .top {
     padding: 100px 0 60px 0;
   }
-  .cooperation__sec .top p {
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
     font-size: 18px;
     line-height: 21.78px;
     padding: 80px 0 0 0;
   }
-  .cooperation__sec .top p span {
+  .cooperation__sec .top p span,
+  .cooperation__sec .top div span {
     font-size: 22px;
   }
   .pink__btn {
@@ -7224,7 +7251,20 @@ button {
     padding-bottom: 100px;
   }
   .cooperation__sec .bottom {
-    margin: 0 30px;
+    padding: 40px 30px;
+    background: #171717;
+    max-width: 100%;
+  }
+  .cooperation__sec .midle .dot {
+    width: 12px;
+    height: 12px;
+  }
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
+    padding: 0 0 80px 0;
+  }
+  .cooperation__sec .top p:first-child {
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -7240,15 +7280,30 @@ button {
     max-width: 270px;
   }
   .cooperation__sec .top {
-    padding: 57px 0 100px 0;
+    padding: 57px 0 60px 0;
   }
-  .cooperation__sec .top p {
-    padding: 65px 0 60px 0;
+  .cooperation__sec .top p:first-child {
+    text-align: left;
+    padding: 0 !important;
+    display: inline;
+  }
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
+    padding: 65px 15px 60px 15px;
     font-size: 14px;
     line-height: 19.36px;
+    text-align: left;
   }
-  .cooperation__sec .top p span {
+  .cooperation__sec .top p span,
+  .cooperation__sec .top div span {
     font-size: 16px;
+  }
+  .cooperation__sec .top p br,
+  .cooperation__sec .top div br {
+    display: none;
+  }
+  .cooperation__sec .top div {
+    padding-bottom: 0;
   }
   .pink__btn {
     padding: 12px 22px;
@@ -7309,6 +7364,7 @@ button {
   }
   .cooperation__sec .phone__box {
     position: relative;
+    flex-direction: column;
   }
   .cooperation__sec .midle .info__box {
     padding-top: 180px;
@@ -7324,6 +7380,38 @@ button {
     margin: 0;
     padding: 40px 15px 20px 15px;
     text-align: left;
+  }
+  .cooperation__sec .midle .dot {
+    width: 6px;
+    height: 6px;
+  }
+  .cooperation__sec .phone__box .content__info {
+    position: unset;
+    display: block;
+  }
+  .cooperation__sec .phone__box .content__parent {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    gap: 10px;
+  }
+  .cooperation__sec .phone__box .content__parent:last-child {
+    bottom: 0;
+    top: auto;
+  }
+  .cooperation__sec .phone__box .content__info.last,
+  .cooperation__sec .phone__box .content__info.first {
+    margin-left: 0;
+  }
+  .cooperation__sec .top p,
+  .cooperation__sec .top div {
+    padding-top: 0;
+  }
+  .cooperation__sec .top h1 {
+    font-size: 26px;
+  }
+  .cooperation__sec .top .title__box {
+    padding-bottom: 65px;
   }
 }
 
