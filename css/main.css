@@ -6549,8 +6549,13 @@ button {
 }
 .decor .work__time-info span {
   font-weight: 700;
-  color: #00ff0a;
   display: block;
+}
+.decor .work__time-info span.active {
+  color: #00ff0a;
+}
+.decor .work__time-info span.closed {
+  color: #ff453a;
 }
 .decor .adres__flex {
   display: flex;

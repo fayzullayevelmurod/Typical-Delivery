@@ -1116,6 +1116,30 @@ try {
 }
 
 try {
-  const targetSelect = document.querySelector(".target-select");
-  const workTimeInfo = document.querySelector(".work__time-info");
+  const workTimeInfo = document.querySelector(".work__time-info-first");
+  const selectedText = document.querySelector(".selected__text");
+  const options = document.querySelectorAll(".option");
+
+  options.forEach((option) => {
+    option.addEventListener("click", function () {
+      const selectText = option.querySelector(".select__text").textContent;
+      const time = option.querySelector("p").textContent;
+      const status = option.querySelector(".status").textContent;
+
+      selectedText.value = selectText;
+      workTimeInfo.innerHTML = `${time} <br> ${status}`;
+
+      const workTimeSpan = document.createElement("span");
+      workTimeSpan.className = `status ${
+        option.querySelector(".status").classList.contains("active")
+          ? "active"
+          : "closed"
+      }`;
+      workTimeSpan.textContent = status;
+
+      workTimeInfo.innerHTML = `${time} <br>`;
+      workTimeInfo.appendChild(workTimeSpan);
+      console.log(workTimeInfo);
+    });
+  });
 } catch (error) {}
