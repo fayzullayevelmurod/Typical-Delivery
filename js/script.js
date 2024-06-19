@@ -32,11 +32,12 @@ window.addEventListener("scroll", () => {
 });
 
 // ymaps
+
 try {
-  const center = [55.75864051344586, 37.6275861640625];
+  const center = [55.030199, 82.92043];
   function init() {
     let map = new ymaps.Map("map", {
-      center: [55.75864051344586, 37.6275861640625],
+      center: center,
       zoom: 10,
     });
 
@@ -81,14 +82,60 @@ try {
       }
     );
 
-    map.controls.remove("geolocationControl"); // geolokatsiyani olib tashlash
-    map.controls.remove("searchControl"); // qidiruvni olib tashlash
-    map.controls.remove("trafficControl"); // trafik nazoratini olib tashlash
-    map.controls.remove("typeSelector"); // tur tanlashni olib tashlash
-    map.controls.remove("fullscreenControl"); // to'liq ekran rejimini olib tashlash
-    map.controls.remove("zoomControl"); // zomm nazoratini olib tashlash
-    map.controls.remove("rulerControl"); // o'lchov nazoratini olib tashlash
+    map.controls.remove("geolocationControl");
+    map.controls.remove("searchControl");
+    map.controls.remove("trafficControl");
+    map.controls.remove("typeSelector");
+    map.controls.remove("fullscreenControl");
+    map.controls.remove("zoomControl");
+    map.controls.remove("rulerControl");
     map.behaviors.disable(["scrollZoom"]); // xarita scrollini o'chirish (ixtiyoriy)
+
+    let zones = [
+      {
+        coordinates: [
+          [59.946, 30.322],
+          [59.944, 30.325],
+          [59.941, 30.32],
+          [59.942, 30.317],
+        ],
+        color: "#ff0000", // Red
+      },
+      {
+        coordinates: [
+          [59.94, 30.316],
+          [59.939, 30.319],
+          [59.936, 30.314],
+          [59.937, 30.311],
+        ],
+        color: "#00ff00", // Green
+      },
+      {
+        coordinates: [
+          [59.933, 30.31],
+          [59.932, 30.313],
+          [59.929, 30.308],
+          [59.93, 30.305],
+        ],
+        color: "#0000ff", // Blue
+      },
+      // Add more zones as needed
+    ];
+
+    // Add polygons to the map
+    zones.forEach((zone) => {
+      let polygon = new ymaps.Polygon(
+        [zone.coordinates],
+        {},
+        {
+          fillColor: zone.color,
+          strokeColor: "#000000",
+          opacity: 0.5,
+          strokeWidth: 2,
+        }
+      );
+      map.geoObjects.add(polygon);
+    });
 
     map.geoObjects.add(placemark);
   }
@@ -140,55 +187,6 @@ var heroSwiper = new Swiper(".hero__swiper", {
     },
   },
 });
-// var heroSwiper = new Swiper(".product__three-swiper", {
-//   navigation: {
-//     nextEl: ".next-btn",
-//     prevEl: ".prev-btn",
-//   },
-//   slidesPerView: 3.4,
-//   spaceBetween: 10,
-//   speed: 700,
-//   centeredSlides: true,
-//   initialSlide: 1,
-//   watchOverflow: true,
-//   centeredSlides: true,
-//   breakpoints: {
-//      1024: {
-//       slidesPerView: 2.4,
-//       spaceBetween: 10,
-//     },
-//     768: {
-//       slidesPerView: 3.3,
-//       spaceBetween: 10,
-//     },
-//     0: {
-//       slidesPerView: 1.3,
-//       spaceBetween: 10,
-//     },
-//   },
-// });
-// slidesPerView: 3.4,
-//   speed: 700,
-//   spaceBetween: 10,
-//   navigation: {
-//     nextEl: ".next-btn",
-//     prevEl: ".prev-btn",
-//   },
-//   breakpoints: {
-//     1024: {
-//       slidesPerView: 5.4,
-//       spaceBetween: 10,
-//     },
-//     768: {
-//       slidesPerView: 3.3,
-//       spaceBetween: 10,
-//     },
-//     0: {
-//       slidesPerView: 1.3,
-//       spaceBetween: 10,
-//     },
-//   },
-// });
 
 // promotion__swiper
 var promotionSwiper = new Swiper(".promotion__swiper", {
@@ -900,27 +898,27 @@ try {
 } catch (error) {}
 
 // product tab
-try {
-  const productTabContent = document.querySelectorAll(".product__tab-content");
-  const productTabItem = document.querySelectorAll(".product__tab-item");
+// try {
+//   const productTabContent = document.querySelectorAll(".product__tab-content");
+//   const productTabItem = document.querySelectorAll(".product__tab-item");
 
-  function hideProductContent() {
-    productTabContent.forEach((content) => content.classList.remove("show"));
-    productTabItem.forEach((item) => item.classList.remove("active"));
-  }
-  function showProductContent(idx = 0) {
-    productTabContent[idx].classList.add("show");
-    productTabItem[idx].classList.add("active");
-  }
-  hideProductContent();
-  showProductContent();
-  productTabItem.forEach((btn, idx) => {
-    btn.addEventListener("click", () => {
-      hideProductContent();
-      showProductContent(idx);
-    });
-  });
-} catch (error) {}
+//   function hideProductContent() {
+//     productTabContent.forEach((content) => content.classList.remove("show"));
+//     productTabItem.forEach((item) => item.classList.remove("active"));
+//   }
+//   function showProductContent(idx = 0) {
+//     productTabContent[idx].classList.add("show");
+//     productTabItem[idx].classList.add("active");
+//   }
+//   hideProductContent();
+//   showProductContent();
+//   productTabItem.forEach((btn, idx) => {
+//     btn.addEventListener("click", () => {
+//       hideProductContent();
+//       showProductContent(idx);
+//     });
+//   });
+// } catch (error) {}
 
 try {
   const titleEl = document.querySelectorAll(".title__el");
@@ -1070,46 +1068,44 @@ try {
   //     errorPromoCodeText.classList.add("active");
   //   }
   // });
-  document.addEventListener("DOMContentLoaded", function () {
-    const promoInput = document.querySelector(".enter__promo-code");
-    const errorPromoCodeText = document.querySelector(".error__code");
-    const promoPrice = document.querySelector(".promo__price");
-    const discountText = document.querySelector(".discount__text");
-    const btn = document.querySelector(".next__tab");
-    const validPromoCode = "0000";
+  const promoInput = document.querySelector(".enter__promo-code");
+  const errorPromoCodeText = document.querySelector(".error__code");
+  const promoPrice = document.querySelector(".promo__price");
+  const discountText = document.querySelector(".discount__text");
+  const btn = document.querySelector(".next__tab");
+  const validPromoCode = "0000";
 
-    promoInput.addEventListener("input", function () {
-      if (promoInput.value.length > 4) {
-        promoInput.value = promoInput.value.slice(0, 4);
-      }
+  promoInput.addEventListener("input", function () {
+    if (promoInput.value.length > 4) {
+      promoInput.value = promoInput.value.slice(0, 4);
+    }
 
-      const enteredCode = promoInput.value.trim();
+    const enteredCode = promoInput.value.trim();
 
+    errorPromoCodeText.classList.remove("active");
+    promoPrice.classList.remove("active");
+    discountText.classList.remove("active");
+    btn.classList.remove("active");
+
+    if (enteredCode !== "") {
+      btn.classList.add("active");
+    }
+  });
+
+  btn.addEventListener("click", function () {
+    const enteredCode = promoInput.value.trim();
+
+    if (enteredCode === validPromoCode) {
+      // Correct promo code entered
       errorPromoCodeText.classList.remove("active");
+      promoPrice.classList.add("active");
+      discountText.classList.add("active");
+    } else {
+      // Incorrect promo code entered
+      errorPromoCodeText.classList.add("active");
       promoPrice.classList.remove("active");
       discountText.classList.remove("active");
-      btn.classList.remove("active");
-
-      if (enteredCode !== "") {
-        btn.classList.add("active");
-      }
-    });
-
-    btn.addEventListener("click", function () {
-      const enteredCode = promoInput.value.trim();
-
-      if (enteredCode === validPromoCode) {
-        // Correct promo code entered
-        errorPromoCodeText.classList.remove("active");
-        promoPrice.classList.add("active");
-        discountText.classList.add("active");
-      } else {
-        // Incorrect promo code entered
-        errorPromoCodeText.classList.add("active");
-        promoPrice.classList.remove("active");
-        discountText.classList.remove("active");
-      }
-    });
+    }
   });
 } catch (error) {
   console.log(error);
@@ -1143,3 +1139,73 @@ try {
     });
   });
 } catch (error) {}
+
+// added selected product in basket
+try {
+  // Barcha checkboxlarni olamiz
+  const checkboxes = document.querySelectorAll(".clicker__input");
+  console.log(checkboxes);
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      const parentBox = this.closest(".product__cart-box");
+      const productName = parentBox.querySelector(".product__name").textContent;
+      const productImgSrc = parentBox
+        .querySelector(".product__img img")
+        .getAttribute("src");
+      const productPrice =
+        parentBox.querySelector(".product__price").textContent;
+      const addedCartInfo = parentBox.querySelector(".added__cart-info");
+
+      const orderDiv = document.querySelector(".order");
+
+      if (this.checked) {
+        const productItem = document.createElement("div");
+        productItem.classList.add("order__tr", "product__item");
+        productItem.innerHTML = `
+                    <div class="left__td">
+                        <div class="img__box">
+                            <img src="${productImgSrc}" alt="product2-img" width="82" height="82">
+                        </div>
+                        <span class="product__title">${productName}</span>
+                    </div>
+                    <div class="right__td">
+                        <div class="counter">
+                            <button class="decrement__two">
+                                <img src="images/icons/minus.svg" alt="">
+                            </button>
+                            <span class="count__number">1</span>
+                            <button class="increment__two">
+                                <img src="images/icons/plus-2.svg" alt="stop" width="18" height="18">
+                            </button>
+                        </div>
+                        <span class="price">${productPrice}</span>
+                        <button class="clear delete__product-btn">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L13 13M1 13L13 1" stroke="#BDBDBD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                `;
+        orderDiv.appendChild(productItem);
+        addedCartInfo.classList.add("show");
+
+        const deleteBtn = productItem.querySelector(".delete__product-btn");
+        deleteBtn.addEventListener("click", function () {
+          productItem.remove();
+          checkbox.checked = false;
+          addedCartInfo.classList.remove("show");
+        });
+      } else {
+        const items = orderDiv.querySelectorAll(".product__item");
+        items.forEach((item) => {
+          const title = item.querySelector(".product__title").textContent;
+          if (title === productName) {
+            item.remove();
+          }
+        });
+      }
+    });
+  });
+} catch (error) {
+  console.log(error);
+}

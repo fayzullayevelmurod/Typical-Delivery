@@ -4624,6 +4624,14 @@ button {
     row-gap: 20px;
   }
 }
+.map-circle-placemark._outline .map-circle-placemark__caption {
+  background: red;
+}
+
+[class*="map-circle-placemark._outline"] {
+  background: red;
+}
+
 [class*=copyrights-pane] {
   display: none !important;
 }
@@ -6815,6 +6823,14 @@ button {
     padding-right: 24px;
   }
 }
+.pink__btn {
+  color: #fff;
+}
+
+.media__show-text {
+  display: none;
+}
+
 .cooperation__sec {
   font-family: "Inter", sans-serif;
   background: #171717;
@@ -6830,6 +6846,7 @@ button {
   top: 40%;
   z-index: 10;
   left: 50%;
+  color: #fff;
   transform: translateX(-50%);
 }
 .cooperation__sec .top {
@@ -6876,9 +6893,13 @@ button {
 }
 .cooperation__sec .top .title__box h1:last-child {
   margin-left: auto;
+  font-size: 64px;
+  line-height: 77.45px;
+  margin-top: -20px;
 }
 .cooperation__sec .top p:first-child {
   text-align: right;
+  padding-top: 0;
 }
 .cooperation__sec .top p,
 .cooperation__sec .top div {
@@ -7137,6 +7158,10 @@ button {
   color: rgba(255, 255, 255, 0.6980392157);
   margin-bottom: 10px;
 }
+.cooperation__sec .no-mt {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 
 .cards__box.media__block {
   display: none;
@@ -7271,8 +7296,14 @@ button {
   .cooperation__sec .top p:first-child {
     padding-bottom: 0;
   }
+  .cooperation__sec .top .title__box h1:last-child {
+    font-size: 50px;
+  }
 }
 @media screen and (max-width: 768px) {
+  .cooperation__modal .pink__btn {
+    width: 100%;
+  }
   .cooperation__sec .top h1 {
     font-size: 32px;
     line-height: 38.73px;
@@ -7282,7 +7313,11 @@ button {
     line-height: 26.63px;
   }
   .cooperation__sec .top .title__box {
-    max-width: 270px;
+    margin: 0 auto;
+    max-width: 269px;
+  }
+  .cooperation__sec .top .title__box h1:last-child {
+    font-size: 26px;
   }
   .cooperation__sec .top {
     padding: 57px 0 60px 0;
@@ -7413,10 +7448,61 @@ button {
     padding-top: 0;
   }
   .cooperation__sec .top h1 {
-    font-size: 26px;
+    font-size: 32px;
   }
   .cooperation__sec .top .title__box {
-    padding-bottom: 65px;
+    padding-bottom: 50px;
+  }
+  .media__show-text {
+    display: block;
+    padding: 0 !important;
+  }
+  .media__none-text {
+    display: none;
+  }
+  .cooperation__sec .top p span,
+  .cooperation__sec .top div span {
+    line-height: 16px;
+  }
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+.cooperation__modal .modal__content {
+  background: #212429;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.cooperation__modal .remember__box label::before {
+  background: #282b33;
+}
+.cooperation__modal .remember__box label a {
+  color: rgba(165, 148, 253, 0.6980392157);
+}
+.cooperation__modal .remember__box input:checked + label::before {
+  background: #a594fd;
+}
+.cooperation__modal .modal__input {
+  background: #282b33;
+}
+.cooperation__modal .textarea {
+  height: 115px;
+  resize: none;
+  padding-top: 7px;
+}
+.cooperation__modal .modal__close-btn {
+  background: #282b33;
+}
+
+@media screen and (max-width: 480px) {
+  .cooperation__sec .top .title__box {
+    margin: 0;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cooperation__sec .top .title__box h1:last-child {
+    margin-top: -30px;
   }
 }
 

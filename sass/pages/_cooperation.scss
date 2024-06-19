@@ -1,3 +1,9 @@
+.pink__btn {
+  color: #fff;
+}
+.media__show-text {
+  display: none;
+}
 .cooperation__sec {
   .photo-cms-wrapper.photo {
     overflow: visible;
@@ -10,6 +16,7 @@
     top: 40%;
     z-index: 10;
     left: 50%;
+    color: #fff;
     transform: translateX(-50%);
   }
   font-family: "Inter", sans-serif;
@@ -61,10 +68,14 @@
       flex-direction: column;
       h1:last-child {
         margin-left: auto;
+        font-size: 64px;
+        line-height: 77.45px;
+        margin-top: -20px;
       }
     }
     p:first-child {
       text-align: right;
+      padding-top: 0;
     }
     p,
     div {
@@ -340,6 +351,10 @@
       margin-bottom: 10px;
     }
   }
+  .no-mt {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
 
 .cards__box.media__block {
@@ -476,9 +491,15 @@
   .cooperation__sec .top p:first-child {
     padding-bottom: 0;
   }
+  .cooperation__sec .top .title__box h1:last-child {
+    font-size: 50px;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .cooperation__modal .pink__btn {
+    width: 100%;
+  }
   .cooperation__sec .top h1 {
     font-size: 32px;
     line-height: 38.73px;
@@ -488,7 +509,11 @@
     line-height: 26.63px;
   }
   .cooperation__sec .top .title__box {
-    max-width: 270px;
+    margin: 0 auto;
+    max-width: 269px;
+  }
+  .cooperation__sec .top .title__box h1:last-child {
+    font-size: 26px;
   }
   .cooperation__sec .top {
     padding: 57px 0 60px 0;
@@ -619,9 +644,65 @@
     padding-top: 0;
   }
   .cooperation__sec .top h1 {
-    font-size: 26px;
+    font-size: 32px;
   }
   .cooperation__sec .top .title__box {
-    padding-bottom: 65px;
+    // padding-bottom: 65px;
+    padding-bottom: 50px;
+  }
+  .media__show-text {
+    display: block;
+    padding: 0 !important;
+  }
+  .media__none-text {
+    display: none;
+  }
+  .cooperation__sec .top p span,
+  .cooperation__sec .top div span {
+    line-height: 16px;
+  }
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+.cooperation__modal {
+  .modal__content {
+    background: #212429;
+    border: 1px solid #ffffff33;
+  }
+  .remember__box label::before {
+    background: #282b33;
+  }
+  .remember__box {
+    label a {
+      color: #a594fdb2;
+    }
+    input:checked + label::before {
+      background: #a594fd;
+    }
+  }
+  .modal__input {
+    background: #282b33;
+  }
+  .textarea {
+    height: 115px;
+    resize: none;
+    padding-top: 7px;
+  }
+  .modal__close-btn {
+    background: #282b33;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cooperation__sec .top .title__box {
+    margin: 0;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cooperation__sec .top .title__box h1:last-child {
+    margin-top: -30px;
   }
 }
