@@ -2656,7 +2656,7 @@ button {
     transform: translateX(-100%);
   }
 }
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1364px) {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
