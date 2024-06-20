@@ -33,115 +33,115 @@ window.addEventListener("scroll", () => {
 
 // ymaps
 
-try {
-  const center = [55.030199, 82.92043];
-  function init() {
-    let map = new ymaps.Map("map", {
-      center: center,
-      zoom: 10,
-    });
+// try {
+//   const center = [55.030199, 82.92043];
+//   function init() {
+//     let map = new ymaps.Map("map", {
+//       center: center,
+//       zoom: 10,
+//     });
 
-    // Custom layout for the placemark
-    let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div class="map__icons-content one" style="display: flex; align-items: center;" gap="2px">' +
-        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-        "</div>" +
-        '<div class="map__icons-content two" style="display: flex; align-items: center;" gap="2px">' +
-        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-        "</div>" +
-        '<div class="map__icons-content three" style="display: flex; align-items: center;" gap="2px">' +
-        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-        "</div>" +
-        '<div class="map__icons-content four" style="display: flex; align-items: center;" gap="2px">' +
-        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-        "</div>" +
-        '<div class="map__icons-content five" style="display: flex; align-items: center;" gap="2px">' +
-        '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-        '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-        "</div>" +
-        '<div class="map__icons-content six" style="display: flex; align-items: center;" gap="2px">' +
-        '<img src="../images/icons/location1.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-        '<div class="info__box">' +
-        "<span>Семейное кафе</span>" +
-        "<span>Россия, Севастополь, проспект Победы, 2</span>" +
-        "</div>" +
-        "</div>"
-    );
+//     // Custom layout for the placemark
+//     let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+//       '<div class="map__icons-content one" style="display: flex; align-items: center;" gap="2px">' +
+//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+//         "</div>" +
+//         '<div class="map__icons-content two" style="display: flex; align-items: center;" gap="2px">' +
+//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+//         "</div>" +
+//         '<div class="map__icons-content three" style="display: flex; align-items: center;" gap="2px">' +
+//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+//         "</div>" +
+//         '<div class="map__icons-content four" style="display: flex; align-items: center;" gap="2px">' +
+//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+//         "</div>" +
+//         '<div class="map__icons-content five" style="display: flex; align-items: center;" gap="2px">' +
+//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
+//         "</div>" +
+//         '<div class="map__icons-content six" style="display: flex; align-items: center;" gap="2px">' +
+//         '<img src="../images/icons/location1.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
+//         '<div class="info__box">' +
+//         "<span>Семейное кафе</span>" +
+//         "<span>Россия, Севастополь, проспект Победы, 2</span>" +
+//         "</div>" +
+//         "</div>"
+//     );
 
-    let placemark = new ymaps.Placemark(
-      center,
-      {},
-      {
-        iconLayout: MyIconContentLayout,
-        iconImageSize: [34, 34],
-        iconImageOffset: [-25, -52],
-      }
-    );
+//     let placemark = new ymaps.Placemark(
+//       center,
+//       {},
+//       {
+//         iconLayout: MyIconContentLayout,
+//         iconImageSize: [34, 34],
+//         iconImageOffset: [-25, -52],
+//       }
+//     );
 
-    map.controls.remove("geolocationControl");
-    map.controls.remove("searchControl");
-    map.controls.remove("trafficControl");
-    map.controls.remove("typeSelector");
-    map.controls.remove("fullscreenControl");
-    map.controls.remove("zoomControl");
-    map.controls.remove("rulerControl");
-    map.behaviors.disable(["scrollZoom"]); // xarita scrollini o'chirish (ixtiyoriy)
+//     map.controls.remove("geolocationControl");
+//     map.controls.remove("searchControl");
+//     map.controls.remove("trafficControl");
+//     map.controls.remove("typeSelector");
+//     map.controls.remove("fullscreenControl");
+//     map.controls.remove("zoomControl");
+//     map.controls.remove("rulerControl");
+//     map.behaviors.disable(["scrollZoom"]); // xarita scrollini o'chirish (ixtiyoriy)
 
-    let zones = [
-      {
-        coordinates: [
-          [59.946, 30.322],
-          [59.944, 30.325],
-          [59.941, 30.32],
-          [59.942, 30.317],
-        ],
-        color: "#ff0000", // Red
-      },
-      {
-        coordinates: [
-          [59.94, 30.316],
-          [59.939, 30.319],
-          [59.936, 30.314],
-          [59.937, 30.311],
-        ],
-        color: "#00ff00", // Green
-      },
-      {
-        coordinates: [
-          [59.933, 30.31],
-          [59.932, 30.313],
-          [59.929, 30.308],
-          [59.93, 30.305],
-        ],
-        color: "#0000ff", // Blue
-      },
-      // Add more zones as needed
-    ];
+//     let zones = [
+//       {
+//         coordinates: [
+//           [59.946, 30.322],
+//           [59.944, 30.325],
+//           [59.941, 30.32],
+//           [59.942, 30.317],
+//         ],
+//         color: "#ff0000", // Red
+//       },
+//       {
+//         coordinates: [
+//           [59.94, 30.316],
+//           [59.939, 30.319],
+//           [59.936, 30.314],
+//           [59.937, 30.311],
+//         ],
+//         color: "#00ff00", // Green
+//       },
+//       {
+//         coordinates: [
+//           [59.933, 30.31],
+//           [59.932, 30.313],
+//           [59.929, 30.308],
+//           [59.93, 30.305],
+//         ],
+//         color: "#0000ff", // Blue
+//       },
+//       // Add more zones as needed
+//     ];
 
-    // Add polygons to the map
-    zones.forEach((zone) => {
-      let polygon = new ymaps.Polygon(
-        [zone.coordinates],
-        {},
-        {
-          fillColor: zone.color,
-          strokeColor: "#000000",
-          opacity: 0.5,
-          strokeWidth: 2,
-        }
-      );
-      map.geoObjects.add(polygon);
-    });
+//     // Add polygons to the map
+//     zones.forEach((zone) => {
+//       let polygon = new ymaps.Polygon(
+//         [zone.coordinates],
+//         {},
+//         {
+//           fillColor: zone.color,
+//           strokeColor: "#000000",
+//           opacity: 0.5,
+//           strokeWidth: 2,
+//         }
+//       );
+//       map.geoObjects.add(polygon);
+//     });
 
-    map.geoObjects.add(placemark);
-  }
+//     map.geoObjects.add(placemark);
+//   }
 
-  ymaps.ready(init);
-} catch (error) {}
+//   ymaps.ready(init);
+// } catch (error) {}
 
 function preloadImages() {
   const images = document.querySelectorAll("img");
