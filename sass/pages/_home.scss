@@ -83,6 +83,8 @@
       cursor: pointer;
       transition: all 0.2s linear;
       padding: 0;
+      z-index: 11;
+      position: relative;
       svg {
         width: 122px;
         height: 20px;
@@ -543,7 +545,7 @@
       content: "";
       position: absolute;
       top: 50%;
-      right: -50px;
+      left: 50px;
       transform: translateY(-50%);
       background: #212429;
       filter: blur(8px);

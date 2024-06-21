@@ -18,11 +18,13 @@ window.addEventListener("scroll", () => {
   if (scrollTop > 250) {
     if (scrollTop > lastScrollTop) {
       headerNav.style.top = "-100px";
+      headerNav.style.opacity = "0";
       if (flexibleBox) flexibleBox.style.top = "1rem";
       if (notificationBox) notificationBox.style.top = "1rem";
       if (stickyFilter) stickyFilter.style.top = "1rem";
     } else {
       headerNav.style.top = "-5px";
+      headerNav.style.opacity = "1";
       if (flexibleBox) flexibleBox.style.top = "85px";
       if (notificationBox) notificationBox.style.top = "85px";
       if (stickyFilter) stickyFilter.style.top = "85px";
@@ -30,6 +32,14 @@ window.addEventListener("scroll", () => {
   }
   lastScrollTop = scrollTop;
 });
+
+// window.addEventListener("resize", () => {
+//   if (window.innerWidth < 1024) {
+//     document.documentElement.style.scrollBehavior = "smooth";
+//   } else {
+//     document.documentElement.style.scrollBehavior = "auto";
+//   }
+// });
 
 // ymaps
 
