@@ -1132,7 +1132,8 @@ try {
       const time = option.querySelector("p").textContent;
       const status = option.querySelector(".status").textContent;
 
-      selectedText.value = selectText;
+      selectedText.textContent = selectText;
+      console.log(selectText);
       workTimeInfo.innerHTML = `${time} <br> ${status}`;
 
       const workTimeSpan = document.createElement("span");
