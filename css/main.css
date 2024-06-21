@@ -108,7 +108,6 @@ li {
   background: #ff453a;
   border: 1px solid rgba(255, 255, 255, 0.0509803922);
   border-radius: 20px;
-  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
   color: #fff;
@@ -230,6 +229,8 @@ body::before, body::after {
   z-index: 999;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -388,7 +389,6 @@ button {
   line-height: 19.36px;
   padding: 18px 35px;
   border-radius: 40px;
-  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
   transition: all 0.2s linear;
@@ -423,8 +423,7 @@ button {
 .product__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
-  -moz-column-gap: 17px;
-       column-gap: 17px;
+  column-gap: 17px;
   row-gap: 20px;
   padding-top: 25px;
 }
@@ -509,8 +508,7 @@ button {
   padding: 5px 0;
 }
 .product__card-img img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 100%;
 }
 .product__card-content {
@@ -575,9 +573,7 @@ button {
   background: #212429;
   border: 1px solid rgba(255, 255, 255, 0.1019607843);
   padding: 15px;
-  width: -moz-fit-content;
   width: fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   z-index: 10;
   transform-origin: bottom;
@@ -654,9 +650,6 @@ button {
   height: 50px;
   font-weight: 400;
   font-size: 16px;
-}
-.phone__input-box input::-moz-placeholder {
-  color: #fff;
 }
 .phone__input-box input::placeholder {
   color: #fff;
@@ -799,9 +792,6 @@ button {
   background: #2f323a;
   color: #ffffff;
   width: 100%;
-}
-.modal__input::-moz-placeholder {
-  color: #bdbdbd;
 }
 .modal__input::placeholder {
   color: #bdbdbd;
@@ -999,7 +989,6 @@ button {
 .back__call .modal__content {
   position: relative;
   padding: 32px 20px;
-  height: -moz-fit-content;
   height: fit-content;
   max-width: 592px;
   border-radius: 24px;
@@ -1130,9 +1119,6 @@ button {
 .enter__num-code input {
   width: 214px;
   font-weight: 500;
-}
-.enter__num-code input::-moz-placeholder {
-  font-size: 16px;
 }
 .enter__num-code input::placeholder {
   font-size: 16px;
@@ -1520,8 +1506,7 @@ button {
     max-width: 100%;
   }
   .product__modal .img__box img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   .product__modal .conten,
   .product__modal .desc {
@@ -2057,7 +2042,6 @@ button {
     height: 63px;
   }
   .header .sticky__logo {
-    width: -moz-fit-content;
     width: fit-content;
     height: 51px;
   }
@@ -2125,7 +2109,6 @@ button {
   align-items: center;
   gap: 15px;
   border-radius: 40px;
-  width: -moz-fit-content;
   width: fit-content;
   margin-top: 15px;
   transition: all 0.2s linear;
@@ -2727,7 +2710,6 @@ button {
     row-gap: 0;
   }
   .product__menu .scroll__box {
-    height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
   }
@@ -3147,8 +3129,7 @@ button {
   .right__sidebar-banner img {
     border-radius: 16px 16px 0px 0px;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .title__lg {
     font-size: 20px;
@@ -3238,8 +3219,7 @@ button {
   }
   .hero__swiper .swiper-slide img {
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .hero .swiper img.media__block {
     display: block;
@@ -3349,8 +3329,7 @@ button {
 .stock__card .card__img {
   height: 202px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .stock__card .card__content {
   padding: 20px 20px 47px 20px;
@@ -3450,8 +3429,7 @@ button {
 .news__img {
   max-width: 400px;
   height: 240px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 .news__date {
@@ -3704,8 +3682,7 @@ button {
     max-width: 100%;
     height: 364px;
     border-radius: 18px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .news__two .news__info-content {
     padding-top: 0;
@@ -3786,8 +3763,7 @@ button {
 }
 .promotion__box-img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 360px;
   object-fit: cover;
   border-radius: 24px;
@@ -3860,8 +3836,7 @@ button {
   }
   .promotion .other__promotions .stock__card .card__img {
     height: 164px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 18px;
   }
   .promotion .other__promotions .stock__card {
@@ -3977,7 +3952,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .delivery__info .delivery__terms ul {
@@ -4010,8 +3984,7 @@ button {
     max-width: 100%;
     width: 100%;
     height: 364.86px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 18px;
   }
   .delivery__info-top {
@@ -4107,8 +4080,7 @@ button {
   color: #bdbdbd;
 }
 .reviews .right__box img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 100%;
 }
 .reviews .reviews__box {
@@ -4253,7 +4225,6 @@ button {
   padding-bottom: 15px;
 }
 .basket__cart.empty__basket .outline__btn {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .basket__cart .flex__box {
@@ -4321,7 +4292,6 @@ button {
   background: #373a42;
   border-radius: 40px;
   padding: 10px 20px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .basket .counter .decrement,
@@ -4701,7 +4671,6 @@ button {
   gap: 2px;
 }
 .contact .map__box .map__icons-content .map__icon-info {
-  width: -moz-fit-content;
   width: fit-content;
   display: block;
   font-size: 14px;
@@ -5309,7 +5278,6 @@ button {
     width: 200px;
   }
   .categories .midle__box .three__box .categories__box:nth-child(2) img {
-    width: -moz-fit-content;
     width: fit-content;
   }
   .categories .right__box h4 {
@@ -5369,8 +5337,7 @@ button {
     margin-left: 160px;
   }
   .categories__box img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
     width: 140px;
   }
   .categories__box .text__box {
@@ -5502,8 +5469,7 @@ button {
 .order .table__body .img__box img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .order .table__body .left__box {
   display: flex;
@@ -5645,9 +5611,7 @@ button {
 }
 .order .right__box .remember__box label {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .order .go__back {
   display: flex;
@@ -5982,7 +5946,6 @@ button {
   border-radius: 20px;
   background: #373a42;
   margin-bottom: 20px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .product__footer {
@@ -6037,8 +6000,7 @@ button {
   font-weight: 500;
   line-height: 34px;
   background-image: linear-gradient(94.23deg, #e0e0e0 0%, #bdbdbd 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .about__delivery .title__box h4 {
@@ -6047,19 +6009,16 @@ button {
   font-weight: 700;
   line-height: 26.58px;
   text-transform: uppercase;
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(94.92deg, #e0e0e0 0%, #bdbdbd 100%);
 }
 .about__delivery .title__box h4 span {
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(98.55deg, #15ffab 0%, #15ffff 98.27%);
 }
 .about__delivery .title__box .more__details {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .about__delivery .right__box {
@@ -6140,6 +6099,17 @@ button {
 .about__delivery .right__box .timeline.first {
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 12%, #aeaeb2 57.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
 }
+.about__delivery .right__box .timeline-circle {
+  position: sticky;
+  display: block;
+  top: 43px;
+  background: #ff453a;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 0;
+  z-index: 2;
+}
 .about__delivery .right__box .title__sm-box {
   position: relative;
 }
@@ -6153,19 +6123,6 @@ button {
   text-transform: uppercase;
   position: relative;
   margin-top: 90px;
-}
-.about__delivery .right__box .title__sm::before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #ff453a;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  right: -109px;
-  z-index: 3;
 }
 .about__delivery .right__box .info__sec {
   display: flex;
@@ -6244,12 +6201,129 @@ button {
   display: block;
 }
 
+.right__box {
+  display: flex;
+  align-items: start;
+  gap: 110px;
+  padding-bottom: 0 !important;
+  min-height: 390px;
+  height: 100px;
+}
+.right__box:first-child {
+  padding-top: 127px;
+}
+.right__box:last-child {
+  padding-bottom: 40px !important;
+  margin-bottom: 100px;
+}
+.right__box .timeline__left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right__box .line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0, #aeaeb2 59.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
+  margin-left: 14px;
+}
+.right__box .line.last {
+  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0%, #aeaeb2 0%, #aeaeb2 92.5%, rgba(174, 174, 178, 0) 100%);
+}
+.right__box .line.first {
+  margin-top: -70px;
+  background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 12%, #aeaeb2 57.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
+}
+.right__box .line__box {
+  height: 100%;
+}
+.right__box .timeline__flex {
+  display: flex;
+  align-items: start;
+  gap: 30px;
+  height: 100%;
+}
+.right__box .sticky-circle {
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%;
+  position: sticky;
+  top: 80px;
+}
+.right__box .sticky-circle.first {
+  background: #fff;
+  margin-top: 70px;
+}
+.right__box .timeline__right {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.right__box h1 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.46px;
+  white-space: nowrap;
+  width: 250px;
+  text-align: right;
+}
+.right__box .block h2 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30.6px;
+  margin-top: -8px;
+}
+.right__box .block p {
+  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25.6px;
+  color: #bdbdbd;
+}
+.right__box .block p a {
+  color: #fff;
+  text-decoration: underline;
+}
+.right__box .block p a.red {
+  color: #ff453a;
+}
+.right__box.hide__title {
+  min-height: 200px;
+  height: 100px;
+  padding-top: 0;
+}
+.right__box.hide__title h1 {
+  opacity: 0;
+}
+
+.media__timeline {
+  display: none;
+}
+
 @media screen and (max-width: 1440px) {
   .about__delivery .right__box .timeline-badge:first-child {
     left: 61.9%;
   }
 }
+@media screen and (max-width: 1260px) {
+  .about__delivery .container {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 1024px) {
+  .right__box .block h2 {
+    font-size: 16px;
+    line-height: 27.2px;
+  }
+  .right__box .block p {
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  .right__box {
+    gap: 86px;
+  }
   .about__delivery .right__box .timeline-badge:first-child {
     left: 34.7%;
   }
@@ -6304,7 +6378,6 @@ button {
   }
   .added__btn {
     margin-top: 40px;
-    width: -moz-fit-content;
     width: fit-content;
     padding: 11px;
     font-size: 16px;
@@ -6315,8 +6388,7 @@ button {
     height: 200px;
   }
   .product__img img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .product__content-box {
     padding: 15px;
@@ -6401,6 +6473,20 @@ button {
   }
 }
 @media screen and (max-width: 768px) {
+  .right__box {
+    min-height: fit-content;
+    height: fit-content;
+    margin-bottom: 0 !important;
+  }
+  .about__delivery .right__box {
+    padding-bottom: 0 !important;
+  }
+  .desktop__timeline {
+    display: none !important;
+  }
+  .media__timeline {
+    display: flex !important;
+  }
   .about__delivery .right__box .timeline-badge:first-child {
     display: none;
   }
@@ -6656,7 +6742,6 @@ button {
   gap: 20px;
 }
 .decor .payment__methods .payment__method {
-  width: -moz-fit-content;
   width: fit-content;
   padding: 12px 20px;
   border-radius: 24px;
@@ -6740,7 +6825,6 @@ button {
   background: #00ff0a;
 }
 .decor .status__box {
-  width: -moz-fit-content;
   width: fit-content;
   background: rgba(255, 250, 176, 0.2509803922);
   padding: 4px 5px;
@@ -6913,15 +6997,13 @@ button {
   font-size: 78px;
   font-weight: 600;
   line-height: 94.4px;
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(178.93deg, #f4faff 13.28%, rgba(8, 8, 8, 0) 214.38%);
   margin-bottom: 0;
 }
 .cooperation__sec .top .title__text {
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Inter", sans-serif;
   font-size: 38px;
@@ -7020,8 +7102,7 @@ button {
   line-height: 74.42px;
   margin-top: -8px;
   background-image: linear-gradient(180deg, #ffffff 0%, rgba(201, 201, 207, 0) 77%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .cooperation__sec .cards__box .content__box {
@@ -7549,4 +7630,6 @@ button {
   .cooperation__sec .top .title__box h1:last-child {
     margin-top: -30px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
