@@ -1219,3 +1219,25 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+const boxes = document.querySelectorAll(".timeline__right-box");
+const circles = document.querySelectorAll(".sticky-circle");
+
+function handleScroll() {
+  const windowHeight = window.innerHeight;
+  boxes.forEach((box, index) => {
+    const rect = box.getBoundingClientRect();
+    const circle = circles[index];
+
+    if (rect.top <= windowHeight / 10 && rect.bottom >= windowHeight / 10) {
+      box.classList.add("active");
+      circle.classList.add("active");
+    } else {
+      box.classList.remove("active");
+      circle.classList.remove("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleScroll);
+handleScroll(); // Initial check on page load

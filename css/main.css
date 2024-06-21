@@ -6208,6 +6208,13 @@ button {
   padding-bottom: 0 !important;
   min-height: 390px;
   height: 100px;
+  transition: all 0.2s linear;
+}
+.right__box.timeline__right-box {
+  opacity: 0.3;
+}
+.right__box.active {
+  opacity: 1;
 }
 .right__box:first-child {
   padding-top: 127px;
@@ -6227,12 +6234,14 @@ button {
   height: 100%;
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0, #aeaeb2 59.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
   margin-left: 14px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 .right__box .line.last {
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0%, #aeaeb2 0%, #aeaeb2 92.5%, rgba(174, 174, 178, 0) 100%);
 }
 .right__box .line.first {
-  margin-top: -70px;
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 12%, #aeaeb2 57.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
 }
 .right__box .line__box {
