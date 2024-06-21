@@ -2670,7 +2670,7 @@ button {
     transform: translateX(-100%);
   }
 }
-@media screen and (max-width: 1364px) {
+@media screen and (max-width: 1365px) {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
@@ -6982,12 +6982,12 @@ button {
 }
 .cooperation__sec .cards__box .card.green {
   background: #425e64;
-  transform: rotate(-4deg);
+  transform: rotate(-1deg);
   margin-right: -10px;
 }
 .cooperation__sec .cards__box .card.pink {
   background: #424764;
-  transform: rotate(4deg);
+  transform: rotate(1deg);
   margin-left: -10px;
 }
 .cooperation__sec .cards__box .card .title__info {
