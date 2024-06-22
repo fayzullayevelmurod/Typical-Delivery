@@ -3261,6 +3261,12 @@ button {
   .product__card-content .product__name {
     padding-bottom: 0;
   }
+  .product__modal .swiper-horizontal {
+    margin-left: -10px;
+  }
+  .product__modal .swiper-horizontal .product__two-box {
+    margin-left: 10px;
+  }
 }
 @media screen and (max-width: 470px) {
   .modal__content {
