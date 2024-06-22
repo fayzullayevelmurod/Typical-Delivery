@@ -1,3 +1,9 @@
+window.addEventListener('resize', () => {
+  if(window) {
+
+  }
+})
+
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) =>
   Array.from(context.querySelectorAll(selector));

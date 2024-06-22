@@ -2676,6 +2676,9 @@ button {
   }
 }
 @media screen and (max-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
   .notification__box {
     right: 30px !important;
   }
