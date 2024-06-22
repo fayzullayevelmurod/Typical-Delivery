@@ -1,3 +1,7 @@
+const $ = (selector, context = document) => context.querySelector(selector);
+const $$ = (selector, context = document) =>
+  Array.from(context.querySelectorAll(selector));
+
 let lastScrollTop = 0;
 const headerNav = document.querySelector("header");
 const flexibleBox = document.querySelector(".flexible__box");
@@ -32,126 +36,6 @@ window.addEventListener("scroll", () => {
   }
   lastScrollTop = scrollTop;
 });
-
-// window.addEventListener("resize", () => {
-//   if (window.innerWidth < 1024) {
-//     document.documentElement.style.scrollBehavior = "smooth";
-//   } else {
-//     document.documentElement.style.scrollBehavior = "auto";
-//   }
-// });
-
-// ymaps
-
-// try {
-//   const center = [55.030199, 82.92043];
-//   function init() {
-//     let map = new ymaps.Map("map", {
-//       center: center,
-//       zoom: 10,
-//     });
-
-//     // Custom layout for the placemark
-//     let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-//       '<div class="map__icons-content one" style="display: flex; align-items: center;" gap="2px">' +
-//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-//         "</div>" +
-//         '<div class="map__icons-content two" style="display: flex; align-items: center;" gap="2px">' +
-//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-//         "</div>" +
-//         '<div class="map__icons-content three" style="display: flex; align-items: center;" gap="2px">' +
-//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-//         "</div>" +
-//         '<div class="map__icons-content four" style="display: flex; align-items: center;" gap="2px">' +
-//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-//         "</div>" +
-//         '<div class="map__icons-content five" style="display: flex; align-items: center;" gap="2px">' +
-//         '<img src="../images/icons/map-location.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-//         '<div class="map__icon-info" style="margin-left: 8px;">Доставка</div>' +
-//         "</div>" +
-//         '<div class="map__icons-content six" style="display: flex; align-items: center;" gap="2px">' +
-//         '<img src="../images/icons/location1.svg" style="width: 34px; height: 34px;" alt="icon"/>' +
-//         '<div class="info__box">' +
-//         "<span>Семейное кафе</span>" +
-//         "<span>Россия, Севастополь, проспект Победы, 2</span>" +
-//         "</div>" +
-//         "</div>"
-//     );
-
-//     let placemark = new ymaps.Placemark(
-//       center,
-//       {},
-//       {
-//         iconLayout: MyIconContentLayout,
-//         iconImageSize: [34, 34],
-//         iconImageOffset: [-25, -52],
-//       }
-//     );
-
-//     map.controls.remove("geolocationControl");
-//     map.controls.remove("searchControl");
-//     map.controls.remove("trafficControl");
-//     map.controls.remove("typeSelector");
-//     map.controls.remove("fullscreenControl");
-//     map.controls.remove("zoomControl");
-//     map.controls.remove("rulerControl");
-//     map.behaviors.disable(["scrollZoom"]); // xarita scrollini o'chirish (ixtiyoriy)
-
-//     let zones = [
-//       {
-//         coordinates: [
-//           [59.946, 30.322],
-//           [59.944, 30.325],
-//           [59.941, 30.32],
-//           [59.942, 30.317],
-//         ],
-//         color: "#ff0000", // Red
-//       },
-//       {
-//         coordinates: [
-//           [59.94, 30.316],
-//           [59.939, 30.319],
-//           [59.936, 30.314],
-//           [59.937, 30.311],
-//         ],
-//         color: "#00ff00", // Green
-//       },
-//       {
-//         coordinates: [
-//           [59.933, 30.31],
-//           [59.932, 30.313],
-//           [59.929, 30.308],
-//           [59.93, 30.305],
-//         ],
-//         color: "#0000ff", // Blue
-//       },
-//       // Add more zones as needed
-//     ];
-
-//     // Add polygons to the map
-//     zones.forEach((zone) => {
-//       let polygon = new ymaps.Polygon(
-//         [zone.coordinates],
-//         {},
-//         {
-//           fillColor: zone.color,
-//           strokeColor: "#000000",
-//           opacity: 0.5,
-//           strokeWidth: 2,
-//         }
-//       );
-//       map.geoObjects.add(polygon);
-//     });
-
-//     map.geoObjects.add(placemark);
-//   }
-
-//   ymaps.ready(init);
-// } catch (error) {}
 
 function preloadImages() {
   const images = document.querySelectorAll("img");
@@ -488,69 +372,98 @@ IMask(phoneInput, { mask: "+{7} (000) 000-00-00" });
 IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
 
 // filter__box
-const filterBox = document.querySelectorAll(".filter__box");
-const applyBtn = document.querySelector(".apply__btn");
+(() => {
+  const filterBox = document.querySelectorAll(".filter__box");
+  const applyBtn = document.querySelector(".apply__btn");
 
-filterBox.forEach((item) => {
-  item.addEventListener("click", () => {
-    item.classList.toggle("active");
-    updateApplyButtonStatus();
-    if (item.classList.contains("active")) {
-      clearBtn.addEventListener("click", () => {
-        item.classList.remove("active");
-        updateApplyButtonStatus();
-      });
-    }
-  });
-});
-
-function updateApplyButtonStatus() {
-  let isActive = false;
   filterBox.forEach((item) => {
-    if (item.classList.contains("active")) {
-      isActive = true;
-    }
+    item.addEventListener("click", () => {
+      item.classList.toggle("active");
+      console.log(item.classList.toggle("active"));
+      updateApplyButtonStatus();
+      if (item.classList.contains("active")) {
+        clearBtn.addEventListener("click", () => {
+          item.classList.remove("active");
+          updateApplyButtonStatus();
+        });
+      }
+    });
   });
 
-  if (isActive) {
-    applyBtn.classList.remove("disabled");
-  } else {
-    applyBtn.classList.add("disabled");
+  function updateApplyButtonStatus() {
+    let isActive = false;
+    filterBox.forEach((item) => {
+      if (item.classList.contains("active")) {
+        isActive = true;
+      }
+    });
+
+    if (isActive) {
+      applyBtn.classList.remove("disabled");
+    } else {
+      applyBtn.classList.add("disabled");
+    }
   }
-}
 
-applyBtn.addEventListener("click", () => {
-  if (!applyBtn.classList.contains("disabled")) {
-    hideFilterModal();
-  }
-});
+  applyBtn.addEventListener("click", () => {
+    if (!applyBtn.classList.contains("disabled")) {
+      hideFilterModal();
+    }
+  });
+})();
 
-try {
-  const filterModal = document.querySelector(".filter__modal");
-  const openFilterModal = document.querySelector(".open__filter-modal");
-  const closeFilterModal = document.querySelector(".filter__modal-close");
+(() => {
+  const filterBox = $$(".filter__box");
+  const applyBtn = $(".apply__btn");
+  const clearBtn = $(".clear__btn");
 
-  function showFilterModal() {
+  const updateApplyButtonStatus = () => {
+    applyBtn.classList.toggle(
+      "disabled",
+      !filterBox.some((item) => item.classList.contains("active"))
+    );
+  };
+
+  filterBox.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("active");
+      updateApplyButtonStatus();
+    });
+
+    clearBtn.addEventListener("click", () => {
+      item.classList.remove("active");
+      updateApplyButtonStatus();
+    });
+  });
+
+  applyBtn.addEventListener("click", () => {
+    if (!applyBtn.classList.contains("disabled")) hideFilterModal();
+  });
+
+  const filterModal = $(".filter__modal");
+  const openFilterModal = $(".open__filter-modal");
+  const closeFilterModal = $(".filter__modal-close");
+
+  const showFilterModal = () => {
     filterModal.classList.add("show");
-    modalOverlay.classList.add("show");
-    body.classList.add("blur");
-    document.body.classList.add("no-scroll");
-  }
-  function hideFilterModal() {
+    $(".modal__overlay").classList.add("show");
+    $("body").classList.add("blur", "no-scroll");
+  };
+
+  const hideFilterModal = () => {
     filterModal.classList.remove("show");
-    modalOverlay.classList.remove("show");
-    body.classList.remove("blur");
-    document.body.classList.remove("no-scroll");
-  }
+    $(".modal__overlay").classList.remove("show");
+    $("body").classList.remove("blur", "no-scroll");
+  };
+
   openFilterModal.addEventListener("click", showFilterModal);
   closeFilterModal.addEventListener("click", hideFilterModal);
 
   filterModal.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("filter__modal")) {
+    if (e.target && e.target.classList.contains("filter__modal"))
       hideFilterModal();
-    }
   });
-} catch (error) {}
+})();
 
 const allSelect = document.querySelectorAll(".all__select");
 const workTimeInfo = document.querySelector(".work__time-info");
@@ -660,48 +573,35 @@ form.addEventListener("click", (e) => {
   }
 });
 
-// window scroll
-try {
-  const sections = document.querySelectorAll(".products");
-  const links = document.querySelectorAll(".tab__header-box");
+// index page tabs
+(() => {
+  const sections = $$(".products");
+  const links = $$(".tab__header-box");
 
-  function changeLinkState() {
+  const changeLinkState = () => {
     let index = sections.length;
-
     while (--index && window.scrollY + 80 < sections[index].offsetTop) {}
-
     links.forEach((link) => link.classList.remove("active"));
     links[index].classList.add("active");
-
-    // if (window.innerWidth >= 1000) {
-    //   links[index].scrollIntoView({ inline: "center", block: "nearest" });
-    // }
-  }
+  };
 
   changeLinkState();
   window.addEventListener("scroll", changeLinkState);
 
   links.forEach((link, index) => {
     link.addEventListener("click", () => {
-      window.scrollTo({
-        top: sections[index].offsetTop - 75,
-        // behavior: "smooth",
-      });
+      window.scrollTo({ top: sections[index].offsetTop - 75 });
     });
   });
-} catch (error) {}
 
-// tabs
-const tabHeaderItems = document.querySelectorAll(".tab__header-box");
-
-tabHeaderItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    tabHeaderItems.forEach((el) => {
-      el.classList.remove("active");
+  const tabHeaderItems = $$(".tab__header-box");
+  tabHeaderItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      tabHeaderItems.forEach((el) => el.classList.remove("active"));
+      item.classList.add("active");
     });
-    item.classList.add("active");
   });
-});
+})();
 try {
   function initializeCounter(
     counter,
@@ -869,8 +769,9 @@ try {
     },
   });
 } catch (error) {}
+
 // products modal
-try {
+(() => {
   const productModal = document.querySelector(".product__modal");
   const openProductModal = document.querySelectorAll(".product__card");
   const closeProductModal = document.querySelector(".close__product-modal");
@@ -905,30 +806,9 @@ try {
       hideProductModal();
     }
   });
+})();
+try {
 } catch (error) {}
-
-// product tab
-// try {
-//   const productTabContent = document.querySelectorAll(".product__tab-content");
-//   const productTabItem = document.querySelectorAll(".product__tab-item");
-
-//   function hideProductContent() {
-//     productTabContent.forEach((content) => content.classList.remove("show"));
-//     productTabItem.forEach((item) => item.classList.remove("active"));
-//   }
-//   function showProductContent(idx = 0) {
-//     productTabContent[idx].classList.add("show");
-//     productTabItem[idx].classList.add("active");
-//   }
-//   hideProductContent();
-//   showProductContent();
-//   productTabItem.forEach((btn, idx) => {
-//     btn.addEventListener("click", () => {
-//       hideProductContent();
-//       showProductContent(idx);
-//     });
-//   });
-// } catch (error) {}
 
 try {
   const titleEl = document.querySelectorAll(".title__el");
@@ -1046,46 +926,14 @@ try {
 }
 
 try {
-  // const promoInput = document.querySelector(".enter__promo-code");
-  // const errorPromoCodeText = document.querySelector(".error__code");
-  // const promoPrice = document.querySelector(".promo__price");
-  // const discountText = document.querySelector(".discount__text");
-  // const btn = document.querySelector(".next__tab");
-  // const validPromoCode = "0000";
-
-  // promoInput.addEventListener("input", function () {
-  //   if (promoInput.value.length > 4) {
-  //     promoInput.value = promoInput.value.slice(0, 4);
-  //   }
-
-  //   const enteredCode = promoInput.value.trim();
-
-  //   errorPromoCodeText.classList.remove("active");
-  //   promoPrice.classList.remove("active");
-  //   discountText.classList.remove("active");
-  //   btn.classList.remove("active");
-
-  //   if (enteredCode === "") {
-  //     // If no promo code is entered
-  //     return;
-  //   } else if (enteredCode === validPromoCode) {
-  //     // If the correct promo code is entered
-  //     btn.classList.add("active");
-  //     promoPrice.classList.add("active");
-  //     discountText.classList.add("active");
-  //   } else {
-  //     // If any other code is entered
-  //     errorPromoCodeText.classList.add("active");
-  //   }
-  // });
   const promoInput = document.querySelector(".enter__promo-code");
   const errorPromoCodeText = document.querySelector(".error__code");
   const promoPrice = document.querySelector(".promo__price");
   const discountText = document.querySelector(".discount__text");
   const btn = document.querySelector(".next__tab");
   const validPromoCode = "0000";
-
   promoInput.addEventListener("input", function () {
+    console.log("salom");
     if (promoInput.value.length > 4) {
       promoInput.value = promoInput.value.slice(0, 4);
     }
