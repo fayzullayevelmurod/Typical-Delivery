@@ -407,10 +407,12 @@
     transform: translateX(-100%);
   }
 }
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1366px) {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
+}
+@media screen and (max-width: 1365px) {
   .bottom__panel {
     display: block;
     padding-bottom: 25px;

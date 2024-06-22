@@ -2653,10 +2653,12 @@ button {
     transform: translateX(-100%);
   }
 }
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1366px) {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
+}
+@media screen and (max-width: 1365px) {
   .bottom__panel {
     display: block;
     padding-bottom: 25px;
@@ -4960,7 +4962,7 @@ button {
     height: 365px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .contact .flex__box {
     flex-direction: column;
   }
@@ -5294,12 +5296,65 @@ button {
   display: none;
 }
 
+.media-right__box {
+  display: none;
+}
+
 @media screen and (max-width: 1340px) {
   .categories {
     flex-wrap: wrap;
   }
   .categories .left__box {
     order: 1;
+  }
+  .categories .left__box,
+  .categories .right__box {
+    display: none;
+  }
+  .right__box:last-child {
+    align-items: stretch;
+  }
+  .categories .right__box .categories__box.first {
+    max-height: 100%;
+  }
+  .right__box:last-child {
+    height: 100%;
+  }
+  .media-right__box {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .media-right__box .left__box,
+  .media-right__box .right__box {
+    display: flex;
+    flex: 1;
+  }
+  .media-right__box .left__box > a,
+  .media-right__box .right__box > a {
+    flex: 1;
+  }
+  .categories .midle__box .six__box {
+    max-width: unset !important;
+  }
+  .categories .midle__box .flex__box.first > a {
+    flex: 1;
+    width: unset;
+    min-width: unset;
+    max-width: unset;
+  }
+  .categories .midle__box .flex__box.first > a:nth-child(2) {
+    max-width: 200px;
+  }
+  .categories .midle__box .flex__box.first .categories__box:first-child {
+    width: unset;
+    min-width: unset;
+    max-width: unset;
+  }
+  .categories .midle__box .five__box .categories__box {
+    flex: 1;
   }
   .categories .left__box,
   .categories .right__box {
@@ -5317,7 +5372,7 @@ button {
     margin: 0;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .categories.media__hide {
     display: none;
   }
@@ -7106,12 +7161,10 @@ button {
 }
 .cooperation__sec .cards__box .card.green {
   background: #425e64;
-  transform: rotate(-1deg);
   margin-right: -10px;
 }
 .cooperation__sec .cards__box .card.pink {
   background: #424764;
-  transform: rotate(1deg);
   margin-left: -10px;
 }
 .cooperation__sec .cards__box .card .title__info {

@@ -1,11 +1,10 @@
-.map-circle-placemark._outline
-  .map-circle-placemark__caption {
-    background: red;
-  }
-  [class*="map-circle-placemark._outline"] {
-    background: red;
-  }
-  [class*="copyrights-pane"] {
+.map-circle-placemark._outline .map-circle-placemark__caption {
+  background: red;
+}
+[class*="map-circle-placemark._outline"] {
+  background: red;
+}
+[class*="copyrights-pane"] {
   display: none !important;
 }
 [class*="ground-pane"] {
@@ -319,7 +318,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .contact .flex__box {
     flex-direction: column;
   }
