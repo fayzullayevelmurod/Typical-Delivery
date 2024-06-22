@@ -2149,7 +2149,7 @@ button {
   font-weight: 600;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .footer .parrent__row .media__block {
     padding-top: 0;
   }
@@ -2657,6 +2657,23 @@ button {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
+  .bottom__panel {
+    display: block;
+    padding-bottom: 25px;
+  }
+  .bottom__panel .active img {
+    display: none;
+  }
+  .bottom__panel .active img.active-img {
+    display: block;
+    margin: 0 auto 4px auto;
+  }
+  .bottom__panel .active span {
+    color: #ff453a;
+  }
+  .footer {
+    padding-bottom: 100px;
+  }
 }
 @media screen and (max-width: 1255px) {
   .right__sidebar-banner img {
@@ -2675,7 +2692,7 @@ button {
     gap: 70px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   html {
     scroll-behavior: smooth;
   }
@@ -3073,7 +3090,7 @@ button {
     border-radius: 14px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .media__right-sidebar {
     padding-bottom: 40px;
   }
@@ -3096,6 +3113,12 @@ button {
   }
 }
 @media screen and (max-width: 767px) {
+  .product__modal .swiper-horizontal {
+    margin-left: -10px;
+  }
+  .product__modal .swiper-horizontal .product__two-box {
+    margin-left: 10px;
+  }
   .product__card {
     border-width: 1px;
   }
@@ -3260,12 +3283,6 @@ button {
   }
   .product__card-content .product__name {
     padding-bottom: 0;
-  }
-  .product__modal .swiper-horizontal {
-    margin-left: -10px;
-  }
-  .product__modal .swiper-horizontal .product__two-box {
-    margin-left: 10px;
   }
 }
 @media screen and (max-width: 470px) {
@@ -5081,8 +5098,10 @@ button {
   position: absolute;
 }
 .categories .right__box .categories__box.first {
-  height: 361px;
+  min-height: 361px;
+  max-height: 361px;
   padding-top: 200px;
+  width: 100%;
 }
 .categories .right__box .categories__box.first img {
   width: 295px;
@@ -5092,7 +5111,9 @@ button {
 }
 .categories .right__box .categories__box:last-child {
   padding-top: 265px;
-  height: 430px;
+  min-height: 430px;
+  max-height: 430px;
+  width: 100%;
 }
 .categories .right__box .categories__box:last-child img {
   width: 302px;
@@ -5276,6 +5297,9 @@ button {
 @media screen and (max-width: 1340px) {
   .categories {
     flex-wrap: wrap;
+  }
+  .categories .left__box {
+    order: 1;
   }
   .categories .left__box,
   .categories .right__box {
@@ -6406,7 +6430,7 @@ button {
     height: 200px;
   }
   .product__img img {
-    object-fit: cover;
+    object-fit: contain;
   }
   .product__content-box {
     padding: 15px;

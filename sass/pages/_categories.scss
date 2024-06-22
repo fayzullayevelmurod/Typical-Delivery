@@ -97,8 +97,10 @@
         position: absolute;
       }
       &.first {
-        height: 361px;
+        min-height: 361px;
+        max-height: 361px;
         padding-top: 200px;
+        width: 100%;
         img {
           width: 295px;
           height: 283px;
@@ -108,7 +110,9 @@
       }
       &:last-child {
         padding-top: 265px;
-        height: 430px;
+        min-height: 430px;
+        max-height: 430px;
+        width: 100%;
         img {
           width: 302px;
           height: 302px;
@@ -325,6 +329,9 @@
   .categories {
     flex-wrap: wrap;
   }
+  .categories .left__box {
+    order: 1;
+  }
   .categories .left__box,
   .categories .right__box {
     flex-direction: row;
@@ -373,7 +380,7 @@
         left: -65px;
       }
     }
-    .categories__box .categories__name{
+    .categories__box .categories__name {
       font-size: 20px;
     }
     &:nth-child(5) {

@@ -1,8 +1,7 @@
-window.addEventListener('resize', () => {
-  if(window) {
-
+window.addEventListener("resize", () => {
+  if (window) {
   }
-})
+});
 
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) =>
@@ -419,56 +418,58 @@ IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
 })();
 
 (() => {
-  const filterBox = $$(".filter__box");
-  const applyBtn = $(".apply__btn");
-  const clearBtn = $(".clear__btn");
+  try {
+    const filterBox = $$(".filter__box");
+    const applyBtn = $(".apply__btn");
+    const clearBtn = $(".clear__btn");
 
-  const updateApplyButtonStatus = () => {
-    applyBtn.classList.toggle(
-      "disabled",
-      !filterBox.some((item) => item.classList.contains("active"))
-    );
-  };
+    const updateApplyButtonStatus = () => {
+      applyBtn.classList.toggle(
+        "disabled",
+        !filterBox.some((item) => item.classList.contains("active"))
+      );
+    };
 
-  filterBox.forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.toggle("active");
-      updateApplyButtonStatus();
+    filterBox.forEach((item) => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+        updateApplyButtonStatus();
+      });
+
+      clearBtn.addEventListener("click", () => {
+        item.classList.remove("active");
+        updateApplyButtonStatus();
+      });
     });
 
-    clearBtn.addEventListener("click", () => {
-      item.classList.remove("active");
-      updateApplyButtonStatus();
+    applyBtn.addEventListener("click", () => {
+      if (!applyBtn.classList.contains("disabled")) hideFilterModal();
     });
-  });
 
-  applyBtn.addEventListener("click", () => {
-    if (!applyBtn.classList.contains("disabled")) hideFilterModal();
-  });
+    const filterModal = $(".filter__modal");
+    const openFilterModal = $(".open__filter-modal");
+    const closeFilterModal = $(".filter__modal-close");
 
-  const filterModal = $(".filter__modal");
-  const openFilterModal = $(".open__filter-modal");
-  const closeFilterModal = $(".filter__modal-close");
+    const showFilterModal = () => {
+      filterModal.classList.add("show");
+      $(".modal__overlay").classList.add("show");
+      $("body").classList.add("blur", "no-scroll");
+    };
 
-  const showFilterModal = () => {
-    filterModal.classList.add("show");
-    $(".modal__overlay").classList.add("show");
-    $("body").classList.add("blur", "no-scroll");
-  };
+    const hideFilterModal = () => {
+      filterModal.classList.remove("show");
+      $(".modal__overlay").classList.remove("show");
+      $("body").classList.remove("blur", "no-scroll");
+    };
 
-  const hideFilterModal = () => {
-    filterModal.classList.remove("show");
-    $(".modal__overlay").classList.remove("show");
-    $("body").classList.remove("blur", "no-scroll");
-  };
+    openFilterModal.addEventListener("click", showFilterModal);
+    closeFilterModal.addEventListener("click", hideFilterModal);
 
-  openFilterModal.addEventListener("click", showFilterModal);
-  closeFilterModal.addEventListener("click", hideFilterModal);
-
-  filterModal.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("filter__modal"))
-      hideFilterModal();
-  });
+    filterModal.addEventListener("click", (e) => {
+      if (e.target && e.target.classList.contains("filter__modal"))
+        hideFilterModal();
+    });
+  } catch (error) {}
 })();
 
 const allSelect = document.querySelectorAll(".all__select");
@@ -581,32 +582,34 @@ form.addEventListener("click", (e) => {
 
 // index page tabs
 (() => {
-  const sections = $$(".products");
-  const links = $$(".tab__header-box");
+  try {
+    const sections = $$(".products");
+    const links = $$(".tab__header-box");
 
-  const changeLinkState = () => {
-    let index = sections.length;
-    while (--index && window.scrollY + 80 < sections[index].offsetTop) {}
-    links.forEach((link) => link.classList.remove("active"));
-    links[index].classList.add("active");
-  };
+    const changeLinkState = () => {
+      let index = sections.length;
+      while (--index && window.scrollY + 80 < sections[index].offsetTop) {}
+      links.forEach((link) => link.classList.remove("active"));
+      links[index].classList.add("active");
+    };
 
-  changeLinkState();
-  window.addEventListener("scroll", changeLinkState);
+    changeLinkState();
+    window.addEventListener("scroll", changeLinkState);
 
-  links.forEach((link, index) => {
-    link.addEventListener("click", () => {
-      window.scrollTo({ top: sections[index].offsetTop - 75 });
+    links.forEach((link, index) => {
+      link.addEventListener("click", () => {
+        window.scrollTo({ top: sections[index].offsetTop - 75 });
+      });
     });
-  });
 
-  const tabHeaderItems = $$(".tab__header-box");
-  tabHeaderItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      tabHeaderItems.forEach((el) => el.classList.remove("active"));
-      item.classList.add("active");
+    const tabHeaderItems = $$(".tab__header-box");
+    tabHeaderItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        tabHeaderItems.forEach((el) => el.classList.remove("active"));
+        item.classList.add("active");
+      });
     });
-  });
+  } catch (error) {}
 })();
 try {
   function initializeCounter(
@@ -768,6 +771,10 @@ try {
         slidesPerView: 3.3,
         spaceBetween: 10,
       },
+      500: {
+        slidesPerView: 2.3,
+        spaceBetween: 10,
+      },
       0: {
         slidesPerView: 1.3,
         spaceBetween: 10,
@@ -778,40 +785,42 @@ try {
 
 // products modal
 (() => {
-  const productModal = document.querySelector(".product__modal");
-  const openProductModal = document.querySelectorAll(".product__card");
-  const closeProductModal = document.querySelector(".close__product-modal");
+  try {
+    const productModal = document.querySelector(".product__modal");
+    const openProductModal = document.querySelectorAll(".product__card");
+    const closeProductModal = document.querySelector(".close__product-modal");
 
-  function showProductModal() {
-    productModal.classList.add("active");
-    document.body.classList.add("no-scroll");
-    modalOverlay.classList.add("show");
-    body.classList.add("blur");
-  }
-  function hideProductModal() {
-    productModal.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-    modalOverlay.classList.remove("show");
-    body.classList.remove("blur");
-  }
-  openProductModal.forEach((btn) => {
-    const infoBtn = btn.querySelector(".info__btn");
-    btn.addEventListener("click", (e) => {
-      if (
-        !e.target.classList.contains("info__btn") &&
-        !e.target.classList.contains("info__icon") &&
-        !e.target.classList.contains("close__icon")
-      ) {
-        showProductModal();
+    function showProductModal() {
+      productModal.classList.add("active");
+      document.body.classList.add("no-scroll");
+      modalOverlay.classList.add("show");
+      body.classList.add("blur");
+    }
+    function hideProductModal() {
+      productModal.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+      modalOverlay.classList.remove("show");
+      body.classList.remove("blur");
+    }
+    openProductModal.forEach((btn) => {
+      const infoBtn = btn.querySelector(".info__btn");
+      btn.addEventListener("click", (e) => {
+        if (
+          !e.target.classList.contains("info__btn") &&
+          !e.target.classList.contains("info__icon") &&
+          !e.target.classList.contains("close__icon")
+        ) {
+          showProductModal();
+        }
+      });
+    });
+    closeProductModal.addEventListener("click", hideProductModal);
+    productModal.addEventListener("click", (e) => {
+      if (e.target && e.target.classList.contains("product__modal")) {
+        hideProductModal();
       }
     });
-  });
-  closeProductModal.addEventListener("click", hideProductModal);
-  productModal.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("product__modal")) {
-      hideProductModal();
-    }
-  });
+  } catch (error) {}
 })();
 try {
 } catch (error) {}

@@ -693,7 +693,7 @@
   .product__img {
     height: 200px;
     img {
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   .product__content-box {

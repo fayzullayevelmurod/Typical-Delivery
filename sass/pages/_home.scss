@@ -411,6 +411,25 @@
   .auth__modal .remember__box label {
     font-size: 14px;
   }
+  .bottom__panel {
+    display: block;
+    padding-bottom: 25px;
+    .active {
+      img {
+        display: none;
+        &.active-img {
+          display: block;
+          margin: 0 auto 4px auto;
+        }
+      }
+      span {
+        color: #ff453a;
+      }
+    }
+  }
+  .footer {
+    padding-bottom: 100px;
+  }
 }
 @media screen and (max-width: 1255px) {
   .right__sidebar-banner img {
@@ -429,8 +448,8 @@
     gap: 70px;
   }
 }
-
-@media screen and (max-width: 1024px) {
+// change 1024px ==> 1365px
+@media screen and (max-width: 1365px) {
   html {
     scroll-behavior: smooth;
   }
@@ -839,7 +858,7 @@
     border-radius: 14px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .media__right-sidebar {
     padding-bottom: 40px;
   }
@@ -868,6 +887,13 @@
 }
 // 567 -> 767px
 @media screen and (max-width: 767px) {
+  .product__modal .swiper-horizontal {
+    margin-left: -10px;
+
+    .product__two-box {
+      margin-left: 10px;
+    }
+  }
   .product__card {
     border-width: 1px;
   }
@@ -1039,13 +1065,6 @@
   }
   .product__card-content .product__name {
     padding-bottom: 0;
-  }
-  .product__modal .swiper-horizontal {
-    margin-left: -10px;
-
-    .product__two-box {
-      margin-left: 10px;
-    }
   }
 }
 @media screen and (max-width: 470px) {
