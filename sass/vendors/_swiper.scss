@@ -37,7 +37,7 @@
 .hero .swiper img.media__block {
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .hero__swiper .swiper-slide img {
     height: 256px;
   }
@@ -73,10 +73,10 @@
 .swiper-next-btn,
 .swiper-prev-btn {
   transform: scale(0.84);
-  background: #FF453A73;
- 
+  background: #ff453a73;
+
   &:hover {
-    background: #FF453A;
+    background: #ff453a;
     transform: scale(1.1);
   }
   &.swiper-prev-btn {
@@ -88,7 +88,7 @@
 
   transition: all 0.2s linear;
   width: 62px;
-  background: #FF453A73;
+  background: #ff453a73;
   height: 62px;
   display: flex;
   align-items: center;

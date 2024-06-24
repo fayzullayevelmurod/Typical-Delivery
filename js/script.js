@@ -714,11 +714,15 @@ try {
     },
     breakpoints: {
       1024: {
-        slidesPerView: 5.4,
+        slidesPerView: 3.4,
         spaceBetween: 10,
       },
       768: {
         slidesPerView: 3.3,
+        spaceBetween: 10,
+      },
+      500: {
+        slidesPerView: 2.3,
         spaceBetween: 10,
       },
       0: {

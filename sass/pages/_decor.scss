@@ -334,7 +334,7 @@
     width: 46px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .decor .info {
     font-size: 18px;
     line-height: 22.01px;
@@ -347,6 +347,7 @@
   }
   .decor .delivery__info-text {
     font-size: 14px;
+    width: 99%;
   }
   .decor .option__box {
     padding-right: 24px;
