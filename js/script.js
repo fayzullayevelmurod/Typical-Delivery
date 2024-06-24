@@ -714,7 +714,7 @@ try {
     },
     breakpoints: {
       1024: {
-        slidesPerView: 3.4,
+        slidesPerView: 4.4,
         spaceBetween: 10,
       },
       768: {

@@ -8,6 +8,10 @@
   .photo-cms-wrapper.photo {
     overflow: visible;
   }
+  .media__none-text {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
   .photo-cms-sticky {
     overflow: visible !important;
   }
@@ -362,6 +366,20 @@
   .cards__box.media__block {
     display: block;
   }
+  .cooperation__sec .midle .title__box h1.line {
+    margin-left: 0;
+    margin: 0 auto;
+  }
+  .cooperation__sec .midle .title__box {
+    max-width: 730px;
+  }
+  .cooperation__sec .midle .title__box h1.line {
+    // padding-left: ;
+  }
+  .cooperation__sec .midle .title__box h1,
+  .cooperation__sec .midle .title__box h1 span {
+    width: fit-content;
+  }
   .section.photo,
   .section.photo-section {
     display: none;
@@ -394,7 +412,7 @@
     line-height: 21.78px;
     padding: 80px 0 0 0;
     span {
-      font-size: 22px;
+      font-size: 18px;
     }
   }
   .pink__btn {
@@ -415,6 +433,7 @@
     overflow-x: scroll;
     z-index: 100;
     position: relative;
+    justify-content: space-between;
 
     &::-webkit-scrollbar {
       display: none;
@@ -481,6 +500,11 @@
   .cooperation__sec .midle .dot {
     width: 12px;
     height: 12px;
+  }
+  .media__none-text {
+    br {
+      display: none;
+    }
   }
   .cooperation__sec .top p,
   .cooperation__sec .top div {
@@ -579,10 +603,13 @@
   }
   .cooperation__sec .midle .title__box h1.line {
     padding-left: 11px;
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: 0;
   }
   .cooperation__sec .midle .title__box {
     padding-bottom: 80px;
+    max-width: 290px;
+    margin: 0 auto;
   }
   .cooperation__sec .phone__box .content__info {
     position: absolute;
@@ -663,6 +690,10 @@
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+  .cooperation__sec .top .title__box {
+    margin: 0 auto;
+    max-width: 310px;
+  }
 }
 .cooperation__modal {
   .modal__content {
@@ -695,12 +726,17 @@
 
 @media screen and (max-width: 480px) {
   .cooperation__sec .top .title__box {
-    margin: 0;
-    max-width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 0 auto;
+    max-width: 300px;
   }
   .cooperation__sec .top .title__box h1:last-child {
     margin-top: -30px;
+    margin-left: 39px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .cooperation__sec .top .title__box h1:last-child {
+    margin-left: 29px;
   }
 }

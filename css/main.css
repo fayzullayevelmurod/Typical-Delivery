@@ -2653,7 +2653,7 @@ button {
     transform: translateX(-100%);
   }
 }
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1365px) {
   .auth__modal .remember__box label {
     font-size: 14px;
   }
@@ -4184,9 +4184,20 @@ button {
     border-radius: 18px;
   }
 }
+.media__show {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .reviews .left__box {
     max-width: 100%;
+  }
+  .reviews .reviews__box {
+    text-align: center;
+  }
+  .reviews .reviews__box a {
+    height: 100%;
+    margin: 0 auto;
   }
   .reviews .yandex__reviews-box img {
     width: 25px;
@@ -4215,6 +4226,19 @@ button {
   .reviews .right__box img {
     width: 100%;
     height: 223px;
+  }
+  .reviews__box {
+    height: auto !important;
+  }
+  .reviews__box .media__hide {
+    display: none;
+  }
+  .reviews__box .media__show {
+    display: block;
+    width: 100%;
+  }
+  .reviews__box a {
+    width: 100%;
   }
 }
 .basket {
@@ -6751,6 +6775,12 @@ button {
 .decor .option .flex__box {
   justify-content: start;
 }
+.decor .select__box-one .arrow__down {
+  z-index: 7 !important;
+}
+.decor .select__box-one .option__box {
+  z-index: 6;
+}
 .decor .option__box {
   padding-right: 25px;
 }
@@ -7048,9 +7078,6 @@ button {
   .decor .option__box .flex__box {
     flex-direction: row;
   }
-  .decor .select__form .scroll__box {
-    max-width: 99.4%;
-  }
   .decor .status__box {
     font-size: 12px;
   }
@@ -7095,6 +7122,10 @@ button {
 }
 .cooperation__sec .photo-cms-wrapper.photo {
   overflow: visible;
+}
+.cooperation__sec .media__none-text {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
 }
 .cooperation__sec .photo-cms-sticky {
   overflow: visible !important;
@@ -7427,6 +7458,17 @@ button {
   .cards__box.media__block {
     display: block;
   }
+  .cooperation__sec .midle .title__box h1.line {
+    margin-left: 0;
+    margin: 0 auto;
+  }
+  .cooperation__sec .midle .title__box {
+    max-width: 730px;
+  }
+  .cooperation__sec .midle .title__box h1,
+  .cooperation__sec .midle .title__box h1 span {
+    width: fit-content;
+  }
   .section.photo,
   .section.photo-section {
     display: none;
@@ -7460,7 +7502,7 @@ button {
   }
   .cooperation__sec .top p span,
   .cooperation__sec .top div span {
-    font-size: 22px;
+    font-size: 18px;
   }
   .pink__btn {
     padding: 17px 28px;
@@ -7480,6 +7522,7 @@ button {
     overflow-x: scroll;
     z-index: 100;
     position: relative;
+    justify-content: space-between;
   }
   .cooperation__sec .cards__box .container::-webkit-scrollbar {
     display: none;
@@ -7544,6 +7587,9 @@ button {
   .cooperation__sec .midle .dot {
     width: 12px;
     height: 12px;
+  }
+  .media__none-text br {
+    display: none;
   }
   .cooperation__sec .top p,
   .cooperation__sec .top div {
@@ -7642,10 +7688,13 @@ button {
   }
   .cooperation__sec .midle .title__box h1.line {
     padding-left: 11px;
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: 0;
   }
   .cooperation__sec .midle .title__box {
     padding-bottom: 80px;
+    max-width: 290px;
+    margin: 0 auto;
   }
   .cooperation__sec .phone__box .content__info {
     position: absolute;
@@ -7724,6 +7773,10 @@ button {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+  .cooperation__sec .top .title__box {
+    margin: 0 auto;
+    max-width: 310px;
+  }
 }
 .cooperation__modal .modal__content {
   background: #212429;
@@ -7752,13 +7805,17 @@ button {
 
 @media screen and (max-width: 480px) {
   .cooperation__sec .top .title__box {
-    margin: 0;
-    max-width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 0 auto;
+    max-width: 300px;
   }
   .cooperation__sec .top .title__box h1:last-child {
     margin-top: -30px;
+    margin-left: 39px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .cooperation__sec .top .title__box h1:last-child {
+    margin-left: 29px;
   }
 }
 

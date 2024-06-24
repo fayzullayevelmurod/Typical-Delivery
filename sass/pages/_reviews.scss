@@ -97,10 +97,20 @@
     border-radius: 18px;
   }
 }
-
+.media__show {
+  display: none;
+}
 @media screen and (max-width: 767px) {
   .reviews .left__box {
     max-width: 100%;
+  }
+  .reviews .reviews__box {
+    text-align: center;
+    a {
+      height: 100%;
+      // width: 560px;
+      margin: 0 auto;
+    }
   }
   .reviews .yandex__reviews-box {
     img {
@@ -132,5 +142,18 @@
   .reviews .right__box img {
     width: 100%;
     height: 223px;
+  }
+  .reviews__box {
+    height: auto !important;
+    .media__hide {
+      display: none;
+    }
+    .media__show {
+      display: block;
+      width: 100%;
+    }
+    a {
+      width: 100%;
+    }
   }
 }
