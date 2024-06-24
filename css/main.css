@@ -180,7 +180,7 @@ li {
     padding-right: 30px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .breadcrumb {
     padding: 60px 0 20px 0;
   }
@@ -262,7 +262,7 @@ body::after {
   color: #bdbdbd;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   body.no-scroll {
     padding-right: 0 !important;
   }
@@ -333,7 +333,7 @@ button {
   z-index: 2;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .outline__btn {
     padding: 9px 22px;
     font-size: 14px;
@@ -1434,7 +1434,7 @@ button {
   justify-content: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .product__modal .modal__content {
     max-width: 100%;
     padding: 30px;
@@ -2828,7 +2828,7 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .auth__modal .modal__title {
     padding: 60px 0;
   }
@@ -3376,7 +3376,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(316px, 1fr));
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .stock__cards .stock__card .card__img {
     height: 165px;
   }
@@ -3506,7 +3506,7 @@ button {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .news {
     padding: 30px 0 80px 0;
   }
@@ -3579,7 +3579,7 @@ button {
   margin: 40px auto 0 auto;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .not__found .go__back {
     gap: 10px;
     font-size: 16px;
@@ -3701,7 +3701,7 @@ button {
   font-weight: 600;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .news__two .news__info {
     flex-direction: column;
     gap: 15px;
@@ -3835,7 +3835,7 @@ button {
   border-radius: 20px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .promotion__boxes {
     flex-direction: column;
     row-gap: 25px;
@@ -4007,7 +4007,7 @@ button {
     width: 100%;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .delivery__info .delivery__img {
     max-width: 100%;
     width: 100%;
@@ -4131,7 +4131,7 @@ button {
   background: #212429;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .reviews .sidebars {
     flex-direction: column;
     gap: 40px;
@@ -4471,7 +4471,7 @@ button {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .basket {
     padding: 30px 0 80px 0;
   }
@@ -4539,6 +4539,7 @@ button {
   }
   .basket__cart .right__box {
     width: 100%;
+    gap: 0;
   }
   .basket__cart .delete__product-btn {
     margin-left: auto;
@@ -4585,6 +4586,17 @@ button {
     width: 98%;
   }
 }
+@media screen and (max-width: 828px) {
+  .basket .left__sec {
+    max-width: 420px;
+  }
+  .basket .right__sec {
+    flex: 1 1 268px;
+  }
+  .basket .counter {
+    margin-left: 0;
+  }
+}
 @media screen and (max-width: 768px) {
   .product__four-swiper .product__card .product__card-img {
     height: 140px;
@@ -4595,6 +4607,7 @@ button {
   }
   .basket .top__box > div {
     width: 100%;
+    max-width: 100%;
   }
   .basket .bottom__box {
     padding-top: 40px;
@@ -4905,7 +4918,7 @@ button {
   font-weight: 600;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .contact .operating__mode h3 {
     font-size: 16px;
     padding: 25px 0 15px 0;
@@ -5745,7 +5758,7 @@ button {
     display: none;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .order .sidebars__section {
     gap: 20px;
     padding-top: 150px;
@@ -6289,7 +6302,7 @@ button {
   display: block;
 }
 
-.right__box {
+.desktop__timeline .right__box {
   display: flex;
   align-items: start;
   gap: 110px;
@@ -6298,26 +6311,26 @@ button {
   height: 100px;
   transition: all 0.2s linear;
 }
-.right__box.timeline__right-box {
+.desktop__timeline .right__box.timeline__right-box {
   opacity: 0.3;
 }
-.right__box.active {
+.desktop__timeline .right__box.active {
   opacity: 1;
 }
-.right__box:first-child {
+.desktop__timeline .right__box:first-child {
   padding-top: 127px;
 }
-.right__box:last-child {
+.desktop__timeline .right__box:last-child {
   padding-bottom: 40px !important;
   margin-bottom: 100px;
 }
-.right__box .timeline__left {
+.desktop__timeline .right__box .timeline__left {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.right__box .line {
+.desktop__timeline .right__box .line {
   width: 2px;
   height: 100%;
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0, #aeaeb2 59.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
@@ -6326,39 +6339,39 @@ button {
   top: 0;
   z-index: -1;
 }
-.right__box .line.last {
+.desktop__timeline .right__box .line.last {
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 0%, #aeaeb2 0%, #aeaeb2 92.5%, rgba(174, 174, 178, 0) 100%);
 }
-.right__box .line.first {
+.desktop__timeline .right__box .line.first {
   background: linear-gradient(rgba(47, 50, 58, 0) 0%, #aeaeb2 12%, #aeaeb2 57.83%, #aeaeb2 100%, rgba(174, 174, 178, 0) 100%);
 }
-.right__box .line__box {
+.desktop__timeline .right__box .line__box {
   height: 100%;
 }
-.right__box .timeline__flex {
+.desktop__timeline .right__box .timeline__flex {
   display: flex;
   align-items: start;
   gap: 30px;
   height: 100%;
 }
-.right__box .sticky-circle {
+.desktop__timeline .right__box .sticky-circle {
   width: 30px;
   height: 30px;
-  background: red;
+  background: #ff453a;
   border-radius: 50%;
   position: sticky;
   top: 80px;
 }
-.right__box .sticky-circle.first {
+.desktop__timeline .right__box .sticky-circle.first {
   background: #fff;
   margin-top: 70px;
 }
-.right__box .timeline__right {
+.desktop__timeline .right__box .timeline__right {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
-.right__box h1 {
+.desktop__timeline .right__box h1 {
   font-size: 20px;
   font-weight: 700;
   line-height: 24.46px;
@@ -6366,32 +6379,32 @@ button {
   width: 250px;
   text-align: right;
 }
-.right__box .block h2 {
+.desktop__timeline .right__box .block h2 {
   font-size: 18px;
   font-weight: 600;
   line-height: 30.6px;
   margin-top: -8px;
 }
-.right__box .block p {
+.desktop__timeline .right__box .block p {
   padding-top: 5px;
   font-size: 16px;
   font-weight: 500;
   line-height: 25.6px;
   color: #bdbdbd;
 }
-.right__box .block p a {
+.desktop__timeline .right__box .block p a {
   color: #fff;
   text-decoration: underline;
 }
-.right__box .block p a.red {
+.desktop__timeline .right__box .block p a.red {
   color: #ff453a;
 }
-.right__box.hide__title {
+.desktop__timeline .right__box.hide__title {
   min-height: 200px;
   height: 100px;
   padding-top: 0;
 }
-.right__box.hide__title h1 {
+.desktop__timeline .right__box.hide__title h1 {
   opacity: 0;
 }
 
@@ -6409,7 +6422,7 @@ button {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .right__box .block h2 {
     font-size: 16px;
     line-height: 27.2px;
@@ -6418,7 +6431,7 @@ button {
     font-size: 14px;
     line-height: 22.4px;
   }
-  .right__box {
+  .desktop__timeline .right__box {
     gap: 86px;
   }
   .about__delivery .right__box .timeline-badge:first-child {
@@ -6947,7 +6960,7 @@ button {
   fill-opacity: 1;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .decor .right__form.first {
     order: -1;
   }
@@ -7388,7 +7401,7 @@ button {
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1365px) {
   .cards__box.media__block {
     display: block;
   }

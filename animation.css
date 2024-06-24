@@ -2802,6 +2802,9 @@ textarea.w-select {
   display: flex;
   position: relative;
 }
+.photo-cms-wrapper-10 {
+  width: 10vw;
+}
 .photo-cms-wrapper.photo {
   height: 80%;
   border-radius: 32px;
