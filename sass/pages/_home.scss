@@ -901,12 +901,10 @@
 // 567 -> 767px
 @media screen and (max-width: 767px) {
   .product__modal .swiper-horizontal,
-  .product__two-swiper {
-    margin-left: -10px;
-
-    .product__two-box {
-      margin-left: 10px;
-    }
+  .product__two-swiper,
+  .empty__page .product__four-swiper {
+    overflow: hidden !important;
+    margin-right: -15px;
   }
   .product__card {
     border-width: 1px;

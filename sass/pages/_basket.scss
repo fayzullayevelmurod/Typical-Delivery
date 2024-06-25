@@ -202,14 +202,15 @@
 
   .bottom__box {
     padding-top: 60px;
-    max-width: 813px;
+    max-width: 100%;
     width: 100%;
+    padding-right: 25px;
     .order {
       display: flex;
       flex-direction: column;
       gap: 10px;
       padding-bottom: 0;
-
+      padding-left: 25px;
       &__tr {
         display: flex;
         align-items: center;
@@ -275,6 +276,15 @@
 }
 
 @media screen and (max-width: 1365px) {
+  .basket .bottom__box .order {
+    padding-left: 15px;
+  }
+  .basket .bottom__box .order .left__td {
+    gap: 15px;
+  }
+  .basket .bottom__box {
+    padding-right: 15px;
+  }
   .basket {
     padding: 30px 0 80px 0;
   }
@@ -342,12 +352,9 @@
     padding: 0;
     margin: 0;
   }
-  .basket .counter {
-    margin-left: 40px;
-  }
   .basket__cart .right__box {
     width: 100%;
-    gap: 0;
+    gap: 16px;
   }
   .basket__cart .delete__product-btn {
     margin-left: auto;
@@ -380,7 +387,7 @@
   }
   .basket .bottom__box .order .right__td .price {
     order: -1;
-    margin: 0 15px 0 0;
+    margin: 0 5px 0 0;
     width: 81px;
   }
   .right__td .clear {
@@ -389,9 +396,6 @@
       width: 16px;
       height: 16px;
     }
-  }
-  .basket .bottom__box {
-    width: 98%;
   }
 }
 
@@ -455,12 +459,9 @@
   .basket {
     padding: 20px 0 60px 0;
   }
-  .basket .counter {
-    margin-left: 35px;
-  }
   .basket .bottom__box .order .right__td .price {
     width: 56px;
-    margin-right: 35px;
+    margin-right: 29px;
   }
   .basket .bottom__box .order .left__td .product__title {
     font-size: 14px;

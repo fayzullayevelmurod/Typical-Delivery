@@ -39,6 +39,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      p {
+        font-size: 18px;
+      }
     }
     &__body {
       display: flex;
@@ -82,7 +85,7 @@
             margin-left: -10px;
           }
           &:nth-child(2) {
-            margin-left: 18px;
+            margin-left: 6px;
           }
         }
       }
@@ -230,7 +233,7 @@
   }
 }
 // media
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1365px) {
   .order .table .table__tr {
     flex-direction: column;
     gap: 10px;
