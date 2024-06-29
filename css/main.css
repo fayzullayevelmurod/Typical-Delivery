@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap");
 /* Core style */
 html {
@@ -449,6 +450,7 @@ button {
   top: 10px;
   left: 15px;
   display: flex;
+  cursor: pointer;
   gap: 5px;
 }
 .product__card .offer__box > div {
@@ -498,7 +500,11 @@ button {
   -webkit-text-fill-color: transparent;
 }
 .product__card-img {
-  padding: 60px 0 58px 0;
+  padding: 5px 0;
+  height: 286px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   border-radius: 20px;
   background: linear-gradient(180deg, #212429 0%, #30333a 100%);
@@ -510,6 +516,7 @@ button {
 .product__card-img img {
   object-fit: contain;
   width: 100%;
+  height: 100%;
 }
 .product__card-content {
   padding: 20px;
@@ -1319,6 +1326,9 @@ button {
   justify-content: center;
   position: relative;
   z-index: 2;
+}
+.product__modal .img__box img {
+  object-fit: contain;
 }
 .product__modal .img__box::before {
   content: "";
@@ -2940,8 +2950,15 @@ button {
   .header .header__logo .img__2 {
     width: 85px;
   }
-  .product__card-img {
+  .products[data-type=роллы] .product__card-img {
     padding: 50px 0;
+    display: block;
+  }
+  .products[data-type=роллы] .product__card-img img {
+    height: unset;
+  }
+  .product__card-img {
+    height: 229px;
   }
   .product__card-content {
     padding: 20px 15px 0 15px;
@@ -3051,6 +3068,16 @@ button {
   #pancakes .product__card-img > img {
     height: 134px;
   }
+  .product__card-img > img {
+    height: 134px;
+  }
+  .products[data-type=роллы] .product__card-img {
+    padding: 0;
+    display: flex;
+  }
+  .products[data-type=роллы] .product__card-img img {
+    height: 73px;
+  }
   .phone__input-box input,
   .back__call .modal__input,
   .back__call .sedn__box .red__btn {
@@ -3089,10 +3116,9 @@ button {
     height: 32px;
   }
   .product__card-img {
-    padding: 30px 0;
+    height: 140px;
   }
   .product__card-img > img {
-    height: 78px;
     width: 100%;
   }
   .product__card .offer__box {

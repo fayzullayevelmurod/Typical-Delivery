@@ -168,33 +168,36 @@ function setClock(endtime) {
 }
 setClock(deadline);
 
-// products
-const products = document.querySelectorAll(".product__card");
-const productName = document.querySelectorAll(".product__name");
-const productDesc = document.querySelectorAll(".product__desc");
-products.forEach((product) => {
-  const openProductInfoBtn = product.querySelector(".info__btn");
-  const productInfoBox = product.querySelector(".product__info-list");
-  openProductInfoBtn.addEventListener("click", () => {
-    openProductInfoBtn.classList.toggle("active");
-    productInfoBox.classList.toggle("active");
+try {
+  // products
+  const products = document.querySelectorAll(".product__card");
+  const productName = document.querySelectorAll(".product__name");
+  const productDesc = document.querySelectorAll(".product__desc");
+  products.forEach((product) => {
+    const openProductInfoBtn = product.querySelector(".info__btn");
+    const productInfoBox = product.querySelector(".product__info-list");
+    openProductInfoBtn.addEventListener("click", () => {
+      openProductInfoBtn.classList.toggle("active");
+      productInfoBox.classList.toggle("active");
+    });
   });
-});
-const maxLengthProductName = window.innerWidth >= 480 ? 43 : 46;
-const maxLengthProductDesc = 96;
+  const maxLengthProductName = window.innerWidth >= 480 ? 43 : 46;
+  const maxLengthProductDesc = 96;
 
-productName.forEach((item) => {
-  if (item.textContent.length > maxLengthProductName) {
-    item.textContent = item.textContent.slice(0, maxLengthProductName) + "...";
-  }
-});
+  productName.forEach((item) => {
+    if (item.textContent.length > maxLengthProductName) {
+      item.textContent =
+        item.textContent.slice(0, maxLengthProductName) + "...";
+    }
+  });
 
-productDesc.forEach((description) => {
-  if (description.textContent.length > maxLengthProductDesc) {
-    description.textContent =
-      description.textContent.slice(0, maxLengthProductDesc) + "...";
-  }
-});
+  productDesc.forEach((description) => {
+    if (description.textContent.length > maxLengthProductDesc) {
+      description.textContent =
+        description.textContent.slice(0, maxLengthProductDesc) + "...";
+    }
+  });
+} catch (error) {}
 
 // read more
 try {
@@ -580,37 +583,6 @@ form.addEventListener("click", (e) => {
   }
 });
 
-// index page tabs
-(() => {
-  try {
-    const sections = $$(".products");
-    const links = $$(".tab__header-box");
-
-    const changeLinkState = () => {
-      let index = sections.length;
-      while (--index && window.scrollY + 80 < sections[index].offsetTop) {}
-      links.forEach((link) => link.classList.remove("active"));
-      links[index].classList.add("active");
-    };
-
-    changeLinkState();
-    window.addEventListener("scroll", changeLinkState);
-
-    links.forEach((link, index) => {
-      link.addEventListener("click", () => {
-        window.scrollTo({ top: sections[index].offsetTop - 75 });
-      });
-    });
-
-    const tabHeaderItems = $$(".tab__header-box");
-    tabHeaderItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        tabHeaderItems.forEach((el) => el.classList.remove("active"));
-        item.classList.add("active");
-      });
-    });
-  } catch (error) {}
-})();
 try {
   function initializeCounter(
     counter,
@@ -787,45 +759,6 @@ try {
   });
 } catch (error) {}
 
-// products modal
-(() => {
-  try {
-    const productModal = document.querySelector(".product__modal");
-    const openProductModal = document.querySelectorAll(".product__card");
-    const closeProductModal = document.querySelector(".close__product-modal");
-
-    function showProductModal() {
-      productModal.classList.add("active");
-      document.body.classList.add("no-scroll");
-      modalOverlay.classList.add("show");
-      body.classList.add("blur");
-    }
-    function hideProductModal() {
-      productModal.classList.remove("active");
-      document.body.classList.remove("no-scroll");
-      modalOverlay.classList.remove("show");
-      body.classList.remove("blur");
-    }
-    openProductModal.forEach((btn) => {
-      const infoBtn = btn.querySelector(".info__btn");
-      btn.addEventListener("click", (e) => {
-        if (
-          !e.target.classList.contains("info__btn") &&
-          !e.target.classList.contains("info__icon") &&
-          !e.target.classList.contains("close__icon")
-        ) {
-          showProductModal();
-        }
-      });
-    });
-    closeProductModal.addEventListener("click", hideProductModal);
-    productModal.addEventListener("click", (e) => {
-      if (e.target && e.target.classList.contains("product__modal")) {
-        hideProductModal();
-      }
-    });
-  } catch (error) {}
-})();
 try {
 } catch (error) {}
 
@@ -873,6 +806,9 @@ try {
   });
 } catch (error) {}
 
+
+// modal product added
+
 // added product
 try {
   const addedProductBtns = document.querySelectorAll(
@@ -884,6 +820,7 @@ try {
   const notification = document.getElementById("notification");
   const closeBtn = notification.querySelector(".close__btn");
   const productAddedBtn = document.querySelector(".product__added-btn");
+
   let count = 0;
 
   productNumber.textContent = count;

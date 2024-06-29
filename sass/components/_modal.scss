@@ -662,6 +662,9 @@
     justify-content: center;
     position: relative;
     z-index: 2;
+    img {
+      object-fit: contain;
+    }
     &::before {
       content: "";
       position: absolute;

@@ -1,0 +1,1203 @@
+[
+  {
+    "title": "Роллы",
+    "products": [
+      {
+        "id": 1,
+        "name": "Унаги кранч ",
+        "description": "Сочетание свежих морепродуктов и нежного сливочного соуса.",
+        "image": "images/product-img-1.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        },
+        "discounts": [
+          {
+            "type": "discount",
+            "label": "-25%",
+            "discountNumberClass": "discount__number"
+          },
+          {
+            "type": "new",
+            "label": "Скидка ",
+            "icon": "images/icons/bag.svg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Унаги кранч ",
+        "description": "Сочетание свежих морепродуктов и нежного сливочного соуса.",
+        "image": "images/product-img-1.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        },
+        "discounts": [
+          {
+            "type": "discount",
+            "icon": "images/icons/acute.svg",
+            "tooltip": "Острое",
+            "tooltipFirst": "first"
+          },
+          {
+            "type": "new",
+            "label": "Новинка",
+            "icon": "images/icons/starts.svg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Унаги кранч ",
+        "description": "Сочетание свежих морепродуктов и нежного сливочного соуса.",
+        "image": "images/product-img-1.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        },
+        "discounts": [
+          {
+            "type": "discount",
+            "icon": "images/icons/duble-acute.svg",
+            "tooltip": "Очень острое",
+            "tooltipFirst": ""
+          },
+          {
+            "type": "new",
+            "label": "Хит",
+            "icon": "images/icons/flesh.svg"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Унаги кранч ",
+        "description": "Сочетание свежих морепродуктов и нежного сливочного соуса.",
+        "image": "images/product-img-1.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        },
+        "discounts": [
+          {
+            "type": "discount",
+            "label": "-25%",
+            "discountNumberClass": "discount__number"
+          },
+          {
+            "type": "new",
+            "label": "Скидка ",
+            "icon": "images/icons/bag.svg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Унаги кранч ",
+        "description": "Сочетание свежих морепродуктов и нежного сливочного соуса.",
+        "image": "images/product-img-1.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        },
+        "discounts": [
+          {
+            "type": "discount",
+            "icon": "images/icons/acute.svg",
+            "tooltip": "Острое",
+            "tooltipFirst": "first"
+          },
+          {
+            "type": "new",
+            "label": "Новинка",
+            "icon": "images/icons/starts.svg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Унаги кранч ",
+        "description": "Сочетание свежих морепродуктов и нежного сливочного соуса.",
+        "image": "images/product-img-1.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        },
+        "discounts": [
+          {
+            "type": "discount",
+            "icon": "images/icons/duble-acute.svg",
+            "tooltip": "Очень острое",
+            "tooltipFirst": ""
+          },
+          {
+            "type": "new",
+            "label": "Хит",
+            "icon": "images/icons/flesh.svg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Пицца",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-2.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-2.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-2.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-2.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-2.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-2.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Блины",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Форель, погружение",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Суси и Гунканы",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Горячие роллы",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Сеты",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Салаты и закуски",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Супы",
+    "products": [
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Унаги кранч ",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Блины с лососем и яйцом-пашот",
+        "description": "Блины с лососем и яйцом-пашот, подаются с зеленью и соусом.",
+        "image": "images/product-img-3.webp",
+        "price": "1750 ₽",
+        "weights": ["780 г"],
+        "sizes": ["30 см", "45 см"],
+        "info": {
+          "calories": "1441 ккал",
+          "weight": "780 г",
+          "nutrition": {
+            "energy": "178.0 ккал",
+            "proteins": "10.8 г",
+            "fats": "4.2 г",
+            "carbohydrates": "24.3 г",
+            "totalWeight": "390.0 г"
+          }
+        }
+      }
+    ]
+  }
+]
