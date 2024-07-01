@@ -3157,6 +3157,7 @@ button {
   .empty__page .product__four-swiper {
     overflow: hidden !important;
     margin-right: -15px;
+    margin-left: -15px;
   }
   .product__card {
     border-width: 1px;
@@ -6381,6 +6382,9 @@ button {
   min-height: 390px;
   height: 100px;
   transition: all 0.2s linear;
+}
+.desktop__timeline .right__box:nth-child(2) {
+  min-height: 230px;
 }
 .desktop__timeline .right__box.active {
   opacity: 1;

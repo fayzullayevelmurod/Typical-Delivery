@@ -476,6 +476,9 @@
 // new code
 .desktop__timeline {
   .right__box {
+    &:nth-child(2) {
+      min-height: 230px;
+    }
     display: flex;
     align-items: start;
     gap: 110px;
