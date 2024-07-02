@@ -472,7 +472,6 @@
 .notification-box.show {
   display: block;
 }
-
 // new code
 .desktop__timeline {
   .right__box {
@@ -570,7 +569,7 @@
       flex-direction: column;
       row-gap: 20px;
     }
-    h1 {
+    .timeline__title {
       font-size: 20px;
       font-weight: 700;
       line-height: 24.46px;

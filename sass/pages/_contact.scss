@@ -216,13 +216,13 @@
   .operating__mode {
     max-width: 243px;
     width: 100%;
-    h3 {
+    .operating__mode-title {
       font-size: 18px;
       font-weight: 700;
       line-height: 22.01px;
       padding: 30px 0 15px 0;
     }
-    h4 {
+    .operating__mode-date {
       font-size: 16px;
       font-weight: 500;
       line-height: 19.57px;
@@ -258,7 +258,7 @@
 
 // media
 @media screen and (max-width: 1365px) {
-  .contact .operating__mode h3 {
+  .contact .operating__mode .operating__mode-title {
     font-size: 16px;
     padding: 25px 0 15px 0;
     line-height: 19.57px;
@@ -271,7 +271,7 @@
   }
   .contact .operating__mode p,
   .contact .operating__mode a,
-  .contact .operating__mode h4 {
+  .contact .operating__mode .operating__mode-date {
     font-size: 14px;
     line-height: 22px;
   }
@@ -297,7 +297,7 @@
     max-width: 203px;
     min-width: 203px;
   }
-  .contact .operating__mode h4 {
+  .contact .operating__mode .operating__mode-date {
     max-width: 150px;
   }
   .contact .map__box {
@@ -333,7 +333,7 @@
     max-width: 100%;
     text-align: center;
   }
-  .contact .operating__mode h4 {
+  .contact .operating__mode .operating__mode-date {
     margin: 0 auto;
     max-width: 128px;
   }

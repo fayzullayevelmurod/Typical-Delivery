@@ -312,6 +312,12 @@
     .modal__close-btn {
       height: 36px;
     }
+    .modal__header-title {
+      font-family: "Commissioner", sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 31.8px;
+    }
   }
   .modal__content {
     position: relative;
@@ -787,6 +793,9 @@
       max-width: 100%;
       padding: 30px;
     }
+  }
+  .back__call .modal__header .modal__header-title {
+    font-size: 24px;
   }
   .modal .send__btn {
     height: 46px;

@@ -993,6 +993,12 @@ button {
 .back__call .modal__header .modal__close-btn {
   height: 36px;
 }
+.back__call .modal__header .modal__header-title {
+  font-family: "Commissioner", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 31.8px;
+}
 .back__call .modal__content {
   position: relative;
   padding: 32px 20px;
@@ -1448,6 +1454,9 @@ button {
   .product__modal .modal__content {
     max-width: 100%;
     padding: 30px;
+  }
+  .back__call .modal__header .modal__header-title {
+    font-size: 24px;
   }
   .modal .send__btn {
     height: 46px;
@@ -1981,7 +1990,7 @@ button {
 .media__header .apps {
   padding-top: 40px;
 }
-.media__header .apps h5 {
+.media__header .apps .apps-title {
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -2140,7 +2149,7 @@ button {
 .footer__link:hover {
   color: #bdbdbd;
 }
-.footer .last h5 {
+.footer .last .last-box__title {
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -4951,13 +4960,13 @@ button {
   max-width: 243px;
   width: 100%;
 }
-.contact .operating__mode h3 {
+.contact .operating__mode .operating__mode-title {
   font-size: 18px;
   font-weight: 700;
   line-height: 22.01px;
   padding: 30px 0 15px 0;
 }
-.contact .operating__mode h4 {
+.contact .operating__mode .operating__mode-date {
   font-size: 16px;
   font-weight: 500;
   line-height: 19.57px;
@@ -4988,7 +4997,7 @@ button {
 }
 
 @media screen and (max-width: 1365px) {
-  .contact .operating__mode h3 {
+  .contact .operating__mode .operating__mode-title {
     font-size: 16px;
     padding: 25px 0 15px 0;
     line-height: 19.57px;
@@ -4999,7 +5008,7 @@ button {
   }
   .contact .operating__mode p,
   .contact .operating__mode a,
-  .contact .operating__mode h4 {
+  .contact .operating__mode .operating__mode-date {
     font-size: 14px;
     line-height: 22px;
   }
@@ -5025,7 +5034,7 @@ button {
     max-width: 203px;
     min-width: 203px;
   }
-  .contact .operating__mode h4 {
+  .contact .operating__mode .operating__mode-date {
     max-width: 150px;
   }
   .contact .map__box {
@@ -5057,7 +5066,7 @@ button {
     max-width: 100%;
     text-align: center;
   }
-  .contact .operating__mode h4 {
+  .contact .operating__mode .operating__mode-date {
     margin: 0 auto;
     max-width: 128px;
   }
@@ -5168,7 +5177,7 @@ button {
   flex-direction: column;
   gap: 30px;
 }
-.categories .right__box h4 {
+.categories .right__box .gradient-text {
   font-family: "Futura", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -6448,7 +6457,7 @@ button {
   flex-direction: column;
   row-gap: 20px;
 }
-.desktop__timeline .right__box h1 {
+.desktop__timeline .right__box .timeline__title {
   font-size: 20px;
   font-weight: 700;
   line-height: 24.46px;
