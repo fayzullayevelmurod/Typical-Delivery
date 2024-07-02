@@ -4143,6 +4143,12 @@ button {
   justify-content: center;
   gap: 15px;
 }
+.reviews .yandex__reviews-box .yandex__reviews-title {
+  font-family: "Commissioner";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.46px;
+}
 .reviews .left__box {
   max-width: 560px;
   width: 100%;
@@ -4188,6 +4194,10 @@ button {
     flex-direction: column;
     gap: 40px;
   }
+  .reviews .yandex__reviews-box .yandex__reviews-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
   .reviews .left__box {
     margin: 0 auto;
   }
@@ -4225,6 +4235,10 @@ button {
 @media screen and (max-width: 767px) {
   .reviews .left__box {
     max-width: 100%;
+  }
+  .reviews .yandex__reviews-box .yandex__reviews-title {
+    font-size: 16px;
+    line-height: 19.57px;
   }
   .reviews .reviews__box {
     text-align: center;
@@ -5596,7 +5610,7 @@ button {
   padding: 20px;
   text-align: center;
 }
-.order .thanks__box h5 {
+.order .thanks__box .thanks__box-title {
   font-size: 22px;
   font-weight: 600;
   line-height: 26px;
@@ -5742,7 +5756,7 @@ button {
   border-radius: 24px;
   padding: 25px;
 }
-.order .right__box-card h4 {
+.order .right__box-card .right__box-card-title {
   font-size: 26px;
   font-weight: 600;
   line-height: 31.8px;
@@ -5849,7 +5863,7 @@ button {
     max-width: 268px;
     width: 100%;
   }
-  .order .right__box-card h4 {
+  .order .right__box-card .right__box-card-title {
     font-size: 20px;
     line-height: 24.46px;
   }
@@ -5903,7 +5917,7 @@ button {
   .order {
     padding: 30px 0 80px 0;
   }
-  .order .thanks__box h5 {
+  .order .thanks__box .thanks__box-title {
     font-size: 20px;
   }
   .order .sidebars__section .left__box .order__boxes-title {
@@ -5944,7 +5958,7 @@ button {
   .order {
     padding: 20px 0 60px 0;
   }
-  .order .thanks__box h5 {
+  .order .thanks__box .thanks__box-title {
     font-size: 18px;
     line-height: 26px;
   }

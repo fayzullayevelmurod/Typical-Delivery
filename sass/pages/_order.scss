@@ -9,7 +9,7 @@
     border-radius: 24px;
     padding: 20px;
     text-align: center;
-    h5 {
+    .thanks__box-title {
       font-size: 22px;
       font-weight: 600;
       line-height: 26px;
@@ -162,7 +162,7 @@
       background: #212429;
       border-radius: 24px;
       padding: 25px;
-      h4 {
+      .right__box-card-title {
         font-size: 26px;
         font-weight: 600;
         line-height: 31.8px;
@@ -275,7 +275,7 @@
     max-width: 268px;
     width: 100%;
   }
-  .order .right__box-card h4 {
+  .order .right__box-card .right__box-card-title {
     font-size: 20px;
     line-height: 24.46px;
   }
@@ -329,7 +329,7 @@
   .order {
     padding: 30px 0 80px 0;
   }
-  .order .thanks__box h5 {
+  .order .thanks__box .thanks__box-title {
     font-size: 20px;
   }
   .order .sidebars__section .left__box .order__boxes-title {
@@ -371,7 +371,7 @@
   .order {
     padding: 20px 0 60px 0;
   }
-  .order .thanks__box h5 {
+  .order .thanks__box .thanks__box-title {
     font-size: 18px;
     line-height: 26px;
   }

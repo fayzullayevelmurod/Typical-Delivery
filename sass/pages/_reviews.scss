@@ -18,6 +18,12 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
+    .yandex__reviews-title {
+      font-family: "Commissioner";
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24.46px;
+    }
   }
   .left__box {
     max-width: 560px;
@@ -67,6 +73,10 @@
     flex-direction: column;
     gap: 40px;
   }
+  .reviews .yandex__reviews-box .yandex__reviews-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
   .reviews .left__box {
     margin: 0 auto;
   }
@@ -103,6 +113,10 @@
 @media screen and (max-width: 767px) {
   .reviews .left__box {
     max-width: 100%;
+  }
+  .reviews .yandex__reviews-box .yandex__reviews-title {
+    font-size: 16px;
+    line-height: 19.57px;
   }
   .reviews .reviews__box {
     text-align: center;
