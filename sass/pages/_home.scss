@@ -351,6 +351,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 76px;
   border-top: 1px solid #ffffff33;
   background: #2f323a;
   padding: 14px 0 16px 0;
@@ -358,8 +359,22 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
+    & > a,
     & > div {
       text-align: center;
+      // margin: 0 auto;
+      .active-img {
+        display: none;
+      }
+      &.active {
+        img,
+        svg {
+          display: none;
+        }
+        .active-img {
+          display: block;
+        }
+      }
     }
     span {
       display: block;

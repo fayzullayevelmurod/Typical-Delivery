@@ -472,46 +472,49 @@ IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
   } catch (error) {}
 })();
 
-const allSelect = document.querySelectorAll(".all__select");
-const workTimeInfo = document.querySelector(".work__time-info");
-
-allSelect.forEach((parentEl) => {
-  const selectBox = parentEl.querySelector(".select__box");
-  const selectOption = parentEl.querySelector(".option__box");
-  const options = parentEl.querySelectorAll(".option");
-  const selectedText = parentEl.querySelector(".selected__text");
-
-  selectBox.addEventListener("click", (e) => {
-    e.stopPropagation();
-    allSelect.forEach((el) => {
-      el.querySelector(".select__box").classList.remove("active");
-      el.querySelector(".option__box").classList.remove("show");
-    });
-    selectOption.classList.toggle("show");
-    selectBox.classList.toggle("active");
-  });
-
-  options.forEach((option) => {
-    option.addEventListener("click", (e) => {
-      e.stopPropagation();
-      selectedText.value = option.querySelector(".select__text").textContent;
-      selectedText.classList.add("active");
-      selectOption.classList.remove("show");
-      selectBox.classList.remove("active");
-    });
-  });
-});
-
-document.addEventListener("click", (e) => {
+try {
+  const allSelect = document.querySelectorAll(".all__select");
+  const workTimeInfo = document.querySelector(".work__time-info");
+  console.log(allSelect);
   allSelect.forEach((parentEl) => {
-    const selectOption = parentEl.querySelector(".option__box");
     const selectBox = parentEl.querySelector(".select__box");
-    if (!parentEl.contains(e.target)) {
-      selectOption.classList.remove("show");
-      selectBox.classList.remove("active");
-    }
+    const selectOption = parentEl.querySelector(".option__box");
+    const options = parentEl.querySelectorAll(".option");
+    const selectedText = parentEl.querySelector(".selected__text");
+
+    selectBox.addEventListener("click", (e) => {
+      e.stopPropagation();
+      allSelect.forEach((el) => {
+        el.querySelector(".select__box").classList.remove("active");
+        el.querySelector(".option__box").classList.remove("show");
+      });
+      selectOption.classList.toggle("show");
+      selectBox.classList.toggle("active");
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.stopPropagation();
+        selectedText.value = option.querySelector(".select__text").textContent;
+        selectedText.classList.add("active");
+        selectOption.classList.remove("show");
+        selectBox.classList.remove("active");
+      });
+    });
   });
-});
+  document.addEventListener("click", (e) => {
+    allSelect.forEach((parentEl) => {
+      const selectOption = parentEl.querySelector(".option__box");
+      const selectBox = parentEl.querySelector(".select__box");
+      if (!parentEl.contains(e.target)) {
+        selectOption.classList.remove("show");
+        selectBox.classList.remove("active");
+      }
+    });
+  });
+} catch (error) {
+  console.log(error);
+}
 
 // num__code
 const inputsTwo = document.querySelectorAll(".checker__input");
@@ -1019,7 +1022,6 @@ try {
 
 // added selected product in basket
 try {
-  // Barcha checkboxlarni olamiz
   const checkboxes = document.querySelectorAll(".clicker__input");
   console.log(checkboxes);
   checkboxes.forEach((checkbox) => {
@@ -1083,9 +1085,7 @@ try {
       }
     });
   });
-} catch (error) {
-  console.log(error);
-}
+} catch (error) {}
 
 const boxes = document.querySelectorAll(".timeline__right-box");
 const circles = document.querySelectorAll(".sticky-circle");

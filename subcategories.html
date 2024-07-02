@@ -25,16 +25,16 @@
 </head>
 
 <body>
-  <div class="notification__box home" id="notification">
-    <img src="images/icons/cart3.svg" alt="">
-    <div>
-      <p>Добавлено в корзину</p>
-      <span>Унаги кранч <span id="product__count">3</span> шт</span>
-    </div>
-    <button class="close__btn">
-      <img src="images/icons/close.svg" alt="close icon">
-    </button>
-  </div>
+	<div class="notification__box home" id="notification">
+		<img src="images/icons/cart3.svg" alt="">
+		<div>
+			<p>Добавлено в корзину</p>
+			<span>Унаги кранч <span id="product__count">3</span> шт</span>
+		</div>
+		<button class="close__btn">
+			<img src="images/icons/close.svg" alt="close icon">
+		</button>
+	</div>
 	<div class="wrapper">
 
 		<!-- header -->
@@ -1014,19 +1014,19 @@
 			</div>
 		</footer>
 
-
 		<div class="bottom__panel">
 			<div class="container">
-				<div class="active">
-					<img loading="lazy" src="images/icons/home.svg" alt="" width="20" height="20">
-					<img class="active-img" loading="lazy" src="images/icons/active-home.svg" alt="" width="20" height="20">
+				<div>
+					<img loading="lazy" src="images/icons/home.svg" alt="" width="20" height="20" />
+					<img class="active-img" loading="lazy" src="images/icons/active-home.svg" alt="" width="20" height="20" />
 					<span>Главная</span>
 				</div>
 				<div>
-					<img loading="lazy" src="images/icons/wallet.png" alt="" width="20" height="20">
+					<img loading="lazy" src="images/icons/wallet.png" alt="" width="20" height="20" />
+					<img class="active-img" src="images/icons/wallet-active.png" alt="">
 					<span>Заказы</span>
 				</div>
-				<div>
+				<div class="active">
 					<svg width="27" height="20" viewBox="0 0 27 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M1.31217 16.0657H25.2672C25.7433 16.0657 26.1294 16.4518 26.1294 16.9279C26.1294 17.4041 25.7434 17.7901 25.2672 17.7901H1.31217C0.836046 17.7901 0.45 17.4041 0.45 16.9279C0.45 16.4517 0.835995 16.0657 1.31217 16.0657Z"
@@ -1035,6 +1035,7 @@
 							d="M14.3652 3.6241L14.595 3.64532L14.9289 3.69472C19.9536 4.43817 23.8742 8.55149 24.3358 13.6632H2.24364C2.70539 8.54868 6.63126 4.43273 11.6559 3.69196L11.9388 3.65026L12.2201 3.62407C12.573 3.59123 12.9293 3.57228 13.2897 3.57228C13.6501 3.57228 14.0094 3.59124 14.3652 3.6241Z"
 							stroke="#BDBDBD" stroke-width="0.9" />
 					</svg>
+					<img class="active-img" src="images/icons/menu-active.png" alt="" width="26" height="20">
 					<span>Меню</span>
 				</div>
 				<div>
@@ -1214,47 +1215,49 @@
 						required placeholder="">
 					<label for="checker input" class="up__text">Телефон*</label>
 				</div>
-				<div class="select__box modal__input">
-					<div class="select__input">
-						<input class="selected__text" placeholder="Выберите заведение" required>
-					</div>
-					<img loading="lazy" class="arrow__down" src="images/icons/arrow-down.svg" alt="arrow-down" width="12"
-						height="14">
-					<div class="option__box">
-						<div class="scroll__box">
-							<div class="option">
-								<span class="select__text">пр-т Победы, 2</span>
-								<div class="flex__box">
-									<p>с 10:00 до 00:00</p>
-									<span class="status active">Открыто</span>
+				<div class="all__select">
+					<div class="select__box modal__input">
+						<div class="select__input">
+							<input class="selected__text" placeholder="Выберите заведение" required>
+						</div>
+						<img loading="lazy" class="arrow__down" src="images/icons/arrow-down.svg" alt="arrow-down" width="12"
+							height="14">
+						<div class="option__box">
+							<div class="scroll__box">
+								<div class="option">
+									<span class="select__text">пр-т Победы, 2</span>
+									<div class="flex__box">
+										<p>с 10:00 до 00:00</p>
+										<span class="status active">Открыто</span>
+									</div>
 								</div>
-							</div>
-							<div class="option">
-								<span class="select__text">пр-т Окт. Революции, 42</span>
-								<div class="flex__box">
-									<p>с 09:00 до 01:00</p>
-									<span class="status closed">Закрыто</span>
+								<div class="option">
+									<span class="select__text">пр-т Окт. Революции, 42</span>
+									<div class="flex__box">
+										<p>с 09:00 до 01:00</p>
+										<span class="status closed">Закрыто</span>
+									</div>
 								</div>
-							</div>
-							<div class="option">
-								<span class="select__text">пр-т Ген. Острякова, 52</span>
-								<div class="flex__box">
-									<p>с 10:00 до 00:00</p>
-									<span class="status active">Открыто</span>
+								<div class="option">
+									<span class="select__text">пр-т Ген. Острякова, 52</span>
+									<div class="flex__box">
+										<p>с 10:00 до 00:00</p>
+										<span class="status active">Открыто</span>
+									</div>
 								</div>
-							</div>
-							<div class="option">
-								<span class="select__text">пр-т Окт. Революции, 42</span>
-								<div class="flex__box">
-									<p>с 09:00 до 01:00</p>
-									<span class="status closed">Закрыто</span>
+								<div class="option">
+									<span class="select__text">пр-т Окт. Революции, 42</span>
+									<div class="flex__box">
+										<p>с 09:00 до 01:00</p>
+										<span class="status closed">Закрыто</span>
+									</div>
 								</div>
-							</div>
-							<div class="option">
-								<span class="select__text">пр-т Окт. Революции, 42</span>
-								<div class="flex__box">
-									<p>с 09:00 до 01:00</p>
-									<span class="status closed">Закрыто</span>
+								<div class="option">
+									<span class="select__text">пр-т Окт. Революции, 42</span>
+									<div class="flex__box">
+										<p>с 09:00 до 01:00</p>
+										<span class="status closed">Закрыто</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1465,7 +1468,7 @@
 	<!-- swiper js -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<!-- custom js -->
-	<script src="./js/script.js"></script>
+	<script src="./js/new.js"></script>
 </body>
 
 </html>
