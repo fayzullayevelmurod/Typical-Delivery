@@ -2632,7 +2632,6 @@ button {
 }
 .bottom__panel .container > a, .bottom__panel .container > div {
   text-align: center;
-  margin: 0 auto;
 }
 .bottom__panel .container > a .active-img, .bottom__panel .container > div .active-img {
   display: none;
@@ -3759,6 +3758,7 @@ button {
 }
 .news__two .title__desc {
   font-weight: 600;
+  color: #bdbdbd;
 }
 
 @media screen and (max-width: 1365px) {
