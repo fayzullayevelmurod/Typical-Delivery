@@ -867,7 +867,7 @@ button {
   right: 20px;
   height: 36px;
 }
-.filter__modal h2 {
+.filter__modal .filter-title {
   font-size: 26px;
   font-weight: 600;
   line-height: 31px;
@@ -4708,6 +4708,7 @@ button {
 @media screen and (max-width: 767px) {
   .product__four-swiper .product__card .product__card-img {
     height: 140px;
+    padding-top: 20px;
   }
   .basket .top__box {
     flex-direction: column;
@@ -4765,6 +4766,11 @@ button {
   }
   .empty__page .top__box {
     row-gap: 20px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .product__four-swiper .product__card .product__card-img {
+    padding-top: 0;
   }
 }
 .map-circle-placemark._outline .map-circle-placemark__caption {
@@ -6212,7 +6218,7 @@ button {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.about__delivery .title__box h4 {
+.about__delivery .title__box .delivery-title {
   font-family: "Futura", sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -6222,7 +6228,7 @@ button {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(94.92deg, #e0e0e0 0%, #bdbdbd 100%);
 }
-.about__delivery .title__box h4 span {
+.about__delivery .title__box .delivery-title span {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(98.55deg, #15ffab 0%, #15ffff 98.27%);
@@ -6340,7 +6346,7 @@ button {
   max-width: 489px;
   width: 100%;
 }
-.about__delivery .right__box .info__sec h4 {
+.about__delivery .right__box .info__sec .info__sec-title {
   font-size: 18px;
   font-weight: 600;
   line-height: 30.6px;
@@ -6492,24 +6498,24 @@ button {
   width: 250px;
   text-align: right;
 }
-.desktop__timeline .right__box .block h2 {
+.desktop__timeline .right__box .block .block-title {
   font-size: 18px;
   font-weight: 600;
   line-height: 30.6px;
   margin-top: -8px;
 }
-.desktop__timeline .right__box .block p {
+.desktop__timeline .right__box .block .block-info {
   padding-top: 5px;
   font-size: 16px;
   font-weight: 500;
   line-height: 25.6px;
   color: #bdbdbd;
 }
-.desktop__timeline .right__box .block p a {
+.desktop__timeline .right__box .block .block-info a {
   color: #fff;
   text-decoration: underline;
 }
-.desktop__timeline .right__box .block p a.red {
+.desktop__timeline .right__box .block .block-info a.red {
   color: #ff453a;
 }
 .desktop__timeline .right__box.hide__title {
@@ -6536,11 +6542,11 @@ button {
   }
 }
 @media screen and (max-width: 1365px) {
-  .right__box .block h2 {
+  .right__box .block .block-title {
     font-size: 16px;
     line-height: 27.2px;
   }
-  .right__box .block p {
+  .right__box .block .block-info {
     font-size: 14px;
     line-height: 22.4px;
   }
@@ -6661,7 +6667,7 @@ button {
     font-size: 18px;
     line-height: 22.01px;
   }
-  .about__delivery .right__box .info__sec h4 {
+  .about__delivery .right__box .info__sec .info__sec-title {
     font-size: 16px;
     line-height: 27.2px;
   }
@@ -6686,7 +6692,7 @@ button {
     gap: 15px;
   }
   .about__delivery .title__box .about__delivery-info,
-  .about__delivery .title__box h4 {
+  .about__delivery .title__box .delivery-title {
     font-size: 18px;
     line-height: 23.92px;
   }
@@ -6778,12 +6784,12 @@ button {
     font-size: 16px;
     text-align: left;
   }
-  .about__delivery .right__box .info__sec h4 {
+  .about__delivery .right__box .info__sec .info__sec-title {
     font-size: 14px;
     position: relative;
     padding-left: 18px;
   }
-  .about__delivery .right__box .info__sec h4::before {
+  .about__delivery .right__box .info__sec .info__sec-title::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -6802,7 +6808,7 @@ button {
     font-size: 13px;
     line-height: 20.8px;
   }
-  .about__delivery .right__box .info__sec h4 {
+  .about__delivery .right__box .info__sec .info__sec-title {
     margin-top: 5px;
   }
   .about__delivery .right__box .timeline__box {

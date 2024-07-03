@@ -414,6 +414,7 @@
 @media screen and (max-width: 767px) {
   .product__four-swiper .product__card .product__card-img {
     height: 140px;
+    padding-top: 20px;
   }
   .basket .top__box {
     flex-direction: column;
@@ -473,5 +474,11 @@
     .top__box {
       row-gap: 20px;
     }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .product__four-swiper .product__card .product__card-img {
+    padding-top: 0;
   }
 }

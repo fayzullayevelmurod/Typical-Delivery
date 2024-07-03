@@ -238,7 +238,7 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    h4 {
+    .delivery-title {
       font-family: "Futura", sans-serif;
       font-size: 20px;
       font-weight: 700;
@@ -401,7 +401,7 @@
       gap: 20px;
       max-width: 489px;
       width: 100%;
-      h4 {
+      .info__sec-title {
         font-size: 18px;
         font-weight: 600;
         line-height: 30.6px;
@@ -578,13 +578,13 @@
       text-align: right;
     }
     .block {
-      h2 {
+      .block-title {
         font-size: 18px;
         font-weight: 600;
         line-height: 30.6px;
         margin-top: -8px;
       }
-      p {
+      .block-info {
         padding-top: 5px;
         font-size: 16px;
         font-weight: 500;
@@ -624,11 +624,11 @@
   }
 }
 @media screen and (max-width: 1365px) {
-  .right__box .block h2 {
+  .right__box .block .block-title {
     font-size: 16px;
     line-height: 27.2px;
   }
-  .right__box .block p {
+  .right__box .block .block-info {
     font-size: 14px;
     line-height: 22.4px;
   }
@@ -752,7 +752,7 @@
     font-size: 18px;
     line-height: 22.01px;
   }
-  .about__delivery .right__box .info__sec h4 {
+  .about__delivery .right__box .info__sec .info__sec-title {
     font-size: 16px;
     line-height: 27.2px;
   }
@@ -777,7 +777,7 @@
     gap: 15px;
   }
   .about__delivery .title__box .about__delivery-info,
-  .about__delivery .title__box h4 {
+  .about__delivery .title__box .delivery-title {
     font-size: 18px;
     line-height: 23.92px;
   }
@@ -869,7 +869,7 @@
     font-size: 16px;
     text-align: left;
   }
-  .about__delivery .right__box .info__sec h4 {
+  .about__delivery .right__box .info__sec .info__sec-title {
     font-size: 14px;
     position: relative;
     padding-left: 18px;
@@ -894,7 +894,7 @@
       line-height: 20.8px;
     }
   }
-  .about__delivery .right__box .info__sec h4 {
+  .about__delivery .right__box .info__sec .info__sec-title {
     margin-top: 5px;
   }
   .about__delivery .right__box .timeline__box {
