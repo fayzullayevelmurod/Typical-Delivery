@@ -791,7 +791,6 @@
 }
 // 576px -> 767px
 @media screen and (max-width: 767px) {
-
   .notification__box {
     right: 15px !important;
   }
@@ -1172,5 +1171,13 @@
   }
   .product__cards {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+// min width
+@media screen and (min-width: 1366px) {
+  .outline__btn,
+  .footer .teal__btn {
+    height: 50px;
   }
 }

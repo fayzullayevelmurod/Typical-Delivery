@@ -1,8 +1,3 @@
-window.addEventListener("resize", () => {
-  if (window) {
-  }
-});
-
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) =>
   Array.from(context.querySelectorAll(selector));
@@ -92,10 +87,6 @@ var promotionSwiper = new Swiper(".promotion__swiper", {
   slidesPerView: 2.3,
   speed: 700,
   spaceBetween: 20,
-  // navigation: {
-  //   nextEl: "next__btn",
-  //   prevEl: "prev__btn",
-  // },
   navigation: {
     nextEl: ".next__btn",
     prevEl: ".prev__btn",
@@ -111,8 +102,6 @@ var promotionSwiper = new Swiper(".promotion__swiper", {
     },
   },
 });
-// Timer
-
 // Timer
 
 const deadline = "2024-08-11";
@@ -387,7 +376,6 @@ IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
   filterBox.forEach((item) => {
     item.addEventListener("click", () => {
       item.classList.toggle("active");
-      console.log(item.classList.toggle("active"));
       updateApplyButtonStatus();
       if (item.classList.contains("active")) {
         clearBtn.addEventListener("click", () => {
@@ -520,7 +508,7 @@ document.addEventListener("click", (e) => {
 const inputsTwo = document.querySelectorAll(".checker__input");
 const warningCode = document.querySelector(".warning__code");
 const numCodeInput = document.querySelector(".num__code-input");
-// up__input
+const callFormBtn = document.querySelectorAll(".call__form-btn");
 const upBox = document.querySelectorAll(".up__box");
 const form = document.querySelector(".back__call");
 const numCode = document.querySelector(".num__code").textContent;
@@ -554,10 +542,8 @@ upBox.forEach((item) => {
   });
 });
 numCodeInput.addEventListener("input", function () {
-  // Faqat raqam kiritsin
   this.value = this.value.replace(/\D/g, "");
 
-  // 4 ta raqamdan ortiq kiritilmasin
   if (this.value.length > 4) {
     this.value = this.value.slice(0, 4);
   }
@@ -567,13 +553,11 @@ const openCallModal = document.querySelectorAll(".open__call-modal");
 const closeCallModal = document.querySelector(".call__modal-close");
 function showCallModal() {
   form.classList.add("show");
-  body.classList.add("blur-two");
-  // document.body.style.overflow = "hidden";
+  body.classList.add("blur-two", "no-scroll");
 }
 function hideCallModal() {
   form.classList.remove("show");
-  body.classList.remove("blur-two");
-  // document.body.style.overflow = "auto";
+  body.classList.remove("blur-two", "no-scroll");
 }
 openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
 closeCallModal.addEventListener("click", hideCallModal);
@@ -806,7 +790,6 @@ try {
   });
 } catch (error) {}
 
-
 // modal product added
 
 // added product
@@ -889,7 +872,6 @@ try {
   const btn = document.querySelector(".next__tab");
   const validPromoCode = "0000";
   promoInput.addEventListener("input", function () {
-    console.log("salom");
     if (promoInput.value.length > 4) {
       promoInput.value = promoInput.value.slice(0, 4);
     }
@@ -934,22 +916,22 @@ try {
     option.addEventListener("click", function () {
       const selectText = option.querySelector(".select__text").textContent;
       const time = option.querySelector("p").textContent;
-      const status = option.querySelector(".status").textContent;
+      if (time) {
+        const status = option.querySelector(".status").textContent;
+        selectedText.value = selectText;
+        workTimeInfo.innerHTML = `${time} <br> ${status}`;
 
-      selectedText.value = selectText;
-      workTimeInfo.innerHTML = `${time} <br> ${status}`;
+        const workTimeSpan = document.createElement("span");
+        workTimeSpan.className = `status ${
+          option.querySelector(".status").classList.contains("active")
+            ? "active"
+            : "closed"
+        }`;
+        workTimeSpan.textContent = status;
 
-      const workTimeSpan = document.createElement("span");
-      workTimeSpan.className = `status ${
-        option.querySelector(".status").classList.contains("active")
-          ? "active"
-          : "closed"
-      }`;
-      workTimeSpan.textContent = status;
-
-      workTimeInfo.innerHTML = `${time} <br>`;
-      workTimeInfo.appendChild(workTimeSpan);
-      console.log(workTimeInfo);
+        workTimeInfo.innerHTML = `${time} <br>`;
+        workTimeInfo.appendChild(workTimeSpan);
+      }
     });
   });
 } catch (error) {}
@@ -958,7 +940,6 @@ try {
 try {
   // Barcha checkboxlarni olamiz
   const checkboxes = document.querySelectorAll(".clicker__input");
-  console.log(checkboxes);
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
       const parentBox = this.closest(".product__cart-box");
@@ -1044,4 +1025,4 @@ function handleScroll() {
 }
 
 window.addEventListener("scroll", handleScroll);
-handleScroll(); // Initial check on page load
+handleScroll();

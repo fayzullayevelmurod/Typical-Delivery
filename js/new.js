@@ -384,7 +384,6 @@ IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
   filterBox.forEach((item) => {
     item.addEventListener("click", () => {
       item.classList.toggle("active");
-      console.log(item.classList.toggle("active"));
       updateApplyButtonStatus();
       if (item.classList.contains("active")) {
         clearBtn.addEventListener("click", () => {
@@ -475,7 +474,6 @@ IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
 try {
   const allSelect = document.querySelectorAll(".all__select");
   const workTimeInfo = document.querySelector(".work__time-info");
-  console.log(allSelect);
   allSelect.forEach((parentEl) => {
     const selectBox = parentEl.querySelector(".select__box");
     const selectOption = parentEl.querySelector(".option__box");
@@ -567,12 +565,12 @@ const openCallModal = document.querySelectorAll(".open__call-modal");
 const closeCallModal = document.querySelector(".call__modal-close");
 function showCallModal() {
   form.classList.add("show");
-  body.classList.add("blur-two");
+  body.classList.add("blur-two", "no-scroll");
   // document.body.style.overflow = "hidden";
 }
 function hideCallModal() {
   form.classList.remove("show");
-  body.classList.remove("blur-two");
+  body.classList.remove("blur-two", "no-scroll");
   // document.body.style.overflow = "auto";
 }
 openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
@@ -1015,7 +1013,6 @@ try {
 
       workTimeInfo.innerHTML = `${time} <br>`;
       workTimeInfo.appendChild(workTimeSpan);
-      console.log(workTimeInfo);
     });
   });
 } catch (error) {}
@@ -1023,7 +1020,6 @@ try {
 // added selected product in basket
 try {
   const checkboxes = document.querySelectorAll(".clicker__input");
-  console.log(checkboxes);
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
       const parentBox = this.closest(".product__cart-box");
@@ -1107,4 +1103,4 @@ function handleScroll() {
 }
 
 window.addEventListener("scroll", handleScroll);
-handleScroll(); // Initial check on page load
+handleScroll();

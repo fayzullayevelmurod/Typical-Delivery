@@ -3400,6 +3400,12 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
+@media screen and (min-width: 1366px) {
+  .outline__btn,
+  .footer .teal__btn {
+    height: 50px;
+  }
+}
 .stock__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
@@ -7206,7 +7212,7 @@ button {
   padding-left: 30px !important;
   padding-right: 30px !important;
 }
-.cooperation__sec .photo-cms-sticky {
+.cooperation__sec .photo__cms-sticky {
   overflow: visible !important;
 }
 .cooperation__sec .pink__btn {
