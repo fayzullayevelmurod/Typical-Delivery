@@ -4,6 +4,11 @@
   .title {
     padding-bottom: 25px;
   }
+  .required-select {
+    &::placeholder {
+      color: #fff;
+    }
+  }
   .product__two-title {
     display: flex;
     align-items: center;

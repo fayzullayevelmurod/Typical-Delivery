@@ -2307,7 +2307,7 @@ button {
   }
 }
 .danger {
-  border: 1px solid #ff453a;
+  border: 1px solid #ff453a !important;
 }
 
 @media screen and (min-width: 1300px) {
@@ -4318,6 +4318,9 @@ button {
 }
 .basket .title {
   padding-bottom: 25px;
+}
+.basket .required-select::placeholder {
+  color: #fff;
 }
 .basket .product__two-title {
   display: flex;

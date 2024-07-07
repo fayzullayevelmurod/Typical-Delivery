@@ -421,7 +421,7 @@
                       <div class="flex__item">
                         <div class="up__box">
                           <input
-                            class="checker__input modal__input up__input"
+                            class="checker__input modal__input up__input required-input"
                             type="text"
                             name="text"
                             placeholder=""
@@ -431,7 +431,7 @@
                         </div>
                         <div class="up__box">
                           <input
-                            class="checker__input modal__input up__input number__input phone__input"
+                            class="checker__input modal__input up__input number__input phone__input required-input"
                             type="tel"
                             name="number"
                             required
@@ -639,13 +639,13 @@
                   <div class="select__form">
                     <div class="flex__box">
                       <div class="all__select">
-                        <div class="select__box select__box-one modal__input">
+                        <div
+                          class="select__box select__box-one modal__input required__select-box"
+                        >
                           <div class="select__input">
                             <input
-                              class="selected__text"
+                              class="selected__text required-select"
                               placeholder="Сегодня (понедельник)"
-                              value="Сегодня (понедельник)"
-                              required
                             />
                           </div>
                           <img
@@ -688,12 +688,13 @@
                         </div>
                       </div>
                       <div class="all__select">
-                        <div class="select__box modal__input">
+                        <div
+                          class="select__box modal__input required__select-box"
+                        >
                           <div class="select__input">
                             <input
-                              class="selected__text"
+                              class="selected__text required-select"
                               placeholder="Как можно быстрее"
-                              value="Как можно быстрее"
                               required
                             />
                           </div>
@@ -743,7 +744,7 @@
                       <p class="info">Количество персон*</p>
                       <div class="up__box">
                         <input
-                          class="checker__input modal__input up__input number__input phone__input"
+                          class="checker__input modal__input up__input number__input phone__input required-input"
                           type="number"
                           name="number"
                           required
@@ -756,7 +757,7 @@
                       <p class="info">Вам нужна сдача?</p>
                       <div class="up__box">
                         <input
-                          class="checker__input modal__input up__input number__input phone__input"
+                          class="checker__input modal__input up__input number__input phone__input required-input"
                           type="number"
                           name="number"
                           required
@@ -771,7 +772,7 @@
                     <div class="payment__method">
                       <span>Наличными курьеру</span>
                       <input
-                        class="clicker__input"
+                        class="clicker__input required-checkbox"
                         type="radio"
                         id="check-box4"
                         name="payment"
@@ -783,7 +784,7 @@
                     <div class="payment__method">
                       <span>Картой курьеру</span>
                       <input
-                        class="clicker__input"
+                        class="clicker__input required-checkbox"
                         type="radio"
                         id="check-box5"
                         name="payment"
@@ -795,7 +796,7 @@
                     <div class="payment__method">
                       <span>На сайте</span>
                       <input
-                        class="clicker__input"
+                        class="clicker__input required-checkbox"
                         type="radio"
                         id="check-box6"
                         name="payment"
@@ -882,7 +883,11 @@
                     <span class="total__price">3850 ₽</span>
                   </div>
                 </div>
-                <a class="outline__btn" href="#!">Оформить заказ</a>
+                <form class="send-form">
+                  <button class="outline__btn send-btn" type="submit">
+                    Оформить заказ
+                  </button>
+                </form>
                 <div class="remember__box">
                   <input type="checkbox" checked="" id="remember3" />
                   <label for="remember3"

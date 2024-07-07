@@ -554,19 +554,20 @@ document.addEventListener("click", (e) => {
 });
 
 // num__code
+const form = document.querySelector(".back__call");
 const inputsTwo = document.querySelectorAll(".checker__input");
 const warningCode = document.querySelector(".warning__code");
 const numCodeInput = document.querySelector(".num__code-input");
-// up__input
 const upBox = document.querySelectorAll(".up__box");
-const form = document.querySelector(".back__call");
 const numCode = document.querySelector(".num__code").textContent;
 const callFormBtn = form.querySelector(".call__form-btn");
+const formUpBox = form.querySelectorAll(".up__box");
+const selectBox = form.querySelector(".select__box");
+
 upBox.forEach((item) => {
   const upInput = item.querySelector(".up__input");
   const upText = item.querySelector(".up__text");
   const selectedText = form.querySelector(".selected__text");
-  const selectBox = form.querySelector(".select__box");
   upInput.addEventListener("click", () => {
     upText.classList.add("up");
   });
@@ -586,13 +587,17 @@ upBox.forEach((item) => {
       upText.classList.remove("up");
     }
   });
-
-  form.addEventListener("submit", function (e) {
+});
+form.addEventListener("submit", function (e) {
+  formUpBox.forEach((item) => {
     let allInputsEmpty = true;
+    const upInput = item.querySelector(".up__input");
+    const upText = item.querySelector(".up__text");
     let inputs = [numCodeInput, upInput];
     let preventSubmit = false;
-
+    console.log(inputs);
     inputs.forEach((input) => {
+      console.log(input);
       if (input.value.trim() === "") {
         input.classList.add("danger");
         preventSubmit = true;
@@ -611,6 +616,7 @@ upBox.forEach((item) => {
 
     if (allInputsEmpty) {
       upText.classList.add("up");
+      console.log("salom");
       warningCode.classList.add("show");
       preventSubmit = true;
     } else {
@@ -1115,3 +1121,60 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 handleScroll();
+
+try {
+  const requireInputs = document.querySelectorAll(".required-input");
+  const requireSelectBox = document.querySelectorAll(".required__select-box");
+  const requireSelects = document.querySelectorAll(".required-select");
+  const requireCheckboxes = document.querySelectorAll(".required-checkbox");
+  const sendForm = document.querySelector(".send-form");
+
+  sendForm.addEventListener("submit", (e) => {
+    let preventSubmit = false;
+
+    // Required inputs validation
+    requireInputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        input.classList.add("danger");
+        preventSubmit = true;
+      } else {
+        input.classList.remove("danger");
+      }
+    });
+
+    // Required selects validation
+    requireSelectBox.forEach((selectBox) => {
+      const select = selectBox.querySelector(".required-select");
+      if (select.value.trim() === "") {
+        selectBox.classList.add("danger");
+        preventSubmit = true;
+      } else {
+        selectBox.classList.remove("danger");
+      }
+    });
+
+    // Required checkboxes validation
+    let checkboxChecked = false;
+    requireCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        checkboxChecked = true;
+      }
+    });
+
+    if (!checkboxChecked) {
+      requireCheckboxes.forEach((checkbox) => {
+        checkbox.closest(".payment__method").classList.add("danger");
+      });
+      preventSubmit = true;
+    } else {
+      requireCheckboxes.forEach((checkbox) => {
+        checkbox.closest(".payment__method").classList.remove("danger");
+      });
+    }
+    if (!preventSubmit) {
+      e.preventDefault();
+    }
+  });
+} catch (error) {
+  console.log(error);
+}
