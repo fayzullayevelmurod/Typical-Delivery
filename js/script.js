@@ -1171,6 +1171,7 @@ try {
         checkbox.closest(".payment__method").classList.remove("danger");
       });
     }
+
     if (!preventSubmit) {
       e.preventDefault();
     }
