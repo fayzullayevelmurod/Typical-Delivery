@@ -1257,7 +1257,6 @@
                 class="modal__input phone__input"
                 type="tel"
                 name="number"
-                required
               />
               <label class="placeholder__text">Номер телефона</label>
             </div>
@@ -1267,28 +1266,24 @@
                   class="modal__input enter__code-input"
                   type="number"
                   aria-label="send code input"
-                  required
                 />
                 <span class="line"></span>
                 <input
                   class="modal__input enter__code-input"
                   type="number"
                   aria-label="send code input"
-                  required
                 />
                 <span class="line"></span>
                 <input
                   class="modal__input enter__code-input"
                   type="number"
                   aria-label="send code input"
-                  required
                 />
                 <span class="line"></span>
                 <input
                   class="modal__input enter__code-input"
                   type="number"
                   aria-label="send code input"
-                  required
                 />
               </div>
               <button class="send__code-btn" type="button">Получить код</button>
@@ -1322,6 +1317,127 @@
           <a href="#!">Конфиденциальность</a> и
           <a href="#!">Условия использования.</a>
         </p>
+      </div>
+    </div>
+
+    <!-- Back call -->
+    <div class="back__call modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <div class="modal__header-title">Обратный звонок</div>
+          <button
+            class="modal__close-btn call__modal-close"
+            aria-label="close modal button"
+          >
+            <img
+              loading="lazy"
+              src="images/icons/close.svg"
+              alt="close icon"
+              width="16"
+              height="16"
+            />
+          </button>
+        </div>
+        <form class="call__modal-form">
+          <div class="up__box">
+            <input
+              class="checker__input modal__input up__input"
+              type="text"
+              name="text"
+              placeholder=""
+            />
+            <label class="up__text">Ваше имя*</label>
+          </div>
+          <div class="up__box">
+            <input
+              class="checker__input modal__input up__input number__input phone__input"
+              type="tel"
+              name="number"
+              placeholder=""
+            />
+            <label class="up__text">Телефон*</label>
+          </div>
+          <div class="all__select">
+            <div class="select__box modal__input">
+              <div class="select__input">
+                <input
+                  class="selected__text"
+                  placeholder="Выберите заведение"
+                />
+              </div>
+              <img
+                loading="lazy"
+                class="arrow__down"
+                src="images/icons/arrow-down.svg"
+                alt="arrow-down"
+                width="12"
+                height="14"
+              />
+              <div class="option__box">
+                <div class="scroll__box">
+                  <div class="option">
+                    <span class="select__text">пр-т Победы, 2</span>
+                    <div class="flex__box">
+                      <p>с 10:00 до 00:00</p>
+                      <span class="status active">Открыто</span>
+                    </div>
+                  </div>
+                  <div class="option">
+                    <span class="select__text">пр-т Окт. Революции, 42</span>
+                    <div class="flex__box">
+                      <p>с 09:00 до 01:00</p>
+                      <span class="status closed">Закрыто</span>
+                    </div>
+                  </div>
+                  <div class="option">
+                    <span class="select__text">пр-т Ген. Острякова, 52</span>
+                    <div class="flex__box">
+                      <p>с 10:00 до 00:00</p>
+                      <span class="status active">Открыто</span>
+                    </div>
+                  </div>
+                  <div class="option">
+                    <span class="select__text">пр-т Окт. Революции, 42</span>
+                    <div class="flex__box">
+                      <p>с 09:00 до 01:00</p>
+                      <span class="status closed">Закрыто</span>
+                    </div>
+                  </div>
+                  <div class="option">
+                    <span class="select__text">пр-т Окт. Революции, 42</span>
+                    <div class="flex__box">
+                      <p>с 09:00 до 01:00</p>
+                      <span class="status closed">Закрыто</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="enter__num-code">
+            <div class="up__box">
+              <input
+                class="up__input modal__input num__code-input"
+                type="number"
+              />
+              <label class="up__text">Введите цифры</label>
+            </div>
+            <p class="num__code">1465</p>
+          </div>
+          <p class="warning__code">Вы ввели не верный код</p>
+          <div class="sedn__box">
+            <div class="remember__box">
+              <input type="checkbox" checked id="remember2" />
+              <label for="remember2"
+                >Согласен с обработкой моих персональных данных в соответствии с
+                <a href="#!">политикой конфиденциальности сайта</a></label
+              >
+            </div>
+            <button class="red__btn call__form-btn" type="submit">
+              Отправить
+            </button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -1456,148 +1572,6 @@
           <button class="clear__btn">Сбросить</button>
           <button class="red__btn apply__btn disabled">Применить</button>
         </div>
-      </div>
-    </div>
-
-    <!-- Back call -->
-    <div class="back__call modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <div class="modal__header-title">Обратный звонок</div>
-          <button
-            class="modal__close-btn call__modal-close"
-            aria-label="close modal button"
-          >
-            <img
-              loading="lazy"
-              src="images/icons/close.svg"
-              alt="close icon"
-              width="16"
-              height="16"
-            />
-          </button>
-        </div>
-        <form class="call__modal-form">
-          <div class="up__box">
-            <input
-              class="checker__input modal__input up__input"
-              type="text"
-              name="text"
-              placeholder=""
-              required
-            />
-            <label class="up__text">Ваше имя*</label>
-          </div>
-          <div class="up__box">
-            <input
-              class="checker__input modal__input up__input number__input phone__input"
-              type="tel"
-              name="number"
-              required
-              placeholder=""
-            />
-            <label class="up__text">Телефон*</label>
-          </div>
-          <div class="all__select">
-            <div class="select__box modal__input">
-              <div class="select__input">
-                <input
-                  class="selected__text"
-                  placeholder="Выберите заведение"
-                  required
-                />
-              </div>
-              <img
-                loading="lazy"
-                class="arrow__down"
-                src="images/icons/arrow-down.svg"
-                alt="arrow-down"
-                width="12"
-                height="14"
-              />
-              <div class="option__box">
-                <div class="scroll__box">
-                  <div class="option">
-                    <span class="select__text"
-                      >Cамовывоз пр-т Окт. Революции, 42</span
-                    >
-                    <div class="flex__box">
-                      <p>с 09:00 до 01:00</p>
-                      <span class="status active">Открыто</span>
-                    </div>
-                  </div>
-                  <div class="option">
-                    <span class="select__text">Самовывоз пр-т Победы, 2</span>
-                    <div class="flex__box">
-                      <p>с 09:00 до 01:00</p>
-                      <span class="status closed">Закрыто</span>
-                    </div>
-                  </div>
-                  <div class="option">
-                    <span class="select__text"
-                      >Самовывоз пр-т Ген. Острякова, 52</span
-                    >
-                    <div class="flex__box">
-                      <p>с 09:00 до 01:00</p>
-                      <span class="status active">Открыто</span>
-                    </div>
-                  </div>
-                  <div class="option">
-                    <span class="select__text"
-                      >Самовывоз ул. Симонок, 37 (Северная сторона)</span
-                    >
-                    <div class="flex__box">
-                      <p>с 09:00 до 01:00</p>
-                      <span class="status closed">Закрыто</span>
-                    </div>
-                  </div>
-                  <div class="option">
-                    <span class="select__text"
-                      >Cамовывоз пр-т Окт. Революции, 42</span
-                    >
-                    <div class="flex__box">
-                      <p>с 09:00 до 01:00</p>
-                      <span class="status active">Открыто</span>
-                    </div>
-                  </div>
-                  <div class="option">
-                    <span class="select__text"
-                      >Cамовывоз пр-т Окт. Революции, 42</span
-                    >
-                    <div class="flex__box">
-                      <p>с 09:00 до 01:00</p>
-                      <span class="status active">Открыто</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="enter__num-code">
-            <div class="up__box">
-              <input
-                class="up__input modal__input num__code-input"
-                type="number"
-                required
-              />
-              <label class="up__text">Введите цифры</label>
-            </div>
-            <p class="num__code">1465</p>
-          </div>
-          <p class="warning__code">Вы ввели не верный код</p>
-          <div class="sedn__box">
-            <div class="remember__box">
-              <input type="checkbox" checked id="remember2" />
-              <label for="remember2"
-                >Согласен с обработкой моих персональных данных в соответствии с
-                <a href="#!">политикой конфиденциальности сайта</a></label
-              >
-            </div>
-            <button class="red__btn call__form-btn" type="submit">
-              Отправить
-            </button>
-          </div>
-        </form>
       </div>
     </div>
 

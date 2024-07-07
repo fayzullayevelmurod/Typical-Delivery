@@ -264,13 +264,20 @@ authModal.addEventListener("click", (e) => {
   }
 });
 // validate input
-
 const phoneInput = document.querySelector(".phone__input");
 const numberInputs = document.querySelectorAll(".number__input");
 const placeholderText = document.querySelector(".placeholder__text");
 const inputs = document.querySelectorAll(".enter__code-input");
 const errorText = document.querySelector(".error__text");
 const wrongCode = document.querySelector(".wrong__code");
+const authModalForm = authModal.querySelector(".modal__form");
+const selectedText = document.querySelector(".selected__text");
+
+if (phoneInput.value) {
+  phoneInput.classList.add("up");
+} else {
+  phoneInput.classList.add("up");
+}
 
 inputs.forEach(function (input, index) {
   input.addEventListener("input", function () {
@@ -291,12 +298,9 @@ inputs.forEach(function (input, index) {
     }
   });
 });
+
 sendButton.addEventListener("click", function (e) {
   inputs.forEach(function (input) {
-    if (input.value === "") {
-      input.focus();
-      return;
-    }
     if (input.value && phoneInput.value) {
       input.classList.add("error");
     }
@@ -306,6 +310,7 @@ sendButton.addEventListener("click", function (e) {
     wrongCode.classList.add("show");
   }
 });
+
 phoneInput.addEventListener("click", () => {
   phoneInput.placeholder = "+7-(---)--- -- --";
   placeholderText.classList.add("up");
@@ -318,6 +323,50 @@ document.addEventListener("click", (event) => {
   if (event.target !== phoneInput && !phoneInput.value) {
     placeholderText.classList.remove("up");
     phoneInput.placeholder = "";
+  }
+});
+
+authModalForm.addEventListener("submit", function (e) {
+  let allInputsEmpty = true;
+  let inputsArray = Array.from(inputs);
+  let preventSubmit = false;
+
+  inputsArray.forEach((input) => {
+    if (input.value.trim() === "") {
+      input.classList.add("danger");
+      preventSubmit = true;
+    } else {
+      input.classList.remove("danger");
+      allInputsEmpty = false;
+    }
+  });
+
+  if (phoneInput.value.trim() === "") {
+    phoneInput.classList.add("danger");
+    preventSubmit = true;
+  } else {
+    phoneInput.classList.remove("danger");
+  }
+
+  if (allInputsEmpty) {
+    placeholderText.classList.add("up");
+    wrongCode.classList.add("show");
+    preventSubmit = true;
+  } else {
+    if (numCodeInput.value.trim() !== numCode.trim()) {
+      placeholderText.classList.add("up");
+      wrongCode.classList.add("show");
+      numCodeInput.classList.add("danger");
+      preventSubmit = true;
+    } else {
+      placeholderText.classList.remove("up");
+      wrongCode.classList.remove("show");
+      numCodeInput.classList.remove("danger");
+    }
+  }
+
+  if (preventSubmit) {
+    e.preventDefault();
   }
 });
 
@@ -377,44 +426,44 @@ IMask(phoneInput, { mask: "+{7} (000) 000-00-00" });
 IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
 
 // filter__box
-(() => {
-  const filterBox = document.querySelectorAll(".filter__box");
-  const applyBtn = document.querySelector(".apply__btn");
+// (() => {
+const filterBox = document.querySelectorAll(".filter__box");
+const applyBtn = document.querySelector(".apply__btn");
 
+filterBox.forEach((item) => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+    updateApplyButtonStatus();
+    if (item.classList.contains("active")) {
+      clearBtn.addEventListener("click", () => {
+        item.classList.remove("active");
+        updateApplyButtonStatus();
+      });
+    }
+  });
+});
+
+function updateApplyButtonStatus() {
+  let isActive = false;
   filterBox.forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.toggle("active");
-      updateApplyButtonStatus();
-      if (item.classList.contains("active")) {
-        clearBtn.addEventListener("click", () => {
-          item.classList.remove("active");
-          updateApplyButtonStatus();
-        });
-      }
-    });
+    if (item.classList.contains("active")) {
+      isActive = true;
+    }
   });
 
-  function updateApplyButtonStatus() {
-    let isActive = false;
-    filterBox.forEach((item) => {
-      if (item.classList.contains("active")) {
-        isActive = true;
-      }
-    });
-
-    if (isActive) {
-      applyBtn.classList.remove("disabled");
-    } else {
-      applyBtn.classList.add("disabled");
-    }
+  if (isActive) {
+    applyBtn.classList.remove("disabled");
+  } else {
+    applyBtn.classList.add("disabled");
   }
+}
 
-  applyBtn.addEventListener("click", () => {
-    if (!applyBtn.classList.contains("disabled")) {
-      hideFilterModal();
-    }
-  });
-})();
+applyBtn.addEventListener("click", () => {
+  if (!applyBtn.classList.contains("disabled")) {
+    hideFilterModal();
+  }
+});
+// })();
 
 (() => {
   try {
@@ -431,7 +480,7 @@ IMask(numberInput, { mask: "+{7} (000) 000-00-00" });
 
     filterBox.forEach((item) => {
       item.addEventListener("click", () => {
-        item.classList.toggle("active");
+        item.classList.add("active");
         updateApplyButtonStatus();
       });
 
@@ -522,9 +571,12 @@ const numCodeInput = document.querySelector(".num__code-input");
 const upBox = document.querySelectorAll(".up__box");
 const form = document.querySelector(".back__call");
 const numCode = document.querySelector(".num__code").textContent;
+const callFormBtn = form.querySelector(".call__form-btn");
 upBox.forEach((item) => {
   const upInput = item.querySelector(".up__input");
   const upText = item.querySelector(".up__text");
+  const selectedText = form.querySelector(".selected__text");
+  const selectBox = form.querySelector(".select__box");
   upInput.addEventListener("click", () => {
     upText.classList.add("up");
   });
@@ -544,18 +596,53 @@ upBox.forEach((item) => {
       upText.classList.remove("up");
     }
   });
-  form.addEventListener("submit", function (event) {
-    if (numCodeInput.value.trim() !== numCode.trim()) {
-      event.preventDefault();
+
+  form.addEventListener("submit", function (e) {
+    let allInputsEmpty = true;
+    let inputs = [numCodeInput, upInput];
+    let preventSubmit = false;
+
+    inputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        input.classList.add("danger");
+        preventSubmit = true;
+      } else {
+        input.classList.remove("danger");
+        allInputsEmpty = false;
+      }
+    });
+
+    if (selectedText.value.trim() === "") {
+      selectBox.classList.add("danger");
+      preventSubmit = true;
+    } else {
+      selectBox.classList.remove("danger");
+    }
+
+    if (allInputsEmpty) {
+      upText.classList.add("up");
       warningCode.classList.add("show");
+      preventSubmit = true;
+    } else {
+      if (numCodeInput.value.trim() !== numCode.trim()) {
+        upText.classList.add("up");
+        warningCode.classList.add("show");
+        numCodeInput.classList.add("danger");
+        preventSubmit = true;
+      } else {
+        warningCode.classList.remove("show");
+        numCodeInput.classList.remove("danger");
+      }
+    }
+
+    if (preventSubmit) {
+      e.preventDefault();
     }
   });
 });
-numCodeInput.addEventListener("input", function () {
-  // Faqat raqam kiritsin
-  this.value = this.value.replace(/\D/g, "");
 
-  // 4 ta raqamdan ortiq kiritilmasin
+numCodeInput.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "");
   if (this.value.length > 4) {
     this.value = this.value.slice(0, 4);
   }
@@ -566,12 +653,10 @@ const closeCallModal = document.querySelector(".call__modal-close");
 function showCallModal() {
   form.classList.add("show");
   body.classList.add("blur-two", "no-scroll");
-  // document.body.style.overflow = "hidden";
 }
 function hideCallModal() {
   form.classList.remove("show");
   body.classList.remove("blur-two", "no-scroll");
-  // document.body.style.overflow = "auto";
 }
 openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
 closeCallModal.addEventListener("click", hideCallModal);
