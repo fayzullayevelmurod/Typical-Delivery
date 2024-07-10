@@ -104,15 +104,17 @@ li {
 .red__btn {
   font-size: 16px;
   font-weight: 600;
-  line-height: 20px;
   padding: 10px 32px;
   background: #ff453a;
   border: 1px solid rgba(255, 255, 255, 0.0509803922);
-  border-radius: 20px;
+  border-radius: 40px;
   width: fit-content;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   transition: all 0.2s linear;
+  height: 50px;
 }
 .red__btn:hover {
   background: #d5413a;
@@ -2867,6 +2869,9 @@ button {
   .auth__modal .modal__title {
     padding: 60px 0;
   }
+  .red__btn {
+    height: 46px;
+  }
   .auth__modal .remember__box {
     padding: 15px 0 20px 0;
   }
@@ -3041,6 +3046,9 @@ button {
 @media screen and (max-width: 767px) {
   .notification__box {
     right: 15px !important;
+  }
+  .red__btn {
+    height: 44px;
   }
   .back__call .enter__num-code {
     gap: 10px;

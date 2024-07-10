@@ -614,6 +614,9 @@
   .auth__modal .modal__title {
     padding: 60px 0;
   }
+  .red__btn {
+    height: 46px;
+  }
   .auth__modal .remember__box {
     padding: 15px 0 20px 0;
   }
@@ -796,6 +799,9 @@
 @media screen and (max-width: 767px) {
   .notification__box {
     right: 15px !important;
+  }
+  .red__btn {
+    height: 44px;
   }
   .back__call .enter__num-code {
     gap: 10px;
