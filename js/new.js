@@ -563,108 +563,110 @@ try {
   console.log(error);
 }
 
-// num__code
-const inputsTwo = document.querySelectorAll(".checker__input");
-const warningCode = document.querySelector(".warning__code");
-const numCodeInput = document.querySelector(".num__code-input");
-// up__input
-const upBox = document.querySelectorAll(".up__box");
-const form = document.querySelector(".back__call");
-const numCode = document.querySelector(".num__code").textContent;
-const callFormBtn = form.querySelector(".call__form-btn");
-upBox.forEach((item) => {
-  const upInput = item.querySelector(".up__input");
-  const upText = item.querySelector(".up__text");
-  const selectedText = form.querySelector(".selected__text");
-  const selectBox = form.querySelector(".select__box");
-  upInput.addEventListener("click", () => {
-    upText.classList.add("up");
-  });
-  upInput.addEventListener("focus", () => {
-    if (!upInput.value.trim()) {
-      upText.classList.add("active");
-    }
-  });
-
-  upInput.addEventListener("blur", () => {
-    if (!upInput.value.trim()) {
-      upText.classList.remove("active");
-    }
-  });
-  document.addEventListener("click", (event) => {
-    if (event.target !== upInput && !upInput.value) {
-      upText.classList.remove("up");
-    }
-  });
-
-  form.addEventListener("submit", function (e) {
-    let allInputsEmpty = true;
-    let inputs = [numCodeInput, upInput];
-    let preventSubmit = false;
-
-    inputs.forEach((input) => {
-      if (input.value.trim() === "") {
-        input.classList.add("danger");
-        preventSubmit = true;
-      } else {
-        input.classList.remove("danger");
-        allInputsEmpty = false;
+(() => {
+  // num__code
+  const inputsTwo = document.querySelectorAll(".checker__input");
+  const warningCode = document.querySelector(".warning__code");
+  const numCodeInput = document.querySelector(".num__code-input");
+  // up__input
+  const upBox = document.querySelectorAll(".up__box");
+  const form = document.querySelector(".back__call");
+  const numCode = document.querySelector(".num__code").textContent;
+  const callFormBtn = form.querySelector(".call__form-btn");
+  upBox.forEach((item) => {
+    const upInput = item.querySelector(".up__input");
+    const upText = item.querySelector(".up__text");
+    const selectedText = form.querySelector(".selected__text");
+    const selectBox = form.querySelector(".select__box");
+    upInput.addEventListener("click", () => {
+      upText.classList.add("up");
+    });
+    upInput.addEventListener("focus", () => {
+      if (!upInput.value.trim()) {
+        upText.classList.add("active");
       }
     });
 
-    if (selectedText.value.trim() === "") {
-      selectBox.classList.add("danger");
-      preventSubmit = true;
-    } else {
-      selectBox.classList.remove("danger");
-    }
+    upInput.addEventListener("blur", () => {
+      if (!upInput.value.trim()) {
+        upText.classList.remove("active");
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (event.target !== upInput && !upInput.value) {
+        upText.classList.remove("up");
+      }
+    });
 
-    if (allInputsEmpty) {
-      upText.classList.add("up");
-      warningCode.classList.add("show");
-      preventSubmit = true;
-    } else {
-      if (numCodeInput.value.trim() !== numCode.trim()) {
-        upText.classList.add("up");
-        warningCode.classList.add("show");
-        numCodeInput.classList.add("danger");
+    form.addEventListener("submit", function (e) {
+      let allInputsEmpty = true;
+      let inputs = [numCodeInput, upInput];
+      let preventSubmit = false;
+
+      inputs.forEach((input) => {
+        if (input.value.trim() === "") {
+          input.classList.add("danger");
+          preventSubmit = true;
+        } else {
+          input.classList.remove("danger");
+          allInputsEmpty = false;
+        }
+      });
+
+      if (selectedText.value.trim() === "") {
+        selectBox.classList.add("danger");
         preventSubmit = true;
       } else {
-        warningCode.classList.remove("show");
-        numCodeInput.classList.remove("danger");
+        selectBox.classList.remove("danger");
       }
-    }
 
-    if (preventSubmit) {
-      e.preventDefault();
+      if (allInputsEmpty) {
+        upText.classList.add("up");
+        warningCode.classList.add("show");
+        preventSubmit = true;
+      } else {
+        if (numCodeInput.value.trim() !== numCode.trim()) {
+          upText.classList.add("up");
+          warningCode.classList.add("show");
+          numCodeInput.classList.add("danger");
+          preventSubmit = true;
+        } else {
+          warningCode.classList.remove("show");
+          numCodeInput.classList.remove("danger");
+        }
+      }
+
+      if (preventSubmit) {
+        e.preventDefault();
+      }
+    });
+  });
+
+  numCodeInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+    if (this.value.length > 4) {
+      this.value = this.value.slice(0, 4);
     }
   });
-});
 
-numCodeInput.addEventListener("input", function () {
-  this.value = this.value.replace(/\D/g, "");
-  if (this.value.length > 4) {
-    this.value = this.value.slice(0, 4);
+  const openCallModal = document.querySelectorAll(".open__call-modal");
+  const closeCallModal = document.querySelector(".call__modal-close");
+  function showCallModal() {
+    form.classList.add("show");
+    body.classList.add("blur-two", "no-scroll");
   }
-});
-
-const openCallModal = document.querySelectorAll(".open__call-modal");
-const closeCallModal = document.querySelector(".call__modal-close");
-function showCallModal() {
-  form.classList.add("show");
-  body.classList.add("blur-two", "no-scroll");
-}
-function hideCallModal() {
-  form.classList.remove("show");
-  body.classList.remove("blur-two", "no-scroll");
-}
-openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
-closeCallModal.addEventListener("click", hideCallModal);
-form.addEventListener("click", (e) => {
-  if (e.target && e.target.classList.contains("back__call")) {
-    hideCallModal();
+  function hideCallModal() {
+    form.classList.remove("show");
+    body.classList.remove("blur-two", "no-scroll");
   }
-});
+  openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
+  closeCallModal.addEventListener("click", hideCallModal);
+  form.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("back__call")) {
+      hideCallModal();
+    }
+  });
+})();
 
 // index page tabs
 (() => {

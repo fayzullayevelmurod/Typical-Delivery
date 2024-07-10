@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  const numberInputs = document.querySelectorAll('input[type="number"]');
+
+  numberInputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/[^0-9]/g, ""); // faqat raqamlarni qoldiradi
+      console.log("salom");
+    });
+  });
+});
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) =>
   Array.from(context.querySelectorAll(selector));
@@ -1131,6 +1141,7 @@ try {
 
   sendForm.addEventListener("submit", (e) => {
     let preventSubmit = false;
+    // e.preventDefault();
 
     // Required inputs validation
     requireInputs.forEach((input) => {
@@ -1172,10 +1183,17 @@ try {
       });
     }
 
-    if (!preventSubmit) {
+    if (preventSubmit) {
       e.preventDefault();
     }
   });
 } catch (error) {
   console.log(error);
+}
+function validateNumberInput(input) {
+  const validNumber = input.value.replace(/[^0-9]/g, ""); // faqat raqamlarni qoldiradi
+  console.log(validNumber);
+  if (input.value !== validNumber) {
+    input.value = validNumber;
+  }
 }
