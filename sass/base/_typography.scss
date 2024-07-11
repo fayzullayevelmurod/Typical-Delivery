@@ -7,6 +7,13 @@ body {
   &.no-scroll {
     overflow: hidden;
     padding-right: 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
   }
 
   &.blur {

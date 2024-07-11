@@ -247,14 +247,12 @@ const body = document.querySelector("body");
 function hideMOdal() {
   authModal.classList.remove("show");
   modalOverlay.classList.remove("show");
-  document.body.classList.remove("no-scroll");
-  body.classList.remove("blur");
+  body.classList.remove("no-scroll", "blur");
 }
 function showModal() {
   authModal.classList.add("show");
   modalOverlay.classList.add("show");
-  document.body.classList.add("no-scroll");
-  body.classList.add("blur");
+  body.classList.add("no-scroll", "blur");
 }
 openModal.forEach((btn) => btn.addEventListener("click", showModal));
 authModalClose.addEventListener("click", hideMOdal);
@@ -651,13 +649,13 @@ try {
 
   const openCallModal = document.querySelectorAll(".open__call-modal");
   const closeCallModal = document.querySelector(".call__modal-close");
-  function showCallModal() {
-    form.classList.add("show");
-    body.classList.add("blur-two", "no-scroll");
-  }
   function hideCallModal() {
     form.classList.remove("show");
     body.classList.remove("blur-two", "no-scroll");
+  }
+  function showCallModal() {
+    form.classList.add("show");
+    body.classList.add("blur-two", "no-scroll");
   }
   openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
   closeCallModal.addEventListener("click", hideCallModal);
@@ -877,16 +875,14 @@ try {
 
 // products modal
 (() => {
-  // try {
   const productModal = document.querySelector(".product__modal");
   const openProductModal = document.querySelectorAll(".product__card");
   const closeProductModal = document.querySelector(".close__product-modal");
 
   function showProductModal() {
     productModal.classList.add("active");
-    document.body.classList.add("no-scroll");
+    body.classList.add("no-scroll", "blur");
     modalOverlay.classList.add("show");
-    body.classList.add("blur");
   }
   function hideProductModal() {
     productModal.classList.remove("active");
@@ -912,7 +908,6 @@ try {
       hideProductModal();
     }
   });
-  // } catch (error) {}
 })();
 try {
 } catch (error) {}
