@@ -1,3 +1,4 @@
+let scrollPosition = 0;
 window.addEventListener("resize", () => {
   if (window) {
   }
@@ -247,12 +248,14 @@ const body = document.querySelector("body");
 function hideMOdal() {
   authModal.classList.remove("show");
   modalOverlay.classList.remove("show");
-  body.classList.remove("no-scroll", "blur");
+  // body.classList.remove("no-scroll", "blur");
+  scrollEl();
 }
 function showModal() {
   authModal.classList.add("show");
   modalOverlay.classList.add("show");
-  body.classList.add("no-scroll", "blur");
+  // body.classList.add("no-scroll", "blur");
+  noScroll();
 }
 openModal.forEach((btn) => btn.addEventListener("click", showModal));
 authModalClose.addEventListener("click", hideMOdal);
@@ -651,11 +654,11 @@ try {
   const closeCallModal = document.querySelector(".call__modal-close");
   function hideCallModal() {
     form.classList.remove("show");
-    body.classList.remove("blur-two", "no-scroll");
+    scrollEl();
   }
   function showCallModal() {
+    noScroll();
     form.classList.add("show");
-    body.classList.add("blur-two", "no-scroll");
   }
   openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
   closeCallModal.addEventListener("click", hideCallModal);
@@ -665,6 +668,30 @@ try {
     }
   });
 })();
+
+function noScroll() {
+  body.classList.add("blur-two", "no-scroll");
+  // Hozirgi scroll pozitsiyasini saqlash
+  scrollPosition = window.pageYOffset;
+  // Body elementiga overflow hidden va fixed berish
+  document.body.style.overflow = "hidden";
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.style.width = "100%";
+}
+
+function scrollEl() {
+  body.classList.remove("blur-two", "no-scroll");
+  // Body elementidan overflow hidden va fixedni olib tashlash
+  document.body.style.overflow = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  document.body.classList.remove("blur-two");
+
+  // Scroll pozitsiyasini tiklash
+  window.scrollTo(0, scrollPosition);
+}
 
 // index page tabs
 (() => {
@@ -881,14 +908,16 @@ try {
 
   function showProductModal() {
     productModal.classList.add("active");
-    body.classList.add("no-scroll", "blur");
+    // body.classList.add("no-scroll", "blur");
+    noScroll();
     modalOverlay.classList.add("show");
   }
   function hideProductModal() {
     productModal.classList.remove("active");
-    document.body.classList.remove("no-scroll");
+    // document.body.classList.remove("no-scroll");
     modalOverlay.classList.remove("show");
-    body.classList.remove("blur");
+    // body.classList.remove("blur");
+    scrollEl();
   }
   openProductModal.forEach((btn) => {
     const infoBtn = btn.querySelector(".info__btn");

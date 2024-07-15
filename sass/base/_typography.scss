@@ -5,15 +5,14 @@ body {
   color: #fff;
   position: relative;
   &.no-scroll {
-    overflow: hidden;
     padding-right: 3px;
+    overflow: hidden;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     &::-webkit-scrollbar {
       width: 0 !important;
     }
+    -webkit-overflow-scrolling: auto;
   }
 
   &.blur {
