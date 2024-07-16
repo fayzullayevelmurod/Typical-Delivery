@@ -3427,6 +3427,7 @@ button {
   .outline__btn,
   .footer .teal__btn {
     max-height: 50px;
+    min-height: 50px;
   }
 }
 .stock__cards {
