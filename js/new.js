@@ -3,7 +3,35 @@ window.addEventListener("resize", () => {
   if (window) {
   }
 });
-
+try {
+  var productTwoSwiper = new Swiper(".product__four-swiper", {
+    slidesPerView: 4.5,
+    speed: 700,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".next-btn",
+      prevEl: ".prev-btn",
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4.4,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 3.3,
+        spaceBetween: 10,
+      },
+      500: {
+        slidesPerView: 2.3,
+        spaceBetween: 10,
+      },
+      0: {
+        slidesPerView: 1.3,
+        spaceBetween: 10,
+      },
+    },
+  });
+} catch (error) {}
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) =>
   Array.from(context.querySelectorAll(selector));
@@ -845,31 +873,7 @@ try {
     },
   });
 } catch (error) {}
-try {
-  var productTwoSwiper = new Swiper(".product__four-swiper", {
-    slidesPerView: 4.5,
-    speed: 700,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".next-btn",
-      prevEl: ".prev-btn",
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 4.5,
-        spaceBetween: 10,
-      },
-      768: {
-        slidesPerView: 3.1,
-        spaceBetween: 10,
-      },
-      0: {
-        slidesPerView: 2,
-        spaceBetween: 10,
-      },
-    },
-  });
-} catch (error) {}
+
 try {
   var productTwoSwiper = new Swiper(".product__three-swiper", {
     slidesPerView: 3.4,

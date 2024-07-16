@@ -211,8 +211,10 @@ body {
   position: relative;
 }
 body.no-scroll {
-  overflow-y: hidden;
   padding-right: 3px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
   -webkit-overflow-scrolling: auto;
 }
 body.no-scroll::-webkit-scrollbar {
@@ -3422,7 +3424,7 @@ button {
 @media screen and (min-width: 1366px) {
   .outline__btn,
   .footer .teal__btn {
-    height: 50px;
+    max-height: 50px;
   }
 }
 .stock__cards {
@@ -4794,11 +4796,6 @@ button {
   }
   .empty__page .top__box {
     row-gap: 20px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .product__four-swiper .product__card .product__card-img {
-    padding-top: 0;
   }
 }
 .map-circle-placemark._outline .map-circle-placemark__caption {
