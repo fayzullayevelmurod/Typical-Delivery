@@ -1,3 +1,6 @@
+const $ = (selector, context = document) => context.querySelector(selector);
+const $$ = (selector, context = document) =>
+  Array.from(context.querySelectorAll(selector));
 function disableScrollOnMobileSafari() {
   const isMobileSafari = /iP(ad|hone|od)/i.test(navigator.userAgent);
   if (isMobileSafari) {
@@ -175,6 +178,99 @@ authModal.addEventListener("click", (e) => {
   });
 })();
 
+// products modal
+(() => {
+  const productModal = document.querySelector(".product__modal");
+  const openProductModal = document.querySelectorAll(".product__card");
+  const closeProductModal = document.querySelector(".close__product-modal");
+
+  function showProductModal() {
+    productModal.classList.add("active");
+    // body.classList.add("no-scroll", "blur");
+    noScroll();
+    modalOverlay.classList.add("show");
+  }
+  function hideProductModal() {
+    productModal.classList.remove("active");
+    // document.body.classList.remove("no-scroll");
+    modalOverlay.classList.remove("show");
+    // body.classList.remove("blur");
+    scrollEl();
+  }
+  openProductModal.forEach((btn) => {
+    const infoBtn = btn.querySelector(".info__btn");
+    btn.addEventListener("click", (e) => {
+      if (
+        !e.target.classList.contains("info__btn") &&
+        !e.target.classList.contains("info__icon") &&
+        !e.target.classList.contains("close__icon")
+      ) {
+        showProductModal();
+      }
+    });
+  });
+  closeProductModal.addEventListener("click", hideProductModal);
+  productModal.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("product__modal")) {
+      hideProductModal();
+    }
+  });
+})();
+
+(() => {
+  try {
+    const filterBox = $$(".filter__box");
+    const applyBtn = $(".apply__btn");
+    const clearBtn = $(".clear__btn");
+
+    const updateApplyButtonStatus = () => {
+      applyBtn.classList.toggle(
+        "disabled",
+        !filterBox.some((item) => item.classList.contains("active"))
+      );
+    };
+
+    filterBox.forEach((item) => {
+      item.addEventListener("click", () => {
+        item.classList.add("active");
+        updateApplyButtonStatus();
+      });
+
+      clearBtn.addEventListener("click", () => {
+        item.classList.remove("active");
+        updateApplyButtonStatus();
+      });
+    });
+
+    applyBtn.addEventListener("click", () => {
+      if (!applyBtn.classList.contains("disabled")) hideFilterModal();
+    });
+
+    const filterModal = $(".filter__modal");
+    const openFilterModal = $(".open__filter-modal");
+    const closeFilterModal = $(".filter__modal-close");
+
+    const showFilterModal = () => {
+      filterModal.classList.add("show");
+      $(".modal__overlay").classList.add("show");
+      $("body").classList.add("blur", "no-scroll");
+    };
+
+    const hideFilterModal = () => {
+      filterModal.classList.remove("show");
+      $(".modal__overlay").classList.remove("show");
+      $("body").classList.remove("blur", "no-scroll");
+    };
+
+    openFilterModal.addEventListener("click", showFilterModal);
+    closeFilterModal.addEventListener("click", hideFilterModal);
+
+    filterModal.addEventListener("click", (e) => {
+      if (e.target && e.target.classList.contains("filter__modal"))
+        hideFilterModal();
+    });
+  } catch (error) {}
+})();
 // modal
 
 let scrollPosition = 0;
@@ -211,9 +307,6 @@ try {
     },
   });
 } catch (error) {}
-const $ = (selector, context = document) => context.querySelector(selector);
-const $$ = (selector, context = document) =>
-  Array.from(context.querySelectorAll(selector));
 
 let lastScrollTop = 0;
 const headerNav = document.querySelector("header");
@@ -644,61 +737,6 @@ applyBtn.addEventListener("click", () => {
 });
 // })();
 
-(() => {
-  // try {
-  const filterBox = $$(".filter__box");
-  const applyBtn = $(".apply__btn");
-  const clearBtn = $(".clear__btn");
-
-  const updateApplyButtonStatus = () => {
-    applyBtn.classList.toggle(
-      "disabled",
-      !filterBox.some((item) => item.classList.contains("active"))
-    );
-  };
-
-  filterBox.forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.add("active");
-      updateApplyButtonStatus();
-    });
-
-    clearBtn.addEventListener("click", () => {
-      item.classList.remove("active");
-      updateApplyButtonStatus();
-    });
-  });
-
-  applyBtn.addEventListener("click", () => {
-    if (!applyBtn.classList.contains("disabled")) hideFilterModal();
-  });
-
-  const filterModal = $(".filter__modal");
-  const openFilterModal = $(".open__filter-modal");
-  const closeFilterModal = $(".filter__modal-close");
-
-  const showFilterModal = () => {
-    filterModal.classList.add("show");
-    $(".modal__overlay").classList.add("show");
-    $("body").classList.add("blur", "no-scroll");
-  };
-
-  const hideFilterModal = () => {
-    filterModal.classList.remove("show");
-    $(".modal__overlay").classList.remove("show");
-    $("body").classList.remove("blur", "no-scroll");
-  };
-
-  openFilterModal.addEventListener("click", showFilterModal);
-  closeFilterModal.addEventListener("click", hideFilterModal);
-
-  filterModal.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("filter__modal"))
-      hideFilterModal();
-  });
-  // } catch (error) {}
-})();
-
 try {
   const allSelect = document.querySelectorAll(".all__select");
   const workTimeInfo = document.querySelector(".work__time-info");
@@ -925,44 +963,6 @@ try {
   });
 } catch (error) {}
 
-// products modal
-(() => {
-  const productModal = document.querySelector(".product__modal");
-  const openProductModal = document.querySelectorAll(".product__card");
-  const closeProductModal = document.querySelector(".close__product-modal");
-
-  function showProductModal() {
-    productModal.classList.add("active");
-    // body.classList.add("no-scroll", "blur");
-    noScroll();
-    modalOverlay.classList.add("show");
-  }
-  function hideProductModal() {
-    productModal.classList.remove("active");
-    // document.body.classList.remove("no-scroll");
-    modalOverlay.classList.remove("show");
-    // body.classList.remove("blur");
-    scrollEl();
-  }
-  openProductModal.forEach((btn) => {
-    const infoBtn = btn.querySelector(".info__btn");
-    btn.addEventListener("click", (e) => {
-      if (
-        !e.target.classList.contains("info__btn") &&
-        !e.target.classList.contains("info__icon") &&
-        !e.target.classList.contains("close__icon")
-      ) {
-        showProductModal();
-      }
-    });
-  });
-  closeProductModal.addEventListener("click", hideProductModal);
-  productModal.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("product__modal")) {
-      hideProductModal();
-    }
-  });
-})();
 try {
 } catch (error) {}
 
