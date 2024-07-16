@@ -1,3 +1,182 @@
+function disableScrollOnMobileSafari() {
+  const isMobileSafari = /iP(ad|hone|od)/i.test(navigator.userAgent);
+  if (isMobileSafari) {
+    body.style.touchAction = "none";
+  }
+}
+
+function enableScrollOnMobileSafari() {
+  const isMobileSafari = /iP(ad|hone|od)/i.test(navigator.userAgent);
+  if (isMobileSafari) {
+    body.style.touchAction = "";
+  }
+}
+function noScroll() {
+  body.classList.add("blur-two", "no-scroll");
+  disableScrollOnMobileSafari();
+  // Hozirgi scroll pozitsiyasini saqlash
+  // scrollPosition = window.pageYOffset;
+  // Body elementiga overflow hidden va fixed berish
+  // document.body.style.overflow = "hidden";
+  // document.body.style.position = "fixed";
+  // document.body.style.top = `-${scrollPosition}px`;
+  // document.body.style.width = "100%";
+}
+
+function scrollEl() {
+  body.classList.remove("blur-two", "no-scroll");
+  enableScrollOnMobileSafari();
+  // Body elementidan overflow hidden va fixedni olib tashlash
+  // document.body.style.overflow = "";
+  // document.body.style.position = "";
+  // document.body.style.top = "";
+  // document.body.style.width = "";
+  // document.body.classList.remove("blur-two");
+
+  // Scroll pozitsiyasini tiklash
+  // window.scrollTo(0, scrollPosition);
+}
+
+// modal
+// auth modal start
+const authModal = document.querySelector(".auth__modal");
+const openModal = document.querySelectorAll(".auth__modal-open");
+const modalOverlay = document.querySelector(".modal__overlay");
+const authModalClose = document.querySelector(".auth__modal-close");
+const sendButton = authModal.querySelector(".send__btn");
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
+const header = document.querySelector("header");
+const body = document.querySelector("body");
+function hideMOdal() {
+  authModal.classList.remove("show");
+  modalOverlay.classList.remove("show");
+  // body.classList.remove("no-scroll", "blur");
+  scrollEl();
+}
+function showModal() {
+  authModal.classList.add("show");
+  modalOverlay.classList.add("show");
+  // body.classList.add("no-scroll", "blur");
+  noScroll();
+}
+openModal.forEach((btn) => btn.addEventListener("click", showModal));
+authModalClose.addEventListener("click", hideMOdal);
+authModal.addEventListener("click", (e) => {
+  if (e.target && e.target.classList.contains("auth__modal")) {
+    hideMOdal();
+  }
+});
+
+//
+
+(() => {
+  // num__code
+  const inputsTwo = document.querySelectorAll(".checker__input");
+  const warningCode = document.querySelector(".warning__code");
+  const numCodeInput = document.querySelector(".num__code-input");
+  // up__input
+  const upBox = document.querySelectorAll(".up__box");
+  const form = document.querySelector(".back__call");
+  const numCode = document.querySelector(".num__code").textContent;
+  const callFormBtn = form.querySelector(".call__form-btn");
+  upBox.forEach((item) => {
+    const upInput = item.querySelector(".up__input");
+    const upText = item.querySelector(".up__text");
+    const selectedText = form.querySelector(".selected__text");
+    const selectBox = form.querySelector(".select__box");
+    upInput.addEventListener("click", () => {
+      upText.classList.add("up");
+    });
+    upInput.addEventListener("focus", () => {
+      if (!upInput.value.trim()) {
+        upText.classList.add("active");
+      }
+    });
+
+    upInput.addEventListener("blur", () => {
+      if (!upInput.value.trim()) {
+        upText.classList.remove("active");
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (event.target !== upInput && !upInput.value) {
+        upText.classList.remove("up");
+      }
+    });
+
+    form.addEventListener("submit", function (e) {
+      let allInputsEmpty = true;
+      let inputs = [numCodeInput, upInput];
+      let preventSubmit = false;
+
+      inputs.forEach((input) => {
+        if (input.value.trim() === "") {
+          input.classList.add("danger");
+          preventSubmit = true;
+        } else {
+          input.classList.remove("danger");
+          allInputsEmpty = false;
+        }
+      });
+
+      if (selectedText.value.trim() === "") {
+        selectBox.classList.add("danger");
+        preventSubmit = true;
+      } else {
+        selectBox.classList.remove("danger");
+      }
+
+      if (allInputsEmpty) {
+        upText.classList.add("up");
+        warningCode.classList.add("show");
+        preventSubmit = true;
+      } else {
+        if (numCodeInput.value.trim() !== numCode.trim()) {
+          upText.classList.add("up");
+          warningCode.classList.add("show");
+          numCodeInput.classList.add("danger");
+          preventSubmit = true;
+        } else {
+          warningCode.classList.remove("show");
+          numCodeInput.classList.remove("danger");
+        }
+      }
+
+      if (preventSubmit) {
+        e.preventDefault();
+      }
+    });
+  });
+
+  numCodeInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+    if (this.value.length > 4) {
+      this.value = this.value.slice(0, 4);
+    }
+  });
+
+  const openCallModal = document.querySelectorAll(".open__call-modal");
+  const closeCallModal = document.querySelector(".call__modal-close");
+  function hideCallModal() {
+    form.classList.remove("show");
+    scrollEl();
+  }
+  function showCallModal() {
+    noScroll();
+    form.classList.add("show");
+  }
+  openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
+  closeCallModal.addEventListener("click", hideCallModal);
+  form.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("back__call")) {
+      hideCallModal();
+    }
+  });
+})();
+
+// modal
+
 let scrollPosition = 0;
 window.addEventListener("resize", () => {
   if (window) {
@@ -263,35 +442,6 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// modal
-const authModal = document.querySelector(".auth__modal");
-const openModal = document.querySelectorAll(".auth__modal-open");
-const modalOverlay = document.querySelector(".modal__overlay");
-const authModalClose = document.querySelector(".auth__modal-close");
-const sendButton = authModal.querySelector(".send__btn");
-const main = document.querySelector("main");
-const footer = document.querySelector("footer");
-const header = document.querySelector("header");
-const body = document.querySelector("body");
-function hideMOdal() {
-  authModal.classList.remove("show");
-  modalOverlay.classList.remove("show");
-  // body.classList.remove("no-scroll", "blur");
-  scrollEl();
-}
-function showModal() {
-  authModal.classList.add("show");
-  modalOverlay.classList.add("show");
-  // body.classList.add("no-scroll", "blur");
-  noScroll();
-}
-openModal.forEach((btn) => btn.addEventListener("click", showModal));
-authModalClose.addEventListener("click", hideMOdal);
-authModal.addEventListener("click", (e) => {
-  if (e.target && e.target.classList.contains("auth__modal")) {
-    hideMOdal();
-  }
-});
 // validate input
 const phoneInput = document.querySelector(".phone__input");
 const numberInputs = document.querySelectorAll(".number__input");
@@ -590,135 +740,6 @@ try {
   });
 } catch (error) {
   console.log(error);
-}
-
-(() => {
-  // num__code
-  const inputsTwo = document.querySelectorAll(".checker__input");
-  const warningCode = document.querySelector(".warning__code");
-  const numCodeInput = document.querySelector(".num__code-input");
-  // up__input
-  const upBox = document.querySelectorAll(".up__box");
-  const form = document.querySelector(".back__call");
-  const numCode = document.querySelector(".num__code").textContent;
-  const callFormBtn = form.querySelector(".call__form-btn");
-  upBox.forEach((item) => {
-    const upInput = item.querySelector(".up__input");
-    const upText = item.querySelector(".up__text");
-    const selectedText = form.querySelector(".selected__text");
-    const selectBox = form.querySelector(".select__box");
-    upInput.addEventListener("click", () => {
-      upText.classList.add("up");
-    });
-    upInput.addEventListener("focus", () => {
-      if (!upInput.value.trim()) {
-        upText.classList.add("active");
-      }
-    });
-
-    upInput.addEventListener("blur", () => {
-      if (!upInput.value.trim()) {
-        upText.classList.remove("active");
-      }
-    });
-    document.addEventListener("click", (event) => {
-      if (event.target !== upInput && !upInput.value) {
-        upText.classList.remove("up");
-      }
-    });
-
-    form.addEventListener("submit", function (e) {
-      let allInputsEmpty = true;
-      let inputs = [numCodeInput, upInput];
-      let preventSubmit = false;
-
-      inputs.forEach((input) => {
-        if (input.value.trim() === "") {
-          input.classList.add("danger");
-          preventSubmit = true;
-        } else {
-          input.classList.remove("danger");
-          allInputsEmpty = false;
-        }
-      });
-
-      if (selectedText.value.trim() === "") {
-        selectBox.classList.add("danger");
-        preventSubmit = true;
-      } else {
-        selectBox.classList.remove("danger");
-      }
-
-      if (allInputsEmpty) {
-        upText.classList.add("up");
-        warningCode.classList.add("show");
-        preventSubmit = true;
-      } else {
-        if (numCodeInput.value.trim() !== numCode.trim()) {
-          upText.classList.add("up");
-          warningCode.classList.add("show");
-          numCodeInput.classList.add("danger");
-          preventSubmit = true;
-        } else {
-          warningCode.classList.remove("show");
-          numCodeInput.classList.remove("danger");
-        }
-      }
-
-      if (preventSubmit) {
-        e.preventDefault();
-      }
-    });
-  });
-
-  numCodeInput.addEventListener("input", function () {
-    this.value = this.value.replace(/\D/g, "");
-    if (this.value.length > 4) {
-      this.value = this.value.slice(0, 4);
-    }
-  });
-
-  const openCallModal = document.querySelectorAll(".open__call-modal");
-  const closeCallModal = document.querySelector(".call__modal-close");
-  function hideCallModal() {
-    form.classList.remove("show");
-    scrollEl();
-  }
-  function showCallModal() {
-    noScroll();
-    form.classList.add("show");
-  }
-  openCallModal.forEach((btn) => btn.addEventListener("click", showCallModal));
-  closeCallModal.addEventListener("click", hideCallModal);
-  form.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("back__call")) {
-      hideCallModal();
-    }
-  });
-})();
-
-function noScroll() {
-  body.classList.add("blur-two", "no-scroll");
-  // Hozirgi scroll pozitsiyasini saqlash
-  scrollPosition = window.pageYOffset;
-  // Body elementiga overflow hidden va fixed berish
-  document.body.style.overflow = "hidden";
-  document.body.style.position = "fixed";
-  document.body.style.top = `-${scrollPosition}px`;
-  document.body.style.width = "100%";
-}
-
-function scrollEl() {
-  body.classList.remove("blur-two", "no-scroll");
-  // Body elementidan overflow hidden va fixedni olib tashlash
-  document.body.style.overflow = "";
-  document.body.style.position = "";
-  document.body.style.top = "";
-  document.body.style.width = "";
-  document.body.classList.remove("blur-two");
-
-  // Scroll pozitsiyasini tiklash
-  window.scrollTo(0, scrollPosition);
 }
 
 // index page tabs

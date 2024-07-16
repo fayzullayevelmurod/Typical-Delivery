@@ -7,12 +7,14 @@ body {
   &.no-scroll {
     padding-right: 3px;
     overflow: hidden;
-    position: fixed;
-    width: 100%;
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior: none;
     &::-webkit-scrollbar {
       width: 0 !important;
     }
-    -webkit-overflow-scrolling: auto;
   }
 
   &.blur {
