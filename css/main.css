@@ -3898,6 +3898,10 @@ button {
 .promotion .other__promotions .promotion__swiper {
   margin-right: -300px;
   padding-right: 300px;
+  width: 100%;
+}
+.promotion .other__promotions .outline__btn {
+  min-height: unset;
 }
 .promotion .other__promotions-boxes {
   display: flex;

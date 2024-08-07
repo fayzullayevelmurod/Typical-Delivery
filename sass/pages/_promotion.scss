@@ -8,6 +8,7 @@
       color: #fff;
     }
   }
+
   .flex__box {
     display: flex;
     align-items: center;
@@ -21,15 +22,18 @@
     gap: 35px;
     justify-content: space-between;
     padding-top: 25px;
+
     .img__box {
       max-width: 100%;
       width: 100%;
     }
+
     .promotion__box-content {
       max-width: 585px;
       width: 100%;
     }
   }
+
   &__box {
     &-img {
       width: 100%;
@@ -39,28 +43,39 @@
       border-radius: 24px;
     }
   }
+
   .description__box {
     padding-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
+
   .other__promotions {
     padding-top: 80px;
-    .container__box {
-    }
+
+    .container__box {}
+
     .promotion__swiper {
       margin-right: -300px;
       padding-right: 300px;
+      width: 100%;
     }
+
+    .outline__btn {
+      min-height: unset;
+    }
+
     &-boxes {
       display: flex;
       align-items: start;
       gap: 40px;
     }
+
     .content {
       padding-top: 20px;
       max-width: 312px;
+
       .description {
         padding: 25px 0;
         font-size: 20px;
@@ -71,9 +86,11 @@
         -webkit-text-fill-color: transparent;
       }
     }
+
     .stock__card {
       background: linear-gradient(180deg, #212429 26.74%, #2f323a 100%);
       border: none;
+
       .card__img {
         border-radius: 20px;
       }
@@ -88,35 +105,44 @@
     row-gap: 25px;
     padding-top: 20px;
   }
+
   .promotion__boxes .promotion__box-content {
     max-width: 100%;
   }
+
   .promotion .other__promotions {
     padding-top: 60px;
   }
+
   .promotion .other__promotions .content .description {
     font-size: 15px;
     line-height: 30.6px;
     padding: 15px 0 25px 0;
   }
+
   .promotion .other__promotions-boxes {
     gap: 25px;
   }
+
   .stock__card .card__title {
     font-size: 16px;
     line-height: 19.57px;
   }
+
   .stock__card .card__content {
     padding: 20px 15px;
   }
+
   .promotion .other__promotions .stock__card .card__img {
     height: auto;
     object-fit: cover;
     border-radius: 18px;
   }
+
   .promotion .other__promotions .stock__card {
     border-radius: 18px;
   }
+
   .promotion {
     padding: 30px 0 80px 0;
   }
@@ -127,6 +153,7 @@
     display: block;
     row-gap: 20px;
   }
+
   .promotion .other__promotions .content {
     margin-bottom: 20px;
     max-width: 100%;
@@ -136,27 +163,34 @@
       display: none;
     }
   }
+
   .promotion .other__promotions {
     padding-top: 40px;
   }
+
   .promotion .other__promotions .content .description {
     font-size: 16px;
     padding-bottom: 0;
   }
+
   .promotion__boxes {
     row-gap: 20px;
+
     .title__lg {
       font-size: 22px;
       line-height: 26.91px;
     }
   }
+
   .promotion__box-img {
     height: auto;
     border-radius: 16px;
   }
+
   .stock__card .card__content {
     padding: 15px;
   }
+
   .promotion {
     padding: 20px 0 60px 0;
   }
