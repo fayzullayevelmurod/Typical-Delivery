@@ -3973,10 +3973,18 @@ button {
     display: block;
     row-gap: 20px;
   }
+  .promotion .other__promotions .promotion__swiper {
+    margin-left: 0;
+    padding-right: 0;
+  }
+  .promotion .other__promotions-boxes {
+    margin-right: -15px;
+  }
   .promotion .other__promotions .content {
     margin-bottom: 20px;
     max-width: 100%;
     padding-top: 0;
+    padding-right: 15px;
   }
   .promotion .other__promotions .content .swiper-btns {
     display: none;
